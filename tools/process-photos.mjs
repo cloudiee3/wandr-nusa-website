@@ -29,7 +29,6 @@ const OUT = path.join(ROOT, 'assets', 'img');
 const SLOTS = [
   // ---- Tetebatu, our own photographs -----------------------------------
   { out: 'hero/hero.jpg',       w: 1600, h: 900,  max: 500, src: 'Tetebatu Rice Field.jpg',       focus: { x: 0.50, y: 0.54 } },
-  { out: 'about.jpg',           w: 640,  h: 800,  max: 300, src: 'Tetebatu Rice Plant.avif',      focus: { x: 0.46, y: 0.52 } },
   { out: 'tours/tetebatu.jpg',  w: 1200, h: 800,  max: 300, src: 'Monkey Forest .avif',           focus: { x: 0.55, y: 0.50 } },
   { out: 'gallery/durian-indah.jpg', w: 800, h: 1000, max: 300, src: 'Durian Indah Waterfall 2.avif', focus: { x: 0.50, y: 0.45 } },
   { out: 'og-image.jpg',        w: 1200, h: 630,  max: 300, src: 'Tetebatu Rice Field.jpg',       focus: { x: 0.50, y: 0.54 } },

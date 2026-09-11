@@ -31,6 +31,9 @@ did and refuses to write anything over its size budget.
 | `hero/hero.jpg` | The Tetebatu valley, wide | have it, but low resolution |
 | gallery | Any trip photos — needs **at least 3** before the grid appears | 1 so far |
 
+Two more gallery photos would bring the whole photo section back, and
+`Tetebatu Rice Plant.avif` is already here waiting to be one of them.
+
 "Stand-in" means a licensed stock photo that is not the actual place. They are
 there so the page looks finished, and they should be replaced.
 
@@ -49,7 +52,7 @@ Natural and documentary. No heavy filters, no text burned into the picture.
 | File | Where it is used |
 |---|---|
 | `Tetebatu Rice Field.jpg` | hero + social preview |
-| `Tetebatu Rice Plant.avif` | About |
+| `Tetebatu Rice Plant.avif` | **not used** — good photo, waiting on a slot (the gallery needs 3) |
 | `Monkey Forest .avif` | Tetebatu card |
 | `Durian Indah Waterfall 2.avif` | gallery |
 | `pexels-firman-fatthul-…jpg` | Central Lombok card — **stand-in** |
