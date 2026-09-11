@@ -62,10 +62,9 @@ export const TOURS = [
     id: 'lombok-tengah',
     order: 2,
     photo: 'assets/img/tours/lombok-tengah.jpg',
-    stock: true,
     alt: {
-      en: 'Two waterfalls falling side by side through dense green forest',
-      id: 'Dua air terjun jatuh berdampingan di hutan hijau yang rapat',
+      en: 'Water falling in thin strands through the plants on the cliff at Benang Kelambu, into a shallow pool',
+      id: 'Air jatuh seperti untaian benang menembus tanaman di tebing Benang Kelambu, ke kolam dangkal',
     },
     name: {
       en: 'Benang Kelambu, Benang Stokel & River Tubing',
@@ -128,12 +127,10 @@ export const TOURS = [
   {
     id: 'sembalun',
     order: 4,
-    /* Photo on its way — set this to 'assets/img/tours/sembalun.jpg' once the
-       file is in photos/ and `npm run photos` has been run. */
-    photo: null,
+    photo: 'assets/img/tours/sembalun.jpg',
     alt: {
-      en: 'The Sembalun valley from above, its fields laid out in a patchwork below the cloud-covered ridges',
-      id: 'Lembah Sembalun dari ketinggian, ladangnya berpetak-petak di bawah punggungan yang tertutup awan',
+      en: 'The Sembalun valley seen from the ridge, its fields laid out in a patchwork under cloud-covered mountains',
+      id: 'Lembah Sembalun dilihat dari punggungan, ladangnya berpetak-petak di bawah gunung yang tertutup awan',
     },
     name: { en: 'Sembalun', id: 'Sembalun' },
     region: { en: 'East Lombok · Sembalun', id: 'Lombok Timur · Sembalun' },

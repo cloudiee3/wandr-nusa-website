@@ -20,8 +20,10 @@ export const WHATSAPP_NUMBER = '6282340819128';
 /* Shown to humans. Keep it in sync with the number above. */
 export const WHATSAPP_DISPLAY = '+62 823-4081-9128';
 
+/* TODO: address, region, map pin and reply hours below were assumed and are
+   still unconfirmed. */
 export const CONTACT = {
-  email: 'hello@wandrnusa.com',
+  email: 'wandrnusa@gmail.com',
   /* Where you actually operate from — shown in the footer. */
   address: 'Tetebatu, Sikur, East Lombok',
   region: 'West Nusa Tenggara, Indonesia',
@@ -32,8 +34,9 @@ export const CONTACT = {
 
 export const SOCIALS = [
   { id: 'instagram', label: 'Instagram', handle: '@wandrnusa', url: 'https://instagram.com/wandrnusa' },
+  /* TODO: confirm the TikTok handle — this one was assumed, not given. */
   { id: 'tiktok',    label: 'TikTok',    handle: '@wandrnusa', url: 'https://tiktok.com/@wandrnusa' },
-  { id: 'email',     label: 'Email',     handle: 'hello@wandrnusa.com', url: 'mailto:hello@wandrnusa.com' },
+  { id: 'email',     label: 'Email',     handle: 'wandrnusa@gmail.com', url: 'mailto:wandrnusa@gmail.com' },
 ];
 
 /* Villages and towns we pick up from / run trips through. Footer + hero. */

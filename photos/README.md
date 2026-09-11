@@ -25,17 +25,15 @@ did and refuses to write anything over its size budget.
 
 | Slot | What it should show | Status |
 |---|---|---|
-| `tours/sembalun.jpg` | Sembalun — Bukit Selong, the fields, Desa Beleq | **missing** |
-| `tours/lombok-tengah.jpg` | Benang Kelambu or Benang Stokel, or river tubing | stand-in |
-| `tours/senaru.jpg` | Sendang Gile or Tiu Kelep | stand-in |
-| `hero/hero.jpg` | The Tetebatu valley, wide | have it, but low resolution |
+| `tours/senaru.jpg` | Sendang Gile or Tiu Kelep | stand-in — not the real place |
 | gallery | Any trip photos — needs **at least 3** before the grid appears | 1 so far |
 
-Two more gallery photos would bring the whole photo section back, and
-`Tetebatu Rice Plant.avif` is already here waiting to be one of them.
+"Stand-in" means a licensed stock photo that is not the actual place. It is
+there so the page looks finished, and it should be replaced.
 
-"Stand-in" means a licensed stock photo that is not the actual place. They are
-there so the page looks finished, and they should be replaced.
+`Tetebatu Rice Plant.avif` and `Tetebatu Rice Field.jpg` are both here and
+unused — two more gallery photos would bring the whole photo section back, and
+those two could be the first of them.
 
 ## Shooting for these slots
 
@@ -51,12 +49,15 @@ Natural and documentary. No heavy filters, no text burned into the picture.
 
 | File | Where it is used |
 |---|---|
-| `Tetebatu Rice Field.jpg` | hero + social preview |
-| `Tetebatu Rice Plant.avif` | **not used** — good photo, waiting on a slot (the gallery needs 3) |
+| `Rinjani Crater Lake.jpg` | hero + social preview |
+| `Sembalun Bukit Selong.jpg` | Sembalun card |
+| `Benang Kelambu.webp` | Central Lombok card |
 | `Monkey Forest .avif` | Tetebatu card |
 | `Durian Indah Waterfall 2.avif` | gallery |
-| `pexels-firman-fatthul-…jpg` | Central Lombok card — **stand-in** |
+| `Tetebatu Rice Field.jpg` | not used |
+| `Tetebatu Rice Plant.avif` | not used |
 | `pexels-vincent-ma-janssen-…jpg` | Senaru card — **stand-in** |
+| `pexels-firman-fatthul-…jpg` | not used |
 
-The two `pexels-` files are from Pexels, which permits commercial use. Every
-photo that arrived without clear commercial rights has been deleted.
+The `pexels-` files are from Pexels, which permits commercial use. Every photo
+that arrived without clear commercial rights has been deleted.
