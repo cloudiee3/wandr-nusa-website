@@ -1,0 +1,72 @@
+/* ==========================================================================
+   wandrnusa — design tokens
+   Brand palette is fixed. Change values here, nowhere else.
+   Rule: each section picks exactly ONE accent (--accent) from the three
+   accent colours below. Soft Sand is a surface only — never a headline.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette ---------------------------------------------------- */
+  --navy:        #0B2E4A;  /* Deep Navy — primary / structure */
+  --sea-mist:    #D8E5E2;  /* Sea Mist — soft base */
+  --paper:       #FFFDF8;  /* Paper / off-white cream — light background */
+  --sand:        #E7D7C1;  /* Soft Sand — SURFACE ONLY, never headline text */
+
+  /* Accents — one per section */
+  --ocean:       #4F9CC2;  /* Ocean Blue */
+  --forest:      #5B7D69;  /* Forest Green */
+  --terracotta:  #B86E52;  /* Terracotta Clay */
+
+  /* Derived neutrals, all built from navy so nothing drifts off-brand */
+  --ink:            var(--navy);
+  --ink-muted:      #46637A;
+  --ink-soft:       #6D8398;
+  --hairline:       rgba(11, 46, 74, 0.14);
+  --hairline-soft:  rgba(11, 46, 74, 0.08);
+  --hairline-light: rgba(255, 253, 248, 0.22);
+
+  /* Default accent; sections override it */
+  --accent: var(--ocean);
+
+  /* ---- Typography ------------------------------------------------------- */
+  --font-display: "DM Serif Display", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --t-hero:    clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
+  --t-h2:      clamp(2rem, 1.35rem + 2.6vw, 3.5rem);
+  --t-h3:      clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+  --t-h4:      clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --t-lead:    clamp(1.0625rem, 1rem + 0.45vw, 1.3125rem);
+  --t-body:    clamp(0.9688rem, 0.94rem + 0.15vw, 1.0625rem);
+  --t-small:   0.875rem;
+  --t-caption: 0.8125rem;
+  --t-eyebrow: 0.75rem;
+
+  /* ---- Spacing ---------------------------------------------------------- */
+  --space-2xs: 0.375rem;
+  --space-xs:  0.625rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 7vw, 9rem);
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --gutter: clamp(1.25rem, 0.75rem + 2.5vw, 4rem);
+  --max-width: 1280px;
+  --max-text: 62ch;
+  --header-h: 76px;
+
+  /* ---- Shape & motion ---------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius:    8px;
+  --radius-lg: 14px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --speed: 420ms;
+}
+
+@media (max-width: 700px) {
+  :root { --header-h: 64px; }
+}
