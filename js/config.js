@@ -45,6 +45,6 @@ export const SERVICE_AREAS = [
 
 /* Default message used by CTAs that are not tied to a specific tour. */
 export const DEFAULT_WA_MESSAGE = {
-  en: 'Hello Wandr Nusa, I would like to ask about your private escapes.',
-  id: 'Halo Wandr Nusa, saya ingin bertanya tentang private escape dari Wandr Nusa.',
+  en: 'Hello Wandr Nusa, I would like to ask about your escapes.',
+  id: 'Halo Wandr Nusa, saya ingin bertanya tentang escape dari Wandr Nusa.',
 };

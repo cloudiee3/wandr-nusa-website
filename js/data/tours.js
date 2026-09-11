@@ -21,6 +21,8 @@
    RULES
    - Every text field is bilingual: { en, id }
    - Never put a price here. Price is a conversation.
+   - Say nothing about private vs shared or group size. Whether a trip is
+     shared, and how many people come, is settled per booking on WhatsApp.
    - `alt` describes what is actually in the picture.
    ========================================================================== */
 
@@ -28,7 +30,6 @@ export const TOURS = [
   {
     id: 'tetebatu',
     order: 1,
-    private: true,
     photo: 'assets/img/tours/tetebatu.jpg',
     alt: {
       en: 'Black langurs sitting in the trees at the monkey forest above Tetebatu',
@@ -47,8 +48,8 @@ export const TOURS = [
       id: ['Sawah terasering', 'Hutan monyet', 'Air terjun', 'Gudang tembakau'],
     },
     included: {
-      en: ['Private car and driver', 'Local guide', 'Entrance fees', 'Drinking water', 'Collection and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk', 'Air minum', 'Antar-jemput'],
+      en: ['Car and driver', 'Local guide', 'Entrance fees', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil dan sopir', 'Pemandu lokal', 'Tiket masuk', 'Air minum', 'Antar-jemput'],
     },
     notIncluded: null,
     note: {
@@ -60,7 +61,6 @@ export const TOURS = [
   {
     id: 'lombok-tengah',
     order: 2,
-    private: true,
     photo: 'assets/img/tours/lombok-tengah.jpg',
     stock: true,
     alt: {
@@ -83,8 +83,8 @@ export const TOURS = [
       id: ['Benang Stokel', 'Jalan hutan antar keduanya', 'Benang Kelambu', 'River tubing'],
     },
     included: {
-      en: ['Private car and driver', 'Local guide', 'Entrance fees', 'Tubing equipment and river guide', 'Drinking water', 'Collection and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk', 'Peralatan tubing dan pemandu sungai', 'Air minum', 'Antar-jemput'],
+      en: ['Car and driver', 'Local guide', 'Entrance fees', 'Tubing equipment and river guide', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil dan sopir', 'Pemandu lokal', 'Tiket masuk', 'Peralatan tubing dan pemandu sungai', 'Air minum', 'Antar-jemput'],
     },
     notIncluded: null,
     note: {
@@ -96,7 +96,6 @@ export const TOURS = [
   {
     id: 'senaru',
     order: 3,
-    private: true,
     photo: 'assets/img/tours/senaru.jpg',
     stock: true,
     alt: {
@@ -116,8 +115,8 @@ export const TOURS = [
       id: ['Desa Senaru', 'Sendang Gile', 'Menyeberang sungai', 'Tiu Kelep'],
     },
     included: {
-      en: ['Private car and driver', 'Local guide', 'Entrance fees and village contribution', 'Drinking water', 'Collection and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk dan kontribusi desa', 'Air minum', 'Antar-jemput'],
+      en: ['Car and driver', 'Local guide', 'Entrance fees and village contribution', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil dan sopir', 'Pemandu lokal', 'Tiket masuk dan kontribusi desa', 'Air minum', 'Antar-jemput'],
     },
     notIncluded: null,
     note: {
@@ -129,7 +128,6 @@ export const TOURS = [
   {
     id: 'sembalun',
     order: 4,
-    private: true,
     /* Photo on its way — set this to 'assets/img/tours/sembalun.jpg' once the
        file is in photos/ and `npm run photos` has been run. */
     photo: null,
@@ -150,8 +148,8 @@ export const TOURS = [
       id: ['Viewpoint Bukit Selong', 'Ladang lembah', 'Desa Beleq', 'Pintu pendakian Rinjani'],
     },
     included: {
-      en: ['Private car and driver', 'Local guide', 'Entrance and viewpoint fees', 'Drinking water', 'Collection and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk dan viewpoint', 'Air minum', 'Antar-jemput'],
+      en: ['Car and driver', 'Local guide', 'Entrance and viewpoint fees', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil dan sopir', 'Pemandu lokal', 'Tiket masuk dan viewpoint', 'Air minum', 'Antar-jemput'],
     },
     notIncluded: null,
     note: {

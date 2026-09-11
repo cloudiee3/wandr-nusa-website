@@ -46,7 +46,6 @@ export function tourCard(tour, index = 0) {
     <article class="tour-card reveal" data-reveal-delay="${index * 90}" id="trip-${esc(tour.id)}">
       <div class="tour-card__media">
         ${media(tour, lang)}
-        ${tour.private ? `<span class="pill pill-private tour-card__badge">${esc(t('tours.private'))}</span>` : ''}
       </div>
 
       <div class="tour-card__body">

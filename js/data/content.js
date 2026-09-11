@@ -5,18 +5,18 @@
 
 export const ABOUT = {
   statement: {
-    en: 'Wandr Nusa is a travel brand from the Nusa Islands. We make private escapes for people who would rather wander than follow a crowd.',
-    id: 'Wandr Nusa adalah brand travel dari Kepulauan Nusa. Kami membuat private escape untuk orang yang lebih suka menjelajah daripada ikut rombongan.',
+    en: 'Wandr Nusa is a travel brand from the Nusa Islands. We make escapes for people who would rather wander than follow a crowd.',
+    id: 'Wandr Nusa adalah brand travel dari Kepulauan Nusa. Kami membuat escape untuk orang yang lebih suka menjelajah daripada ikut arus.',
   },
   body: {
     en: [
       'Wandering is the good part. The driving, the tickets, the where-do-we-eat, the is-this-even-the-right-road — that part is ours.',
-      'Nothing here is sold by the seat. You get the car, the guide and the day, and the route is drawn around what you actually want out of it.',
+      'You get the car, the guide and the day. The route is drawn around what you actually want out of it, and it can still change halfway through.',
       'We are warm and well prepared, but never over-polished or overly formal.',
     ],
     id: [
       'Bagian menjelajahnya yang seru. Nyetirnya, tiketnya, bingung mau makan di mana, ragu ini jalan yang benar atau bukan — itu bagian kami.',
-      'Tidak ada yang dijual per kursi di sini. Mobilnya, pemandunya, harinya milik Anda, dan rutenya digambar sesuai apa yang benar-benar Anda cari.',
+      'Mobilnya, pemandunya, harinya milik Anda. Rutenya digambar sesuai apa yang benar-benar Anda cari, dan masih bisa berubah di tengah jalan.',
       'Kami hangat dan siap, tapi tidak dibuat-buat dan tidak kaku.',
     ],
   },

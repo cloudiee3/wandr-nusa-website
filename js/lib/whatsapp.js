@@ -42,8 +42,8 @@ export function waRequestMessage(lang = getLang()) {
  */
 export function waBookingMessage(values, lang = getLang()) {
   const L = lang === 'id'
-    ? { intro: 'Halo Wandr Nusa, saya ingin memesan private escape.', name: 'Nama', date: 'Tanggal', people: 'Jumlah orang', dest: 'Destinasi', note: 'Catatan' }
-    : { intro: 'Hello Wandr Nusa, I would like to book a private escape.', name: 'Name', date: 'Date', people: 'People', dest: 'Destination', note: 'Notes' };
+    ? { intro: 'Halo Wandr Nusa, saya ingin memesan escape.', name: 'Nama', date: 'Tanggal', people: 'Jumlah orang', dest: 'Destinasi', note: 'Catatan' }
+    : { intro: 'Hello Wandr Nusa, I would like to book an escape.', name: 'Name', date: 'Date', people: 'People', dest: 'Destination', note: 'Notes' };
 
   const lines = [L.intro, ''];
   if (values.name)        lines.push(`${L.name}: ${values.name}`);

@@ -86,14 +86,6 @@
   white-space: nowrap;
 }
 
-.pill-private {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
-  text-transform: uppercase;
-  letter-spacing: var(--ls-label);
-  font-size: 0.6875rem;
-}
 
 .pill-row { display: flex; flex-wrap: wrap; gap: var(--space-2xs); }
 
@@ -161,14 +153,6 @@
 .tour-card__media { position: relative; }
 .tour-card__media .frame { border-radius: 0; }
 
-.tour-card__badge {
-  position: absolute;
-  top: var(--space-sm);
-  left: var(--space-sm);
-  background: rgba(255, 253, 248, 0.94);
-  backdrop-filter: blur(6px);
-  border-color: transparent;
-}
 
 .tour-card__body {
   padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
