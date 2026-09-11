@@ -1,20 +1,27 @@
 /* ==========================================================================
-   wandrnusa — trips
+   wandrnusa — escapes
    --------------------------------------------------------------------------
-   ADDING A TRIP
-   1. Copy an entry, paste it into the array, give it a unique `id` and an
-      `order`.
-   2. Put a photo at  photos/<something>.jpg  and add it to the manifest in
-      tools/process-photos.mjs, then run `npm run photos`.
-   3. Point `photo` at the processed file. Leave `photo: null` until you have
-      a real picture of that place — the card shows a plain branded panel
-      instead, which is honest. Do not borrow a photo of somewhere else.
+   ⚠️  ROUTE / INCLUDED / NOT INCLUDED ARE AWAITING YOUR CONFIRMATION.
+
+   The `route` and `included` lists below were written from general knowledge
+   of the region, not from your actual operation, and you have said they
+   contain mistakes. Treat every one as a draft until you have checked it.
+   `notIncluded` is deliberately empty — nothing is guessed there. Send the
+   real lists and they go straight in; the section is already wired up and
+   appears the moment an entry has one.
+
+   ADDING AN ESCAPE
+   1. Copy an entry, give it a unique `id` and an `order`.
+   2. Put the photo in photos/, add it to tools/process-photos.mjs, run
+      `npm run photos`, then point `photo` at the processed file.
+   3. Leave `photo: null` until you have a real picture of that place — the
+      card shows a plain branded panel, which is honest. Never borrow a photo
+      of somewhere else.
 
    RULES
    - Every text field is bilingual: { en, id }
-   - Never put a price here. Price is a WhatsApp conversation.
-   - `alt` describes what is actually in the picture, not what you wish it
-     showed. It is read aloud to blind visitors and shown when a photo fails.
+   - Never put a price here. Price is a conversation.
+   - `alt` describes what is actually in the picture.
    ========================================================================== */
 
 export const TOURS = [
@@ -29,23 +36,24 @@ export const TOURS = [
     },
     name: { en: 'Tetebatu', id: 'Tetebatu' },
     region: { en: 'East Lombok · Sikur', id: 'Lombok Timur · Sikur' },
-    duration: { en: 'About 8 hours', id: 'Sekitar 8 jam' },
+    duration: { en: 'A full day', id: 'Seharian penuh' },
     effort: { en: 'Easy walking', id: 'Jalan kaki ringan' },
     description: {
-      en: 'A village 700 metres up on the south side of Rinjani. You walk more than you drive here — through the rice terraces, into the monkey forest, then out to two waterfalls.',
-      id: 'Desa di ketinggian 700 mdpl, sisi selatan Rinjani. Di sini lebih banyak jalan kaki daripada naik mobil — lewat sawah terasering, masuk hutan monyet, lalu ke dua air terjun.',
+      en: 'Rice terraces stacked up the southern slope of Rinjani, a forest full of langurs, and waterfalls you reach on foot. The kind of day where you walk more than you drive.',
+      id: 'Sawah bertingkat di lereng selatan Rinjani, hutan penuh lutung, dan air terjun yang dicapai dengan jalan kaki. Hari yang lebih banyak jalan daripada naik mobil.',
     },
     route: {
-      en: ['Rice terraces', 'Monkey forest', 'Ulem-Ulem waterfall', 'Sarang Walet waterfall', 'Tobacco barns'],
-      id: ['Sawah terasering', 'Hutan monyet', 'Air terjun Ulem-Ulem', 'Air terjun Sarang Walet', 'Gudang tembakau'],
+      en: ['Rice terraces', 'Monkey forest', 'Waterfalls', 'Tobacco barns'],
+      id: ['Sawah terasering', 'Hutan monyet', 'Air terjun', 'Gudang tembakau'],
     },
     included: {
-      en: ['Private car and driver', 'Guide who lives in Tetebatu', 'All entrance fees', 'Drinking water', 'Hotel pickup and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu warga Tetebatu', 'Semua tiket masuk', 'Air minum', 'Antar-jemput hotel'],
+      en: ['Private car and driver', 'Local guide', 'Entrance fees', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk', 'Air minum', 'Antar-jemput'],
     },
+    notIncluded: null,
     note: {
-      en: 'Flat walking on village paths. Trainers are fine. The last part to the waterfall is slippery after rain.',
-      id: 'Jalannya datar, lewat jalan desa. Sepatu biasa cukup. Jalur terakhir ke air terjun licin kalau habis hujan.',
+      en: 'Mostly flat walking on village paths. Trainers are fine. The last stretch to the water is slippery after rain.',
+      id: 'Sebagian besar jalan datar lewat jalan desa. Sepatu biasa cukup. Jalur terakhir ke air licin kalau habis hujan.',
     },
   },
 
@@ -60,27 +68,28 @@ export const TOURS = [
       id: 'Dua air terjun jatuh berdampingan di hutan hijau yang rapat',
     },
     name: {
-      en: 'Benang Kelambu, Benang Stokel & river tubing',
-      id: 'Benang Kelambu, Benang Stokel & river tubing',
+      en: 'Benang Kelambu, Benang Stokel & River Tubing',
+      id: 'Benang Kelambu, Benang Stokel & River Tubing',
     },
     region: { en: 'Central Lombok · Aik Berik', id: 'Lombok Tengah · Aik Berik' },
-    duration: { en: 'About 9 hours', id: 'Sekitar 9 jam' },
+    duration: { en: 'A full day', id: 'Seharian penuh' },
     effort: { en: 'Some walking, you get wet', id: 'Jalan sedang, basah-basahan' },
     description: {
-      en: 'Two waterfalls in Aik Berik, about thirty minutes apart on foot. Benang Stokel falls in straight ropes. Benang Kelambu comes down through the plants on the cliff. River tubing after lunch when the water is right.',
-      id: 'Dua air terjun di Aik Berik, sekitar 30 menit jalan kaki satu sama lain. Benang Stokel jatuh lurus seperti untaian benang. Benang Kelambu turun menembus tanaman di tebing. Sorenya river tubing kalau debit airnya pas.',
+      en: 'Benang Stokel falls in straight ropes. Benang Kelambu comes down through the plants on the cliff like a curtain, which is where it gets its name. Then the river, in a tube, if the water is behaving.',
+      id: 'Benang Stokel jatuh lurus seperti untaian benang. Benang Kelambu turun menembus tanaman di tebing seperti kelambu — dari situ namanya. Lalu turun ke sungai naik ban, kalau airnya bersahabat.',
     },
     route: {
-      en: ['Benang Stokel waterfall', 'Forest path between the two', 'Benang Kelambu waterfall', 'River tubing', 'Lunch in the village'],
-      id: ['Air terjun Benang Stokel', 'Jalan hutan antar air terjun', 'Air terjun Benang Kelambu', 'River tubing', 'Makan siang di desa'],
+      en: ['Benang Stokel', 'Forest path between the two', 'Benang Kelambu', 'River tubing'],
+      id: ['Benang Stokel', 'Jalan hutan antar keduanya', 'Benang Kelambu', 'River tubing'],
     },
     included: {
-      en: ['Private car and driver', 'Local guide', 'All entrance fees', 'Tubing gear, life vest and river guide', 'Drinking water', 'Hotel pickup and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Semua tiket masuk', 'Peralatan tubing, pelampung, dan pemandu sungai', 'Air minum', 'Antar-jemput hotel'],
+      en: ['Private car and driver', 'Local guide', 'Entrance fees', 'Tubing equipment and river guide', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk', 'Peralatan tubing dan pemandu sungai', 'Air minum', 'Antar-jemput'],
     },
+    notIncluded: null,
     note: {
-      en: 'Tubing depends on the river level and we decide on the day. We will tell you straight if it is not safe. Bring a change of clothes.',
-      id: 'Tubing tergantung debit sungai dan diputuskan hari itu juga. Kalau tidak aman, kami bilang apa adanya. Bawa baju ganti.',
+      en: 'Tubing depends on the river and gets decided on the day. If it is not safe we will say so. Bring a change of clothes.',
+      id: 'Tubing tergantung kondisi sungai dan diputuskan hari itu juga. Kalau tidak aman, kami bilang. Bawa baju ganti.',
     },
   },
 
@@ -96,23 +105,24 @@ export const TOURS = [
     },
     name: { en: 'Senaru', id: 'Senaru' },
     region: { en: 'North Lombok · Bayan', id: 'Lombok Utara · Bayan' },
-    duration: { en: 'About 10 hours', id: 'Sekitar 10 jam' },
+    duration: { en: 'A long day', id: 'Hari yang panjang' },
     effort: { en: 'Steps and river crossings', id: 'Banyak tangga, menyeberang sungai' },
     description: {
-      en: 'Sendang Gile is a short walk down from the car park. Tiu Kelep is forty minutes further and you cross the river a few times to get there, so you will get wet. Senaru village at the top of the road still keeps the Wetu Telu calendar.',
-      id: 'Sendang Gile cuma turun sebentar dari parkiran. Tiu Kelep 40 menit lebih jauh dan kita menyeberang sungai beberapa kali, jadi pasti basah. Desa Senaru di ujung jalan masih memegang kalender Wetu Telu.',
+      en: 'Two waterfalls, one easy and one earned. You cross the river to reach the second, so you arrive wet either way. The village at the top of the road still keeps the Wetu Telu calendar.',
+      id: 'Dua air terjun, satu gampang, satu harus diperjuangkan. Menyeberang sungai untuk sampai yang kedua, jadi tetap basah. Desa di ujung jalan masih memegang kalender Wetu Telu.',
     },
     route: {
-      en: ['Senaru village', 'Sendang Gile waterfall', 'River crossings', 'Tiu Kelep waterfall', 'Rinjani trailhead'],
-      id: ['Desa adat Senaru', 'Air terjun Sendang Gile', 'Menyeberang sungai', 'Air terjun Tiu Kelep', 'Pintu pendakian Rinjani'],
+      en: ['Senaru village', 'Sendang Gile', 'River crossings', 'Tiu Kelep'],
+      id: ['Desa Senaru', 'Sendang Gile', 'Menyeberang sungai', 'Tiu Kelep'],
     },
     included: {
-      en: ['Private car and driver', 'Guide from Senaru', 'Entrance fees and village contribution', 'Help at the river crossings', 'Drinking water', 'Hotel pickup and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu warga Senaru', 'Tiket masuk dan kontribusi desa', 'Pendampingan saat menyeberang sungai', 'Air minum', 'Antar-jemput hotel'],
+      en: ['Private car and driver', 'Local guide', 'Entrance fees and village contribution', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk dan kontribusi desa', 'Air minum', 'Antar-jemput'],
     },
+    notIncluded: null,
     note: {
-      en: 'A long day from south Lombok — about three hours each way. Wear sandals with grip. Bring a dry bag for your phone.',
-      id: 'Hari yang panjang kalau dari Lombok selatan — sekitar tiga jam sekali jalan. Pakai sandal gunung. Bawa dry bag untuk HP.',
+      en: 'A long way from the south of the island, so we start early. Sandals with grip beat trainers, and bring a dry bag for your phone.',
+      id: 'Jauh dari selatan pulau, jadi kami berangkat pagi. Sandal gunung lebih aman daripada sepatu, dan bawa dry bag untuk HP.',
     },
   },
 
@@ -120,36 +130,36 @@ export const TOURS = [
     id: 'sembalun',
     order: 4,
     private: true,
-    /* No photo yet. The picture that was here was not Sembalun, so it is gone.
-       Put a real one at photos/, add it to tools/process-photos.mjs, then set
-       this to 'assets/img/tours/sembalun.jpg'. */
+    /* Photo on its way — set this to 'assets/img/tours/sembalun.jpg' once the
+       file is in photos/ and `npm run photos` has been run. */
     photo: null,
     alt: {
-      en: 'The Sembalun valley seen from Bukit Selong',
-      id: 'Lembah Sembalun dilihat dari Bukit Selong',
+      en: 'The Sembalun valley from above, its fields laid out in a patchwork below the cloud-covered ridges',
+      id: 'Lembah Sembalun dari ketinggian, ladangnya berpetak-petak di bawah punggungan yang tertutup awan',
     },
     name: { en: 'Sembalun', id: 'Sembalun' },
     region: { en: 'East Lombok · Sembalun', id: 'Lombok Timur · Sembalun' },
-    duration: { en: 'About 10 hours', id: 'Sekitar 10 jam' },
+    duration: { en: 'A long day', id: 'Hari yang panjang' },
     effort: { en: 'Short climbs, cold morning', id: 'Sedikit menanjak, pagi dingin' },
     description: {
-      en: 'A valley on the east side of Rinjani, 1,150 metres up and cold first thing. Bukit Selong looks straight down on the fields. Garlic and strawberries grow here. The crater rim sits on the skyline all day.',
-      id: 'Lembah di sisi timur Rinjani, 1.150 mdpl dan dingin di pagi hari. Bukit Selong memandang langsung ke petak-petak ladang. Bawang putih dan stroberi tumbuh di sini. Punggung kaldera terlihat sepanjang hari.',
+      en: 'A valley high on the eastern side of Rinjani, cold enough in the morning to want a jacket. Fields laid out in a patchwork below you, the crater rim on the skyline all day.',
+      id: 'Lembah tinggi di sisi timur Rinjani, pagi harinya dingin sampai butuh jaket. Ladang berpetak-petak di bawah, punggung kaldera terlihat sepanjang hari.',
     },
     route: {
-      en: ['Bukit Selong viewpoint', 'Sembalun fields', 'Desa Beleq', 'Garlic and strawberry plots', 'Rinjani trailhead'],
-      id: ['Viewpoint Bukit Selong', 'Ladang Sembalun', 'Desa Beleq', 'Kebun bawang putih dan stroberi', 'Pintu pendakian Rinjani'],
+      en: ['Bukit Selong viewpoint', 'The valley fields', 'Desa Beleq', 'Rinjani trailhead'],
+      id: ['Viewpoint Bukit Selong', 'Ladang lembah', 'Desa Beleq', 'Pintu pendakian Rinjani'],
     },
     included: {
-      en: ['Private car and driver', 'Guide from Sembalun', 'Entrance and viewpoint fees', 'Drinking water', 'Hotel pickup and drop-off'],
-      id: ['Mobil privat dan sopir', 'Pemandu warga Sembalun', 'Tiket masuk dan viewpoint', 'Air minum', 'Antar-jemput hotel'],
+      en: ['Private car and driver', 'Local guide', 'Entrance and viewpoint fees', 'Drinking water', 'Collection and drop-off'],
+      id: ['Mobil privat dan sopir', 'Pemandu lokal', 'Tiket masuk dan viewpoint', 'Air minum', 'Antar-jemput'],
     },
+    notIncluded: null,
     note: {
-      en: 'We start early for the light, before cloud covers the rim. Bring a jacket — mornings are 16–18 °C.',
-      id: 'Kami berangkat pagi untuk cahayanya, sebelum kaldera tertutup awan. Bawa jaket — pagi hari 16–18 °C.',
+      en: 'We start early for the light, before cloud closes over the rim. Bring a jacket — the mornings are genuinely cold.',
+      id: 'Kami berangkat pagi untuk cahayanya, sebelum kaldera tertutup awan. Bawa jaket — paginya benar-benar dingin.',
     },
   },
 ];
 
-/** Trips in display order. */
+/** Escapes in display order. */
 export const getTours = () => [...TOURS].sort((a, b) => a.order - b.order);

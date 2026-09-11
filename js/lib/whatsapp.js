@@ -25,15 +25,15 @@ export function waLink(message) {
 export function waTourMessage(tour, lang = getLang()) {
   const name = tr(tour.name, lang);
   return lang === 'id'
-    ? `Halo Wandr Nusa, saya tertarik dengan "${name}" (private one-day trip). Boleh minta info ketersediaan dan harganya?`
-    : `Hello Wandr Nusa, I am interested in the "${name}" private one-day trip. Could you tell me about availability and price?`;
+    ? `Halo Wandr Nusa, saya tertarik dengan escape "${name}". Boleh minta info ketersediaan dan harganya?`
+    : `Hello Wandr Nusa, I am interested in the "${name}" escape. Could you tell me about availability and price?`;
 }
 
 /** Message used by the "Tour by request" section. */
 export function waRequestMessage(lang = getLang()) {
   return lang === 'id'
-    ? 'Halo Wandr Nusa, saya ingin mengatur tour by request. Rencana saya kira-kira seperti ini:'
-    : 'Hello Wandr Nusa, I would like to arrange a tour by request. Here is roughly what I have in mind:';
+    ? 'Halo Wandr Nusa, saya ingin mengatur escape by request. Rencana saya kira-kira seperti ini:'
+    : 'Hello Wandr Nusa, I would like to arrange something by request. Here is roughly what I have in mind:';
 }
 
 /**
@@ -42,8 +42,8 @@ export function waRequestMessage(lang = getLang()) {
  */
 export function waBookingMessage(values, lang = getLang()) {
   const L = lang === 'id'
-    ? { intro: 'Halo Wandr Nusa, saya ingin memesan private trip.', name: 'Nama', date: 'Tanggal', people: 'Jumlah orang', dest: 'Destinasi', note: 'Catatan' }
-    : { intro: 'Hello Wandr Nusa, I would like to book a private trip.', name: 'Name', date: 'Date', people: 'People', dest: 'Destination', note: 'Notes' };
+    ? { intro: 'Halo Wandr Nusa, saya ingin memesan private escape.', name: 'Nama', date: 'Tanggal', people: 'Jumlah orang', dest: 'Destinasi', note: 'Catatan' }
+    : { intro: 'Hello Wandr Nusa, I would like to book a private escape.', name: 'Name', date: 'Date', people: 'People', dest: 'Destination', note: 'Notes' };
 
   const lines = [L.intro, ''];
   if (values.name)        lines.push(`${L.name}: ${values.name}`);

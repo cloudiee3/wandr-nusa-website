@@ -157,13 +157,29 @@
 .hero__media { position: absolute; inset: 0; z-index: -2; background: var(--navy); }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Documentary look: one soft navy gradient for legibility, no heavy vignette */
+/* Documentary look: soft navy gradients for legibility, no heavy vignette.
+   Two passes, because a photograph can be bright at either end — the top one
+   carries the logo and nav over a bright sky, the bottom one carries the
+   headline and buttons. Tuned to clear WCAG AA and no further; darkening past
+   that muddies the photograph, which the art direction rules out. */
 .hero__scrim {
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(to top, rgba(11, 46, 74, 0.86) 0%, rgba(11, 46, 74, 0.42) 42%, rgba(11, 46, 74, 0.14) 75%);
+    linear-gradient(to bottom,
+      rgba(11, 46, 74, 0.72) 0%,
+      rgba(11, 46, 74, 0.58) 10%,
+      rgba(11, 46, 74, 0.44) 20%,
+      rgba(11, 46, 74, 0.24) 30%,
+      rgba(11, 46, 74, 0.08) 40%,
+      rgba(11, 46, 74, 0.00) 48%),
+    linear-gradient(to top,
+      rgba(11, 46, 74, 0.88) 0%,
+      rgba(11, 46, 74, 0.70) 28%,
+      rgba(11, 46, 74, 0.46) 52%,
+      rgba(11, 46, 74, 0.20) 72%,
+      rgba(11, 46, 74, 0.00) 92%);
 }
 
 .hero__inner {
@@ -172,7 +188,10 @@
   padding-top: calc(var(--header-h) + 3rem);
 }
 .hero__eyebrow { color: var(--paper); opacity: 0.85; }
-.hero h1 { max-width: 16ch; margin-bottom: var(--space-md); }
+/* Wide enough that each sentence of the headline holds one line. A taller
+   headline pushes the eyebrow and logo up into the bright part of the
+   photograph, where white type stops being readable. */
+.hero h1 { max-width: 24ch; margin-bottom: var(--space-md); }
 .hero__lead { max-width: 46ch; margin-bottom: var(--space-lg); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); align-items: center; }
 

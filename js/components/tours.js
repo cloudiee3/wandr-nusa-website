@@ -28,10 +28,10 @@ function media(tour, lang) {
     </div>`;
 }
 
-function list(label, items) {
+function list(label, items, modifier = '') {
   if (!items || !items.length) return '';
   return `
-    <div class="card-list">
+    <div class="card-list ${modifier}">
       <p class="label">${esc(label)}</p>
       <ul class="card-list__items">${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
     </div>`;
@@ -62,6 +62,7 @@ export function tourCard(tour, index = 0) {
 
         ${list(t('tours.route'), tr(tour.route, lang))}
         ${list(t('tours.included'), tr(tour.included, lang))}
+        ${list(t('tours.notIncluded'), tr(tour.notIncluded, lang), 'card-list--excluded')}
         ${note ? `<p class="tour-card__note"><strong>${esc(t('tours.goodToKnow'))}:</strong> ${esc(note)}</p>` : ''}
 
         <div class="tour-card__cta">

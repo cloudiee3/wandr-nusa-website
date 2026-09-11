@@ -9,7 +9,7 @@
 export const SITE = {
   name: 'wandrnusa',
   legalName: 'Wandr Nusa',
-  tagline: 'Travel shaped by the people who live here.',
+  tagline: 'Wander the islands. Leave the rest to us.',
   baseIn: 'Tetebatu, Lombok',
 };
 
@@ -45,6 +45,6 @@ export const SERVICE_AREAS = [
 
 /* Default message used by CTAs that are not tied to a specific tour. */
 export const DEFAULT_WA_MESSAGE = {
-  en: 'Hello Wandr Nusa, I would like to ask about your private one-day trips in Lombok.',
-  id: 'Halo Wandr Nusa, saya ingin bertanya tentang private one-day trip di Lombok.',
+  en: 'Hello Wandr Nusa, I would like to ask about your private escapes.',
+  id: 'Halo Wandr Nusa, saya ingin bertanya tentang private escape dari Wandr Nusa.',
 };

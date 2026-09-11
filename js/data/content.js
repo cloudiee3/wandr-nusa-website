@@ -1,22 +1,22 @@
 /* ==========================================================================
-   wandrnusa — page content (about, pillars, request, gallery, guest reviews)
+   wandrnusa — page content (about, pillars, by request, photos, reviews)
    All text is bilingual: { en, id }.
    ========================================================================== */
 
 export const ABOUT = {
   statement: {
-    en: 'Wandr Nusa is a Nusa Tenggara travel brand. We show visitors the islands through people, places, and routes we genuinely know.',
-    id: 'Wandr Nusa adalah brand travel Nusa Tenggara. Kami mengajak tamu mengenal pulau-pulau ini lewat orang, tempat, dan rute yang benar-benar kami kenal.',
+    en: 'Wandr Nusa is a travel brand from the Nusa Islands. We make private escapes for people who would rather wander than follow a crowd.',
+    id: 'Wandr Nusa adalah brand travel dari Kepulauan Nusa. Kami membuat private escape untuk orang yang lebih suka menjelajah daripada ikut rombongan.',
   },
   body: {
     en: [
-      'We started in Tetebatu, a village on the south side of Rinjani. Most of our trips still leave from there.',
-      'Every trip is private. One car, one guide, your group only. No fixed departure time and nobody else in the van.',
+      'Wandering is the good part. The driving, the tickets, the where-do-we-eat, the is-this-even-the-right-road — that part is ours.',
+      'Nothing here is sold by the seat. You get the car, the guide and the day, and the route is drawn around what you actually want out of it.',
       'We are warm and well prepared, but never over-polished or overly formal.',
     ],
     id: [
-      'Kami mulai dari Tetebatu, desa di sisi selatan Rinjani. Sampai sekarang sebagian besar trip kami berangkat dari sana.',
-      'Semua trip privat. Satu mobil, satu pemandu, hanya rombongan Anda. Tidak ada jadwal tetap dan tidak digabung orang lain.',
+      'Bagian menjelajahnya yang seru. Nyetirnya, tiketnya, bingung mau makan di mana, ragu ini jalan yang benar atau bukan — itu bagian kami.',
+      'Tidak ada yang dijual per kursi di sini. Mobilnya, pemandunya, harinya milik Anda, dan rutenya digambar sesuai apa yang benar-benar Anda cari.',
       'Kami hangat dan siap, tapi tidak dibuat-buat dan tidak kaku.',
     ],
   },
@@ -25,34 +25,34 @@ export const ABOUT = {
 export const PILLARS = [
   {
     id: 'local-first',
-    title: { en: 'Local first', id: 'Warga lokal dulu' },
+    title: { en: 'Local first', id: 'Lokal dulu' },
     body: {
-      en: 'Your guide grew up in the village you are visiting. They know the farmers, the shortcuts, and which warung makes good coffee.',
-      id: 'Pemandu Anda besar di desa yang Anda kunjungi. Dia kenal petaninya, jalan pintasnya, dan warung mana yang kopinya enak.',
+      en: 'Everything we run is built on knowing these islands properly — which is why we can take you past the obvious without guessing.',
+      id: 'Semua yang kami jalankan berangkat dari benar-benar mengenal pulau-pulau ini — makanya kami bisa membawa Anda melewati yang biasa tanpa menebak-nebak.',
     },
   },
   {
     id: 'well-looked-after',
     title: { en: 'Well looked after', id: 'Diurus dengan baik' },
     body: {
-      en: 'Private car, cold water, a driver who knows the road in the rain. We answer WhatsApp before, during and after your trip.',
-      id: 'Mobil privat, air dingin, sopir yang hafal jalan termasuk saat hujan. WhatsApp kami balas sebelum, selama, dan sesudah trip.',
+      en: 'Cold water, a driver who knows the road in the rain, and someone answering you before, during and after. You should never have to chase us.',
+      id: 'Air dingin, sopir yang hafal jalan termasuk saat hujan, dan orang yang membalas sebelum, selama, dan sesudah. Anda tidak perlu mengejar-ngejar kami.',
     },
   },
   {
     id: 'worth-the-detour',
     title: { en: 'Worth the detour', id: 'Layak jalan memutar' },
     body: {
-      en: 'Some busy stops are busy for a reason. Some are not. We will tell you which, and take you to the better one.',
-      id: 'Ada spot ramai yang memang bagus. Ada yang tidak. Kami bilang yang mana, lalu antar ke yang lebih baik.',
+      en: 'Some crowded places earn it. Some do not. We will tell you which, then take you to the one worth your afternoon.',
+      id: 'Ada tempat ramai yang memang pantas. Ada yang tidak. Kami bilang yang mana, lalu antar ke yang pantas menghabiskan sore Anda.',
     },
   },
   {
     id: 'never-overdone',
     title: { en: 'Never overdone', id: 'Tidak berlebihan' },
     body: {
-      en: 'No uniforms, no megaphone, no five stops before lunch. One day, done properly.',
-      id: 'Tanpa seragam, tanpa toa, tanpa lima destinasi sebelum makan siang. Satu hari, dikerjakan dengan benar.',
+      en: 'No uniforms, no megaphone, no rushing you through somewhere so we can reach the next one. Fewer stops, properly.',
+      id: 'Tanpa seragam, tanpa toa, tanpa buru-buru supaya bisa kejar tujuan berikutnya. Lebih sedikit tempat, tapi benar.',
     },
   },
 ];
@@ -60,16 +60,16 @@ export const PILLARS = [
 export const REQUEST = {
   points: [
     { en: 'A route through Lombok that is not on the list above', id: 'Rute di Lombok yang belum ada di daftar di atas' },
-    { en: 'Two or three days together, with somewhere to sleep sorted', id: 'Dua atau tiga hari sekaligus, termasuk tempat menginapnya' },
-    { en: 'A day built for photography, a family pace, or older travellers', id: 'Satu hari yang disusun untuk fotografi, ritme keluarga, atau tamu lansia' },
+    { en: 'Several days strung together, with somewhere to sleep sorted', id: 'Beberapa hari sekaligus, termasuk tempat menginapnya' },
+    { en: 'Something built for photography, a gentler pace, or travelling with children', id: 'Disusun untuk fotografi, ritme lebih santai, atau bepergian dengan anak' },
     { en: 'Airport or harbour transfers at either end', id: 'Antar-jemput bandara atau pelabuhan di awal dan akhir' },
-    { en: 'Somewhere else in Nusa Tenggara — ask, and we will say honestly what we can run', id: 'Tempat lain di Nusa Tenggara — tanya saja, kami jujur soal yang bisa kami jalankan' },
+    { en: 'Somewhere else across the Nusa Islands — ask, and we will tell you honestly what we can run', id: 'Tempat lain di Kepulauan Nusa — tanya saja, kami jujur soal yang bisa kami jalankan' },
   ],
 };
 
 /* --------------------------------------------------------------------------
    PHOTOS
-   Only real pictures of real trips belong here. The grid hides itself until
+   Only real pictures of real escapes belong here. The grid hides itself until
    there are at least three — a two-photo gallery looks like a mistake, and
    filling the gaps with pictures of somewhere else would be worse.
 
@@ -91,14 +91,13 @@ export const GALLERY = [
 /* --------------------------------------------------------------------------
    GUEST REVIEWS
    Empty on purpose. The section stays hidden until there is something real to
-   put in it — invented reviews on a page that promises "routes we genuinely
-   know" would undo the whole point.
+   put in it.
 
    Add them like this, using the guest's own words and with their permission:
 
      { id: 'r1',
        quote: { en: '…', id: '…' },
        name: 'Sofia',
-       meta: { en: 'Tetebatu, March 2026', id: 'Tetebatu, Maret 2026' } },
+       meta: { en: 'Sembalun, March 2026', id: 'Sembalun, Maret 2026' } },
    -------------------------------------------------------------------------- */
 export const TESTIMONIALS = [];
