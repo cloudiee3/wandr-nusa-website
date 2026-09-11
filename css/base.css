@@ -55,7 +55,7 @@ p:last-child { margin-bottom: 0; }
 .eyebrow {
   font-size: var(--t-eyebrow);
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 var(--space-sm);
@@ -123,6 +123,35 @@ p:last-child { margin-bottom: 0; }
 
 .section-head { max-width: 46rem; margin-bottom: var(--space-xl); }
 .section-head .lead { margin-top: var(--space-md); }
+
+/* Small uppercase label. One definition, used by card lists, form fields,
+   footer column headings and the contact list — they used to disagree on
+   size, weight and letter-spacing. */
+.label {
+  font-family: var(--font-body);
+  font-size: var(--t-caption);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--space-xs);
+}
+
+/* Two-column split shared by About, Trips and Contact, so the page has one
+   column rhythm rather than three slightly different ones. */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--split-gap);
+  align-items: start;
+}
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+
+/* Vertical spacing utilities, so markup never carries inline styles. */
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
 
 .rule { height: 1px; background: var(--hairline); border: 0; margin: 0; }
 

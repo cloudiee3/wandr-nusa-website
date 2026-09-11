@@ -1,6 +1,6 @@
 /* ==========================================================================
-   wandrnusa — tour cards
-   Rendered from js/data/tours.js. Add a destination there, not here.
+   wandrnusa — trip cards
+   Rendered from js/data/tours.js. Add a trip there, not here.
    ========================================================================== */
 
 import { getTours } from '../data/tours.js';
@@ -9,24 +9,31 @@ import { esc } from '../lib/dom.js';
 import { icon } from '../lib/icons.js';
 import { waLink, waTourMessage } from '../lib/whatsapp.js';
 
-function includedList(tour, lang) {
-  const items = tr(tour.included, lang) || [];
+/**
+ * A trip with no photograph yet gets a plain branded panel, not a picture of
+ * somewhere else and not an illustration pretending to be one.
+ */
+function media(tour, lang) {
+  if (!tour.photo) {
+    return `
+      <div class="frame frame-3x2 frame-empty">
+        <span class="frame-empty__mark" aria-hidden="true">${icon('mark')}</span>
+        <span class="frame-empty__label">${esc(t('tours.photoSoon'))}</span>
+      </div>`;
+  }
   return `
-    <div class="included">
-      <p class="included__label">${esc(t('tours.included'))}</p>
-      <ul class="included__list">
-        ${items.map((item) => `<li>${esc(item)}</li>`).join('')}
-      </ul>
+    <div class="frame frame-3x2">
+      <img src="${esc(tour.photo)}" alt="${esc(tr(tour.alt, lang))}"
+           loading="lazy" decoding="async" width="1600" height="1067">
     </div>`;
 }
 
-function routeList(tour, lang) {
-  const items = tr(tour.route, lang) || [];
-  if (!items.length) return '';
+function list(label, items) {
+  if (!items || !items.length) return '';
   return `
-    <div>
-      <p class="included__label">${esc(t('tours.route'))}</p>
-      <ul class="route">${items.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
+    <div class="card-list">
+      <p class="label">${esc(label)}</p>
+      <ul class="card-list__items">${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
     </div>`;
 }
 
@@ -36,14 +43,9 @@ export function tourCard(tour, index = 0) {
   const note = tr(tour.note, lang);
 
   return `
-    <article class="tour-card reveal" data-reveal-delay="${index * 90}" id="tour-${esc(tour.id)}">
+    <article class="tour-card reveal" data-reveal-delay="${index * 90}" id="trip-${esc(tour.id)}">
       <div class="tour-card__media">
-        <div class="frame frame-3x2">
-          <img src="${esc(tour.image)}"
-               data-fallback="${esc(tour.placeholder)}"
-               alt="${esc(tr(tour.alt, lang))}"
-               loading="lazy" decoding="async" width="1600" height="1067">
-        </div>
+        ${media(tour, lang)}
         ${tour.private ? `<span class="pill pill-private tour-card__badge">${esc(t('tours.private'))}</span>` : ''}
       </div>
 
@@ -58,8 +60,8 @@ export function tourCard(tour, index = 0) {
 
         <p class="tour-card__desc">${esc(tr(tour.description, lang))}</p>
 
-        ${routeList(tour, lang)}
-        ${includedList(tour, lang)}
+        ${list(t('tours.route'), tr(tour.route, lang))}
+        ${list(t('tours.included'), tr(tour.included, lang))}
         ${note ? `<p class="tour-card__note"><strong>${esc(t('tours.goodToKnow'))}:</strong> ${esc(note)}</p>` : ''}
 
         <div class="tour-card__cta">

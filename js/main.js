@@ -5,13 +5,13 @@
 
 import { initLang, setLang, getLang, onLangChange, applyStaticStrings } from './i18n.js';
 import { SITE, WHATSAPP_DISPLAY, CONTACT } from './config.js';
-import { $, $$, mount, withFallback, observeReveals } from './lib/dom.js';
+import { $, $$, mount, observeReveals } from './lib/dom.js';
 import { icon } from './lib/icons.js';
-import { waLink, waRequestMessage, isPlaceholderNumber } from './lib/whatsapp.js';
+import { waLink, waRequestMessage } from './lib/whatsapp.js';
 import { renderTours } from './components/tours.js';
 import {
   renderAboutBody, renderAboutStatement, renderPillars, renderRequestPoints,
-  renderGallery, renderTestimonials, hasTestimonials,
+  renderGallery, hasGallery, renderTestimonials, hasTestimonials,
   renderServiceAreas, renderSocials, renderFooterContact,
 } from './components/sections.js';
 import { renderContactForm, bindContactForm } from './components/contactForm.js';
@@ -45,14 +45,19 @@ function renderAll() {
   mount('#pillars', renderPillars());
   mount('#tour-grid', renderTours());
   mount('#request-points', renderRequestPoints());
-  mount('#gallery-grid', renderGallery());
 
-  const quotes = $('#quotes');
-  if (quotes) {
-    mount(quotes, renderTestimonials());
-    const block = $('#quotes-block');
-    if (block) block.hidden = !hasTestimonials();
-  }
+  // Photos and reviews each appear only once there is real material for them,
+  // and the whole section drops out if neither has any.
+  const photos = hasGallery();
+  const reviews = hasTestimonials();
+  if (photos) mount('#gallery-grid', renderGallery());
+  if (reviews) mount('#quotes', renderTestimonials());
+  const galleryBlock = $('#gallery-block');
+  const quotesBlock = $('#quotes-block');
+  if (galleryBlock) galleryBlock.hidden = !photos;
+  if (quotesBlock) quotesBlock.hidden = !reviews;
+  const gallerySection = $('#gallery');
+  if (gallerySection) gallerySection.hidden = !(photos || reviews);
 
   mount('#contact-form-mount', renderContactForm());
   bindContactForm();
@@ -67,7 +72,6 @@ function renderAll() {
   });
 
   paintIcons();
-  withFallback();
   observeReveals();
 }
 
@@ -96,13 +100,6 @@ function boot() {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
-  if (isPlaceholderNumber()) {
-    console.warn(
-      '[wandrnusa] WHATSAPP_NUMBER in js/config.js is still the placeholder. ' +
-      'Every WhatsApp link on the site points at a number that is not yours.'
-    );
-  }
 }
 
 if (document.readyState === 'loading') {

@@ -53,6 +53,3 @@ export function waBookingMessage(values, lang = getLang()) {
   if (values.message)     lines.push('', `${L.note}: ${values.message}`);
   return lines.join('\n');
 }
-
-/** True while config.js still holds the placeholder number. */
-export const isPlaceholderNumber = () => normalise(WHATSAPP_NUMBER) === '6281900000000';

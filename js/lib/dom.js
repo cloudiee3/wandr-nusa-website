@@ -30,23 +30,6 @@ export function mount(target, html) {
   return el;
 }
 
-/**
- * Swap in a fallback illustration when a photo has not been added yet,
- * so a missing file never shows a broken image.
- */
-export function withFallback(root = document) {
-  $$('img[data-fallback]', root).forEach((img) => {
-    if (img.dataset.fallbackBound) return;
-    img.dataset.fallbackBound = '1';
-    img.addEventListener('error', () => {
-      const fb = img.dataset.fallback;
-      if (fb && img.src !== fb && !img.src.endsWith(fb)) img.src = fb;
-    }, { once: true });
-    // Fires when the browser already resolved the src as broken before binding.
-    if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
-  });
-}
-
 /** Reveal elements as they scroll into view. Respects reduced motion. */
 export function observeReveals(root = document) {
   const items = $$('.reveal:not(.is-visible)', root);

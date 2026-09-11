@@ -39,6 +39,12 @@
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
+.btn-ghost-light {
+  color: var(--paper);
+  border-color: rgba(255, 253, 248, 0.38);
+}
+.btn-ghost-light:hover { color: var(--paper); border-color: var(--paper); }
+
 .btn-light {
   background: var(--paper);
   color: var(--navy);
@@ -62,6 +68,7 @@
   transition: border-color 200ms var(--ease), gap 200ms var(--ease);
 }
 .link-arrow:hover { border-bottom-color: currentColor; gap: 0.8em; }
+.link-quiet { color: inherit; }
 
 /* ---- Pills / tags ------------------------------------------------------- */
 
@@ -71,7 +78,7 @@
   gap: 0.45em;
   font-size: var(--t-caption);
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-micro);
   padding: 0.32rem 0.75rem;
   border-radius: 999px;
   border: 1px solid var(--hairline);
@@ -84,7 +91,7 @@
   color: var(--accent);
   background: color-mix(in srgb, var(--accent) 8%, transparent);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--ls-label);
   font-size: 0.6875rem;
 }
 
@@ -103,6 +110,26 @@
   object-fit: cover;
   transition: transform 900ms var(--ease);
 }
+/* A slot with no photograph yet. Reads as a deliberate brand surface rather
+   than a broken image or a stand-in picture of somewhere else. */
+.frame-empty {
+  background: var(--sea-mist);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  color: var(--ink-soft);
+}
+.frame-empty__mark { width: 30px; height: 30px; color: var(--navy); opacity: 0.16; }
+.frame-empty__mark svg { width: 100%; height: 100%; }
+.frame-empty__label {
+  font-size: var(--t-caption);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
 .frame-4x3 { aspect-ratio: 4 / 3; }
 .frame-3x2 { aspect-ratio: 3 / 2; }
 .frame-4x5 { aspect-ratio: 4 / 5; }
@@ -153,7 +180,7 @@
 
 .tour-card__region {
   font-size: var(--t-caption);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 500;
@@ -174,17 +201,10 @@
 .tour-card__meta span { display: inline-flex; align-items: center; gap: 0.4em; }
 .tour-card__meta svg { width: 14px; height: 14px; flex: none; opacity: 0.85; }
 
-/* "What's included" — no prices anywhere */
-.included { border-top: 1px solid var(--hairline-soft); padding-top: var(--space-sm); }
-.included__label {
-  font-size: var(--t-caption);
-  font-weight: 500;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin: 0 0 var(--space-xs);
-}
-.included__list {
+/* Both card lists — "Where you go" and "What's included" — are one component.
+   They used to be two, with different type, bullets and spacing. */
+.card-list { border-top: 1px solid var(--hairline-soft); padding-top: var(--space-sm); }
+.card-list__items {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -193,17 +213,18 @@
   font-size: var(--t-caption);
   color: var(--ink-muted);
 }
-.included__list li {
+.card-list__items li {
   display: grid;
-  grid-template-columns: 1rem 1fr;
-  gap: 0.5rem;
+  grid-template-columns: 0.4rem 1fr;
+  gap: 0.6rem;
   align-items: start;
   line-height: 1.5;
 }
-.included__list li::before {
+.card-list__items li::before {
   content: "";
-  width: 6px; height: 6px;
-  margin-top: 0.5em;
+  width: 5px;
+  height: 5px;
+  margin-top: 0.55em;
   border-radius: 50%;
   background: var(--accent);
 }
@@ -218,25 +239,6 @@
 
 .tour-card__cta { margin-top: auto; padding-top: var(--space-sm); }
 
-/* ---- Highlight / route list --------------------------------------------- */
-
-.route {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.5rem;
-  font-size: var(--t-caption);
-  color: var(--ink-muted);
-}
-.route li { display: inline-flex; align-items: center; gap: 0.5rem; }
-.route li:not(:last-child)::after {
-  content: "";
-  width: 12px; height: 1px;
-  background: var(--hairline);
-}
-
 /* ---- Forms -------------------------------------------------------------- */
 
 .field { display: flex; flex-direction: column; gap: var(--space-2xs); }
@@ -244,7 +246,7 @@
 .field label {
   font-size: var(--t-caption);
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -297,55 +299,38 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(0.5rem, 0.25rem + 1vw, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
 }
-.gallery-item { grid-column: span 4; display: flex; margin: 0; }
-.gallery-item .frame { border-radius: var(--radius); width: 100%; }
-.gallery-item:hover .frame > img { transform: scale(1.05); }
-.gallery-item--wide { grid-column: span 8; }
+.gallery-item { margin: 0; }
+.gallery-item .frame { border-radius: var(--radius); }
+.gallery-item:hover .frame > img { transform: scale(1.04); }
 
-/* Fills the height set by the tallest item on its row, so the mosaic has no
-   holes whatever aspect ratio the photo happens to be. */
-.gallery-item--stretch .frame { aspect-ratio: auto; height: 100%; }
-
-@media (max-width: 760px) {
-  .gallery-item,
-  .gallery-item--wide,
-  .gallery-item--tall { grid-column: span 6; }
-}
-
-/* ---- Testimonials ------------------------------------------------------- */
+/* ---- Guest reviews ------------------------------------------------------ */
 
 .quote-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
   gap: clamp(1.25rem, 1rem + 1.5vw, 2rem);
 }
 
 .quote {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   padding: clamp(1.35rem, 1.1rem + 1vw, 2rem);
   background: var(--paper);
   border: 1px solid var(--hairline-soft);
   border-radius: var(--radius-lg);
 }
-.quote__mark {
-  font-family: var(--font-display);
-  font-size: 2.75rem;
-  line-height: 0.6;
-  color: var(--accent);
-  opacity: 0.5;
-}
 .quote__text {
-  font-family: var(--font-display);
-  font-size: var(--t-h4);
-  line-height: 1.4;
-  letter-spacing: -0.01em;
   margin: 0;
   max-width: none;
+  font-size: var(--t-body);
+  line-height: 1.6;
+  color: var(--ink);
 }
+.quote__text::before { content: "\201C"; }
+.quote__text::after { content: "\201D"; }
 .quote__meta { margin-top: auto; font-size: var(--t-caption); color: var(--ink-soft); }
-.quote__name { display: block; color: var(--ink); font-weight: 500; font-size: var(--t-small); }
+.quote__name { display: block; color: var(--ink); font-weight: 500; font-size: var(--t-small); font-style: normal; }

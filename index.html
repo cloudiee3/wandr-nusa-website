@@ -6,11 +6,10 @@
   <title>wandrnusa — private one-day trips in Lombok</title>
 
   <meta name="description" data-i18n-attr="content:meta.description"
-        content="Private one-day trips around Lombok — Tetebatu, Central Lombok, Senaru and Sembalun — run by guides from the villages you visit. Travel shaped by the people who live here.">
+        content="Private one-day trips in Lombok: Tetebatu, Central Lombok, Senaru and Sembalun. Your own car and guide, home the same day.">
   <meta name="theme-color" content="#0B2E4A">
   <link rel="canonical" href="https://wandrnusa.com/">
 
-  <!-- Social preview. Swap og-image.jpg for a real photo (1200×630). -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="wandrnusa">
   <meta property="og:title" content="wandrnusa — Travel shaped by the people who live here.">
@@ -31,7 +30,6 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
 
-
   <!-- Local SEO. Keep in sync with js/config.js. No prices here either. -->
   <script type="application/ld+json">
   {
@@ -40,10 +38,11 @@
     "name": "Wandr Nusa",
     "alternateName": "wandrnusa",
     "slogan": "Travel shaped by the people who live here.",
-    "description": "Private one-day trips in Lombok — Tetebatu, Central Lombok, Senaru and Sembalun — run by guides from the villages you visit.",
+    "description": "Private one-day trips in Lombok: Tetebatu, Central Lombok, Senaru and Sembalun.",
     "url": "https://wandrnusa.com/",
     "image": "https://wandrnusa.com/assets/img/og-image.jpg",
     "logo": "https://wandrnusa.com/assets/logo/lockup-navy.png",
+    "telephone": "+6282340819128",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tetebatu, Sikur",
@@ -56,13 +55,7 @@
       { "@type": "Place", "name": "Senaru, North Lombok" },
       { "@type": "Place", "name": "Sembalun, East Lombok" }
     ],
-    "knowsLanguage": ["en", "id"],
-    "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Tetebatu One-Day Trip" } },
-      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Benang Kelambu, Benang Stokel & River Tubing" } },
-      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Senaru One-Day Trip" } },
-      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Sembalun One-Day Trip" } }
-    ]
+    "knowsLanguage": ["en", "id"]
   }
   </script>
 
@@ -85,7 +78,7 @@
       <nav class="nav" id="primary-nav" data-open="false" aria-label="Primary">
         <a href="#home" data-i18n="nav.home">Home</a>
         <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#tours" data-i18n="nav.tours">Tours</a>
+        <a href="#trips" data-i18n="nav.tours">Trips</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
@@ -118,9 +111,8 @@
     <section class="hero" id="home">
       <div class="hero__media">
         <img src="assets/img/hero/hero.jpg"
-             data-fallback="assets/img/placeholders/hero.svg"
-             alt="Rice terraces on the southern slope of Rinjani, Lombok"
-             fetchpriority="high" decoding="async" width="2400" height="1350">
+             alt="Dawn mist over the rice terraces and villages of the Tetebatu valley, below Rinjani"
+             fetchpriority="high" decoding="async" width="1600" height="900">
       </div>
       <div class="hero__scrim" aria-hidden="true"></div>
 
@@ -128,16 +120,16 @@
         <p class="eyebrow hero__eyebrow" data-i18n="hero.eyebrow">Lombok · Nusa Tenggara</p>
         <h1>Travel shaped by the people who live here.</h1>
         <p class="lead hero__lead" data-i18n="hero.lead">
-          Private one-day trips to Tetebatu, Central Lombok, Senaru and Sembalun — with guides who grew up on these roads.
+          Private one-day trips in Lombok. Your own car, your own guide, home the same day.
         </p>
 
         <div class="hero__actions">
           <a class="btn btn-light" data-wa="default" href="#" target="_blank" rel="noopener">
             <span data-icon="whatsapp"></span>
-            <span data-i18n="cta.whatsappLong">Plan your trip on WhatsApp</span>
+            <span data-i18n="cta.whatsappLong">Message us on WhatsApp</span>
           </a>
-          <a class="btn btn-ghost" href="#tours" style="color:var(--paper);border-color:rgba(255,253,248,.35)">
-            <span data-i18n="cta.seeTours">See the tours</span>
+          <a class="btn btn-ghost btn-ghost-light" href="#trips">
+            <span data-i18n="cta.seeTours">See the trips</span>
             <span data-icon="arrowRight"></span>
           </a>
         </div>
@@ -155,50 +147,50 @@
          ================================================================= -->
     <section class="section surface-mist about" id="about">
       <div class="shell">
-        <div class="about__grid">
+        <div class="split">
           <div class="reveal">
             <p class="eyebrow" data-i18n="about.eyebrow">About us</p>
-            <h2 data-i18n="about.title">We only take you where we already go.</h2>
+            <h2 data-i18n="about.title">Your guide is from the village you visit.</h2>
             <div class="about__media">
               <div class="frame frame-4x5">
                 <img src="assets/img/about.jpg"
-                     data-fallback="assets/img/placeholders/about.svg"
-                     alt="The valley below Tetebatu on the southern slope of Rinjani"
-                     loading="lazy" decoding="async">
+                     alt="Three women planting rice seedlings in a flooded paddy at Tetebatu"
+                     loading="lazy" decoding="async" width="640" height="800">
               </div>
             </div>
           </div>
+
           <div class="reveal" data-reveal-delay="120">
             <p class="about__statement" id="about-statement"></p>
-            <div class="lead" id="about-body" style="margin-top:var(--space-md)"></div>
+            <div class="lead mt-md" id="about-body"></div>
           </div>
         </div>
 
-        <p class="eyebrow reveal" style="margin-top:var(--space-xl)" data-i18n="about.pillarsLabel">How we work</p>
-        <div class="pillars" id="pillars" style="margin-top:var(--space-sm)"></div>
+        <p class="eyebrow mt-xl" data-i18n="about.pillarsLabel">How we work</p>
+        <div class="pillars mt-sm" id="pillars"></div>
       </div>
     </section>
 
     <!-- =================================================================
-         3. TOURS — accent: Ocean Blue. No prices anywhere.
+         3. TRIPS — accent: Ocean Blue. No prices anywhere.
          ================================================================= -->
-    <section class="section surface-paper tours" id="tours">
+    <section class="section surface-paper tours" id="trips">
       <div class="shell">
         <div class="tours__head">
           <div class="section-head reveal">
             <p class="eyebrow" data-i18n="tours.eyebrow">One-day trips</p>
-            <h2 data-i18n="tours.title">Four days out, each one private.</h2>
-            <p class="lead" data-i18n="tours.lead">
-              Every trip below runs for your group alone and comes back the same day.
+            <h2 data-i18n="tours.title">Four places we know well.</h2>
+            <p class="lead mt-md" data-i18n="tours.lead">
+              Each trip is for your group alone and comes back the same day.
             </p>
           </div>
 
           <div class="tours__notice reveal" data-reveal-delay="120">
             <span data-icon="info"></span>
             <p>
-              <strong data-i18n="tours.noticeStrong">Every trip is a private trip.</strong>
+              <strong data-i18n="tours.noticeStrong">Every trip is private.</strong>
               <span data-i18n="tours.notice">
-                No shared departures and no fixed group. Prices depend on your group size and pickup point, so we discuss them on WhatsApp.
+                No shared departures. Price depends on how many people you are and where we pick you up.
               </span>
             </p>
           </div>
@@ -213,53 +205,44 @@
          ================================================================= -->
     <section class="section surface-navy request" id="request">
       <div class="shell">
-        <div class="request__grid">
-          <div class="reveal">
-            <p class="eyebrow" data-i18n="request.eyebrow">Tour by request</p>
-            <h2 data-i18n="request.title">Somewhere else? Tell us where.</h2>
-            <p class="lead" style="margin-top:var(--space-md)" data-i18n="request.lead">
-              The four trips above are what we run most weeks. They are not the limit.
-            </p>
+        <div class="request__inner reveal">
+          <p class="eyebrow" data-i18n="request.eyebrow">Tour by request</p>
+          <h2 data-i18n="request.title">Want to go somewhere else?</h2>
+          <p class="lead mt-md" data-i18n="request.lead">
+            These four are what we run most often. They are not the only thing we can do.
+          </p>
 
-            <ul class="request__list" id="request-points"></ul>
+          <ul class="request__list" id="request-points"></ul>
 
-            <a class="btn btn-light" data-wa="request" href="#" target="_blank" rel="noopener">
-              <span data-icon="whatsapp"></span>
-              <span data-i18n="cta.requestTrip">Tell us what you have in mind</span>
-            </a>
-            <p class="caption" style="margin-top:var(--space-sm)" data-i18n="request.closing">
-              No form to fill in, no deposit to talk it through. Just a message.
-            </p>
-          </div>
-
-          <div class="request__media reveal" data-reveal-delay="120">
-            <div class="frame frame-4x3">
-              <img src="assets/img/tours/request.jpg"
-                   data-fallback="assets/img/placeholders/request.svg"
-                   alt="A road through the fields on the way to Sembalun"
-                   loading="lazy" decoding="async">
-            </div>
-          </div>
+          <a class="btn btn-light" data-wa="request" href="#" target="_blank" rel="noopener">
+            <span data-icon="whatsapp"></span>
+            <span data-i18n="cta.requestTrip">Tell us your plan</span>
+          </a>
+          <p class="caption mt-sm" data-i18n="request.closing">
+            No form, no deposit to talk it through. Just send a message.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- =================================================================
-         5. GALLERY & GUESTS — accent: Forest Green
+         5. PHOTOS & GUESTS — accent: Forest Green
+         Both blocks hide themselves until there is real material for them.
          ================================================================= -->
-    <section class="section surface-sand gallery" id="gallery">
+    <section class="section surface-sand gallery" id="gallery" hidden>
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow" data-i18n="gallery.eyebrow">From the road</p>
-          <h2 data-i18n="gallery.title">Days out, as they actually look.</h2>
+        <div id="gallery-block" hidden>
+          <div class="section-head reveal">
+            <p class="eyebrow" data-i18n="gallery.eyebrow">Photos</p>
+            <h2 data-i18n="gallery.title">From our trips.</h2>
+          </div>
+          <div class="gallery-grid" id="gallery-grid"></div>
         </div>
 
-        <div class="gallery-grid" id="gallery-grid"></div>
-
-        <div class="gallery__quotes" id="quotes-block">
-          <div class="section-head gallery__quotes-head reveal">
+        <div id="quotes-block" hidden>
+          <div class="section-head reveal">
             <p class="eyebrow" data-i18n="gallery.quotesEyebrow">Guests</p>
-            <h2 data-i18n="gallery.quotesTitle">What people said afterwards.</h2>
+            <h2 data-i18n="gallery.quotesTitle">What guests say.</h2>
           </div>
           <div class="quote-grid" id="quotes"></div>
         </div>
@@ -271,12 +254,12 @@
          ================================================================= -->
     <section class="section surface-paper contact" id="contact">
       <div class="shell">
-        <div class="contact__grid">
+        <div class="split">
           <div class="contact__aside reveal">
             <p class="eyebrow" data-i18n="contact.eyebrow">Booking</p>
-            <h2 data-i18n="contact.title">Start the conversation.</h2>
-            <p class="lead" style="margin-top:var(--space-md)" data-i18n="contact.lead">
-              Fill this in and it opens WhatsApp with your details already written out.
+            <h2 data-i18n="contact.title">Send us a message.</h2>
+            <p class="lead mt-md" data-i18n="contact.lead">
+              Fill this in and WhatsApp opens with your details already written.
             </p>
 
             <dl>
@@ -320,12 +303,11 @@
         </div>
 
         <div class="footer-col">
-          <h3 data-i18n="footer.explore">Explore</h3>
+          <h3 data-i18n="footer.explore">Pages</h3>
           <ul>
             <li><a href="#about" data-i18n="nav.about">About</a></li>
-            <li><a href="#tours" data-i18n="nav.tours">Tours</a></li>
+            <li><a href="#trips" data-i18n="nav.tours">Trips</a></li>
             <li><a href="#request" data-i18n="request.eyebrow">Tour by request</a></li>
-            <li><a href="#gallery" data-i18n="gallery.eyebrow">From the road</a></li>
             <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
@@ -338,8 +320,7 @@
         <div class="footer-col">
           <h3 data-i18n="footer.areas">Where we pick up</h3>
           <div class="footer-areas" id="footer-areas"></div>
-          <a class="btn btn-sm btn-light" data-wa="default" href="#" target="_blank" rel="noopener"
-             style="margin-top:var(--space-md)">
+          <a class="btn btn-sm btn-light mt-md" data-wa="default" href="#" target="_blank" rel="noopener">
             <span data-icon="whatsapp"></span>
             <span data-i18n="cta.whatsapp">WhatsApp</span>
           </a>
@@ -348,7 +329,7 @@
 
       <div class="site-footer__bar">
         <span>&copy; <span data-year></span> <span data-site-name>wandrnusa</span>. <span data-i18n="footer.rights">All rights reserved.</span></span>
-        <a class="link-arrow" id="back-to-top" href="#home" style="color:inherit">
+        <a class="link-arrow link-quiet" id="back-to-top" href="#home">
           <span data-i18n="footer.backToTop">Back to top</span>
           <span data-icon="arrowUp"></span>
         </a>

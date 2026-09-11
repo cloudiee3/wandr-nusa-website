@@ -8,16 +8,17 @@ files so adding a destination never means touching layout code.
 
 ---
 
-## Before you publish — three things
+## Before you publish
 
 | # | What | Where |
 |---|------|-------|
-| 1 | **Real WhatsApp number.** Every CTA on the page points at it. | `js/config.js` → `WHATSAPP_NUMBER` and `WHATSAPP_DISPLAY` |
-| 2 | **Real guest reviews.** The site ships with clearly-marked samples, not real quotes. | `js/data/content.js` → `TESTIMONIALS` |
-| 3 | **Real photographs.** Until they exist, every image falls back to a brand-coloured illustration. | `assets/img/` — see [`assets/img/README.md`](assets/img/README.md) |
+| 1 | **A photo of Sembalun.** Its card shows a "photo coming soon" panel until you add one. | upload to [`photos/`](photos/README.md) |
+| 2 | **Your own photos of Central Lombok and Senaru.** Both currently use licensed stand-ins that are not the actual places. | same |
+| 3 | **Guest reviews.** The reviews block is empty and hidden. Add real ones and it appears. | `js/data/content.js` → `TESTIMONIALS` |
 
-Items 1 and 2 print a warning in the browser console while they are still
-placeholders, so you can tell at a glance whether the site is launch-ready.
+Nothing here blocks the site from going live — each one just makes it more
+honestly yours. The WhatsApp number is already set to +62 823-4081-9128 in
+`js/config.js`.
 
 ---
 
@@ -51,18 +52,19 @@ This is the job the site is built around. It is one file.
 
 1. Open `js/data/tours.js`.
 2. Copy an existing entry, paste it into the array, and edit it:
-   - `id` — unique, lowercase, no spaces (used for the anchor link and image name)
+   - `id` — unique, lowercase, no spaces (used for the anchor link)
    - `order` — position in the grid
    - every text field is bilingual: `{ en: '...', id: '...' }`
    - `included` is the "What's included" list — **never put a price in it**
-3. Add a photo at `assets/img/tours/<id>.jpg` and point `image` at it. If that
-   file does not exist yet, the card falls back to `placeholder` on its own.
+3. Upload a photo to `photos/`, add it to `tools/process-photos.mjs`, run
+   `npm run photos`, then point `photo` at the processed file.
 
 That's all. The tour card, the booking form's destination dropdown and the
 card's WhatsApp message are all generated from this file.
 
-To generate a matching placeholder illustration for a new destination, add a
-scene to `tools/make-placeholders.mjs` and run `node tools/make-placeholders.mjs`.
+Leave `photo: null` until you have a real picture of that place. The card shows
+a plain branded panel instead, which is honest — borrowing a photo of somewhere
+else is not.
 
 ---
 
@@ -94,9 +96,11 @@ js/
 assets/
   brand/                    original logo files as supplied
   logo/                     web-optimised logo variants
-  img/                      photographs go here (see its README)
+  img/                      processed photographs, written by npm run photos
+photos/                     source photographs — upload here (see its README)
 tools/
-  make-placeholders.mjs     regenerates the fallback illustrations
+  process-photos.mjs        crops and compresses photos into assets/img/
+  build-preview.mjs         bundles the whole site into one .html file
 ```
 
 ---

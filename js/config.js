@@ -13,16 +13,12 @@ export const SITE = {
   baseIn: 'Tetebatu, Lombok',
 };
 
-/* --------------------------------------------------------------------------
-   ⚠️  REQUIRED BEFORE LAUNCH
-   Replace with the real WhatsApp business number.
-   Format: country code + number, digits only, no "+", no spaces, no leading 0.
-   Indonesia is 62 — so 0819-1234-5678 becomes '6281912345678'.
-   -------------------------------------------------------------------------- */
-export const WHATSAPP_NUMBER = '6281900000000';
+/* Country code + number, digits only — no "+", no spaces, no leading zero.
+   Indonesia is 62, so 0823-4081-9128 becomes '6282340819128'. */
+export const WHATSAPP_NUMBER = '6282340819128';
 
 /* Shown to humans. Keep it in sync with the number above. */
-export const WHATSAPP_DISPLAY = '+62 819-0000-0000';
+export const WHATSAPP_DISPLAY = '+62 823-4081-9128';
 
 export const CONTACT = {
   email: 'hello@wandrnusa.com',
