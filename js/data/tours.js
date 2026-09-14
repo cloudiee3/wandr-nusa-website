@@ -40,8 +40,8 @@ export const TOURS = [
     duration: { en: 'A full day', id: 'Seharian penuh' },
     effort: { en: 'Easy walking', id: 'Jalan kaki ringan' },
     description: {
-      en: 'Rice terraces stacked up the southern slope of Rinjani, a forest full of langurs, and waterfalls you reach on foot. The kind of day where you walk more than you drive.',
-      id: 'Sawah bertingkat di lereng selatan Rinjani, hutan penuh lutung, dan air terjun yang dicapai dengan jalan kaki. Hari yang lebih banyak jalan daripada naik mobil.',
+      en: 'Cool air and terraces stepping down the mountain, with black langurs sitting in the canopy watching you pass. The water comes off Rinjani here in short clean falls you reach on foot, through the fields, past barns where tobacco is hung up to dry.',
+      id: 'Udara sejuk dan sawah bertingkat turun dari gunung, dengan lutung hitam duduk di tajuk pohon memperhatikan Anda lewat. Airnya turun dari Rinjani jadi air terjun pendek yang jernih, dicapai dengan jalan kaki lewat sawah, melewati gudang tempat tembakau digantung.',
     },
     route: {
       en: ['Rice terraces', 'Monkey forest', 'Waterfalls', 'Tobacco barns'],
@@ -74,8 +74,8 @@ export const TOURS = [
     duration: { en: 'A full day', id: 'Seharian penuh' },
     effort: { en: 'Some walking, you get wet', id: 'Jalan sedang, basah-basahan' },
     description: {
-      en: 'Benang Stokel falls in straight ropes. Benang Kelambu comes down through the plants on the cliff like a curtain, which is where it gets its name. Then the river, in a tube, if the water is behaving.',
-      id: 'Benang Stokel jatuh lurus seperti untaian benang. Benang Kelambu turun menembus tanaman di tebing seperti kelambu — dari situ namanya. Lalu turun ke sungai naik ban, kalau airnya bersahabat.',
+      en: 'Two waterfalls about half an hour apart on foot. Stokel drops in straight ropes of water. Kelambu comes down through the plants on the cliff in hundreds of thin strands — kelambu means curtain, and once you see it the name is obvious. Afterwards the river, in a tube, moving slowly.',
+      id: 'Dua air terjun berjarak sekitar setengah jam jalan kaki. Stokel jatuh lurus seperti untaian benang. Kelambu turun menembus tanaman di tebing dalam ratusan helai tipis — begitu melihatnya, namanya jadi masuk akal. Sesudahnya, menyusuri sungai naik ban, pelan-pelan.',
     },
     route: {
       en: ['Benang Stokel', 'Forest path between the two', 'Benang Kelambu', 'River tubing'],
@@ -106,8 +106,8 @@ export const TOURS = [
     duration: { en: 'A long day', id: 'Hari yang panjang' },
     effort: { en: 'Steps and river crossings', id: 'Banyak tangga, menyeberang sungai' },
     description: {
-      en: 'Two waterfalls, one easy and one earned. You cross the river to reach the second, so you arrive wet either way. The village at the top of the road still keeps the Wetu Telu calendar.',
-      id: 'Dua air terjun, satu gampang, satu harus diperjuangkan. Menyeberang sungai untuk sampai yang kedua, jadi tetap basah. Desa di ujung jalan masih memegang kalender Wetu Telu.',
+      en: 'The north side, where the forest closes over the road and the air turns heavy. Sendang Gile is a set of steps down. Tiu Kelep is further in, and you cross the river to reach it, so you arrive wet whatever you are wearing. The village at the top of the road keeps its own calendar.',
+      id: 'Sisi utara, tempat hutan menutup jalan dan udara terasa berat. Sendang Gile cuma turun anak tangga. Tiu Kelep lebih jauh ke dalam, dan kita menyeberang sungai untuk sampai — jadi basah, apa pun yang Anda pakai. Desa di ujung jalan punya kalendernya sendiri.',
     },
     route: {
       en: ['Senaru village', 'Sendang Gile', 'River crossings', 'Tiu Kelep'],
@@ -137,8 +137,8 @@ export const TOURS = [
     duration: { en: 'A long day', id: 'Hari yang panjang' },
     effort: { en: 'Short climbs, cold morning', id: 'Sedikit menanjak, pagi dingin' },
     description: {
-      en: 'A valley high on the eastern side of Rinjani, cold enough in the morning to want a jacket. Fields laid out in a patchwork below you, the crater rim on the skyline all day.',
-      id: 'Lembah tinggi di sisi timur Rinjani, pagi harinya dingin sampai butuh jaket. Ladang berpetak-petak di bawah, punggung kaldera terlihat sepanjang hari.',
+      en: 'A high valley on the eastern side, cold enough in the morning to want a jacket. From the ridge the fields lie out below in squares, and the rim of the crater sits on the skyline all day. Garlic and strawberries grow up here, which tells you how different the air is.',
+      id: 'Lembah tinggi di sisi timur, pagi harinya dingin sampai butuh jaket. Dari punggungan, ladang terhampar berpetak-petak di bawah, dan bibir kaldera terlihat di cakrawala sepanjang hari. Bawang putih dan stroberi tumbuh di sini — dari situ Anda tahu betapa berbedanya udaranya.',
     },
     route: {
       en: ['Bukit Selong viewpoint', 'The valley fields', 'Desa Beleq', 'Rinjani trailhead'],
