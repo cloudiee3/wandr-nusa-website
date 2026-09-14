@@ -301,6 +301,9 @@
 
 /* =========================  GALLERY & QUOTES  ============================ */
 
+/* Travelling with us — the only section that talks about the service. */
+.service { --accent: var(--ocean); }
+
 .gallery { --accent: var(--forest); }
 #quotes-block:not([hidden]) + #gallery-block,
 #gallery-block:not([hidden]) + #quotes-block { margin-top: clamp(3rem, 2rem + 4vw, 5rem); }

@@ -3,7 +3,7 @@
    photos, guest reviews, footer lists)
    ========================================================================== */
 
-import { PILLARS, ABOUT, REQUEST, GALLERY, TESTIMONIALS } from '../data/content.js';
+import { PILLARS, SERVICE, ABOUT, REQUEST, GALLERY, TESTIMONIALS } from '../data/content.js';
 import { SERVICE_AREAS, SOCIALS, CONTACT, WHATSAPP_DISPLAY } from '../config.js';
 import { t, tr, getLang } from '../i18n.js';
 import { esc } from '../lib/dom.js';
@@ -29,6 +29,17 @@ export function renderPillars() {
     <div class="pillar reveal" data-reveal-delay="${i * 80}">
       <h3>${esc(tr(p.title, lang))}</h3>
       <p>${esc(tr(p.body, lang))}</p>
+    </div>`).join('');
+}
+
+/* ---- Travelling with us -------------------------------------------------- */
+
+export function renderService() {
+  const lang = getLang();
+  return SERVICE.map((item, i) => `
+    <div class="pillar reveal" data-reveal-delay="${i * 80}">
+      <h3>${esc(tr(item.title, lang))}</h3>
+      <p>${esc(tr(item.body, lang))}</p>
     </div>`).join('');
 }
 

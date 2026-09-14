@@ -11,7 +11,7 @@ import { waLink, waRequestMessage } from './lib/whatsapp.js';
 import { renderTours } from './components/tours.js';
 import {
   renderAboutBody, renderAboutStatement, renderPillars, renderRequestPoints,
-  renderGallery, hasGallery, renderTestimonials, hasTestimonials,
+  renderGallery, hasGallery, renderTestimonials, hasTestimonials, renderService,
   renderServiceAreas, renderSocials, renderFooterContact,
 } from './components/sections.js';
 import { renderContactForm, bindContactForm } from './components/contactForm.js';
@@ -45,6 +45,7 @@ function renderAll() {
   mount('#pillars', renderPillars());
   mount('#tour-grid', renderTours());
   mount('#request-points', renderRequestPoints());
+  mount('#service-grid', renderService());
 
   // Photos and reviews each appear only once there is real material for them,
   // and the whole section drops out if neither has any.
