@@ -7,64 +7,62 @@ export const ABOUT = {
   /* The islands section is about the islands. Nothing about us belongs here —
      that lives in SERVICE, much further down the page. */
   statement: {
-    en: 'Everything on Lombok runs downhill from Rinjani. The rain the mountain catches comes back as the rivers, the waterfalls and the rice terraces — and the day you spend here depends entirely on where on that slope you stand.',
-    id: 'Semua yang ada di Lombok mengalir turun dari Rinjani. Hujan yang ditangkap gunung ini kembali menjadi sungai, air terjun, dan sawah terasering — dan hari yang Anda habiskan di sini tergantung di bagian lereng mana Anda berdiri.',
+    en: 'Lombok is small enough to cross in a morning and varied enough that you will not want to. Volcano, reef, rice terrace, hill country and coastline, all inside eighty kilometres.',
+    id: 'Lombok cukup kecil untuk diseberangi dalam satu pagi, dan cukup beragam sampai Anda tidak ingin buru-buru. Gunung api, terumbu, sawah terasering, perbukitan, dan garis pantai — semuanya dalam delapan puluh kilometer.',
   },
   body: {
     en: [
-      'The island changes as you cross it. Dry and wide open in the south, green and steep in the north, cool enough to want a jacket in the high valleys on the east side. You can be in all three before dinner.',
-      'The mountain makes the weather. Cloud gathers on it by late morning, and the valleys below stay green because of what falls up there. In the dry months the light is hard and clean; in the wet months every small stream turns into a waterfall.',
-      'And Lombok is only the beginning. The Nusa Islands run east from here — Sumbawa, Flores, Sumba, Timor — each one drier, stranger and further from anywhere than the last.',
+      'The south is dry and open, with long empty beaches and headlands between them. The west drops into the sea at Senggigi, and just offshore the three Gilis sit on their reefs, flat and bright and car-free.',
+      'Inland it climbs. Rice terraces step up the slopes, coffee and cacao grow under the shade trees, and the hills roll on until Rinjani closes off the north. Higher again there are valleys cold enough for strawberries, and waterfalls in more of them than anyone bothers to count.',
+      'And people have been making things here for a very long time. Sasak villages weave, throw pots, dry tobacco and hold markets that only happen on certain days. Lombok is also only the beginning — the Nusa Islands run east from here through Sumbawa, Flores, Sumba and Timor.',
     ],
     id: [
-      'Pulau ini berubah saat Anda menyeberanginya. Kering dan terbuka di selatan, hijau dan curam di utara, cukup dingin untuk pakai jaket di lembah-lembah tinggi sisi timur. Ketiganya bisa Anda lewati sebelum makan malam.',
-      'Gunungnya yang membuat cuaca. Awan berkumpul di sana menjelang siang, dan lembah di bawahnya tetap hijau karena hujan yang turun di atas. Di musim kemarau cahayanya keras dan bersih; di musim hujan setiap parit kecil berubah jadi air terjun.',
-      'Dan Lombok baru permulaan. Kepulauan Nusa membentang ke timur dari sini — Sumbawa, Flores, Sumba, Timor — masing-masing makin kering, makin asing, makin jauh dari mana-mana.',
+      'Selatannya kering dan terbuka, dengan pantai-pantai panjang yang sepi dan tanjung di antaranya. Baratnya turun ke laut di Senggigi, dan tak jauh dari pantai tiga Gili duduk di atas terumbunya — datar, terang, tanpa mobil.',
+      'Ke arah dalam, tanahnya naik. Sawah terasering menaiki lereng, kopi dan kakao tumbuh di bawah pohon peneduh, dan perbukitan bergulung sampai Rinjani menutup bagian utara. Lebih tinggi lagi ada lembah yang cukup dingin untuk stroberi, dan air terjun di lebih banyak lembah daripada yang pernah dihitung orang.',
+      'Dan orang sudah membuat sesuatu di sini sejak lama sekali. Desa-desa Sasak menenun, membuat gerabah, menjemur tembakau, dan menggelar pasar yang hanya buka di hari tertentu. Lombok pun baru permulaan — Kepulauan Nusa membentang ke timur lewat Sumbawa, Flores, Sumba, dan Timor.',
     ],
   },
 };
 
-/* Four things the island is made of. All four are about the place. */
-export const PILLARS = [
-  {
-    id: 'the-mountain',
-    title: { en: 'The mountain', id: 'Gunungnya' },
-    body: {
-      en: 'Rinjani decides the weather, the water and the soil. Stand anywhere on Lombok and you are somewhere on its slope, whether you can see it that morning or not. Inside its crater there is a lake the colour of deep glass.',
-      id: 'Rinjani yang menentukan cuaca, air, dan tanahnya. Berdiri di mana pun di Lombok, Anda sedang berada di lerengnya — terlihat atau tidak pagi itu. Di dalam kalderanya ada danau sewarna kaca tebal.',
-    },
-  },
-  {
-    id: 'the-water',
-    title: { en: 'The water', id: 'Airnya' },
-    body: {
-      en: 'What falls on the mountain comes back as rivers and waterfalls, and there are more of them than anyone bothers to count. In the north the water drops in one long clean line. In the middle it comes through the plants on the cliff like a curtain.',
-      id: 'Yang turun di gunung kembali jadi sungai dan air terjun, jumlahnya lebih banyak dari yang pernah dihitung orang. Di utara airnya jatuh lurus dalam satu garis panjang. Di tengah menembus tanaman di tebing seperti kelambu.',
-    },
-  },
-  {
-    id: 'the-fields',
-    title: { en: 'The fields', id: 'Ladangnya' },
-    body: {
-      en: 'Volcanic soil grows almost anything. Rice in terraces down the southern slope, tobacco hung to dry in open barns, coffee and cacao under the trees, and garlic and strawberries up where the air is cold.',
-      id: 'Tanah vulkanis bisa menumbuhkan hampir apa saja. Padi bertingkat turun di lereng selatan, tembakau digantung di gudang terbuka, kopi dan kakao di bawah pepohonan, bawang putih dan stroberi di ketinggian yang udaranya dingin.',
-    },
-  },
-  {
-    id: 'the-villages',
-    title: { en: 'The villages', id: 'Desanya' },
-    body: {
-      en: 'Sasak villages sit on every slope, and each valley does something slightly different — weaving in one, pottery in the next, a market that only happens on certain days in the one after that.',
-      id: 'Desa-desa Sasak ada di setiap lereng, dan tiap lembah punya kekhasannya — tenun di satu tempat, gerabah di tempat berikutnya, pasar yang cuma buka di hari tertentu di tempat sesudahnya.',
-    },
-  },
+/* --------------------------------------------------------------------------
+   WHAT IS HERE
+   One tile per thing the island has. A tile with `photo: null` renders as a
+   plain branded panel with its label, so the grid still reads and the gap is
+   obvious. Add the photo, set the path, and the tile fills in.
+   -------------------------------------------------------------------------- */
+export const HIGHLIGHTS = [
+  { id: 'beaches',     photo: null,
+    label: { en: 'Beaches',        id: 'Pantai' },
+    note:  { en: 'Long and empty along the south coast', id: 'Panjang dan sepi di pesisir selatan' } },
+  { id: 'gilis',       photo: null,
+    label: { en: 'The Gilis',      id: 'Gili' },
+    note:  { en: 'Three flat islands on a reef, no cars', id: 'Tiga pulau datar di atas terumbu, tanpa mobil' } },
+  { id: 'mountain',    photo: 'assets/img/islands/mountain.jpg',
+    label: { en: 'The mountain',   id: 'Gunung' },
+    note:  { en: 'Rinjani, and the lake inside its crater', id: 'Rinjani, dan danau di dalam kalderanya' } },
+  { id: 'waterfalls',  photo: 'assets/img/islands/waterfalls.jpg',
+    label: { en: 'Waterfalls',     id: 'Air terjun' },
+    note:  { en: 'In more valleys than anyone counts', id: 'Di lebih banyak lembah dari yang terhitung' } },
+  { id: 'rice-fields', photo: 'assets/img/islands/rice-fields.jpg',
+    label: { en: 'Rice fields',    id: 'Sawah' },
+    note:  { en: 'Terraced up every slope that will hold them', id: 'Bertingkat di setiap lereng yang sanggup' } },
+  { id: 'hills',       photo: null,
+    label: { en: 'Hill country',   id: 'Perbukitan' },
+    note:  { en: 'Between the coast and the mountain', id: 'Antara pesisir dan gunung' } },
+  { id: 'coffee',      photo: null,
+    label: { en: 'Coffee',         id: 'Kopi' },
+    note:  { en: 'Grown under shade trees with the cacao', id: 'Tumbuh di bawah pohon peneduh bersama kakao' } },
+  { id: 'culture',     photo: null,
+    label: { en: 'Culture',        id: 'Budaya' },
+    note:  { en: 'Sasak, and older than the guidebooks', id: 'Sasak, dan lebih tua dari buku panduan' } },
+  { id: 'village-life',photo: 'assets/img/islands/village-life.jpg',
+    label: { en: 'Village life',   id: 'Kehidupan desa' },
+    note:  { en: 'Markets on certain days, tobacco drying', id: 'Pasar di hari tertentu, tembakau dijemur' } },
+  { id: 'crafts',      photo: null,
+    label: { en: 'Arts and crafts',id: 'Seni dan kriya' },
+    note:  { en: 'Weaving in one valley, pottery in the next', id: 'Tenun di satu lembah, gerabah di lembah berikutnya' } },
 ];
 
-/* --------------------------------------------------------------------------
-   TRAVELLING WITH US
-   Everything about the service lives here, near the bottom of the page, for
-   people who have already decided the islands are worth seeing.
-   -------------------------------------------------------------------------- */
 export const SERVICE = [
   {
     id: 'collected',

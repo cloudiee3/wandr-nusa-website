@@ -10,12 +10,13 @@ import { icon } from './lib/icons.js';
 import { waLink, waRequestMessage } from './lib/whatsapp.js';
 import { renderTours } from './components/tours.js';
 import {
-  renderAboutBody, renderAboutStatement, renderPillars, renderRequestPoints,
+  renderAboutBody, renderAboutStatement, renderHighlights, renderRequestPoints,
   renderGallery, hasGallery, renderTestimonials, hasTestimonials, renderService,
   renderServiceAreas, renderSocials, renderFooterContact,
 } from './components/sections.js';
 import { renderContactForm, bindContactForm } from './components/contactForm.js';
 import { initHeader } from './components/header.js';
+import { renderMap } from './components/map.js';
 
 /* ---- Things that only need doing once ----------------------------------- */
 
@@ -42,7 +43,8 @@ function renderAll() {
 
   mount('#about-statement', renderAboutStatement());
   mount('#about-body', renderAboutBody());
-  mount('#pillars', renderPillars());
+  mount('#highlights', renderHighlights());
+  mount('#map', renderMap());
   mount('#tour-grid', renderTours());
   mount('#request-points', renderRequestPoints());
   mount('#service-grid', renderService());

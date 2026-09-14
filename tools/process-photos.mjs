@@ -35,6 +35,14 @@ const SLOTS = [
   { out: 'tours/sembalun.jpg',  w: 1600, h: 1067, max: 300, src: 'Sembalun Bukit Selong.jpg', focus: { x: 0.52, y: 0.46 } },
   { out: 'gallery/durian-indah.jpg', w: 800, h: 1000, max: 300, src: 'Durian Indah Waterfall 2.avif', focus: { x: 0.50, y: 0.45 } },
 
+  // ---- "What is here" tiles. Portrait, for the islands grid. -----------
+  //      Six more are needed: beaches, the Gilis, hill country, coffee,
+  //      culture, arts and crafts. Add them here as they arrive.
+  { out: 'islands/mountain.jpg',     w: 600, h: 750, max: 200, src: 'Rinjani Crater Lake.jpg',       focus: { x: 0.42, y: 0.50 } },
+  { out: 'islands/waterfalls.jpg',   w: 600, h: 750, max: 200, src: 'Durian Indah Waterfall 2.avif', focus: { x: 0.50, y: 0.45 } },
+  { out: 'islands/rice-fields.jpg',  w: 600, h: 750, max: 200, src: 'Tetebatu Rice Field.jpg',       focus: { x: 0.45, y: 0.55 } },
+  { out: 'islands/village-life.jpg', w: 600, h: 750, max: 200, src: 'Tetebatu Rice Plant.avif',      focus: { x: 0.46, y: 0.52 } },
+
   // ---- Stand-in. Replace once you have your own of Senaru. --------------
   { out: 'tours/senaru.jpg', w: 1600, h: 1067, max: 300, src: 'pexels-vincent-ma-janssen-2823154.jpg', focus: { x: 0.50, y: 0.50 }, stock: true },
 ];

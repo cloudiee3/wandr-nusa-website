@@ -105,7 +105,8 @@
 /* A slot with no photograph yet. Reads as a deliberate brand surface rather
    than a broken image or a stand-in picture of somewhere else. */
 .frame-empty {
-  background: var(--sea-mist);
+  background: color-mix(in srgb, var(--navy) 5%, var(--paper));
+  box-shadow: inset 0 0 0 1px var(--hairline);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,6 +291,35 @@
 .field select[aria-invalid="true"],
 .field textarea[aria-invalid="true"] { border-color: var(--terracotta); }
 
+/* ---- "What is here" tiles ----------------------------------------------- */
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+}
+
+.tile { margin: 0; display: flex; flex-direction: column; gap: var(--space-xs); }
+.tile .frame { border-radius: var(--radius); }
+/* A tile still waiting on a photograph. Dashed, so it reads as a slot rather
+   than a design element, and visible on the mist surface it sits on. */
+.tile .frame-empty {
+  background: none;
+  box-shadow: none;
+  border: 1px dashed color-mix(in srgb, var(--navy) 22%, transparent);
+}
+.tile .frame-empty .frame-empty__mark { opacity: 0.22; }
+.tile:hover .frame > img { transform: scale(1.05); }
+
+.tile__caption { display: flex; flex-direction: column; gap: 0.1rem; }
+.tile__label {
+  font-size: var(--t-small);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.tile__note { font-size: var(--t-caption); color: var(--ink-soft); line-height: 1.4; }
+
 /* ---- Gallery ------------------------------------------------------------ */
 
 .gallery-grid {
@@ -300,6 +330,37 @@
 .gallery-item { margin: 0; }
 .gallery-item .frame { border-radius: var(--radius); }
 .gallery-item:hover .frame > img { transform: scale(1.04); }
+
+/* ---- Travelling with us: a quiet list, not another grid of cards -------- */
+
+.service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  max-width: 46rem;
+}
+.service-item {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+}
+.service-item:last-child { border-bottom: 1px solid var(--hairline); }
+.service-item__title {
+  font-family: var(--font-display);
+  font-size: var(--t-h4);
+  line-height: 1.25;
+  color: var(--ink);
+}
+.service-item__body { font-size: var(--t-small); color: var(--ink-muted); line-height: 1.6; }
+
+@media (max-width: 620px) {
+  .service-item { grid-template-columns: 1fr; gap: var(--space-2xs); }
+}
 
 /* ---- Guest reviews ------------------------------------------------------ */
 

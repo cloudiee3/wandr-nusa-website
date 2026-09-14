@@ -3,7 +3,7 @@
    photos, guest reviews, footer lists)
    ========================================================================== */
 
-import { PILLARS, SERVICE, ABOUT, REQUEST, GALLERY, TESTIMONIALS } from '../data/content.js';
+import { HIGHLIGHTS, SERVICE, ABOUT, REQUEST, GALLERY, TESTIMONIALS } from '../data/content.js';
 import { SERVICE_AREAS, SOCIALS, CONTACT, WHATSAPP_DISPLAY } from '../config.js';
 import { t, tr, getLang } from '../i18n.js';
 import { esc } from '../lib/dom.js';
@@ -23,24 +23,31 @@ export const renderAboutBody = () =>
 
 /* ---- Four pillars ------------------------------------------------------- */
 
-export function renderPillars() {
+export function renderHighlights() {
   const lang = getLang();
-  return PILLARS.map((p, i) => `
-    <div class="pillar reveal" data-reveal-delay="${i * 80}">
-      <h3>${esc(tr(p.title, lang))}</h3>
-      <p>${esc(tr(p.body, lang))}</p>
-    </div>`).join('');
+  return HIGHLIGHTS.map((h, i) => {
+    const label = esc(tr(h.label, lang));
+    const media = h.photo
+      ? `<img src="${esc(h.photo)}" alt="${label}" loading="lazy" decoding="async" width="600" height="750">`
+      : `<span class="frame-empty__mark" aria-hidden="true">${icon('mark')}</span>`;
+    return `
+      <figure class="tile reveal" data-reveal-delay="${i * 55}">
+        <div class="frame frame-4x5 ${h.photo ? '' : 'frame-empty'}">${media}</div>
+        <figcaption class="tile__caption">
+          <span class="tile__label">${label}</span>
+          <span class="tile__note">${esc(tr(h.note, lang))}</span>
+        </figcaption>
+      </figure>`;
+  }).join('');
 }
-
-/* ---- Travelling with us -------------------------------------------------- */
 
 export function renderService() {
   const lang = getLang();
-  return SERVICE.map((item, i) => `
-    <div class="pillar reveal" data-reveal-delay="${i * 80}">
-      <h3>${esc(tr(item.title, lang))}</h3>
-      <p>${esc(tr(item.body, lang))}</p>
-    </div>`).join('');
+  return SERVICE.map((item) => `
+    <li class="service-item reveal">
+      <span class="service-item__title">${esc(tr(item.title, lang))}</span>
+      <span class="service-item__body">${esc(tr(item.body, lang))}</span>
+    </li>`).join('');
 }
 
 /* ---- Tour by request ---------------------------------------------------- */

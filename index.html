@@ -150,7 +150,7 @@
         <div class="split">
           <div class="reveal">
             <p class="eyebrow" data-i18n="about.eyebrow">The islands</p>
-            <h2 data-i18n="about.title">Everything here starts with the mountain.</h2>
+            <h2 data-i18n="about.title">Everything is close together here.</h2>
             <p class="about__statement mt-lg" id="about-statement"></p>
           </div>
 
@@ -159,8 +159,15 @@
           </div>
         </div>
 
-        <p class="eyebrow mt-xl" data-i18n="about.pillarsLabel">What the island is made of</p>
-        <div class="pillars mt-sm" id="pillars"></div>
+        <div class="islands__map reveal mt-xl">
+          <div id="map"></div>
+          <p class="caption islands__map-note" data-i18n="about.mapNote">
+            Not a map — directions and rough distances from the mountain.
+          </p>
+        </div>
+
+        <p class="eyebrow mt-xl" data-i18n="about.pillarsLabel">What is here</p>
+        <div class="tile-grid mt-sm" id="highlights"></div>
       </div>
     </section>
 
@@ -232,7 +239,7 @@
             None of this is complicated. It is just the part that would otherwise be yours to sort out.
           </p>
         </div>
-        <div class="pillars" id="service-grid"></div>
+        <ul class="service-list mt-lg" id="service-grid"></ul>
       </div>
     </section>
 

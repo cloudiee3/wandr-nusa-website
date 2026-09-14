@@ -220,6 +220,40 @@
 
 /* The brand statement sits under the heading, so the two columns carry
    comparable weight now that the photograph is gone. */
+/* Where things are. A schematic, so it never pretends to be a survey. */
+.islands__map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.map { width: 100%; max-width: 30rem; height: auto; overflow: visible; }
+.map__coast {
+  fill: color-mix(in srgb, var(--navy) 6%, transparent);
+  stroke: var(--navy);
+  stroke-width: 0.35;
+  stroke-opacity: 0.28;
+  stroke-dasharray: 1.2 1.6;
+}
+.map__inner {
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 0.3;
+  stroke-opacity: 0.14;
+}
+.map__peak path { fill: var(--navy); opacity: 0.34; }
+.map text {
+  font-family: var(--font-body);
+  font-size: 3px;
+  letter-spacing: 0.05em;
+  fill: var(--ink-muted);
+}
+.map__peak text { fill: var(--ink-soft); font-size: 2.7px; letter-spacing: 0.12em; text-transform: uppercase; }
+.map__place circle { fill: var(--ink-soft); }
+.map__place--escape circle { fill: var(--accent); }
+.map__place--escape text { fill: var(--ink); font-weight: 500; font-size: 3.3px; }
+.islands__map-note { text-align: center; max-width: 34rem; }
+
 .about__statement {
   font-family: var(--font-display);
   font-size: var(--t-h4);

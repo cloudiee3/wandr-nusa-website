@@ -14,6 +14,8 @@ const STORAGE_KEY = 'wandrnusa:lang';
 
 export const STRINGS = {
   en: {
+    'about.mapNote': 'Not a map — directions and rough distances from the mountain. Everything on it is within a day of the coast.',
+    'map.alt': 'A diagram showing the four places we go, arranged around Rinjani by direction and distance.',
     'service.eyebrow': 'Travelling with us',
     'service.title': 'How a day actually goes.',
     'service.lead': 'None of this is complicated. It is just the part that would otherwise be yours to sort out.',
@@ -39,8 +41,8 @@ export const STRINGS = {
     'hero.fact2': 'Waterfalls in every valley',
     'hero.fact3': 'Villages on every slope',
     'about.eyebrow': 'The islands',
-    'about.title': 'Everything here starts with the mountain.',
-    'about.pillarsLabel': 'What the island is made of',
+    'about.title': 'Everything is close together here.',
+    'about.pillarsLabel': 'What is here',
     'tours.eyebrow': 'Where we go',
     'tours.title': 'Four corners of one island.',
     'tours.lead': 'Four parts of Lombok that look nothing like each other — a cool valley of terraces, two waterfalls in the middle of the island, the wet forest of the north, and a high plain on the eastern side.',
@@ -90,6 +92,8 @@ export const STRINGS = {
   },
 
   id: {
+    'about.mapNote': 'Bukan peta — arah dan perkiraan jarak dari gunung. Semuanya dalam jarak sehari dari pesisir.',
+    'map.alt': 'Diagram yang menunjukkan empat tempat tujuan kami, tersusun mengelilingi Rinjani menurut arah dan jaraknya.',
     'service.eyebrow': 'Perjalanan bersama kami',
     'service.title': 'Bagaimana harinya berjalan.',
     'service.lead': 'Tidak ada yang rumit di sini. Ini bagian yang kalau tidak, harus Anda urus sendiri.',
@@ -115,8 +119,8 @@ export const STRINGS = {
     'hero.fact2': 'Air terjun di tiap lembah',
     'hero.fact3': 'Desa di tiap lereng',
     'about.eyebrow': 'Pulau ini',
-    'about.title': 'Semuanya di sini berawal dari gunung.',
-    'about.pillarsLabel': 'Isi pulau ini',
+    'about.title': 'Semuanya berdekatan di sini.',
+    'about.pillarsLabel': 'Apa saja yang ada',
     'tours.eyebrow': 'Tujuan kami',
     'tours.title': 'Empat sisi dari satu pulau.',
     'tours.lead': 'Empat bagian Lombok yang sama sekali tidak mirip satu sama lain — lembah sejuk penuh terasering, dua air terjun di tengah pulau, hutan basah di utara, dan dataran tinggi di sisi timur.',
