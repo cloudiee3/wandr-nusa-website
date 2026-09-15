@@ -202,39 +202,142 @@
 
 /* The brand statement sits under the heading, so the two columns carry
    comparable weight now that the photograph is gone. */
-/* Where things are. A schematic, so it never pretends to be a survey. */
-.islands__map {
-  display: flex;
-  flex-direction: column;
+/* ---- The islands explorer ----------------------------------------------
+   A tall picture on one side; the caption and a numbered index of all ten on
+   the other. One thing at a time, chosen by the reader, instead of ten small
+   tiles competing on one screen.
+
+   The picture deliberately has no aspect ratio. Its column is stretched to
+   whatever height the caption and the list need, and the frame grows to fill
+   that — so the two columns always finish exactly level and no dead band can
+   open up beneath the shorter one, in either language. */
+
+.islands {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
+  align-items: stretch;
+}
+
+/* All ten pictures are stacked in one cell so nothing shifts on a change. */
+.islands__stage { display: grid; }
+.islands__media { grid-area: 1 / 1; display: flex; margin: 0; }
+.islands__media[hidden] { display: none; }
+
+.islands__frame {
+  flex: 1 1 auto;
+  min-height: 20rem;
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+/* Taken out of flow so the photograph's own proportions cannot decide the
+   height of the frame — the column beside it does. */
+.islands__frame > img { position: absolute; inset: 0; }
+
+/* Six of the ten are still waiting on a photograph, and at this size the
+   default empty frame is a large grey hole. Soft Sand is a surface colour in
+   the brand kit, so the panel becomes a deliberate plate with the mark on it
+   rather than something that looks broken. No second accent is introduced. */
+.islands__frame.frame-empty {
+  background: var(--sand);
+  box-shadow: inset 0 0 0 1px rgba(11, 46, 74, 0.10);
+  gap: var(--space-md);
+}
+.islands__frame.frame-empty .frame-empty__mark {
+  width: 84px; height: 84px; opacity: 0.22;
+}
+.islands__frame.frame-empty .frame-empty__label { color: var(--navy); opacity: 0.8; }
+
+.islands__side { display: flex; flex-direction: column; gap: var(--space-lg); }
+.islands__panels { display: grid; }
+.islands__panel { grid-area: 1 / 1; max-width: 46ch; }
+.islands__panel[hidden] { display: none; }
+
+/* The change is instant; the fade stops it reading as a jump. */
+.islands__media:not([hidden]),
+.islands__panel:not([hidden]) { animation: island-in 340ms var(--ease) both; }
+@keyframes island-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .islands__media:not([hidden]),
+  .islands__panel:not([hidden]) { animation: none; }
+}
+
+.islands__count {
+  font-size: var(--t-caption);
+  letter-spacing: var(--ls-micro);
+  text-transform: uppercase;
+  /* Deepened for the same reason as .eyebrow — see css/base.css. */
+  color: color-mix(in srgb, var(--accent) 62%, var(--navy));
+  margin-bottom: var(--space-2xs);
+}
+.islands__count span { opacity: 0.45; }
+.islands__panel h3 { font-size: var(--t-h3); margin-bottom: var(--space-xs); }
+.islands__blurb { font-size: var(--t-body); color: var(--ink-muted); line-height: 1.65; }
+
+/* Pushed to the bottom of the column, so the index sits on the same baseline
+   as the foot of the picture however long the caption runs. */
+.islands__tabs { display: flex; flex-direction: column; margin-top: auto; }
+
+.islands__tab {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
   align-items: center;
   gap: var(--space-sm);
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink-muted);
+  transition: color 200ms var(--ease), padding-left 260ms var(--ease);
 }
-.map { width: 100%; max-width: 30rem; height: auto; overflow: visible; }
-.map__coast {
-  fill: color-mix(in srgb, var(--navy) 6%, transparent);
-  stroke: var(--navy);
-  stroke-width: 0.35;
-  stroke-opacity: 0.28;
-  stroke-dasharray: 1.2 1.6;
+.islands__tab:first-child { border-top: 1px solid var(--hairline); }
+.islands__tab:hover { color: var(--ink); padding-left: 0.4rem; }
+
+.islands__tab-num {
+  font-size: var(--t-caption);
+  letter-spacing: var(--ls-micro);
+  color: var(--ink-muted);
+  transition: color 200ms var(--ease);
 }
-.map__inner {
-  fill: none;
-  stroke: var(--navy);
-  stroke-width: 0.3;
-  stroke-opacity: 0.14;
+.islands__tab-label {
+  font-family: var(--font-display);
+  font-size: var(--t-h4);
+  line-height: 1.2;
 }
-.map__peak path { fill: var(--navy); opacity: 0.34; }
-.map text {
-  font-family: var(--font-body);
-  font-size: 3px;
-  letter-spacing: 0.05em;
-  fill: var(--ink-muted);
+.islands__tab-arrow {
+  display: inline-flex;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 200ms var(--ease), transform 200ms var(--ease);
+  color: var(--accent);
 }
-.map__peak text { fill: var(--ink-soft); font-size: 2.7px; letter-spacing: 0.12em; text-transform: uppercase; }
-.map__place circle { fill: var(--ink-soft); }
-.map__place--escape circle { fill: var(--accent); }
-.map__place--escape text { fill: var(--ink); font-weight: 500; font-size: 3.3px; }
-.islands__map-note { text-align: center; max-width: 34rem; }
+.islands__tab-arrow svg { width: 18px; height: 18px; }
+.islands__tab:hover .islands__tab-arrow { opacity: 0.5; transform: none; }
+
+.islands__tab[aria-selected="true"] {
+  color: var(--ink);
+  padding-left: 0.4rem;
+  border-bottom-color: var(--accent);
+}
+.islands__tab[aria-selected="true"] .islands__tab-num { color: color-mix(in srgb, var(--accent) 62%, var(--navy)); }
+.islands__tab[aria-selected="true"] .islands__tab-arrow { opacity: 1; transform: none; }
+
+@media (max-width: 860px) {
+  .islands { grid-template-columns: 1fr; gap: var(--space-lg); }
+  /* The side column dissolves so its two halves can sit either side of the
+     picture: the list first, because that is the thing you operate. */
+  .islands__side { display: contents; }
+  .islands__tabs { order: -1; margin-top: 0; }
+  .islands__panels { order: 1; }
+  .islands__panel { max-width: none; }
+  /* Landscape here — a portrait frame at full width would fill the screen. */
+  .islands__frame { flex: 0 0 auto; min-height: 0; aspect-ratio: 4 / 3; }
+  .islands__tab { padding-block: 0.75rem; grid-template-columns: 1.9rem 1fr auto; }
+  .islands__tab-label { font-size: var(--t-body); font-family: var(--font-body); font-weight: 500; }
+}
 
 .about__statement {
   font-family: var(--font-display);

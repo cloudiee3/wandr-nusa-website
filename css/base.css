@@ -52,17 +52,30 @@ p:last-child { margin-bottom: 0; }
 
 /* ---- Text utilities ----------------------------------------------------- */
 
+/* The accent at full strength is a 3.0–3.6:1 label against these backgrounds
+   — under the 4.5:1 WCAG AA needs for text this small. Deepening it towards
+   navy keeps the section's one accent recognisable and clears AA on all
+   three. The mix is written out here rather than kept as a :root token
+   because a token would resolve var(--accent) against :root and every
+   section would get the default accent instead of its own. */
 .eyebrow {
   font-size: var(--t-eyebrow);
   font-weight: 500;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--accent);
+  color: color-mix(in srgb, var(--accent) 62%, var(--navy));
   margin: 0 0 var(--space-sm);
   display: flex;
   align-items: center;
   gap: 0.7em;
 }
+/* On the navy sections the same reasoning runs the other way: deepening an
+   accent towards navy buries it in the background. There it is lifted towards
+   paper instead. Both directions clear AA on all three accents. */
+.surface-navy .eyebrow {
+  color: color-mix(in srgb, var(--accent) 70%, var(--paper));
+}
+
 .eyebrow::before {
   content: "";
   width: 26px;

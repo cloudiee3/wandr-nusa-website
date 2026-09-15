@@ -291,35 +291,6 @@
 .field select[aria-invalid="true"],
 .field textarea[aria-invalid="true"] { border-color: var(--terracotta); }
 
-/* ---- "What is here" tiles ----------------------------------------------- */
-
-.tile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
-  gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
-}
-
-.tile { margin: 0; display: flex; flex-direction: column; gap: var(--space-xs); }
-.tile .frame { border-radius: var(--radius); }
-/* A tile still waiting on a photograph. Dashed, so it reads as a slot rather
-   than a design element, and visible on the mist surface it sits on. */
-.tile .frame-empty {
-  background: none;
-  box-shadow: none;
-  border: 1px dashed color-mix(in srgb, var(--navy) 22%, transparent);
-}
-.tile .frame-empty .frame-empty__mark { opacity: 0.22; }
-.tile:hover .frame > img { transform: scale(1.05); }
-
-.tile__caption { display: flex; flex-direction: column; gap: 0.1rem; }
-.tile__label {
-  font-size: var(--t-small);
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.005em;
-}
-.tile__note { font-size: var(--t-caption); color: var(--ink-soft); line-height: 1.4; }
-
 /* ---- Gallery ------------------------------------------------------------ */
 
 .gallery-grid {

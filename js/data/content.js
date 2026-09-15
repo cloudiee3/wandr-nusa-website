@@ -4,63 +4,83 @@
    ========================================================================== */
 
 export const ABOUT = {
-  /* The islands section is about the islands. Nothing about us belongs here —
-     that lives in SERVICE, much further down the page. */
   statement: {
-    en: 'Lombok is small enough to cross in a morning and varied enough that you will not want to. Mountain, reef, rice terrace, hill country and coastline, all inside eighty kilometres.',
-    id: 'Lombok cukup kecil untuk diseberangi dalam satu pagi, dan cukup beragam sampai Anda tidak ingin buru-buru. Gunung, terumbu, sawah terasering, perbukitan, dan garis pantai — semuanya dalam delapan puluh kilometer.',
+    en: 'Lombok is small enough to cross in a morning and varied enough that you will not want to.',
+    id: 'Lombok cukup kecil untuk diseberangi dalam satu pagi, dan cukup beragam sampai Anda tidak ingin buru-buru.',
   },
   body: {
     en: [
-      'The south is dry and open, with long empty beaches and headlands between them. The west drops into the sea at Senggigi, and just offshore the three Gilis sit on their reefs, flat and bright and car-free.',
-      'Inland it climbs. Rice terraces step up the slopes, coffee and cacao grow under the shade trees, and the hills roll on until Rinjani closes off the north. Higher again there are valleys cold enough for strawberries, and waterfalls in more of them than anyone bothers to count.',
-      'And people have been making things here for a very long time. Sasak villages weave, throw pots, dry tobacco and hold markets that only happen on certain days. Lombok is also only the beginning — the Nusa Islands run east from here through Sumbawa, Flores, Sumba and Timor.',
+      'Reef on one side, open ocean on the other, and everything else stacked up in eighty kilometres between them. You can start a day on a beach and finish it somewhere cold enough for a jacket.',
+      'And it does not stop at Lombok. The Nusa Islands run east from here — Sumbawa, Flores, Sumba, Timor — each one drier and further from anywhere than the last.',
     ],
     id: [
-      'Selatannya kering dan terbuka, dengan pantai-pantai panjang yang sepi dan tanjung di antaranya. Baratnya turun ke laut di Senggigi, dan tak jauh dari pantai tiga Gili duduk di atas terumbunya — datar, terang, tanpa mobil.',
-      'Ke arah dalam, tanahnya naik. Sawah terasering menaiki lereng, kopi dan kakao tumbuh di bawah pohon peneduh, dan perbukitan bergulung sampai Rinjani menutup bagian utara. Lebih tinggi lagi ada lembah yang cukup dingin untuk stroberi, dan air terjun di lebih banyak lembah daripada yang pernah dihitung orang.',
-      'Dan orang sudah membuat sesuatu di sini sejak lama sekali. Desa-desa Sasak menenun, membuat gerabah, menjemur tembakau, dan menggelar pasar yang hanya buka di hari tertentu. Lombok pun baru permulaan — Kepulauan Nusa membentang ke timur lewat Sumbawa, Flores, Sumba, dan Timor.',
+      'Terumbu di satu sisi, laut lepas di sisi lain, dan semua yang lain bertumpuk dalam delapan puluh kilometer di antaranya. Anda bisa memulai hari di pantai dan mengakhirinya di tempat yang cukup dingin untuk berjaket.',
+      'Dan tidak berhenti di Lombok. Kepulauan Nusa membentang ke timur dari sini — Sumbawa, Flores, Sumba, Timor — masing-masing makin kering dan makin jauh dari mana-mana.',
     ],
   },
 };
 
-/* --------------------------------------------------------------------------
-   WHAT IS HERE
-   One tile per thing the island has. A tile with `photo: null` renders as a
-   plain branded panel with its label, so the grid still reads and the gap is
-   obvious. Add the photo, set the path, and the tile fills in.
-   -------------------------------------------------------------------------- */
 export const HIGHLIGHTS = [
-  { id: 'beaches',     photo: null,
-    label: { en: 'Beaches',        id: 'Pantai' },
-    note:  { en: 'Long and empty along the south coast', id: 'Panjang dan sepi di pesisir selatan' } },
-  { id: 'gilis',       photo: null,
-    label: { en: 'The Gilis',      id: 'Gili' },
-    note:  { en: 'Three flat islands on a reef, no cars', id: 'Tiga pulau datar di atas terumbu, tanpa mobil' } },
-  { id: 'mountain',    photo: 'assets/img/islands/mountain.jpg',
-    label: { en: 'The mountain',   id: 'Gunung' },
-    note:  { en: 'Rinjani, and the lake that sits inside it', id: 'Rinjani, dan danau yang ada di dalamnya' } },
-  { id: 'waterfalls',  photo: 'assets/img/islands/waterfalls.jpg',
-    label: { en: 'Waterfalls',     id: 'Air terjun' },
-    note:  { en: 'In more valleys than anyone counts', id: 'Di lebih banyak lembah dari yang terhitung' } },
+  { id: 'mountain', photo: 'assets/img/islands/mountain.jpg',
+    label: { en: 'The mountain', id: 'Gunung' },
+    blurb: {
+      en: 'Rinjani holds the middle of the island and decides most of what happens on it — the weather, the rivers, the soil. High inside it there is a lake, and people walk for two days to sit beside it.',
+      id: 'Rinjani memegang bagian tengah pulau dan menentukan hampir semua yang terjadi di atasnya — cuaca, sungai, tanahnya. Jauh di dalamnya ada danau, dan orang berjalan dua hari untuk duduk di tepinya.',
+    } },
+  { id: 'waterfalls', photo: 'assets/img/islands/waterfalls.jpg',
+    label: { en: 'Waterfalls', id: 'Air terjun' },
+    blurb: {
+      en: 'There are more than anyone has bothered to count. Some are a short walk from where the car stops. Others take an hour and a river crossing, and those are usually the ones worth the wet shoes.',
+      id: 'Jumlahnya lebih banyak dari yang pernah dihitung orang. Ada yang cuma sebentar jalan dari tempat mobil berhenti. Ada yang butuh sejam dan menyeberang sungai — dan biasanya yang itulah yang setimpal dengan sepatu basah.',
+    } },
   { id: 'rice-fields', photo: 'assets/img/islands/rice-fields.jpg',
-    label: { en: 'Rice fields',    id: 'Sawah' },
-    note:  { en: 'Terraced up every slope that will hold them', id: 'Bertingkat di setiap lereng yang sanggup' } },
-  { id: 'hills',       photo: null,
-    label: { en: 'Hill country',   id: 'Perbukitan' },
-    note:  { en: 'Between the coast and the mountain', id: 'Antara pesisir dan gunung' } },
-  { id: 'coffee',      photo: null,
-    label: { en: 'Coffee',         id: 'Kopi' },
-    note:  { en: 'Grown under shade trees with the cacao', id: 'Tumbuh di bawah pohon peneduh bersama kakao' } },
-  { id: 'culture',     photo: null,
-    label: { en: 'Culture',        id: 'Budaya' },
-    note:  { en: 'Sasak, and older than the guidebooks', id: 'Sasak, dan lebih tua dari buku panduan' } },
-  { id: 'village-life',photo: 'assets/img/islands/village-life.jpg',
-    label: { en: 'Village life',   id: 'Kehidupan desa' },
-    note:  { en: 'Markets on certain days, tobacco drying', id: 'Pasar di hari tertentu, tembakau dijemur' } },
-  { id: 'crafts',      photo: null,
-    label: { en: 'Arts and crafts',id: 'Seni dan kriya' },
-    note:  { en: 'Weaving in one valley, pottery in the next', id: 'Tenun di satu lembah, gerabah di lembah berikutnya' } },
+    label: { en: 'Rice fields', id: 'Sawah' },
+    blurb: {
+      en: 'Terraced up every slope that will hold them, and they change colour through the year — flooded and silver, then green, then gold before the harvest. Come twice and it looks like somewhere else.',
+      id: 'Bertingkat di setiap lereng yang sanggup menahannya, dan warnanya berubah sepanjang tahun — tergenang dan keperakan, lalu hijau, lalu keemasan menjelang panen. Datang dua kali dan rasanya tempat yang berbeda.',
+    } },
+  { id: 'village-life', photo: 'assets/img/islands/village-life.jpg',
+    label: { en: 'Village life', id: 'Kehidupan desa' },
+    blurb: {
+      en: 'Markets that only happen on certain days. Tobacco hung in open barns to dry. Somebody always calls out to ask where you are from, and they actually want to know.',
+      id: 'Pasar yang cuma ada di hari tertentu. Tembakau digantung di gudang terbuka untuk dijemur. Selalu ada yang menyapa dan bertanya Anda dari mana — dan mereka memang ingin tahu.',
+    } },
+  { id: 'beaches', photo: null,
+    label: { en: 'Beaches', id: 'Pantai' },
+    blurb: {
+      en: 'The south coast is headland after headland with long empty bays between them, and most do not have a name you would recognise. Pull over, walk down, and on a weekday the whole thing is yours.',
+      id: 'Pesisir selatan adalah tanjung demi tanjung dengan teluk-teluk panjang yang sepi di antaranya, dan sebagian besar namanya pun tidak Anda kenal. Menepi, turun sebentar, dan di hari kerja semuanya milik Anda.',
+    } },
+  { id: 'gilis', photo: null,
+    label: { en: 'The Gilis', id: 'Gili' },
+    blurb: {
+      en: 'Three small islands off the north-west, sitting on their own reef. No cars and no motorbikes — you walk, take a bicycle, or take a horse cart. The water is the kind you can see your feet in.',
+      id: 'Tiga pulau kecil di lepas pantai barat laut, duduk di atas terumbunya sendiri. Tanpa mobil dan tanpa motor — jalan kaki, naik sepeda, atau naik cidomo. Airnya sejernih itu sampai kaki Anda kelihatan.',
+    } },
+  { id: 'hills', photo: null,
+    label: { en: 'Hill country', id: 'Perbukitan' },
+    blurb: {
+      en: 'Between the coast and the mountain the land folds over and over. Small roads, small villages, cattle on the verge, and a view waiting at the top of nearly every rise.',
+      id: 'Antara pesisir dan gunung, tanahnya berlipat-lipat. Jalan kecil, desa kecil, sapi di pinggir jalan, dan pemandangan yang menunggu di puncak hampir setiap tanjakan.',
+    } },
+  { id: 'coffee', photo: null,
+    label: { en: 'Coffee', id: 'Kopi' },
+    blurb: {
+      en: 'Grown in the shade alongside the cacao, picked by hand, roasted in small batches in the villages that grow it. Ask for it black and sweet, the way it is drunk here.',
+      id: 'Tumbuh di bawah naungan bersama kakao, dipetik dengan tangan, disangrai sedikit-sedikit di desa yang menanamnya. Minta yang hitam dan manis, seperti cara orang sini meminumnya.',
+    } },
+  { id: 'culture', photo: null,
+    label: { en: 'Culture', id: 'Budaya' },
+    blurb: {
+      en: 'Sasak, and older than any guidebook. Villages built to their own rules, a calendar that is not the one on your phone, and ceremonies that happen whether or not anyone is watching.',
+      id: 'Sasak, dan lebih tua dari buku panduan mana pun. Desa yang dibangun menurut aturannya sendiri, kalender yang bukan kalender di ponsel Anda, dan upacara yang tetap berjalan ada penonton atau tidak.',
+    } },
+  { id: 'crafts', photo: null,
+    label: { en: 'Arts and crafts', id: 'Seni dan kriya' },
+    blurb: {
+      en: 'Weaving in one valley, pottery in the next. Cloth that takes weeks on a backstrap loom, pots shaped without a wheel — both still made the way they have always been made.',
+      id: 'Tenun di satu lembah, gerabah di lembah berikutnya. Kain yang butuh berminggu-minggu di alat tenun gedog, periuk yang dibentuk tanpa roda putar — keduanya masih dibuat seperti dulu.',
+    } },
 ];
 
 export const SERVICE = [

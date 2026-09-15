@@ -2,7 +2,7 @@
   "name": "wandrnusa-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page for Wandr Nusa \u2014 private one-day trips in Lombok, Nusa Tenggara.",
+  "description": "Landing page for Wandr Nusa \u2014 escapes across Lombok and the Nusa Islands.",
   "scripts": {
     "start": "npx --yes serve .",
     "dev": "npx --yes serve .",

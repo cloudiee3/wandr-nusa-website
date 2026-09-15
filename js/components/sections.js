@@ -3,7 +3,7 @@
    photos, guest reviews, footer lists)
    ========================================================================== */
 
-import { HIGHLIGHTS, SERVICE, ABOUT, REQUEST, GALLERY, TESTIMONIALS } from '../data/content.js';
+import { SERVICE, ABOUT, REQUEST, GALLERY, TESTIMONIALS } from '../data/content.js';
 import { SERVICE_AREAS, SOCIALS, CONTACT, WHATSAPP_DISPLAY } from '../config.js';
 import { t, tr, getLang } from '../i18n.js';
 import { esc } from '../lib/dom.js';
@@ -22,24 +22,6 @@ export const renderAboutBody = () =>
   (tr(ABOUT.body, getLang()) || []).map((p) => `<p>${esc(p)}</p>`).join('');
 
 /* ---- Four pillars ------------------------------------------------------- */
-
-export function renderHighlights() {
-  const lang = getLang();
-  return HIGHLIGHTS.map((h, i) => {
-    const label = esc(tr(h.label, lang));
-    const media = h.photo
-      ? `<img src="${esc(h.photo)}" alt="${label}" loading="lazy" decoding="async" width="600" height="750">`
-      : `<span class="frame-empty__mark" aria-hidden="true">${icon('mark')}</span>`;
-    return `
-      <figure class="tile reveal" data-reveal-delay="${i * 55}">
-        <div class="frame frame-4x5 ${h.photo ? '' : 'frame-empty'}">${media}</div>
-        <figcaption class="tile__caption">
-          <span class="tile__label">${label}</span>
-          <span class="tile__note">${esc(tr(h.note, lang))}</span>
-        </figcaption>
-      </figure>`;
-  }).join('');
-}
 
 export function renderService() {
   const lang = getLang();

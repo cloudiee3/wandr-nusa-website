@@ -14,8 +14,6 @@ const STORAGE_KEY = 'wandrnusa:lang';
 
 export const STRINGS = {
   en: {
-    'about.mapNote': 'Not a map — directions and rough distances from the mountain. Everything on it is within a day of the coast.',
-    'map.alt': 'A diagram showing the four places we go, arranged around Rinjani by direction and distance.',
     'service.eyebrow': 'Travelling with us',
     'service.title': 'How a day actually goes.',
     'service.lead': 'None of this is complicated. It is just the part that would otherwise be yours to sort out.',
@@ -89,8 +87,6 @@ export const STRINGS = {
   },
 
   id: {
-    'about.mapNote': 'Bukan peta — arah dan perkiraan jarak dari gunung. Semuanya dalam jarak sehari dari pesisir.',
-    'map.alt': 'Diagram yang menunjukkan empat tempat tujuan kami, tersusun mengelilingi Rinjani menurut arah dan jaraknya.',
     'service.eyebrow': 'Perjalanan bersama kami',
     'service.title': 'Bagaimana harinya berjalan.',
     'service.lead': 'Tidak ada yang rumit di sini. Ini bagian yang kalau tidak, harus Anda urus sendiri.',
