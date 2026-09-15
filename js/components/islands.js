@@ -8,10 +8,10 @@
    It also handles the missing photographs better: one empty panel at a time
    instead of six holes in a grid.
 
-   Layout note: the picture is in one column; the caption and the list are in
-   the other. The picture has no fixed aspect ratio — it flexes to exactly the
-   height the column beside it needs, so the two always end level and no dead
-   band can open up under the shorter one, whatever the copy does.
+   Layout note: picture and caption sit side by side; all ten labels run in a
+   wrapped row beneath, spanning both. A ruled ten-row index read like a
+   table — ten seams down the page for something that is really one choice.
+   As a wrapped row it is one or two lines, with no rules at all.
 
    The tabpanel is the caption rather than the picture: on a screen reader,
    choosing an item should read out what the place is, not just "image".
@@ -52,21 +52,19 @@ export function renderIslands() {
       </div>`).join('');
 
   const tabs = HIGHLIGHTS.map((h, i) => `
-    <button class="islands__tab" type="button" role="tab" id="island-tab-${esc(h.id)}"
+    <button class="islands__tab pill" type="button" role="tab" id="island-tab-${esc(h.id)}"
             aria-controls="island-panel-${esc(h.id)}" aria-selected="${i === 0}"
             tabindex="${i === 0 ? 0 : -1}" data-island="${esc(h.id)}">
-      <span class="islands__tab-num" aria-hidden="true">${pad(i + 1)}</span>
-      <span class="islands__tab-label">${esc(tr(h.label, lang))}</span>
-      <span class="islands__tab-arrow" aria-hidden="true">${icon('arrowRight')}</span>
+      ${esc(tr(h.label, lang))}
     </button>`).join('');
 
+  /* Three siblings, not two: the label row has to span both columns of the
+     grid, so it cannot be nested inside the caption. */
   return `
     <div class="islands__stage">${media}</div>
-    <div class="islands__side">
-      <div class="islands__panels">${panels}</div>
-      <div class="islands__tabs" role="tablist" aria-label="${esc(t('about.pillarsLabel'))}">
-        ${tabs}
-      </div>
+    <div class="islands__side">${panels}</div>
+    <div class="islands__tabs" role="tablist" aria-label="${esc(t('about.pillarsLabel'))}">
+      ${tabs}
     </div>`;
 }
 
