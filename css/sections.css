@@ -184,7 +184,7 @@
 
 .hero__inner {
   width: 100%;
-  padding-block: clamp(3rem, 2rem + 6vw, 6rem);
+  padding-block: clamp(3.5rem, 2.5rem + 6vw, 7rem);
   padding-top: calc(var(--header-h) + 3rem);
 }
 .hero__eyebrow { color: var(--paper); opacity: 0.85; }
@@ -192,27 +192,9 @@
    headline pushes the eyebrow and logo up into the bright part of the
    photograph, where white type stops being readable. */
 .hero h1 { max-width: 24ch; margin-bottom: var(--space-md); }
-.hero__lead { max-width: 46ch; margin-bottom: var(--space-lg); }
+.hero__lead { max-width: 50ch; margin-bottom: var(--space-lg); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); align-items: center; }
 
-.hero__foot {
-  margin-top: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--hairline-light);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs) var(--space-lg);
-  font-size: var(--t-caption);
-  color: rgba(255, 253, 248, 0.78);
-  letter-spacing: 0.03em;
-}
-.hero__foot span { display: inline-flex; align-items: center; gap: 0.5em; }
-.hero__foot span::before {
-  content: "";
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--ocean);
-}
 
 /* =========================  ABOUT  ======================================= */
 

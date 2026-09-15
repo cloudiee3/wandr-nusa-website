@@ -7,8 +7,8 @@ export const ABOUT = {
   /* The islands section is about the islands. Nothing about us belongs here —
      that lives in SERVICE, much further down the page. */
   statement: {
-    en: 'Lombok is small enough to cross in a morning and varied enough that you will not want to. Volcano, reef, rice terrace, hill country and coastline, all inside eighty kilometres.',
-    id: 'Lombok cukup kecil untuk diseberangi dalam satu pagi, dan cukup beragam sampai Anda tidak ingin buru-buru. Gunung api, terumbu, sawah terasering, perbukitan, dan garis pantai — semuanya dalam delapan puluh kilometer.',
+    en: 'Lombok is small enough to cross in a morning and varied enough that you will not want to. Mountain, reef, rice terrace, hill country and coastline, all inside eighty kilometres.',
+    id: 'Lombok cukup kecil untuk diseberangi dalam satu pagi, dan cukup beragam sampai Anda tidak ingin buru-buru. Gunung, terumbu, sawah terasering, perbukitan, dan garis pantai — semuanya dalam delapan puluh kilometer.',
   },
   body: {
     en: [
@@ -39,7 +39,7 @@ export const HIGHLIGHTS = [
     note:  { en: 'Three flat islands on a reef, no cars', id: 'Tiga pulau datar di atas terumbu, tanpa mobil' } },
   { id: 'mountain',    photo: 'assets/img/islands/mountain.jpg',
     label: { en: 'The mountain',   id: 'Gunung' },
-    note:  { en: 'Rinjani, and the lake inside its crater', id: 'Rinjani, dan danau di dalam kalderanya' } },
+    note:  { en: 'Rinjani, and the lake that sits inside it', id: 'Rinjani, dan danau yang ada di dalamnya' } },
   { id: 'waterfalls',  photo: 'assets/img/islands/waterfalls.jpg',
     label: { en: 'Waterfalls',     id: 'Air terjun' },
     note:  { en: 'In more valleys than anyone counts', id: 'Di lebih banyak lembah dari yang terhitung' } },

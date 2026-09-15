@@ -137,8 +137,8 @@ export const TOURS = [
     duration: { en: 'A long day', id: 'Hari yang panjang' },
     effort: { en: 'Short climbs, cold morning', id: 'Sedikit menanjak, pagi dingin' },
     description: {
-      en: 'A high valley on the eastern side, cold enough in the morning to want a jacket. From the ridge the fields lie out below in squares, and the rim of the crater sits on the skyline all day. Garlic and strawberries grow up here, which tells you how different the air is.',
-      id: 'Lembah tinggi di sisi timur, pagi harinya dingin sampai butuh jaket. Dari punggungan, ladang terhampar berpetak-petak di bawah, dan bibir kaldera terlihat di cakrawala sepanjang hari. Bawang putih dan stroberi tumbuh di sini — dari situ Anda tahu betapa berbedanya udaranya.',
+      en: 'A high valley on the eastern side, cold enough in the morning to want a jacket. From the ridge the fields lie out below in squares, and the high rim of the mountain sits on the skyline all day. Garlic and strawberries grow up here, which tells you how different the air is.',
+      id: 'Lembah tinggi di sisi timur, pagi harinya dingin sampai butuh jaket. Dari punggungan, ladang terhampar berpetak-petak di bawah, dan punggungan gunung terlihat di cakrawala sepanjang hari. Bawang putih dan stroberi tumbuh di sini — dari situ Anda tahu betapa berbedanya udaranya.',
     },
     route: {
       en: ['Bukit Selong viewpoint', 'The valley fields', 'Desa Beleq', 'Rinjani trailhead'],
