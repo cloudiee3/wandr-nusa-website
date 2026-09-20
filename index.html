@@ -118,7 +118,12 @@
 
       <div class="shell hero__inner">
         <p class="eyebrow hero__eyebrow" data-i18n="hero.eyebrow">Lombok · Nusa Islands · Indonesia</p>
-        <h1>Wander the islands.<br>Leave the rest to us.</h1>
+        <!-- One span per line: data-i18n writes textContent, so a <br> inside
+             a translated element would not survive the language switch. -->
+        <h1>
+          <span data-i18n="hero.titleA">Some islands you visit.</span>
+          <span data-i18n="hero.titleB">This one, you wander.</span>
+        </h1>
         <p class="lead hero__lead" data-i18n="hero.lead">
           Reef islands off one coast, empty beaches along another, waterfalls in the hills and a mountain holding the middle. Most people leave already planning the next one.
         </p>
@@ -129,7 +134,7 @@
             <span data-i18n="cta.whatsappLong">Start planning on WhatsApp</span>
           </a>
           <a class="btn btn-ghost btn-ghost-light" href="#trips">
-            <span data-i18n="cta.seeTours">See where we go</span>
+            <span data-i18n="cta.seeTours">See the escapes</span>
             <span data-icon="arrowRight"></span>
           </a>
         </div>

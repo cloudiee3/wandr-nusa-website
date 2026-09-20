@@ -191,7 +191,22 @@
 /* Wide enough that each sentence of the headline holds one line. A taller
    headline pushes the eyebrow and logo up into the bright part of the
    photograph, where white type stops being readable. */
-.hero h1 { max-width: 24ch; margin-bottom: var(--space-md); }
+/* The type scale alone leaves the longer half of the headline one character
+   too wide below about 414px, so it wraps and the headline becomes four
+   short lines. The second term takes over only down there and keeps each
+   half on one line; at every width above it the scale is untouched.
+
+   It is tuned to the longest half in either language, so a longer headline
+   would wrap again — hero.mjs asserts two lines at every width to catch
+   that rather than let it go quietly. */
+.hero h1 {
+  font-size: min(var(--t-hero), calc(11.4vw - 0.5rem));
+  max-width: 24ch;
+  margin-bottom: var(--space-md);
+}
+/* Each half is its own line, and its own translated string — see the note
+   in index.html. */
+.hero h1 span { display: block; }
 .hero__lead { max-width: 50ch; margin-bottom: var(--space-lg); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); align-items: center; }
 
