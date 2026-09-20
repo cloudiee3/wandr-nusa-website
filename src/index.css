@@ -126,13 +126,15 @@
 }
 
 @layer utilities {
-  .reveal {
+  /* Content is visible by default; it only starts hidden once main.jsx has
+     confirmed JS is running, so a slow or failed bundle never blanks the page. */
+  .js-reveal .reveal {
     opacity: 0;
     transform: translateY(26px);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .reveal.is-in { opacity: 1; transform: none; }
+  .js-reveal .reveal.is-in { opacity: 1; transform: none; }
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

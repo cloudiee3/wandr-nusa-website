@@ -60,6 +60,17 @@ answers already written into the message.
 In local development there is no form handler, so submitting shows the success state
 without sending anything.
 
+## Live preview artifact
+
+`npm run build:artifact` produces a variant for publishing as a Claude Artifact
+preview: relative asset paths (`base: "./"`) and hash-based routing, since artifact
+hosting serves static files with no rewrite rule. It writes `artifact/index.html` — a
+page shell with no `<html>`/`<head>`/`<body>`, which the Artifact platform supplies —
+plus `artifact/files.json` listing the supporting files to publish alongside it.
+
+Both outputs are generated and git-ignored. The Netlify build is unaffected: it keeps
+absolute paths and real URLs.
+
 ## Deploying
 
 `netlify.toml` is already configured — build `npm run build`, publish `dist`, with a

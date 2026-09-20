@@ -2,9 +2,11 @@
  * Horizontal lockup: the four-tile mark beside the wordmark.
  * `variant` picks the navy artwork (light backgrounds) or the white (dark).
  */
+import { asset } from '../lib/asset'
+
 export default function Logo({ variant = 'navy', className = '', markOnly = false }) {
   const isNavy = variant === 'navy'
-  const mark = isNavy ? '/brand/icon-navy.webp' : '/brand/icon-white.webp'
+  const mark = asset(isNavy ? 'brand/icon-navy.webp' : 'brand/icon-white.webp')
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>

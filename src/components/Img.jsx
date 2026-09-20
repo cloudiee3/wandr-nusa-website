@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import images from '../data/images.json'
+import { asset } from '../lib/asset'
 
 /**
  * Responsive photo backed by the generated WebP set in /public/img.
@@ -23,7 +24,7 @@ export default function Img({
   }
 
   const widths = meta.sizes
-  const srcSet = widths.map((w) => `/img/${name}-${w}.webp ${w}w`).join(', ')
+  const srcSet = widths.map((w) => `${asset(`img/${name}-${w}.webp`)} ${w}w`).join(', ')
 
   return (
     // No position utility here on purpose: callers pass `absolute inset-0`, and
@@ -38,7 +39,7 @@ export default function Img({
       }}
     >
       <img
-        src={`/img/${name}-${widths[widths.length - 1]}.webp`}
+        src={asset(`img/${name}-${widths[widths.length - 1]}.webp`)}
         srcSet={srcSet}
         sizes={sizes}
         alt={alt ?? meta.alt}

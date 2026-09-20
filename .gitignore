@@ -8,3 +8,5 @@ dist-ssr
 .env.*
 !.env.example
 npm-debug.log*
+dist-artifact
+artifact
