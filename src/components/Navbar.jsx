@@ -16,7 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close the drawer on navigation, and lock the page behind it while open.
   useEffect(() => setOpen(false), [pathname])
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -35,84 +34,79 @@ export default function Navbar() {
         Skip to content
       </a>
 
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          solid
-            ? 'border-b border-ink/[0.08] bg-sand-100/85 backdrop-blur-xl'
-            : 'border-b border-transparent bg-transparent'
-        }`}
-      >
-        <div className="wrap flex h-[72px] items-center justify-between gap-6">
-          <Link to="/" aria-label={`${site.name} home`} className="shrink-0">
-            <Logo variant={solid ? 'navy' : 'white'} wordmarkOnly height="h-9" />
-          </Link>
+      {/* The bar floats over the page; the rounded container only appears once
+          you've scrolled, so at the top the logo sits straight on the photo. */}
+      <header className="fixed inset-x-0 top-0 z-50">
+        <div className="wrap pt-3 sm:pt-4">
+          <div
+            className={`flex h-[60px] items-center justify-between gap-4 rounded-full pl-5 pr-2.5
+                        transition-all duration-500 sm:h-[68px] sm:pl-7 sm:pr-3 ${
+              solid
+                ? 'bg-sand-100/80 shadow-[0_14px_44px_-16px_rgba(1,29,57,0.35)] backdrop-blur-xl'
+                : 'bg-transparent shadow-none'
+            }`}
+          >
+            <Link to="/" aria-label={`${site.name} home`} className="shrink-0">
+              <Logo variant={solid ? 'navy' : 'white'} wordmarkOnly height="h-8 sm:h-9" />
+            </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex">
-            {nav.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  `rounded-full px-4 py-2 font-sans text-[0.9rem] transition-colors duration-300 ${
-                    solid
-                      ? isActive
-                        ? 'bg-ink/[0.06] text-ink'
+            <nav className="hidden items-center gap-1 rounded-full bg-white/80 p-1.5 shadow-[0_2px_10px_-2px_rgba(1,29,57,0.18)] backdrop-blur-md lg:flex">
+              {nav.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `rounded-full px-5 py-2 font-sans text-[0.9rem] transition-all duration-300 ${
+                      isActive
+                        ? 'bg-white font-medium text-ink shadow-[0_1px_4px_rgba(1,29,57,0.14)]'
                         : 'text-ink-500 hover:text-ink'
-                      : isActive
-                        ? 'bg-white/15 text-white'
-                        : 'text-white/75 hover:text-white'
-                  }`
-                }
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-2">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary hidden !px-6 !py-2.5 !text-[0.85rem] sm:inline-flex"
               >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+                Get started
+              </a>
 
-          <div className="flex items-center gap-2">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noreferrer"
-              className={`hidden sm:inline-flex ${solid ? 'btn-primary' : 'btn-ghost-light'} !px-5 !py-2.5 !text-[0.85rem]`}
-            >
-              <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
-              Plan a trip
-            </a>
-
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-label={open ? 'Close menu' : 'Open menu'}
-              aria-expanded={open}
-              className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors lg:hidden ${
-                solid ? 'border-ink/15 text-ink' : 'border-white/30 text-white'
-              }`}
-            >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                aria-label={open ? 'Close menu' : 'Open menu'}
+                aria-expanded={open}
+                className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors lg:hidden ${
+                  solid ? 'border-ink/15 bg-white text-ink' : 'border-white/30 bg-white/10 text-white backdrop-blur'
+                }`}
+              >
+                {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Mobile drawer */}
-      <div
-        className={`fixed inset-0 z-40 lg:hidden ${open ? '' : 'pointer-events-none'}`}
-        aria-hidden={!open}
-      >
+      <div className={`fixed inset-0 z-40 lg:hidden ${open ? '' : 'pointer-events-none'}`} aria-hidden={!open}>
         <div
           onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-ink-900/40 transition-opacity duration-300 ${
-            open ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 bg-ink-900/40 transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`}
         />
         <div
-          className={`absolute inset-x-0 top-[72px] origin-top bg-sand-100 px-5 pb-8 pt-4 shadow-lift transition-all duration-300 ${
+          className={`absolute inset-x-3 top-[80px] origin-top rounded-3xl bg-sand-100 px-6 pb-7 pt-3 shadow-lift transition-all duration-300 ${
             open ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
           }`}
         >
           <nav className="flex flex-col">
-            {nav.map((item, i) => (
+            {nav.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
@@ -121,22 +115,16 @@ export default function Navbar() {
                     isActive ? 'text-sea-600' : 'text-ink'
                   }`
                 }
-                style={{ transitionDelay: `${i * 40}ms` }}
               >
                 {item.label}
               </NavLink>
             ))}
           </nav>
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-accent mt-6 w-full"
-          >
+          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent mt-6 w-full">
             <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
             Message us on WhatsApp
           </a>
-          <p className="mt-4 text-center font-sans text-[11px] text-ink-300">{site.phone}</p>
+          <p className="mt-4 text-center text-[12px] text-ink-300">{site.phone}</p>
         </div>
       </div>
     </>

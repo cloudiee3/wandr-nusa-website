@@ -59,7 +59,7 @@ export default function DestinationDetail() {
       {trips.length > 0 && (
         <section className="bg-sand py-16 lg:py-24">
           <div className="wrap">
-            <p className="label">Journeys here</p>
+            <span className="pill"><span className="pill-dot" />Journeys here</span>
             <h2 className="mt-4 text-[1.9rem] sm:text-[2.3rem]">
               How to see <span className="flourish">{d.name}</span>
             </h2>

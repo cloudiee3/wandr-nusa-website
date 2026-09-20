@@ -10,8 +10,12 @@ export default function PageHero({ image, eyebrow, title, lead, children, tall =
 
       <div className="wrap relative w-full pb-14 pt-32 sm:pb-20">
         <div className="max-w-3xl">
-          {eyebrow && <Reveal as="p" className="label-light">{eyebrow}</Reveal>}
-          <Reveal as="h1" delay={90} className="mt-4 text-[2.4rem] leading-[1.06] !text-white sm:text-[3.4rem] lg:text-[4rem]">
+          {eyebrow && (
+            <Reveal>
+              <span className="pill-light"><span className="pill-dot" />{eyebrow}</span>
+            </Reveal>
+          )}
+          <Reveal as="h1" delay={90} className="mt-5 text-[2.4rem] leading-[1.06] !text-white sm:text-[3.4rem] lg:text-[4rem]">
             {title}
           </Reveal>
           {lead && (

@@ -66,6 +66,42 @@
     @apply font-serif italic font-normal tracking-[0] text-sea-300;
   }
 
+  /* Small rounded badge used as a section eyebrow — the dot is the tell. */
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-white px-4 py-2
+           text-[12px] font-medium text-ink shadow-[0_1px_3px_rgba(1,29,57,0.10)];
+  }
+  .pill-light {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10
+           px-4 py-2 text-[12px] font-medium text-white backdrop-blur-md;
+  }
+  .pill-dot {
+    @apply h-[7px] w-[7px] shrink-0 rounded-full bg-sea-500;
+  }
+
+  /* Filter chips */
+  .chip {
+    @apply shrink-0 rounded-full border border-ink/10 bg-white px-4 py-2
+           text-sm text-ink-500 transition-all duration-300
+           hover:border-ink/30 hover:text-ink;
+  }
+  .chip-on {
+    @apply border-ink bg-ink text-white hover:border-ink hover:text-white;
+  }
+
+  /* Inputs inside the hero search widget */
+  .field {
+    @apply flex w-full items-center gap-2.5 rounded-xl bg-white px-4 py-3
+           text-[0.92rem] text-ink shadow-[0_1px_2px_rgba(1,29,57,0.06)]
+           transition-shadow duration-200 focus-within:shadow-[0_0_0_2px_rgba(18,160,168,0.45)];
+  }
+  .field input, .field select {
+    @apply w-full bg-transparent text-ink outline-none placeholder:text-ink-200;
+  }
+  .field-label {
+    @apply mb-1.5 block text-[10.5px] font-semibold uppercase tracking-label text-white/70;
+  }
+
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
            font-sans text-sm font-medium transition-all duration-300

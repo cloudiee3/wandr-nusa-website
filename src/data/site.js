@@ -37,6 +37,7 @@ export const site = {
 }
 
 export const nav = [
+  { label: 'Home', to: '/' },
   { label: 'Destinations', to: '/destinations' },
   { label: 'Journeys', to: '/journeys' },
   { label: 'About', to: '/about' },
@@ -68,6 +69,8 @@ export const trustSignals = [
 
 export const stats = [
   { value: 1400, suffix: '+', label: 'Travellers guided' },
-  { value: 63, suffix: '', label: 'Itineraries designed' },
-  { value: 12, suffix: ' yrs', label: 'On these islands' },
+  { value: 63, suffix: '+', label: 'Itineraries designed' },
+  { value: 6, suffix: '', label: 'Islands covered' },
+  { value: 98, suffix: '%', label: 'Would travel again' },
+  { value: 12, suffix: '+', label: 'Years on these islands' },
 ]

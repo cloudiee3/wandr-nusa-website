@@ -1,69 +1,125 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Clock, Users, MapPin } from 'lucide-react'
+import { CalendarDays, Heart, MapPin, Star } from 'lucide-react'
 import Img from './Img'
 import { formatPrice } from '../data/journeys'
 
+const FAV_KEY = 'wandrnusa:saved'
+
+// Browser storage is per-viewer and can throw, so every access is guarded and
+// the card renders correctly when it comes back empty.
+const readFavs = () => {
+  try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) ?? '[]')) }
+  catch { return new Set() }
+}
+const writeFavs = (set) => {
+  try { localStorage.setItem(FAV_KEY, JSON.stringify([...set])) } catch { /* ignore */ }
+}
+
 export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw' }) {
+  const shots = [...new Set([journey.image, ...journey.gallery])].slice(0, 4)
+  const [i, setI] = useState(0)
+  const [saved, setSaved] = useState(() => readFavs().has(journey.slug))
+
+  function toggleSave(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    const favs = readFavs()
+    favs.has(journey.slug) ? favs.delete(journey.slug) : favs.add(journey.slug)
+    writeFavs(favs)
+    setSaved(favs.has(journey.slug))
+  }
+
   return (
-    <Link
-      to={`/journeys/${journey.slug}`}
-      className="card group flex flex-col overflow-hidden hover:-translate-y-1.5 hover:shadow-lift"
-    >
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <Img
-          name={journey.image}
-          sizes={sizes}
-          className="h-full w-full"
-          imgClassName="transition-transform duration-[1200ms] ease-out group-hover:scale-[1.07]"
-        />
-        <div className="absolute inset-0 scrim-soft opacity-70" />
+    <article className="group flex h-full flex-col">
+      <div className="relative overflow-hidden rounded-2xl">
+        <Link to={`/journeys/${journey.slug}`} className="block" tabIndex={-1} aria-hidden="true">
+          <div className="relative aspect-[4/3]">
+            {shots.map((s, n) => (
+              <Img
+                key={s}
+                name={s}
+                sizes={sizes}
+                priority={n === 0 && i === 0}
+                className={`absolute inset-0 h-full w-full transition-opacity duration-500 ${
+                  n === i ? 'opacity-100' : 'opacity-0'
+                }`}
+                imgClassName="transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
+              />
+            ))}
+          </div>
+        </Link>
 
-        <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 font-sans text-[10px] uppercase tracking-label text-ink backdrop-blur">
-          {journey.category}
-        </span>
+        <button
+          type="button"
+          onClick={toggleSave}
+          aria-pressed={saved}
+          aria-label={saved ? `Remove ${journey.title} from saved` : `Save ${journey.title}`}
+          className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full
+                     border border-white/25 bg-ink-900/25 text-white backdrop-blur-md
+                     transition-colors duration-300 hover:bg-ink-900/45"
+        >
+          <Heart className={`h-4 w-4 ${saved ? 'fill-white' : ''}`} strokeWidth={1.75} />
+        </button>
 
-        <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
-          <span className="inline-flex items-center gap-1.5 font-sans text-[11px] text-white/85">
-            <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} />
-            {journey.region}
-          </span>
-        </div>
+        {shots.length > 1 && (
+          <div className="absolute inset-x-0 bottom-3 flex items-center justify-center gap-1.5">
+            {shots.map((s, n) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setI(n)}
+                aria-label={`Photo ${n + 1} of ${shots.length}`}
+                aria-current={n === i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  n === i ? 'w-5 bg-white' : 'w-1.5 bg-white/55 hover:bg-white/80'
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-[1.3rem] leading-snug transition-colors duration-300 group-hover:text-sea-600">
+      <h3 className="mt-4 text-[1.22rem] leading-snug">
+        <Link to={`/journeys/${journey.slug}`} className="transition-colors duration-300 hover:text-sea-600">
           {journey.title}
-        </h3>
+        </Link>
+      </h3>
 
-        <p className="mt-2.5 line-clamp-3 text-[0.93rem] leading-relaxed text-ink-500">
-          {journey.summary}
-        </p>
-
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 font-sans text-[11px] text-ink-400">
-          <span className="inline-flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5" strokeWidth={1.75} />
-            {journey.duration}
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Users className="h-3.5 w-3.5" strokeWidth={1.75} />
-            {journey.group}
-          </span>
-        </div>
-
-        <div className="mt-5 flex items-end justify-between border-t border-ink/[0.07] pt-4">
-          <span className="leading-tight">
-            <span className="block font-sans text-[10px] uppercase tracking-label text-ink-300">
-              {journey.priceFrom ? 'From' : 'Pricing'}
-            </span>
-            <span className="font-display text-lg font-semibold text-ink">
-              {formatPrice(journey.priceFrom)}
-            </span>
-          </span>
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/12 text-ink transition-all duration-300 group-hover:border-sea-500 group-hover:bg-sea-500 group-hover:text-white">
-            <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
-          </span>
-        </div>
+      <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.8rem] text-ink-400">
+        <span className="inline-flex items-center gap-1.5">
+          <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} />{journey.region}
+        </span>
+        <span className="text-ink-200">|</span>
+        <span className="inline-flex items-center gap-1.5">
+          <CalendarDays className="h-3.5 w-3.5" strokeWidth={1.75} />{journey.duration}
+        </span>
+        <span className="text-ink-200">|</span>
+        <span className="inline-flex items-center gap-1.5">
+          <Star className="h-3.5 w-3.5 fill-ember text-ember" strokeWidth={1.75} />
+          <span className="tnum">{journey.rating.toFixed(1)}</span>
+          <span className="text-ink-300">({journey.reviews})</span>
+        </span>
       </div>
-    </Link>
+
+      <div className="mt-auto flex items-end justify-between gap-4 pt-5">
+        <span className="leading-tight">
+          <span className="font-display text-[1.35rem] font-semibold tnum text-ink">
+            {formatPrice(journey.priceFrom)}
+          </span>
+          {journey.priceFrom && <span className="text-[0.85rem] text-ink-400"> / person</span>}
+        </span>
+        <Link
+          to={`/journeys/${journey.slug}`}
+          className="shrink-0 rounded-full border border-ink/10 bg-white px-5 py-2.5 text-[0.85rem]
+                     text-ink shadow-[0_1px_3px_rgba(1,29,57,0.08)] transition-all duration-300
+                     hover:border-ink hover:bg-ink hover:text-white"
+        >
+          View details
+        </Link>
+      </div>
+
+      <p className="mt-2 text-[0.76rem] text-ink-300">*{journey.priceNote}</p>
+    </article>
   )
 }

@@ -139,7 +139,7 @@ export default function JourneyDetail() {
       <section id="enquire" className="scroll-mt-24 bg-sand py-16 lg:py-24">
         <div className="wrap grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
           <div>
-            <p className="label">Enquire</p>
+            <span className="pill"><span className="pill-dot" />Enquire</span>
             <h2 className="mt-4 text-[2rem] leading-[1.14] sm:text-[2.5rem]">
               Ask about <span className="flourish">{j.title.split(':')[0]}</span>
             </h2>

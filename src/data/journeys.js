@@ -3,6 +3,9 @@
 export const journeys = [
   {
     slug: 'rinjani-summit-trek',
+    rating: 4.9,
+    reviews: 148,
+    priceNote: 'including park permits, guide, porters & all meals',
     title: 'Rinjani Summit & Crater Lake',
     kicker: 'Signature trek',
     region: 'Mount Rinjani, Lombok',
@@ -32,6 +35,9 @@ export const journeys = [
   },
   {
     slug: 'tetebatu-highlands',
+    rating: 4.8,
+    reviews: 96,
+    priceNote: 'including homestay, all meals & village fees',
     title: 'Tetebatu Rice Terraces & Sasak Villages',
     kicker: 'Slow travel',
     region: 'Central Lombok',
@@ -60,6 +66,9 @@ export const journeys = [
   },
   {
     slug: 'north-lombok-waterfalls',
+    rating: 4.9,
+    reviews: 212,
+    priceNote: 'including transport, guide, entry fees & lunch',
     title: 'Sendang Gile & Tiu Kelep Waterfalls',
     kicker: 'Day trip',
     region: 'Senaru, North Lombok',
@@ -89,6 +98,9 @@ export const journeys = [
   },
   {
     slug: 'nusa-penida-island-hop',
+    rating: 4.7,
+    reviews: 184,
+    priceNote: 'including fast boat, private 4WD & lunch',
     title: 'Nusa Penida: Kelingking & the West Coast',
     kicker: 'Island hopping',
     region: 'Nusa Penida',
@@ -118,6 +130,9 @@ export const journeys = [
   },
   {
     slug: 'gili-reef-freedive',
+    rating: 4.8,
+    reviews: 73,
+    priceNote: 'including boat transfers, guesthouse & instructor',
     title: 'Gili Reefs: Snorkel, Freedive, Turtles',
     kicker: 'Ocean',
     region: 'Gili Trawangan · Meno · Air',
@@ -146,6 +161,9 @@ export const journeys = [
   },
   {
     slug: 'sasak-culture-day',
+    rating: 5.0,
+    reviews: 61,
+    priceNote: 'including transport, guide, craft materials & lunch',
     title: 'Sasak Weaving, Pottery & Village Life',
     kicker: 'Day trip',
     region: 'Sade · Sukarara · Penujak',
@@ -175,6 +193,9 @@ export const journeys = [
   },
   {
     slug: 'custom-private-journey',
+    rating: 5.0,
+    reviews: 39,
+    priceNote: 'quoted per itinerary, itemised in full',
     title: 'A Journey Built Around You',
     kicker: 'Bespoke',
     region: 'Anywhere in Nusa Tenggara & Bali',
@@ -205,6 +226,13 @@ export const journeys = [
 ]
 
 export const categories = ['All', 'Trekking', 'Island hopping', 'Culture', 'Ocean', 'Day trips', 'Private']
+
+/** "4.65m" / "750k" — the figure only, for cards that render the currency separately. */
+export function priceFigure(value) {
+  if (!value) return null
+  if (value >= 1_000_000) return (value / 1_000_000).toFixed(2).replace(/\.?0+$/, '') + 'm'
+  return (value / 1000).toFixed(0) + 'k'
+}
 
 export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 
