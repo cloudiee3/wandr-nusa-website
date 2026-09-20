@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wandr Nusa Travel — Lombok, Rinjani &amp; the Nusa Islands</title>
+    <meta name="description" content="Small-group and private journeys through Lombok, Mount Rinjani, Nusa Penida and the Gilis — planned and guided by people who live there." />
+    <meta name="theme-color" content="#011D39" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/brand/favicon-180.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wandr Nusa Travel — Lombok, Rinjani &amp; the Nusa Islands" />
+    <meta property="og:description" content="Small-group and private journeys through Lombok, Mount Rinjani, Nusa Penida and the Gilis." />
+    <meta property="og:image" content="/img/kelingking-beach-1280.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+          href="/fonts/poppins-600-latin.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+          href="/fonts/inter-400-latin.woff2" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Static copy of the enquiry form so Netlify's build-time form detection can see it.
+         The live form is rendered by React and posts to this same name. -->
+    <form name="enquiry" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="trip" />
+      <input type="text" name="dates" />
+      <input type="text" name="travellers" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

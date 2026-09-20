@@ -1,0 +1,181 @@
+{
+  "sasak-house": {
+    "alt": "Traditional Sasak lumbung rice barn in a Lombok village",
+    "ratio": 0.6667,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABQBQCdASoUAB4APwFsrE6rJiQiMAgBYCAJYwCsMswCbKcYoXoJUGh8rQu20QTaONs8ZcAA/ulUBlSmmZrXzMxRafzf+dkmC3EnGNzhylGvCOACgUM3unnl0X2lVDvyfallaennPSDiPPnLO0X78AAA"
+  },
+  "segara-anak": {
+    "alt": "Segara Anak crater lake inside Mount Rinjani",
+    "ratio": 2.0351,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoUAAoAPwFqrU6rJiQiMAgBYCAJZgCdIIjCubqvYLRHv2PBAAD4/Y7+RII58XbCY9YAndsfP7hc2u/8GIDC2D7fqZOY7EZiVFadB5mwAAA="
+  },
+  "durian-indah": {
+    "alt": "Durian Indah waterfall falling through jungle rock",
+    "ratio": 0.6667,
+    "sizes": [
+      480,
+      800
+    ],
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBQCdASoUAB4APv1kq06rJSOiN/VYAWAfiUAZEwGK9AaYX8BHFUMx4k48vi6AAqAAAP7w3620VVVCzySC1xLmDle/zqLc9BOC4ckdEAekG5Ra/zI2amzvyY7E/R46O4N4WSMrKw0sgUmWJxo1RZgM0ngAAA=="
+  },
+  "monkey-forest": {
+    "alt": "Monkey forest canopy in central Lombok",
+    "ratio": 1.5,
+    "sizes": [
+      480,
+      800
+    ],
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoUAA0APwForE6rJiQiMAgBYCAJaAC06B6KLNHPufd6wiCYAPsFLeXIiZcuMH+7br3s+pCabkVSu89LFdWkunEQGxmW+W0Z8HfNMo5N10DSFYp4vliOyJrRV8gAAA=="
+  },
+  "tetebatu-field": {
+    "alt": "Rice fields at Tetebatu with Mount Rinjani behind",
+    "ratio": 1.4462,
+    "sizes": [
+      480,
+      800,
+      1280
+    ],
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAA4APwFqrU6rJiQiMAgBYCAJQBhQBDuF45v2utQAAP7VD45wn4JoywEdSjBHRjnVfYw+lN6Ew18zinOYr6zcTAAAAA=="
+  },
+  "tetebatu-plant": {
+    "alt": "Close view of rice terraces around Tetebatu",
+    "ratio": 1.5,
+    "sizes": [
+      480,
+      800
+    ],
+    "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoUAA0APwFqrU8rJiQiMAgBYCAJagAAW1JOD1YZKUc0AADLzN2MBn4RAbaX8c+0/47v+ImMw8PjODQaw4fSWkUPzlB94h4s2joNlv3FAwA9RAAA"
+  },
+  "rice-terraces": {
+    "alt": "Layered green rice terraces in the Lombok highlands",
+    "ratio": 1.5,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoUAA0APwForE6rJaQiMAgBYCAJZgBTAAefURd1KwxRgAD92BpnPFsMIGhZ/n9O7hG3BTD+ZBAIxmnJVcyJJctJgAA="
+  },
+  "coastline-aerial": {
+    "alt": "Aerial view of a turquoise reef and empty sand beach",
+    "ratio": 1.3342,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoUAA8APwFqrU8rJiQiMAgBYCAJQBadAxuuJ7GHojOU1gAA/tj+jTHed2f2aKcHIWR/t9IrxWLqimnUQ8mFt/K5H4AAAA=="
+  },
+  "freediving": {
+    "alt": "Freediver descending over a coral reef",
+    "ratio": 0.723,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwBACdASoUABwAPwFurk6rJqQiMAgBYCAJQBTihDvZCVRF9yuMJEWjX1qnRqgAAP7oziROsun783yTjeb01BNNEmLhq63Brni5AkhfNAQE/+reaPMVsut98kiFvASSW8m+D9ficbw90UCVQAA="
+  },
+  "jungle-waterfall": {
+    "alt": "Twin waterfalls in dense rainforest",
+    "ratio": 0.6667,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABwBACdASoUAB4APu1gqE6ppaQiN/qoATAdiWcAxzAhUxp9Xpl9FyNz/zfXAAD+6+LkO439B5/fwqJpsOg79dIRNxxaTfFeaLinkbRPHcA4OAI8hutgAA=="
+  },
+  "volcanic-plain": {
+    "alt": "Volcanic sand plain below the Rinjani ridgeline",
+    "ratio": 0.7998,
+    "sizes": [
+      480,
+      800,
+      1280
+    ],
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQBACdASoUABkAPwFusFCrJiSisBgIAWAgCWcAxNgLNNHjRQx7+sApWufI4QAA/fxg/hVjAt8wsIp8lU8tjX0vpWR63llG7Rm5gd8zAlEHzIC+CfpTXL7aWuO+4Dc+e2/bgcmQuAAAAA=="
+  },
+  "rice-road-aerial": {
+    "alt": "Aerial view of a road cutting through golden rice paddies",
+    "ratio": 0.8001,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQBACdASoUABkAPwF4tFQrJySjKAgBYCAJagCsABEcGoZ4WI2MD9Nr81iIeoVeMAD+Q2hgdcKe67qzp5pvYQKfAu4p8WcHLnjDgbuWhwxomZbv1OUEcSJ6FqGVzna2o6v3w1vzkLWqFqK0ZZl8rdF7HAAAAA=="
+  },
+  "rice-field-huts": {
+    "alt": "Bamboo huts and palms among green rice fields",
+    "ratio": 1.5,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoUAA0APwFurk+rJqQiMAgBYCAJQBOgBDsSjPS/jh/wAP3h1nm133AVqlxzXHfkSuxoxDhlyzDyKGgxi7XHlsc0AAA="
+  },
+  "kelingking-beach": {
+    "alt": "Kelingking Beach cliff and turquoise bay, Nusa Penida",
+    "ratio": 1.3343,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoUAA8APwFqrE6rJiQiMAgBYCAJbACdACG7KsOpHIEwDb5GAAD+uQ1wIAeDN7pu8+mst17Wuqu2M7D8EY8zz1yasNy+VXbcohPFkOLA34zImeXIMQAAAA=="
+  },
+  "rinjani-crater": {
+    "alt": "Mount Rinjani crater rim above the lake",
+    "ratio": 1.5,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUAA0APwFqrU6rJiQiMAgBYCAJQBjeg9XtIPTUAaSuIAD+qSaTDIgqTdgXeFK4KVIBmW9uiPSq2yRpiQEvv6cDT3iD7/JmmWAAAA=="
+  },
+  "sendang-gile": {
+    "alt": "Sendang Gile waterfall spilling down a mossy cliff",
+    "ratio": 1.5,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJYwC7ACFUlXqes5ASSYIA/uy0jDV5NyjLRzQb2vFc2xHB25RjuBJNqEEz3AAA"
+  },
+  "tiu-kelep": {
+    "alt": "Tiu Kelep waterfall in the northern Lombok rainforest",
+    "ratio": 0.7501,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBQCdASoUABsAPu1ipk6ppaOiN/qoATAdiWUAuDAg47z79WoWV6t/F/4u0R0T3UwAAP7Y8ypOXyRJWmk133GF18+dy5THaS5Ro548RbrDqZ+2BOxIn1hgIVMZkY4B8J+3OTevn5tGD48wAAA="
+  }
+}
