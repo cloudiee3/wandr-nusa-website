@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Compass, MessageCircle, Quote, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
@@ -8,9 +8,12 @@ import JourneyCard from '../components/JourneyCard'
 import IslandMap from '../components/IslandMap'
 import SearchWidget from '../components/SearchWidget'
 import Deals from '../components/Deals'
+import AboutStrip from '../components/AboutStrip'
+import OfferSlider from '../components/OfferSlider'
+import Testimonials from '../components/Testimonials'
 import { journeys } from '../data/journeys'
 import { destinations } from '../data/destinations'
-import { site, stats, trustSignals, whatsappLink } from '../data/site'
+import { site, stats, whatsappLink } from '../data/site'
 
 const featured = ['rinjani-summit-trek', 'nusa-penida-island-hop', 'tetebatu-highlands']
 
@@ -25,23 +28,6 @@ const MANIFESTO = [
   ['is still with you on the last transfer.', false],
 ]
 
-const testimonials = [
-  {
-    quote:
-      'We had four days and no plan. Wandr Nusa built us a route that took in the rice terraces, two waterfalls and a night on Gili Air — and every driver and guide turned up early.',
-    name: 'Hannah & Tom R.', from: 'Bristol, UK',
-  },
-  {
-    quote:
-      'The Rinjani trek was the hardest thing I have ever done and I would do it again tomorrow. Our guide read the weather perfectly and turned us around on the ridge at exactly the right moment.',
-    name: 'Mikkel A.', from: 'Copenhagen, DK',
-  },
-  {
-    quote:
-      'Travelling with a six-year-old, I expected compromises. Instead they rerouted the whole Penida day so we hit the cliffs before the buses. She still talks about the turtles.',
-    name: 'Priya S.', from: 'Singapore',
-  },
-]
 
 const process = [
   { n: '01', title: 'Tell us the shape of it', body: 'Dates, how many of you, how hard you want to walk, what you cannot miss. A two-line WhatsApp message is a perfectly good start.' },
@@ -220,6 +206,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Special offers ───────────────────────────────────── */}
+      <OfferSlider />
+
+      {/* ── About us ─────────────────────────────────────────── */}
+      <AboutStrip />
+
       {/* ── How it works ─────────────────────────────────────── */}
       <section className="wrap py-16 lg:py-24">
         <SectionHead
@@ -240,58 +232,10 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-x-10 gap-y-8 border-t border-ink/[0.07] pt-10 sm:grid-cols-3">
-          {trustSignals.map((t, i) => (
-            <Reveal key={t.title} delay={i * 90} className="flex gap-4">
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sea-100 text-sea-600">
-                {[<ShieldCheck key="a" className="h-5 w-5" strokeWidth={1.6} />,
-                  <Compass key="b" className="h-5 w-5" strokeWidth={1.6} />,
-                  <Sparkles key="c" className="h-5 w-5" strokeWidth={1.6} />][i]}
-              </span>
-              <div>
-                <h3 className="text-[1rem]">{t.title}</h3>
-                <p className="mt-1.5 text-[0.88rem] leading-relaxed text-ink-400">{t.body}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       {/* ── Testimonials ─────────────────────────────────────── */}
-      <section className="bg-sand py-16 lg:py-24">
-        <div className="wrap">
-          <SectionHead
-            align="center"
-            eyebrow="From travellers"
-            title={<>What people say <span className="flourish">afterwards</span></>}
-          />
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 110}>
-                <figure className="flex h-full flex-col rounded-2xl bg-white p-7 shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
-                  <Quote className="h-7 w-7 shrink-0 text-sea-400" strokeWidth={1.4} />
-                  <blockquote className="mt-5 flex-1 text-[0.97rem] leading-relaxed text-ink-600">
-                    “{t.quote}”
-                  </blockquote>
-                  <figcaption className="mt-7 flex items-center gap-3 border-t border-ink/[0.07] pt-5">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sea-100 font-display text-sm font-semibold text-sea-700"
-                    >
-                      {t.name.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('')}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-medium text-ink">{t.name}</span>
-                      <span className="block text-[11px] font-semibold uppercase tracking-label text-ink-300">{t.from}</span>
-                    </span>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* ── Closing CTA ──────────────────────────────────────── */}
       <section className="relative overflow-hidden">

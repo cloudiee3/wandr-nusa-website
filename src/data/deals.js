@@ -22,3 +22,31 @@ export const deals = [
     journey: 'rinjani-summit-trek',
   },
 ]
+
+// Full-bleed slider at the foot of the homepage. Short, punchy, one photo each.
+export const offerSlides = [
+  {
+    id: 'green-season',
+    kicker: 'Green season',
+    headline: 'Lower prices when the islands are at their greenest',
+    amount: '20% off',
+    image: 'rice-terraces',
+    to: '/journeys/tetebatu-highlands',
+  },
+  {
+    id: 'rinjani-early',
+    kicker: 'Early bird trek',
+    headline: 'Book Rinjani 90 days out and pick your own date',
+    amount: '15% off',
+    image: 'volcanic-plain',
+    to: '/journeys/rinjani-summit-trek',
+  },
+  {
+    id: 'two-island',
+    kicker: 'Two-island week',
+    headline: 'Pair any Lombok journey with the Gilis and save the transfer',
+    amount: 'Free boat transfers',
+    image: 'coastline-aerial',
+    to: '/journeys/gili-reef-freedive',
+  },
+]
