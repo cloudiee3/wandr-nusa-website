@@ -40,7 +40,7 @@ export default function Journeys() {
           ))}
         </div>
 
-        <p className="mt-6 font-mono text-[11px] uppercase tracking-label text-ink-300">
+        <p className="mt-6 font-sans text-[11px] uppercase tracking-label text-ink-300">
           {shown.length} {shown.length === 1 ? 'journey' : 'journeys'}
         </p>
 

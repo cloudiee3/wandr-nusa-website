@@ -121,7 +121,7 @@ ${form.message ? `\n${form.message}` : ''}
         {STEPS.map((s, i) => (
           <li key={s} className="flex flex-1 items-center gap-2">
             <span
-              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono text-[11px] transition-colors duration-300 ${
+              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-sans text-[11px] transition-colors duration-300 ${
                 i < step ? 'bg-sea-500 text-white'
                   : i === step ? 'bg-ink text-white'
                   : 'bg-ink/[0.07] text-ink-300'
@@ -215,11 +215,11 @@ function Field({ label, hint, error, children }) {
   return (
     <label className="mb-5 block">
       <span className="mb-2 flex items-baseline justify-between gap-3">
-        <span className="font-display text-sm font-medium text-ink">{label}</span>
-        {hint && <span className="font-mono text-[10px] text-ink-300">{hint}</span>}
+        <span className="font-sans text-sm font-medium text-ink">{label}</span>
+        {hint && <span className="font-sans text-[10px] text-ink-300">{hint}</span>}
       </span>
       {children}
-      {error && <span className="mt-1.5 block font-mono text-[11px] text-ember">{error}</span>}
+      {error && <span className="mt-1.5 block font-sans text-[11px] text-ember">{error}</span>}
     </label>
   )
 }

@@ -24,7 +24,7 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-display font-semibold tracking-[-0.02em] text-ink;
+    @apply font-display font-semibold tracking-[-0.015em] text-ink;
     text-wrap: balance;
   }
 
@@ -50,12 +50,12 @@
     @apply mx-auto w-full max-w-wrap px-5 sm:px-8 lg:px-12;
   }
 
-  /* Small monospaced eyebrow above headings. */
+  /* Small tracked eyebrow above headings. */
   .label {
-    @apply font-mono text-[11px] uppercase tracking-label text-sea-600;
+    @apply font-sans text-[11px] font-semibold uppercase tracking-label text-sea-600;
   }
   .label-light {
-    @apply font-mono text-[11px] uppercase tracking-label text-sea-300;
+    @apply font-sans text-[11px] font-semibold uppercase tracking-label text-sea-300;
   }
 
   /* Editorial italic flourish used inside display headings. */
@@ -68,7 +68,7 @@
 
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
-           font-display text-sm font-medium transition-all duration-300
+           font-sans text-sm font-medium transition-all duration-300
            active:scale-[0.97];
   }
   .btn-primary {
@@ -136,6 +136,8 @@
   }
   .js-reveal .reveal.is-in { opacity: 1; transform: none; }
 
+  .tnum { font-variant-numeric: tabular-nums; }
+
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
@@ -154,4 +156,11 @@
 }
 @keyframes trail-draw {
   to { stroke-dashoffset: 0; }
+}
+
+/* The boat tracking the route on the island map. */
+@keyframes run-route {
+  0%        { offset-distance: 0%;   opacity: 0; }
+  6%        { opacity: 1; }
+  70%, 100% { offset-distance: 100%; opacity: 0; }
 }

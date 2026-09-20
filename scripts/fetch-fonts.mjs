@@ -5,10 +5,10 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const FAMILIES = [
-  'Poppins:wght@400;500;600;700',
-  'Inter:wght@400;500;600',
-  'Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600',
-  'JetBrains+Mono:wght@400;500',
+  // Fraunces carries the headings — a warm, slightly wonky serif that reads
+  // editorial rather than corporate. Figtree does body, UI and labels.
+  'Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600',
+  'Figtree:wght@400;500;600;700',
 ]
 const KEEP = new Set(['latin', 'latin-ext'])
 const UA =

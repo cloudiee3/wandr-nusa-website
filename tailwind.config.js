@@ -37,12 +37,13 @@ export default {
         ember: '#C87F3C',
       },
       fontFamily: {
-        display: ['Poppins', 'system-ui', 'sans-serif'],
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        // Fraunces for headings and the italic flourish; Figtree for everything
+        // else, including the small tracked labels that used to be monospaced.
+        display: ['Fraunces', 'Georgia', 'serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
       },
-      letterSpacing: { label: '0.22em' },
+      letterSpacing: { label: '0.18em' },
       maxWidth: { wrap: '80rem' },
       boxShadow: {
         lift: '0 24px 60px -24px rgba(1,29,57,0.35)',

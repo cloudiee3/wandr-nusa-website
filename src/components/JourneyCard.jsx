@@ -18,12 +18,12 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
         />
         <div className="absolute inset-0 scrim-soft opacity-70" />
 
-        <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-ink backdrop-blur">
+        <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 font-sans text-[10px] uppercase tracking-label text-ink backdrop-blur">
           {journey.category}
         </span>
 
         <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
-          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-white/85">
+          <span className="inline-flex items-center gap-1.5 font-sans text-[11px] text-white/85">
             <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} />
             {journey.region}
           </span>
@@ -39,7 +39,7 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
           {journey.summary}
         </p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-ink-400">
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 font-sans text-[11px] text-ink-400">
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5" strokeWidth={1.75} />
             {journey.duration}
@@ -52,7 +52,7 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
 
         <div className="mt-5 flex items-end justify-between border-t border-ink/[0.07] pt-4">
           <span className="leading-tight">
-            <span className="block font-mono text-[10px] uppercase tracking-label text-ink-300">
+            <span className="block font-sans text-[10px] uppercase tracking-label text-ink-300">
               {journey.priceFrom ? 'From' : 'Pricing'}
             </span>
             <span className="font-display text-lg font-semibold text-ink">

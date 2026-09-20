@@ -48,7 +48,7 @@ export default function Contact() {
               {site.hours.map(([d, h]) => (
                 <div key={d} className="flex justify-between gap-6 text-[0.94rem]">
                   <dt className="text-ink-400">{d}</dt>
-                  <dd className="font-mono text-[12px] text-ink">{h}</dd>
+                  <dd className="font-sans text-[12px] text-ink">{h}</dd>
                 </div>
               ))}
             </dl>
@@ -69,7 +69,7 @@ const ContactRow = ({ icon: Icon, label, children }) => (
       <Icon className="h-4 w-4" strokeWidth={1.75} />
     </span>
     <div>
-      <span className="font-mono text-[10px] uppercase tracking-label text-ink-300">{label}</span>
+      <span className="font-sans text-[10px] uppercase tracking-label text-ink-300">{label}</span>
       <div className="mt-1 text-[0.98rem] leading-relaxed text-ink-600">{children}</div>
     </div>
   </div>

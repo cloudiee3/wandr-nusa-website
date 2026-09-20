@@ -5,7 +5,7 @@ import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
 import SectionHead from '../components/SectionHead'
 import JourneyCard from '../components/JourneyCard'
-import CompassSignature from '../components/CompassSignature'
+import IslandMap from '../components/IslandMap'
 import { journeys } from '../data/journeys'
 import { destinations } from '../data/destinations'
 import { site, stats, trustSignals, whatsappLink } from '../data/site'
@@ -91,7 +91,7 @@ export default function Home() {
                 <span className="block font-display text-2xl font-semibold text-white sm:text-3xl">
                   <CountUp value={s.value} suffix={s.suffix} />
                 </span>
-                <span className="mt-1 block font-mono text-[10px] uppercase tracking-label text-white/50">
+                <span className="mt-1 block font-sans text-[10px] uppercase tracking-label text-white/50">
                   {s.label}
                 </span>
               </div>
@@ -108,33 +108,31 @@ export default function Home() {
       {/* ── Who we are ───────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-ink-900 py-20 text-white lg:py-28">
         <div className="absolute inset-0 grid-bg opacity-50" aria-hidden="true" />
-        <div className="wrap relative grid items-center gap-14 lg:grid-cols-[1.25fr_1fr]">
-          <div>
-            <SectionHead
-              light
-              eyebrow="Who takes you"
-              title={<>Guides who grew up <span className="flourish-light">on these islands</span></>}
-              lead="Wandr Nusa is a small Lombok-based operator. We are not a booking platform reselling somebody else's day tour — the guides on our trips are our colleagues, the drivers are on our payroll, and the itineraries were walked before they were written."
-            />
+        <div className="wrap relative">
+          <SectionHead
+            light
+            eyebrow="Who takes you"
+            title={<>Guides who grew up <span className="flourish-light">on these islands</span></>}
+            lead="Wandr Nusa is a small Lombok-based operator. We are not a booking platform reselling somebody else's day tour — the guides on our trips are our colleagues, the drivers are on our payroll, and the itineraries were walked before they were written."
+          />
 
-            <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-3">
-              {trustSignals.map((t, i) => (
-                <Reveal key={t.title} delay={i * 90}>
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sea-400/30 bg-sea-500/10 text-sea-300">
-                    {[<ShieldCheck key="a" className="h-5 w-5" strokeWidth={1.6} />,
-                      <Compass key="b" className="h-5 w-5" strokeWidth={1.6} />,
-                      <Sparkles key="c" className="h-5 w-5" strokeWidth={1.6} />][i]}
-                  </span>
-                  <h3 className="mt-4 text-[1.02rem] !text-white">{t.title}</h3>
-                  <p className="mt-2 text-[0.88rem] leading-relaxed text-white/55">{t.body}</p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-
-          <Reveal delay={160} className="mx-auto w-full max-w-sm">
-            <CompassSignature />
+          <Reveal delay={160} className="mt-12">
+            <IslandMap />
           </Reveal>
+
+          <div className="mt-14 grid gap-x-10 gap-y-8 sm:grid-cols-3">
+            {trustSignals.map((t, i) => (
+              <Reveal key={t.title} delay={i * 90}>
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sea-400/30 bg-sea-500/10 text-sea-300">
+                  {[<ShieldCheck key="a" className="h-5 w-5" strokeWidth={1.6} />,
+                    <Compass key="b" className="h-5 w-5" strokeWidth={1.6} />,
+                    <Sparkles key="c" className="h-5 w-5" strokeWidth={1.6} />][i]}
+                </span>
+                <h3 className="mt-4 text-[1.02rem] !text-white">{t.title}</h3>
+                <p className="mt-2 text-[0.88rem] leading-relaxed text-white/55">{t.body}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -171,7 +169,7 @@ export default function Home() {
                   <p className={`mt-2 max-w-sm text-[0.9rem] leading-relaxed text-white/70 ${i === 0 ? '' : 'line-clamp-2'}`}>
                     {d.blurb}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-label text-sea-300">
+                  <span className="mt-4 inline-flex items-center gap-1.5 font-sans text-[11px] uppercase tracking-label text-sea-300">
                     Explore <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
                   </span>
                 </div>
@@ -221,7 +219,7 @@ export default function Home() {
             {process.map((p, i) => (
               <Reveal key={p.n} delay={i * 100}>
                 <article className="card flex gap-5 p-6 hover:border-sea-500/30 hover:shadow-lift sm:p-7">
-                  <span className="font-mono text-sm text-sea-500">{p.n}</span>
+                  <span className="font-sans text-sm text-sea-500">{p.n}</span>
                   <div>
                     <h3 className="text-[1.25rem]">{p.title}</h3>
                     <p className="mt-2.5 text-[0.95rem] leading-relaxed text-ink-500">{p.body}</p>
@@ -269,7 +267,7 @@ export default function Home() {
                     </span>
                     <span>
                       <span className="block font-display text-sm font-medium text-white">{t.name}</span>
-                      <span className="block font-mono text-[10px] uppercase tracking-label text-white/40">{t.from}</span>
+                      <span className="block font-sans text-[10px] uppercase tracking-label text-white/40">{t.from}</span>
                     </span>
                   </figcaption>
                 </figure>

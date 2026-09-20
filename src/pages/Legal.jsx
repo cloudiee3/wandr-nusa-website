@@ -37,7 +37,7 @@ export default function Legal({ kind }) {
       <PageHero image="volcanic-plain" eyebrow="Legal" title={c.title} lead={c.lead} />
 
       <section className="wrap max-w-3xl py-16 lg:py-24">
-        <p className="font-mono text-[11px] uppercase tracking-label text-ink-300">
+        <p className="font-sans text-[11px] uppercase tracking-label text-ink-300">
           Last updated {new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
         </p>
 

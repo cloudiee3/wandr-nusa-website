@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="wrap relative py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div>
-            <Logo variant="white" />
+            <Logo variant="white" height="h-9" />
             <p className="mt-5 max-w-xs text-[0.93rem] leading-relaxed text-white/60">{site.blurb}</p>
 
             <span className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.04] px-3.5 py-1.5">
@@ -23,7 +23,7 @@ export default function Footer() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sea-400 opacity-70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sea-400" />
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-label text-white/70">
+              <span className="font-sans text-[10px] uppercase tracking-label text-white/70">
                 Taking bookings for 2027
               </span>
             </span>
@@ -65,7 +65,7 @@ export default function Footer() {
             <li className="pt-2">
               <dl className="space-y-1">
                 {site.hours.map(([d, h]) => (
-                  <div key={d} className="flex justify-between gap-4 font-mono text-[11px]">
+                  <div key={d} className="flex justify-between gap-4 font-sans text-[11px]">
                     <dt className="text-white/40">{d}</dt>
                     <dd className="text-white/65">{h}</dd>
                   </div>
@@ -76,18 +76,18 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col-reverse items-center justify-between gap-5 border-t border-white/10 pt-7 sm:flex-row">
-          <p className="font-mono text-[11px] text-white/35">
+          <p className="font-sans text-[11px] text-white/35">
             © {year} {site.legalName}. Registered in Nusa Tenggara Barat, Indonesia.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {site.socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
-                 className="link-underline font-mono text-[11px] uppercase tracking-label text-white/50 hover:text-white">
+                 className="link-underline font-sans text-[11px] uppercase tracking-label text-white/50 hover:text-white">
                 {s.label}
               </a>
             ))}
-            <Link to="/privacy" className="link-underline font-mono text-[11px] uppercase tracking-label text-white/50 hover:text-white">Privacy</Link>
-            <Link to="/terms" className="link-underline font-mono text-[11px] uppercase tracking-label text-white/50 hover:text-white">Terms</Link>
+            <Link to="/privacy" className="link-underline font-sans text-[11px] uppercase tracking-label text-white/50 hover:text-white">Privacy</Link>
+            <Link to="/terms" className="link-underline font-sans text-[11px] uppercase tracking-label text-white/50 hover:text-white">Terms</Link>
           </div>
         </div>
       </div>

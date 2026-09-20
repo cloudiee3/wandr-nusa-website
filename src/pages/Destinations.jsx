@@ -36,7 +36,7 @@ export default function Destinations() {
                   </h2>
                   <p className="mt-4 text-[1rem] leading-relaxed text-ink-500">{d.blurb}</p>
 
-                  <div className="mt-6 flex flex-wrap gap-x-7 gap-y-2 font-mono text-[11px] text-ink-400">
+                  <div className="mt-6 flex flex-wrap gap-x-7 gap-y-2 font-sans text-[11px] text-ink-400">
                     <span className="inline-flex items-center gap-1.5">
                       <Mountain className="h-3.5 w-3.5 text-sea-500" strokeWidth={1.75} />{d.elevation}
                     </span>

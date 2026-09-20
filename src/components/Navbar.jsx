@@ -44,7 +44,7 @@ export default function Navbar() {
       >
         <div className="wrap flex h-[72px] items-center justify-between gap-6">
           <Link to="/" aria-label={`${site.name} home`} className="shrink-0">
-            <Logo variant={solid ? 'navy' : 'white'} />
+            <Logo variant={solid ? 'navy' : 'white'} wordmarkOnly height="h-9" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -53,7 +53,7 @@ export default function Navbar() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `rounded-full px-4 py-2 font-display text-[0.9rem] transition-colors duration-300 ${
+                  `rounded-full px-4 py-2 font-sans text-[0.9rem] transition-colors duration-300 ${
                     solid
                       ? isActive
                         ? 'bg-ink/[0.06] text-ink'
@@ -117,7 +117,7 @@ export default function Navbar() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `border-b border-ink/[0.07] py-4 font-display text-lg transition-colors ${
+                  `border-b border-ink/[0.07] py-4 font-sans text-lg transition-colors ${
                     isActive ? 'text-sea-600' : 'text-ink'
                   }`
                 }
@@ -136,7 +136,7 @@ export default function Navbar() {
             <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
             Message us on WhatsApp
           </a>
-          <p className="mt-4 text-center font-mono text-[11px] text-ink-300">{site.phone}</p>
+          <p className="mt-4 text-center font-sans text-[11px] text-ink-300">{site.phone}</p>
         </div>
       </div>
     </>

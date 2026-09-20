@@ -90,6 +90,20 @@ for (const [name, file] of Object.entries(LOGOS)) {
   }
 }
 
+// The brand pack only ships a white wordmark; tint a navy one from its alpha
+// so the mark works on light backgrounds too.
+try {
+  const white = await sharp(path.join('.asset-cache', 'wordmark-white.png'))
+    .trim({ threshold: 10 }).resize({ width: 480, withoutEnlargement: true }).toBuffer()
+  const { width, height } = await sharp(white).metadata()
+  const alpha = await sharp(white).extractChannel('alpha').toBuffer()
+  const navy = await sharp({ create: { width, height, channels: 3, background: '#011D39' } }).png().toBuffer()
+  const tinted = await sharp(navy).joinChannel(alpha).png().toBuffer()
+  await sharp(tinted).webp({ quality: 92, alphaQuality: 100 }).toFile(path.join(OUT_BRAND, 'wordmark-navy.webp'))
+  await sharp(tinted).png({ compressionLevel: 9, palette: true }).toFile(path.join(OUT_BRAND, 'wordmark-navy.png'))
+  console.log('logo   wordmark-navy (tinted)')
+} catch (e) { console.warn('wordmark-navy skipped:', e.message) }
+
 // favicon + apple touch icon from the navy mark on white
 try {
   const mark = await sharp(path.join('.asset-cache', 'icon-navy.png')).trim({ threshold: 10 }).toBuffer()
