@@ -104,20 +104,27 @@ export default function Navbar() {
       <div className={`fixed inset-0 z-40 lg:hidden ${open ? '' : 'pointer-events-none'}`} aria-hidden={!open}>
         <div
           onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-ink-900/40 transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 bg-ink-900/35 backdrop-blur-sm transition-opacity duration-300 ${
+            open ? 'opacity-100' : 'opacity-0'
+          }`}
         />
         <div
-          className={`absolute inset-x-3 top-[80px] origin-top rounded-3xl bg-sand-100 px-6 pb-7 pt-3 shadow-lift transition-all duration-300 ${
+          style={{ top: 'calc(5rem + env(safe-area-inset-top, 0px))' }}
+          className={`absolute inset-x-3 origin-top rounded-3xl border border-white/45 bg-sand-100/70
+                      px-6 pb-7 pt-3 shadow-lift backdrop-blur-2xl backdrop-saturate-150
+                      transition-all duration-300 ${
             open ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
           }`}
         >
           <nav className="flex flex-col">
-            {nav.map((item) => (
+            {nav.map((item, i) => (
               <NavLink
                 key={item.to}
                 to={item.to}
+                style={{ transitionDelay: open ? `${80 + i * 45}ms` : '0ms' }}
                 className={({ isActive }) =>
-                  `border-b border-ink/[0.07] py-4 font-sans text-[1.05rem] transition-colors ${
+                  `border-b border-ink/10 py-4 font-display text-[1.45rem] font-medium tracking-[-0.01em]
+                   transition-all duration-300 ${open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'} ${
                     isActive ? 'text-sea-600' : 'text-ink'
                   }`
                 }
@@ -130,7 +137,12 @@ export default function Navbar() {
             <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
             Message us on WhatsApp
           </a>
-          <p className="mt-4 text-center text-[12px] text-ink-300">{site.phone}</p>
+          <a
+            href={site.phoneHref}
+            className="mt-3 block py-3 text-center text-[0.95rem] text-ink-400 transition-colors hover:text-ink"
+          >
+            {site.phone}
+          </a>
         </div>
       </div>
     </>

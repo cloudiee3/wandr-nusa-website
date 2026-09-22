@@ -79,7 +79,7 @@ export default function Home() {
           <div className="grid items-end gap-7 sm:gap-10 lg:grid-cols-[1.15fr_minmax(0,26.5rem)] lg:gap-12">
             <div>
               <Reveal>
-                <span className="pill">
+                <span className="pill-light">
                   <span className="pill-dot" />
                   {hero.badge}
                 </span>

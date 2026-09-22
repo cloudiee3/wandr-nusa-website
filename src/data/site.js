@@ -10,10 +10,9 @@ export const site = {
   blurb:
     'Small-group and private journeys through Lombok, Mount Rinjani, Nusa Penida and the Gilis — planned and guided by people who live there.',
 
-  // TODO: replace with the real numbers before launch.
-  phone: '+62 812 0000 0000',
-  phoneHref: 'tel:+628120000000',
-  whatsapp: '628120000000', // digits only, country code first
+  phone: '+62 823 4081 9128',
+  phoneHref: 'tel:+6282340819128',
+  whatsapp: '6282340819128', // digits only, country code first
   email: 'hello@wandrnusa.com',
 
   address: {
@@ -31,7 +30,7 @@ export const site = {
 
   socials: [
     { label: 'Instagram', href: 'https://instagram.com/' },
-    { label: 'WhatsApp', href: 'https://wa.me/628120000000' },
+    { label: 'WhatsApp', href: 'https://wa.me/6282340819128' },
     { label: 'TripAdvisor', href: 'https://tripadvisor.com/' },
   ],
 }
