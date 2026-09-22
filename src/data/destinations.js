@@ -41,7 +41,7 @@ export const destinations = [
   {
     slug: 'gili-islands',
     name: 'The Gili Islands',
-    island: 'Gilis',
+    island: 'Gili Islands',
     image: 'coastline-aerial',
     gallery: ['freediving', 'coastline-aerial', 'kelingking-beach'],
     elevation: 'Sea level',
@@ -96,14 +96,14 @@ export const searchGroups = [
       { label: 'Senggigi' },
       { label: 'Tetebatu', dest: 'tetebatu' },
       { label: 'Sendang Gile & Tiu Kelep', dest: 'north-lombok' },
-      { label: 'Sade & the Sasak villages', dest: 'south-coast' },
+      { label: 'Sade & Sasak Villages', dest: 'south-coast' },
     ],
   },
   {
     region: 'Sumbawa',
     options: [
       { label: 'Moyo Island' },
-      { label: 'Saleh Bay (whale sharks)' },
+      { label: 'Saleh Bay (Whale Sharks)' },
       { label: 'Kenawa Island' },
       { label: 'Mount Tambora' },
       { label: 'Lakey Peak, Hu\u2019u' },

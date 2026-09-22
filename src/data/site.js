@@ -46,12 +46,12 @@ export const hero = {
 
 // Where a transfer can start or finish.
 export const pickupPoints = [
-  'Lombok Intl Airport (LOP)',
+  'Lombok International Airport (LOP)',
   'Bali — Ngurah Rai (DPS)',
   'Bangsal Harbour',
-  'Senggigi hotels',
-  'Kuta Lombok hotels',
-  'Gili Islands jetty',
+  'Senggigi Hotels',
+  'Kuta Lombok Hotels',
+  'Gili Islands Jetty',
   'Somewhere else',
 ]
 
