@@ -80,3 +80,48 @@ export const destinations = [
 ]
 
 export const destBySlug = (slug) => destinations.find((d) => d.slug === slug)
+
+// ── Hero search dropdown ────────────────────────────────────
+// The top destinations across the three regions we cover, grouped and ordered
+// by how much they're actually visited. `dest` points at one of the
+// destination pages above; options without one have no fixed itinerary yet, so
+// the journeys page offers to build the trip instead.
+export const searchGroups = [
+  {
+    region: 'Lombok',
+    options: [
+      { label: 'Mount Rinjani', dest: 'mount-rinjani' },
+      { label: 'Gili Trawangan, Meno & Air', dest: 'gili-islands' },
+      { label: 'Kuta & Mandalika', dest: 'south-coast' },
+      { label: 'Senggigi' },
+      { label: 'Tetebatu', dest: 'tetebatu' },
+      { label: 'Sendang Gile & Tiu Kelep', dest: 'north-lombok' },
+      { label: 'Sade & the Sasak villages', dest: 'south-coast' },
+    ],
+  },
+  {
+    region: 'Sumbawa',
+    options: [
+      { label: 'Moyo Island' },
+      { label: 'Saleh Bay (whale sharks)' },
+      { label: 'Kenawa Island' },
+      { label: 'Mount Tambora' },
+      { label: 'Lakey Peak, Hu\u2019u' },
+    ],
+  },
+  {
+    region: 'Nusa Tenggara Timur',
+    options: [
+      { label: 'Komodo National Park' },
+      { label: 'Labuan Bajo' },
+      { label: 'Padar Island' },
+      { label: 'Kelimutu, Flores' },
+      { label: 'Sumba' },
+      { label: 'Rote' },
+      { label: 'Alor' },
+    ],
+  },
+]
+
+/** Stable option values: a destination slug, or "place:<label>". */
+export const optionValue = (o) => (o.dest ? o.dest : `place:${o.label}`)

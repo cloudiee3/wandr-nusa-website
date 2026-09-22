@@ -19,6 +19,7 @@ export default function Journeys() {
 
   // Set by the hero search widget.
   const dest = params.get('dest')
+  const place = params.get('place')
   const kind = params.get('kind')
   const from = fmtDate(params.get('from'))
   const to = fmtDate(params.get('to'))
@@ -26,14 +27,16 @@ export default function Journeys() {
   const destination = dest ? destBySlug(dest) : null
 
   const shown = useMemo(() => {
+    // A "place" is somewhere we don't run a fixed departure yet.
+    if (place) return []
     let list = journeys
     if (destination) list = list.filter((j) => destination.journeys.includes(j.slug))
     if (kind === 'day') list = list.filter((j) => j.duration.toLowerCase().includes('day') && !j.duration.includes('·'))
     if (active !== 'All') list = list.filter((j) => j.category === active)
     return list
-  }, [destination, kind, active])
+  }, [destination, place, kind, active])
 
-  const searched = destination || kind || from || people
+  const searched = destination || place || kind || from || people
   const clearSearch = () => setParams({}, { replace: true })
 
   return (
@@ -51,6 +54,7 @@ export default function Journeys() {
             <span className="text-[11px] font-semibold uppercase tracking-label text-ink-300">Your search</span>
             <div className="flex flex-wrap items-center gap-2">
               {destination && <span className="chip chip-on">{destination.name}</span>}
+              {place && <span className="chip chip-on">{place}</span>}
               {kind === 'day' && <span className="chip chip-on">Day trips</span>}
               {from && to && <span className="chip">{from} – {to}</span>}
               {people && <span className="chip">{people} {people === '1' ? 'traveller' : 'travellers'}</span>}
@@ -86,16 +90,24 @@ export default function Journeys() {
 
         {shown.length === 0 ? (
           <div className="mt-8 rounded-2xl bg-white p-10 text-center shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
-            <h2 className="text-[1.4rem]">Nothing matches that combination</h2>
+            <h2 className="text-[1.4rem]">
+              {place ? <>No fixed departure for {place} — yet</> : 'Nothing matches that combination'}
+            </h2>
             <p className="mx-auto mt-3 max-w-md text-ink-500">
-              Widen the filters, or let us build something around your dates instead — most of what we run
-              started as a request rather than a listing.
+              {place
+                ? `We run ${place} as a private trip rather than a scheduled one. Tell us your dates and we'll come back with a routed plan and the real cost.`
+                : 'Widen the filters, or let us build something around your dates instead — most of what we run started as a request rather than a listing.'}
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
+              <Link
+                to={`/journeys/custom-private-journey${place ? `?place=${encodeURIComponent(place)}` : ''}`}
+                className="btn-accent"
+              >
+                {place ? `Plan a ${place} trip` : 'Plan a custom trip'}
+              </Link>
               <button type="button" onClick={() => { setActive('All'); clearSearch() }} className="btn-ghost">
-                Clear filters
+                See everything
               </button>
-              <Link to="/journeys/custom-private-journey" className="btn-accent">Plan a custom trip</Link>
             </div>
           </div>
         ) : (

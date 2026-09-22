@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight, BedDouble, Car, Globe, Minus, Plus, Users } from 'lucide-react'
-import { destinations } from '../data/destinations'
+import { destinations, optionValue, searchGroups } from '../data/destinations'
 import { pickupPoints, stayAreas } from '../data/site'
 import { DateRangeFields, SingleDateField, addDays, toISO, usePopover } from './DatePicker'
 
@@ -39,8 +39,15 @@ export default function SearchWidget() {
       navigate(`/contact?${new URLSearchParams({ type: 'stay', area, from, to, ...people })}`)
       return
     }
+    if (dest === 'custom') {
+      navigate(`/journeys/custom-private-journey?from=${from}&to=${to}&adults=${adults}&children=${children}`)
+      return
+    }
     const q = new URLSearchParams({ kind: 'journeys', from, to, ...people })
-    if (dest) q.set('dest', dest)
+    // A destination slug filters the catalogue; a "place:" option is somewhere
+    // we don't run a fixed departure yet, so the journeys page offers to plan it.
+    if (dest.startsWith('place:')) q.set('place', dest.slice(6))
+    else if (dest) q.set('dest', dest)
     navigate(`/journeys?${q}`)
   }
 
@@ -75,7 +82,14 @@ export default function SearchWidget() {
               <Globe className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
               <select id="sw-dest" value={dest} onChange={(e) => setDest(e.target.value)}>
                 <option value="">Anywhere we go</option>
-                {destinations.map((d) => <option key={d.slug} value={d.slug}>{d.name}</option>)}
+                {searchGroups.map((g) => (
+                  <optgroup key={g.region} label={g.region}>
+                    {g.options.map((o) => (
+                      <option key={o.label} value={optionValue(o)}>{o.label}</option>
+                    ))}
+                  </optgroup>
+                ))}
+                <option value="custom">Custom / Request a trip</option>
               </select>
             </div>
           </Row>

@@ -1,4 +1,4 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import {
   ArrowLeft, Check, Clock, Gauge, MapPin, MessageCircle, Minus, Sun, Users,
 } from 'lucide-react'
@@ -12,8 +12,14 @@ import { whatsappLink } from '../data/site'
 
 export default function JourneyDetail() {
   const { slug } = useParams()
+  const [params] = useSearchParams()
   const j = bySlug(slug)
   if (!j) return <Navigate to="/journeys" replace />
+
+  // Arriving from the hero search with a place we don't run a fixed trip to.
+  const place = params.get('place')
+  const adults = params.get('adults')
+  const children = params.get('children')
 
   const others = journeys.filter((x) => x.slug !== j.slug).slice(0, 3)
 
@@ -151,7 +157,15 @@ export default function JourneyDetail() {
               <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All journeys
             </Link>
           </div>
-          <EnquiryForm defaultTrip={j.title} />
+          <EnquiryForm
+            defaultTrip={j.title}
+            defaultMessage={place ? `I'd like to go to ${place}.` : ''}
+            defaultTravellers={
+              adults
+                ? `${adults} ${adults === '1' ? 'adult' : 'adults'}, ${children ?? 0} ${children === '1' ? 'child' : 'children'}`
+                : ''
+            }
+          />
         </div>
       </section>
 
