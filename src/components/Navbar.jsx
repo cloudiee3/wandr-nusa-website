@@ -39,11 +39,14 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50">
         <div className="wrap pt-3 sm:pt-4">
           <div
-            className={`flex h-[60px] items-center justify-between gap-4 rounded-full pl-5 pr-2.5
+            /* Frosted rather than opaque: over the hero you see the photograph
+               blurred through it, and over the light sections the border and
+               shadow still read it as a panel floating above the page. */
+            className={`flex h-[60px] items-center justify-between gap-4 rounded-full border pl-5 pr-2.5
                         transition-all duration-500 sm:h-[68px] sm:pl-7 sm:pr-3 ${
               solid
-                ? 'bg-sand-100/80 shadow-[0_14px_44px_-16px_rgba(1,29,57,0.35)] backdrop-blur-xl'
-                : 'bg-transparent shadow-none'
+                ? 'border-white/60 bg-white/[0.62] shadow-[0_16px_50px_-14px_rgba(1,29,57,0.38)] backdrop-blur-2xl backdrop-saturate-150'
+                : 'border-transparent bg-transparent shadow-none'
             }`}
           >
             <Link to="/" aria-label={`${site.name} home`} className="shrink-0">

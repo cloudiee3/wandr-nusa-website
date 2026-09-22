@@ -39,7 +39,9 @@ export const site = {
 // Hero copy — edit here rather than in the component.
 export const hero = {
   badge: 'Top Destination',
-  headline: ['Discover New Places,', 'Create Lasting Memories'],
+  // The last word is picked out in the accent colour.
+  headline: ['Discover New Places,', 'Create Lasting'],
+  headlineAccent: 'Memories',
   subhead:
     'Handpicked stays, seamless booking, and local experiences, everything you need to plan your next adventure with confidence.',
 }

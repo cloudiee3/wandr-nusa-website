@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react'
 import Img from '../components/Img'
@@ -35,12 +36,43 @@ const process = [
   { n: '03', title: 'We guide it ourselves', body: 'Permits, boats, drivers and guides are all ours. One planner stays with you throughout, and there is a real phone number while you travel.' },
 ]
 
+/** Drifts the hero photograph as you scroll, so there is movement behind the
+ *  navbar glass rather than a static image. */
+function useParallax() {
+  const ref = useRef(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let frame = 0
+    const onScroll = () => {
+      if (frame) return
+      frame = requestAnimationFrame(() => {
+        frame = 0
+        const y = Math.min(window.scrollY, window.innerHeight)
+        el.style.transform = `translate3d(0, ${y * 0.18}px, 0)`
+      })
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(frame)
+    }
+  }, [])
+  return ref
+}
+
 export default function Home() {
+  const heroPhoto = useParallax()
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
-        <Img name="segara-anak" priority sizes="100vw" className="absolute inset-0 h-full w-full" imgClassName="animate-ken-burns" />
+        <div ref={heroPhoto} className="absolute inset-0 will-change-transform">
+          <Img name="segara-anak" priority sizes="100vw" className="h-full w-full" imgClassName="animate-ken-burns" />
+        </div>
         <div className="absolute inset-0 scrim" />
 
         <div className="wrap relative w-full pb-10 pt-28 sm:pb-14 sm:pt-32">
@@ -61,7 +93,8 @@ export default function Home() {
               >
                 {hero.headline[0]}
                 <br />
-                {hero.headline[1]}
+                {hero.headline[1]}{' '}
+                <span className="text-ember-300">{hero.headlineAccent}</span>
               </Reveal>
 
               <Reveal as="p" delay={200} className="mt-6 max-w-xl text-[1.02rem] leading-relaxed text-white/80">

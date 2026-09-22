@@ -34,7 +34,15 @@ export default {
           200: '#EFE7DA',
           100: '#FAF7F2',
         },
-        ember: '#C87F3C',
+        // Warm counterpoint to the navy/turquoise. The 300 tint is bright
+        // enough for display type on a dark photograph; the base is for small
+        // marks like stars and the deal badges.
+        ember: {
+          DEFAULT: '#C87F3C',
+          400: '#DD9B54',
+          300: '#E9B36A',
+          200: '#F2CE9B',
+        },
       },
       fontFamily: {
         // Playfair Display for headings and the italic flourish; Figtree for
