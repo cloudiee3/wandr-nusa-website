@@ -37,10 +37,10 @@ export default {
         ember: '#C87F3C',
       },
       fontFamily: {
-        // Fraunces for headings and the italic flourish; Figtree for everything
-        // else, including the small tracked labels that used to be monospaced.
-        display: ['Fraunces', 'Georgia', 'serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        // Playfair Display for headings and the italic flourish; Figtree for
+        // everything else, including the small tracked labels.
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
         sans: ['Figtree', 'system-ui', 'sans-serif'],
       },
       letterSpacing: { label: '0.18em' },

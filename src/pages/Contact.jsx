@@ -1,10 +1,54 @@
+import { useSearchParams } from 'react-router-dom'
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import EnquiryForm from '../components/EnquiryForm'
 import { site, whatsappLink } from '../data/site'
 
+const fmt = (s) => {
+  const d = new Date(s)
+  return Number.isNaN(+d) ? s : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
+/** The hero widget sends Transport and Stays enquiries here with their answers
+ *  in the query string; turn those into a message the traveller can edit. */
+function prefillFrom(params) {
+  const type = params.get('type')
+  const adults = params.get('adults') ?? '2'
+  const kids = params.get('children') ?? '0'
+  const who = `${adults} ${adults === '1' ? 'adult' : 'adults'}, ${kids} ${kids === '1' ? 'child' : 'children'}`
+
+  if (type === 'transport') {
+    return {
+      trip: 'Transport / airport transfer',
+      travellers: who,
+      dates: fmt(params.get('date') ?? ''),
+      message:
+        `Transfer request.\n` +
+        `Pick-up: ${params.get('pickup') ?? ''}\n` +
+        `Drop-off: ${params.get('dropoff') ?? ''}\n` +
+        `Date: ${fmt(params.get('date') ?? '')}`,
+    }
+  }
+  if (type === 'stay') {
+    return {
+      trip: 'Accommodation',
+      travellers: who,
+      dates: `${fmt(params.get('from') ?? '')} – ${fmt(params.get('to') ?? '')}`,
+      message:
+        `Room request.\n` +
+        `Area: ${params.get('area') ?? ''}\n` +
+        `Check-in: ${fmt(params.get('from') ?? '')}\n` +
+        `Check-out: ${fmt(params.get('to') ?? '')}`,
+    }
+  }
+  return { trip: '', travellers: '', message: '', dates: '' }
+}
+
 export default function Contact() {
+  const [params] = useSearchParams()
+  const prefill = prefillFrom(params)
+
   return (
     <>
       <PageHero
@@ -56,7 +100,12 @@ export default function Contact() {
         </div>
 
         <Reveal delay={120} id="enquire" className="scroll-mt-24">
-          <EnquiryForm />
+          <EnquiryForm
+            defaultTrip={prefill.trip}
+            defaultMessage={prefill.message}
+            defaultTravellers={prefill.travellers}
+            defaultDates={prefill.dates}
+          />
         </Reveal>
       </section>
     </>

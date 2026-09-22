@@ -36,6 +36,36 @@ export const site = {
   ],
 }
 
+// Hero copy — edit here rather than in the component.
+export const hero = {
+  badge: 'Top Destination',
+  headline: ['Discover New Places,', 'Create Lasting Memories'],
+  subhead:
+    'Handpicked routes, small groups, and guides who live here, everything you need to plan your next adventure with confidence.',
+}
+
+// Where a transfer can start or finish.
+export const pickupPoints = [
+  'Lombok Intl Airport (LOP)',
+  'Bali — Ngurah Rai (DPS)',
+  'Bangsal Harbour',
+  'Senggigi hotels',
+  'Kuta Lombok hotels',
+  'Gili Islands jetty',
+  'Somewhere else',
+]
+
+// Areas we can book a room in.
+export const stayAreas = [
+  'Senggigi',
+  'Kuta Lombok',
+  'Tetebatu',
+  'Senaru',
+  'Gili Air',
+  'Gili Trawangan',
+  'Gili Meno',
+]
+
 export const nav = [
   { label: 'Home', to: '/' },
   { label: 'Destinations', to: '/destinations' },

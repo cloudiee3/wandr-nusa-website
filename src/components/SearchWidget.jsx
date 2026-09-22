@@ -1,46 +1,60 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, CalendarDays, Globe, Users } from 'lucide-react'
+import { ArrowRight, BedDouble, CalendarDays, Car, Globe, Minus, Plus, Users } from 'lucide-react'
 import { destinations } from '../data/destinations'
+import { pickupPoints, stayAreas } from '../data/site'
 
 const TABS = [
   { id: 'journeys', label: 'Journeys' },
-  { id: 'day', label: 'Day trips' },
-  { id: 'custom', label: 'Custom' },
+  { id: 'transport', label: 'Transport' },
+  { id: 'stays', label: 'Stays' },
 ]
 
-// A realistic default window a few months out, so the widget doesn't open empty.
 const iso = (d) => d.toISOString().slice(0, 10)
-
-/** "Sun, 20 Sep 2026" — native date inputs render in the OS locale, which we
- *  don't control, so the readable value is drawn over a transparent input. */
-const pretty = (value) => {
-  const d = new Date(value)
-  return Number.isNaN(+d)
-    ? 'Pick a date'
-    : d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
-}
 const plusDays = (n) => {
   const d = new Date()
   d.setDate(d.getDate() + n)
   return iso(d)
 }
 
+/** "Tue, 22 Sep 2026" — native date inputs render in the OS locale, which we
+ *  don't control, so the readable value is drawn over a transparent input. */
+const pretty = (value, short = false) => {
+  const d = new Date(value)
+  if (Number.isNaN(+d)) return 'Pick a date'
+  return d.toLocaleDateString('en-GB', {
+    ...(short ? {} : { weekday: 'short' }),
+    day: 'numeric', month: 'short', year: 'numeric',
+  })
+}
+
 export default function SearchWidget() {
   const navigate = useNavigate()
   const [tab, setTab] = useState('journeys')
+
   const [dest, setDest] = useState('')
   const [from, setFrom] = useState(plusDays(90))
   const [to, setTo] = useState(plusDays(97))
-  const [people, setPeople] = useState('2')
+  const [adults, setAdults] = useState(2)
+  const [children, setChildren] = useState(0)
+
+  const [pickup, setPickup] = useState(pickupPoints[0])
+  const [dropoff, setDropoff] = useState(pickupPoints[3])
+  const [area, setArea] = useState(stayAreas[0])
 
   function submit(e) {
     e.preventDefault()
-    if (tab === 'custom') {
-      navigate(`/journeys/custom-private-journey?from=${from}&to=${to}&people=${people}`)
+    const people = { adults: String(adults), children: String(children) }
+
+    if (tab === 'transport') {
+      navigate(`/contact?${new URLSearchParams({ type: 'transport', pickup, dropoff, date: from, ...people })}`)
       return
     }
-    const q = new URLSearchParams({ kind: tab, from, to, people })
+    if (tab === 'stays') {
+      navigate(`/contact?${new URLSearchParams({ type: 'stay', area, from, to, ...people })}`)
+      return
+    }
+    const q = new URLSearchParams({ kind: 'journeys', from, to, ...people })
     if (dest) q.set('dest', dest)
     navigate(`/journeys?${q}`)
   }
@@ -48,16 +62,11 @@ export default function SearchWidget() {
   return (
     <form
       onSubmit={submit}
-      className="w-full rounded-3xl border border-white/20 bg-white/[0.12] p-5 shadow-[0_24px_70px_-24px_rgba(1,15,31,0.7)] backdrop-blur-2xl sm:p-7"
+      className="w-full rounded-3xl border border-white/20 bg-white/[0.13] p-5 shadow-[0_24px_70px_-24px_rgba(1,15,31,0.7)] backdrop-blur-2xl sm:p-7"
     >
-      <h2 className="text-[1.45rem] !text-white">Find your island</h2>
+      <h2 className="text-[1.5rem] !text-white">Find the best Places</h2>
 
-      {/* what kind of trip */}
-      <div
-        role="tablist"
-        aria-label="Trip type"
-        className="mt-5 grid grid-cols-3 gap-1 rounded-full bg-white/15 p-1"
-      >
+      <div role="tablist" aria-label="What are you looking for" className="mt-5 grid grid-cols-3 gap-1 rounded-full bg-white/15 p-1">
         {TABS.map((t) => (
           <button
             key={t.id}
@@ -74,38 +83,65 @@ export default function SearchWidget() {
         ))}
       </div>
 
-      <div className="mt-6">
-        <label className="field-label" htmlFor="sw-dest">Destination</label>
-        <div className="field">
-          <Globe className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-          <select id="sw-dest" value={dest} onChange={(e) => setDest(e.target.value)}>
-            <option value="">Anywhere we go</option>
-            {destinations.map((d) => (
-              <option key={d.slug} value={d.slug}>{d.name}</option>
-            ))}
-          </select>
-        </div>
-      </div>
+      {tab === 'journeys' && (
+        <>
+          <Row label="Destination" htmlFor="sw-dest">
+            <div className="field">
+              <Globe className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
+              <select id="sw-dest" value={dest} onChange={(e) => setDest(e.target.value)}>
+                <option value="">Anywhere we go</option>
+                {destinations.map((d) => <option key={d.slug} value={d.slug}>{d.name}</option>)}
+              </select>
+            </div>
+          </Row>
+          <DateRange from={from} to={to} setFrom={setFrom} setTo={setTo} labels={['Arrive', 'Leave']} />
+          <GuestsRow label="Travellers" {...{ adults, children, setAdults, setChildren }} />
+        </>
+      )}
 
-      <div className="mt-5 grid grid-cols-2 gap-3">
-        <DateField id="sw-from" label="Arrive" value={from} min={iso(new Date())} onChange={setFrom} />
-        <DateField id="sw-to" label="Leave" value={to} min={from} onChange={setTo} />
-      </div>
+      {tab === 'transport' && (
+        <>
+          <Row label="Pick-up" htmlFor="sw-pickup">
+            <div className="field">
+              <Car className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
+              <select id="sw-pickup" value={pickup} onChange={(e) => setPickup(e.target.value)}>
+                {pickupPoints.map((p) => <option key={p} value={p}>{p}</option>)}
+              </select>
+            </div>
+          </Row>
+          <Row label="Drop-off" htmlFor="sw-dropoff">
+            <div className="field">
+              <Globe className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
+              <select id="sw-dropoff" value={dropoff} onChange={(e) => setDropoff(e.target.value)}>
+                {pickupPoints.map((p) => <option key={p} value={p}>{p}</option>)}
+                {destinations.map((d) => <option key={d.slug} value={d.name}>{d.name}</option>)}
+              </select>
+            </div>
+          </Row>
+          <div className="mt-5">
+            <DateField id="sw-date" label="Date" value={from} min={iso(new Date())} onChange={setFrom} />
+          </div>
+          <GuestsRow label="Passengers" {...{ adults, children, setAdults, setChildren }} />
+        </>
+      )}
 
-      <div className="mt-5">
-        <label className="field-label" htmlFor="sw-people">Travellers</label>
-        <div className="field">
-          <Users className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-          <select id="sw-people" value={people} onChange={(e) => setPeople(e.target.value)}>
-            {['1', '2', '3', '4', '5', '6', '7', '8+'].map((n) => (
-              <option key={n} value={n}>{n} {n === '1' ? 'traveller' : 'travellers'}</option>
-            ))}
-          </select>
-        </div>
-      </div>
+      {tab === 'stays' && (
+        <>
+          <Row label="Area" htmlFor="sw-area">
+            <div className="field">
+              <BedDouble className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
+              <select id="sw-area" value={area} onChange={(e) => setArea(e.target.value)}>
+                {stayAreas.map((a) => <option key={a} value={a}>{a}</option>)}
+              </select>
+            </div>
+          </Row>
+          <DateRange from={from} to={to} setFrom={setFrom} setTo={setTo} labels={['Check-in', 'Check-out']} />
+          <GuestsRow label="Guests" {...{ adults, children, setAdults, setChildren }} />
+        </>
+      )}
 
-      <button type="submit" className="btn mt-7 w-full bg-ink py-4 text-white hover:bg-ink-600">
-        Explore now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+      <button type="submit" className="btn mt-7 w-full bg-ink-900 py-4 text-white hover:bg-ink">
+        Explore Now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
       </button>
 
       <p className="mt-3 text-center text-[11.5px] text-white/55">
@@ -115,13 +151,31 @@ export default function SearchWidget() {
   )
 }
 
+const Row = ({ label, htmlFor, children }) => (
+  <div className="mt-5">
+    <label className="field-label" htmlFor={htmlFor}>{label}</label>
+    {children}
+  </div>
+)
+
+const DateRange = ({ from, to, setFrom, setTo, labels }) => (
+  <div className="mt-5 grid grid-cols-2 gap-3">
+    <DateField id="sw-from" label={labels[0]} value={from} min={iso(new Date())} onChange={setFrom} />
+    <DateField id="sw-to" label={labels[1]} value={to} min={from} onChange={setTo} />
+  </div>
+)
+
 function DateField({ id, label, value, min, onChange }) {
   return (
     <div>
       <label className="field-label" htmlFor={id}>{label}</label>
-      <div className="field relative">
+      <div className="field relative !gap-2 !px-3.5">
         <CalendarDays className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-        <span aria-hidden="true" className="truncate">{pretty(value)}</span>
+        <span aria-hidden="true" className="truncate text-[0.82rem]">
+          {/* the weekday doesn't fit two-up on a phone */}
+          <span className="sm:hidden">{pretty(value, true)}</span>
+          <span className="hidden sm:inline">{pretty(value)}</span>
+        </span>
         <input
           id={id}
           type="date"
@@ -134,3 +188,86 @@ function DateField({ id, label, value, min, onChange }) {
     </div>
   )
 }
+
+const GuestsRow = (props) => (
+  <div className="mt-5">
+    <GuestsField {...props} />
+  </div>
+)
+
+/** Single field reading "2 Adults, 0 Children", with steppers behind it. */
+function GuestsField({ label, adults, children, setAdults, setChildren }) {
+  const [open, setOpen] = useState(false)
+  const box = useRef(null)
+
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e) => { if (box.current && !box.current.contains(e.target)) setOpen(false) }
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  const summary = `${adults} ${adults === 1 ? 'Adult' : 'Adults'}, ${children} ${children === 1 ? 'Child' : 'Children'}`
+
+  return (
+    <div ref={box} className="relative">
+      <span className="field-label">{label}</span>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="field text-left"
+      >
+        <Users className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
+        <span className="truncate">{summary}</span>
+      </button>
+
+      {open && (
+        <div className="absolute inset-x-0 top-full z-20 mt-2 rounded-2xl bg-white p-4 shadow-lift">
+          <Stepper label="Adults" min={1} value={adults} onChange={setAdults} />
+          <Stepper label="Children" min={0} value={children} onChange={setChildren} hint="Under 12" />
+        </div>
+      )}
+    </div>
+  )
+}
+
+function Stepper({ label, value, min, onChange, hint }) {
+  return (
+    <div className="flex items-center justify-between gap-6 py-2">
+      <span>
+        <span className="block text-[0.9rem] font-medium text-ink">{label}</span>
+        {hint && <span className="block text-[0.75rem] text-ink-300">{hint}</span>}
+      </span>
+      <span className="flex items-center gap-3">
+        <StepBtn label={`One fewer ${label}`} disabled={value <= min} onClick={() => onChange(value - 1)}>
+          <Minus className="h-4 w-4" strokeWidth={2} />
+        </StepBtn>
+        <span className="w-5 text-center text-[0.95rem] tnum text-ink">{value}</span>
+        <StepBtn label={`One more ${label}`} disabled={value >= 12} onClick={() => onChange(value + 1)}>
+          <Plus className="h-4 w-4" strokeWidth={2} />
+        </StepBtn>
+      </span>
+    </div>
+  )
+}
+
+const StepBtn = ({ label, disabled, onClick, children }) => (
+  <button
+    type="button"
+    aria-label={label}
+    disabled={disabled}
+    onClick={onClick}
+    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-ink/15 text-ink
+               transition-colors hover:border-ink hover:bg-ink hover:text-white
+               disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-ink/15
+               disabled:hover:bg-transparent disabled:hover:text-ink"
+  >
+    {children}
+  </button>
+)

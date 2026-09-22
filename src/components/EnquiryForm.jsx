@@ -15,9 +15,15 @@ const encode = (data) =>
     .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`)
     .join('&')
 
-export default function EnquiryForm({ defaultTrip = '' }) {
+export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', defaultTravellers = '', defaultDates = '' }) {
   const [step, setStep] = useState(0)
-  const [form, setForm] = useState({ ...EMPTY, trip: defaultTrip })
+  const [form, setForm] = useState({
+    ...EMPTY,
+    trip: defaultTrip,
+    message: defaultMessage,
+    travellers: defaultTravellers || EMPTY.travellers,
+    dates: defaultDates,
+  })
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [errors, setErrors] = useState({})
 
@@ -93,7 +99,7 @@ ${form.message ? `\n${form.message}` : ''}
           <button
             type="button"
             className="btn-ghost"
-            onClick={() => { setForm({ ...EMPTY, trip: defaultTrip }); setStep(0); setStatus('idle') }}
+            onClick={() => { setForm({ ...EMPTY, trip: defaultTrip, message: defaultMessage, travellers: defaultTravellers || EMPTY.travellers, dates: defaultDates }); setStep(0); setStatus('idle') }}
           >
             Send another
           </button>
@@ -142,6 +148,8 @@ ${form.message ? `\n${form.message}` : ''}
           <select name="trip" value={form.trip} onChange={set('trip')} className={inputCls(errors.trip)}>
             <option value="">Choose one…</option>
             {journeys.map((j) => <option key={j.slug} value={j.title}>{j.title}</option>)}
+            <option value="Transport / airport transfer">Transport / airport transfer</option>
+            <option value="Accommodation">Accommodation</option>
             <option value="Not sure yet">Not sure yet — help me choose</option>
           </select>
         </Field>

@@ -13,7 +13,7 @@ import OfferSlider from '../components/OfferSlider'
 import Testimonials from '../components/Testimonials'
 import { journeys } from '../data/journeys'
 import { destinations } from '../data/destinations'
-import { site, stats, whatsappLink } from '../data/site'
+import { hero, site, stats, whatsappLink } from '../data/site'
 
 const featured = ['rinjani-summit-trek', 'nusa-penida-island-hop', 'tetebatu-highlands']
 
@@ -44,31 +44,28 @@ export default function Home() {
         <div className="absolute inset-0 scrim" />
 
         <div className="wrap relative w-full pb-10 pt-28 sm:pb-14 sm:pt-32">
-          <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_minmax(0,26rem)] lg:gap-14">
+          <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_minmax(0,26.5rem)] lg:gap-12">
             <div>
               <Reveal>
-                <span className="pill-light">
+                <span className="pill">
                   <span className="pill-dot" />
-                  Lombok · Nusa Islands · Indonesia
+                  {hero.badge}
                 </span>
               </Reveal>
 
-              <Reveal as="h1" delay={100} className="mt-6 text-[2.6rem] leading-[1.02] !text-white sm:text-[3.6rem] lg:text-[4.3rem]">
-                Discover the islands,<br />
-                <span className="flourish-light">not the postcard</span>
+              <Reveal
+                as="h1"
+                delay={100}
+                /* balance is on h1 globally; here the line break is deliberate */
+                className="mt-7 text-[2.05rem] leading-[1.1] !text-white [text-wrap:initial] sm:text-[3.1rem] lg:text-[3.65rem]"
+              >
+                {hero.headline[0]}
+                <br />
+                {hero.headline[1]}
               </Reveal>
 
-              <Reveal as="p" delay={200} className="mt-6 max-w-lg text-[1.02rem] leading-relaxed text-white/75">
-                {site.blurb}
-              </Reveal>
-
-              <Reveal delay={300} className="mt-8 flex flex-wrap gap-3">
-                <Link to="/journeys" className="btn-accent">
-                  Browse journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-                </Link>
-                <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-ghost-light">
-                  <MessageCircle className="h-4 w-4" strokeWidth={1.75} /> Ask us anything
-                </a>
+              <Reveal as="p" delay={200} className="mt-6 max-w-xl text-[1.02rem] leading-relaxed text-white/80">
+                {hero.subhead}
               </Reveal>
             </div>
 
