@@ -22,8 +22,6 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  const solid = scrolled || open
-
   return (
     <>
       <a
@@ -44,16 +42,19 @@ export default function Navbar() {
           <div
             /* Frosted rather than opaque: over the hero you see the photograph
                blurred through it, and over the light sections the border and
-               shadow still read it as a panel floating above the page. */
+               shadow still read it as a panel floating above the page. While
+               the menu is open it goes dark to match the panel below. */
             className={`flex h-[60px] items-center justify-between gap-4 rounded-full border pl-5 pr-2.5
                         transition-all duration-500 sm:h-[68px] sm:pl-7 sm:pr-3 ${
-              solid
-                ? 'border-white/60 bg-white/[0.62] shadow-[0_16px_50px_-14px_rgba(1,29,57,0.38)] backdrop-blur-lg backdrop-saturate-150 sm:backdrop-blur-2xl'
-                : 'border-transparent bg-transparent shadow-none'
+              open
+                ? 'border-white/20 bg-ink-900/25 shadow-[0_16px_50px_-14px_rgba(1,15,31,0.5)] backdrop-blur-2xl backdrop-saturate-150'
+                : scrolled
+                  ? 'border-white/60 bg-white/[0.62] shadow-[0_16px_50px_-14px_rgba(1,29,57,0.38)] backdrop-blur-lg backdrop-saturate-150 sm:backdrop-blur-2xl'
+                  : 'border-transparent bg-transparent shadow-none'
             }`}
           >
             <Link to="/" aria-label={`${site.name} home`} className="-my-2 shrink-0 py-2">
-              <Logo variant={solid ? 'navy' : 'white'} wordmarkOnly height="h-8 sm:h-9" />
+              <Logo variant={scrolled && !open ? 'navy' : 'white'} wordmarkOnly height="h-8 sm:h-9" />
             </Link>
 
             <nav className="hidden items-center gap-1 rounded-full bg-white/80 p-1.5 shadow-[0_2px_10px_-2px_rgba(1,29,57,0.18)] backdrop-blur-md lg:flex">
@@ -90,7 +91,11 @@ export default function Navbar() {
                 aria-label={open ? 'Close menu' : 'Open menu'}
                 aria-expanded={open}
                 className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors active:scale-95 lg:hidden ${
-                  solid ? 'border-ink/15 bg-white text-ink' : 'border-white/30 bg-white/10 text-white backdrop-blur'
+                  open
+                    ? 'border-white/30 bg-white/15 text-white backdrop-blur'
+                    : scrolled
+                      ? 'border-ink/15 bg-white text-ink'
+                      : 'border-white/30 bg-white/10 text-white backdrop-blur'
                 }`}
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -104,15 +109,16 @@ export default function Navbar() {
       <div className={`fixed inset-0 z-40 lg:hidden ${open ? '' : 'pointer-events-none'}`} aria-hidden={!open}>
         <div
           onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-ink-900/35 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-ink-900/45 backdrop-blur-sm transition-opacity duration-300 ${
             open ? 'opacity-100' : 'opacity-0'
           }`}
         />
         <div
           style={{ top: 'calc(5rem + env(safe-area-inset-top, 0px))' }}
-          className={`absolute inset-x-3 origin-top rounded-3xl border border-white/45 bg-sand-100/70
-                      px-6 pb-6 pt-2 shadow-lift backdrop-blur-2xl backdrop-saturate-150
-                      transition-all duration-300 ${
+          className={`absolute inset-x-5 origin-top rounded-3xl border border-white/20 bg-ink-900/20
+                      px-6 pb-6 pt-2 shadow-[0_24px_60px_-18px_rgba(1,15,31,0.6)]
+                      backdrop-blur-2xl backdrop-saturate-150 transition-all duration-300
+                      sm:inset-x-8 ${
             open ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
           }`}
         >
@@ -123,9 +129,9 @@ export default function Navbar() {
                 to={item.to}
                 style={{ transitionDelay: open ? `${80 + i * 45}ms` : '0ms' }}
                 className={({ isActive }) =>
-                  `border-b border-ink/10 py-3.5 font-display text-[1.18rem] font-medium tracking-[-0.01em]
+                  `border-b border-white/15 py-3.5 font-display text-[1.18rem] font-medium tracking-[-0.01em]
                    transition-all duration-300 ${open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'} ${
-                    isActive ? 'text-sea-600' : 'text-ink'
+                    isActive ? 'text-sea-300' : 'text-white'
                   }`
                 }
               >
@@ -133,15 +139,9 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent mt-5 w-full">
+          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent mt-6 w-full">
             <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
             Message us on WhatsApp
-          </a>
-          <a
-            href={site.phoneHref}
-            className="mt-3 block py-3 text-center text-[0.95rem] text-ink-400 transition-colors hover:text-ink"
-          >
-            {site.phone}
           </a>
         </div>
       </div>
