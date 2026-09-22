@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, BedDouble, CalendarDays, Car, Globe, Minus, Plus, Users } from 'lucide-react'
+import { ArrowRight, BedDouble, Car, Globe, Minus, Plus, Users } from 'lucide-react'
 import { destinations } from '../data/destinations'
 import { pickupPoints, stayAreas } from '../data/site'
+import { DateRangeFields, SingleDateField, addDays, toISO, usePopover } from './DatePicker'
 
 const TABS = [
   { id: 'journeys', label: 'Journeys' },
@@ -10,31 +11,15 @@ const TABS = [
   { id: 'stays', label: 'Stays' },
 ]
 
-const iso = (d) => d.toISOString().slice(0, 10)
-const plusDays = (n) => {
-  const d = new Date()
-  d.setDate(d.getDate() + n)
-  return iso(d)
-}
-
-/** "Tue, 22 Sep 2026" — native date inputs render in the OS locale, which we
- *  don't control, so the readable value is drawn over a transparent input. */
-const pretty = (value, short = false) => {
-  const d = new Date(value)
-  if (Number.isNaN(+d)) return 'Pick a date'
-  return d.toLocaleDateString('en-GB', {
-    ...(short ? {} : { weekday: 'short' }),
-    day: 'numeric', month: 'short', year: 'numeric',
-  })
-}
+const plusDays = (n) => addDays(toISO(new Date()), n)
 
 export default function SearchWidget() {
   const navigate = useNavigate()
   const [tab, setTab] = useState('journeys')
 
   const [dest, setDest] = useState('')
-  const [from, setFrom] = useState(plusDays(90))
-  const [to, setTo] = useState(plusDays(97))
+  const [from, setFrom] = useState(() => plusDays(90))
+  const [to, setTo] = useState(() => plusDays(97))
   const [adults, setAdults] = useState(2)
   const [children, setChildren] = useState(0)
 
@@ -94,7 +79,7 @@ export default function SearchWidget() {
               </select>
             </div>
           </Row>
-          <DateRange from={from} to={to} setFrom={setFrom} setTo={setTo} labels={['Arrive', 'Leave']} />
+          <DateRangeFields {...{ from, to, setFrom, setTo }} labels={['Arrive', 'Leave']} />
           <GuestsRow label="Travellers" {...{ adults, children, setAdults, setChildren }} />
         </>
       )}
@@ -118,9 +103,7 @@ export default function SearchWidget() {
               </select>
             </div>
           </Row>
-          <div className="mt-5">
-            <DateField id="sw-date" label="Date" value={from} min={iso(new Date())} onChange={setFrom} />
-          </div>
+          <SingleDateField label="Date" value={from} onChange={setFrom} />
           <GuestsRow label="Passengers" {...{ adults, children, setAdults, setChildren }} />
         </>
       )}
@@ -135,13 +118,13 @@ export default function SearchWidget() {
               </select>
             </div>
           </Row>
-          <DateRange from={from} to={to} setFrom={setFrom} setTo={setTo} labels={['Check-in', 'Check-out']} />
+          <DateRangeFields {...{ from, to, setFrom, setTo }} labels={['Check-in', 'Check-out']} />
           <GuestsRow label="Guests" {...{ adults, children, setAdults, setChildren }} />
         </>
       )}
 
       <button type="submit" className="btn mt-7 w-full bg-ink-900 py-4 text-white hover:bg-ink">
-        Explore Now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+        Wander Now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
       </button>
 
       <p className="mt-3 text-center text-[11.5px] text-white/55">
@@ -158,37 +141,6 @@ const Row = ({ label, htmlFor, children }) => (
   </div>
 )
 
-const DateRange = ({ from, to, setFrom, setTo, labels }) => (
-  <div className="mt-5 grid grid-cols-2 gap-3">
-    <DateField id="sw-from" label={labels[0]} value={from} min={iso(new Date())} onChange={setFrom} />
-    <DateField id="sw-to" label={labels[1]} value={to} min={from} onChange={setTo} />
-  </div>
-)
-
-function DateField({ id, label, value, min, onChange }) {
-  return (
-    <div>
-      <label className="field-label" htmlFor={id}>{label}</label>
-      <div className="field relative !gap-2 !px-3.5">
-        <CalendarDays className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-        <span aria-hidden="true" className="truncate text-[0.82rem]">
-          {/* the weekday doesn't fit two-up on a phone */}
-          <span className="sm:hidden">{pretty(value, true)}</span>
-          <span className="hidden sm:inline">{pretty(value)}</span>
-        </span>
-        <input
-          id={id}
-          type="date"
-          value={value}
-          min={min}
-          onChange={(e) => onChange(e.target.value)}
-          className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
-        />
-      </div>
-    </div>
-  )
-}
-
 const GuestsRow = (props) => (
   <div className="mt-5">
     <GuestsField {...props} />
@@ -198,37 +150,20 @@ const GuestsRow = (props) => (
 /** Single field reading "2 Adults, 0 Children", with steppers behind it. */
 function GuestsField({ label, adults, children, setAdults, setChildren }) {
   const [open, setOpen] = useState(false)
-  const box = useRef(null)
-
-  useEffect(() => {
-    if (!open) return
-    const onDown = (e) => { if (box.current && !box.current.contains(e.target)) setOpen(false) }
-    const onKey = (e) => { if (e.key === 'Escape') setOpen(false) }
-    document.addEventListener('mousedown', onDown)
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('mousedown', onDown)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [open])
+  const { box, drop } = usePopover(open, () => setOpen(false), 170)
 
   const summary = `${adults} ${adults === 1 ? 'Adult' : 'Adults'}, ${children} ${children === 1 ? 'Child' : 'Children'}`
 
   return (
     <div ref={box} className="relative">
       <span className="field-label">{label}</span>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="field text-left"
-      >
+      <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="field text-left">
         <Users className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
         <span className="truncate">{summary}</span>
       </button>
 
       {open && (
-        <div className="absolute inset-x-0 top-full z-20 mt-2 rounded-2xl bg-white p-4 shadow-lift">
+        <div className={`absolute inset-x-0 z-30 rounded-2xl bg-white p-4 shadow-lift ${drop}`}>
           <Stepper label="Adults" min={1} value={adults} onChange={setAdults} />
           <Stepper label="Children" min={0} value={children} onChange={setChildren} hint="Under 12" />
         </div>

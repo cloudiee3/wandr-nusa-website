@@ -41,7 +41,7 @@ export const hero = {
   badge: 'Top Destination',
   headline: ['Discover New Places,', 'Create Lasting Memories'],
   subhead:
-    'Handpicked routes, small groups, and guides who live here, everything you need to plan your next adventure with confidence.',
+    'Handpicked stays, seamless booking, and local experiences, everything you need to plan your next adventure with confidence.',
 }
 
 // Where a transfer can start or finish.
