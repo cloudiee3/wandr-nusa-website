@@ -87,10 +87,25 @@ export const transferGroups = [
 
 export const OTHER_PLACE = 'Somewhere else'
 
-// Areas we can book a room in.
+// Where we can book a room, across the same three regions the journeys cover.
+// Ordered within each group by where travellers actually base themselves.
 export const stayGroups = [
-  { group: 'Lombok', options: ['Senggigi', 'Kuta Lombok', 'Mataram', 'Tetebatu', 'Senaru'] },
-  { group: 'Gili Islands', options: ['Gili Trawangan', 'Gili Air', 'Gili Meno'] },
+  {
+    group: 'Lombok',
+    options: ['Senggigi', 'Kuta Lombok', 'Mataram', 'Tetebatu', 'Senaru'],
+  },
+  {
+    group: 'Gili Islands',
+    options: ['Gili Trawangan', 'Gili Air', 'Gili Meno'],
+  },
+  {
+    group: 'Sumbawa',
+    options: ['Sumbawa Besar', 'Moyo Island', 'Lakey Peak, Hu\u2019u', 'Bima'],
+  },
+  {
+    group: 'Nusa Tenggara Timur',
+    options: ['Labuan Bajo', 'Moni, Flores', 'Ende, Flores', 'Waingapu, Sumba', 'Tambolaka, Sumba', 'Nemberala, Rote'],
+  },
 ]
 
 export const nav = [

@@ -8,7 +8,7 @@ import { DateRangeFields, SingleDateField, addDays, toISO, usePopover } from './
 const TABS = [
   { id: 'journeys', label: 'Journeys' },
   { id: 'transport', label: 'Transport' },
-  { id: 'stays', label: 'Stays' },
+  { id: 'stays', label: 'Hotels' },
 ]
 
 const plusDays = (n) => addDays(toISO(new Date()), n)
