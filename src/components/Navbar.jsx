@@ -5,10 +5,42 @@ import Logo from './Logo'
 import WhatsAppIcon from './WhatsAppIcon'
 import { nav, site, whatsappLink } from '../data/site'
 
+/**
+ * On the homepage the nav is route-based, so the pill would sit on Home for the
+ * whole page. This follows the section crossing the middle of the viewport
+ * instead. Elsewhere it returns null and the route decides, as before.
+ */
+function useScrollSpy(enabled) {
+  const [active, setActive] = useState(null)
+
+  useEffect(() => {
+    if (!enabled) { setActive(null); return }
+    const sections = nav
+      .map((n) => n.spy && document.getElementById(n.spy))
+      .filter(Boolean)
+    if (!sections.length) return
+
+    // A thin band across the middle: whatever crosses it is the active section.
+    const io = new IntersectionObserver(
+      (entries) => {
+        const hit = entries.find((e) => e.isIntersecting)
+        if (hit) setActive(hit.target.id)
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
+    )
+    sections.forEach((el) => io.observe(el))
+    setActive(sections[0].id)
+    return () => io.disconnect()
+  }, [enabled])
+
+  return active
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
+  const spy = useScrollSpy(pathname === '/')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -63,13 +95,14 @@ export default function Navbar() {
                 <NavLink
                   key={item.to}
                   to={item.to}
-                  className={({ isActive }) =>
-                    `rounded-full px-5 py-2 font-sans text-[0.9rem] transition-all duration-300 ${
-                      isActive
+                  className={({ isActive }) => {
+                    const on = spy ? spy === item.spy : isActive
+                    return `rounded-full px-5 py-2 font-sans text-[0.9rem] transition-all duration-300 ${
+                      on
                         ? 'bg-white font-medium text-ink shadow-[0_1px_4px_rgba(1,29,57,0.14)]'
                         : 'text-ink-500 hover:text-ink'
                     }`
-                  }
+                  }}
                 >
                   {item.label}
                 </NavLink>
@@ -129,12 +162,13 @@ export default function Navbar() {
                 key={item.to}
                 to={item.to}
                 style={{ transitionDelay: open ? `${80 + i * 45}ms` : '0ms' }}
-                className={({ isActive }) =>
-                  `border-b border-white/15 py-3.5 font-display text-[1.18rem] font-medium tracking-[-0.01em]
+                className={({ isActive }) => {
+                  const on = spy ? spy === item.spy : isActive
+                  return `border-b border-white/15 py-3.5 font-display text-[1.18rem] font-medium tracking-[-0.01em]
                    transition-all duration-300 ${open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'} ${
-                    isActive ? 'text-sea-300' : 'text-white'
+                    on ? 'text-sea-300' : 'text-white'
                   }`
-                }
+                }}
               >
                 {item.label}
               </NavLink>

@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative flex min-h-[100svh] items-end overflow-hidden">
+      <section id="home" className="relative flex min-h-[100svh] items-end overflow-hidden">
         <div ref={heroPhoto} className="absolute inset-0 will-change-transform">
           <Img name="segara-anak" priority sizes="100vw" className="h-full w-full" imgClassName="animate-ken-burns" />
         </div>
@@ -110,11 +110,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Offers ───────────────────────────────────────────── */}
-      <Deals />
-
       {/* ── Who we are ───────────────────────────────────────── */}
-      <section className="bg-sand py-16 lg:py-24">
+      <section id="about" className="bg-sand py-16 lg:py-24">
         <div className="wrap">
           <div className="text-center">
             <Reveal>
@@ -149,29 +146,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Where we go: the map ─────────────────────────────── */}
-      <section className="wrap py-16 lg:py-24">
-        <Reveal className="relative overflow-hidden rounded-3xl bg-ink-900 px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
-          <div className="absolute inset-0 grid-bg opacity-50" aria-hidden="true" />
-          <div className="relative">
-            <span className="pill-light"><span className="pill-dot" />Our patch</span>
-            <h2 className="mt-5 max-w-xl text-[1.9rem] leading-[1.14] !text-white sm:text-[2.5rem]">
-              A small map, <span className="flourish-light">known well</span>
-            </h2>
-            <p className="mt-4 max-w-xl text-white/60">
-              Everything we run sits within a few hours of the office in Senggigi. That is why we can answer a
-              question about trail conditions with something other than a guess.
-            </p>
+      {/* ── About us ─────────────────────────────────────────── */}
+      <AboutStrip />
 
-            <div className="mt-10">
-              <IslandMap />
-            </div>
+      {/* ── Featured journeys ────────────────────────────────── */}
+      <section id="discover" className="bg-sand py-16 lg:py-24">
+        <div className="wrap">
+          <SectionHead
+            eyebrow="Journeys"
+            title={<>Routes we run <span className="flourish">again and again</span></>}
+            lead="Fixed departures for the classics, and a blank page for everything else."
+            action={
+              <Link to="/journeys" className="btn-ghost">
+                All journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              </Link>
+            }
+          />
+
+          <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((slug, i) => (
+              <Reveal key={slug} delay={i * 110}>
+                <JourneyCard journey={journeys.find((x) => x.slug === slug)} />
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
+        </div>
       </section>
 
+      {/* ── Offers ───────────────────────────────────────────── */}
+      <Deals />
+
+      {/* ── Special offers ───────────────────────────────────── */}
+      <OfferSlider />
+
       {/* ── Destinations ─────────────────────────────────────── */}
-      <section className="wrap pb-16 lg:pb-24">
+      <section id="escapes" className="wrap pb-16 lg:pb-24">
         <SectionHead
           eyebrow="Where we go"
           title={<>Six places worth <span className="flourish">the flight</span></>}
@@ -213,35 +222,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Featured journeys ────────────────────────────────── */}
-      <section className="bg-sand py-16 lg:py-24">
-        <div className="wrap">
-          <SectionHead
-            eyebrow="Journeys"
-            title={<>Routes we run <span className="flourish">again and again</span></>}
-            lead="Fixed departures for the classics, and a blank page for everything else."
-            action={
-              <Link to="/journeys" className="btn-ghost">
-                All journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-              </Link>
-            }
-          />
+      {/* ── Where we go: the map ─────────────────────────────── */}
+      <section className="wrap py-16 lg:py-24">
+        <Reveal className="relative overflow-hidden rounded-3xl bg-ink-900 px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+          <div className="absolute inset-0 grid-bg opacity-50" aria-hidden="true" />
+          <div className="relative">
+            <span className="pill-light"><span className="pill-dot" />Our patch</span>
+            <h2 className="mt-5 max-w-xl text-[1.9rem] leading-[1.14] !text-white sm:text-[2.5rem]">
+              A small map, <span className="flourish-light">known well</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-white/60">
+              Everything we run sits within a few hours of the office in Senggigi. That is why we can answer a
+              question about trail conditions with something other than a guess.
+            </p>
 
-          <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((slug, i) => (
-              <Reveal key={slug} delay={i * 110}>
-                <JourneyCard journey={journeys.find((x) => x.slug === slug)} />
-              </Reveal>
-            ))}
+            <div className="mt-10">
+              <IslandMap />
+            </div>
           </div>
-        </div>
+        </Reveal>
       </section>
-
-      {/* ── Special offers ───────────────────────────────────── */}
-      <OfferSlider />
-
-      {/* ── About us ─────────────────────────────────────────── */}
-      <AboutStrip />
 
       {/* ── How it works ─────────────────────────────────────── */}
       <section className="wrap py-16 lg:py-24">
@@ -269,7 +269,7 @@ export default function Home() {
       <Testimonials />
 
       {/* ── Closing CTA ──────────────────────────────────────── */}
-      <section className="relative overflow-hidden">
+      <section id="contact" className="relative overflow-hidden">
         <Img name="coastline-aerial" sizes="100vw" className="absolute inset-0 h-full w-full" />
         <div className="absolute inset-0 bg-ink-900/70" />
         <div className="wrap relative py-20 text-center lg:py-28">

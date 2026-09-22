@@ -111,12 +111,14 @@ export const stayGroups = [
 
 // Order and labels follow the reference: Home, About, Discover, Escapes,
 // Contact. The routes are unchanged, so existing links still resolve.
+// `spy` is the id of the homepage section this item previews, so the pill can
+// follow the scroll there instead of sitting on Home the whole way down.
 export const nav = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Discover', to: '/journeys' },
-  { label: 'Escapes', to: '/destinations' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Home', to: '/', spy: 'home' },
+  { label: 'About', to: '/about', spy: 'about' },
+  { label: 'Discover', to: '/journeys', spy: 'discover' },
+  { label: 'Escapes', to: '/destinations', spy: 'escapes' },
+  { label: 'Contact', to: '/contact', spy: 'contact' },
 ]
 
 /** Builds a wa.me link with a message already typed for the traveller. */
