@@ -1,12 +1,13 @@
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import {
-  ArrowLeft, Check, Clock, Gauge, MapPin, MessageCircle, Minus, Sun, Users,
+  ArrowLeft, Check, Clock, Gauge, MapPin, Minus, Sun, Users,
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
 import JourneyCard from '../components/JourneyCard'
 import EnquiryForm from '../components/EnquiryForm'
+import WhatsAppIcon from '../components/WhatsAppIcon'
 import { bySlug, formatPrice, journeys } from '../data/journeys'
 import { whatsappLink } from '../data/site'
 
@@ -43,7 +44,7 @@ export default function JourneyDetail() {
         <div className="flex flex-wrap items-center gap-3">
           <a href="#enquire" className="btn-accent">Check availability</a>
           <a href={whatsappLink(`Hi! I'd like to ask about "${j.title}".`)} target="_blank" rel="noreferrer" className="btn-ghost-light">
-            <MessageCircle className="h-4 w-4" strokeWidth={1.75} /> Ask a question
+            <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask a question
           </a>
         </div>
       </PageHero>

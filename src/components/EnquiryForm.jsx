@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Check, Loader2, MessageCircle, Send } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Check, Loader2, Send } from 'lucide-react'
+import WhatsAppIcon from './WhatsAppIcon'
 import { journeys } from '../data/journeys'
 import { site, whatsappLink } from '../data/site'
 
@@ -92,8 +93,8 @@ ${form.message ? `\n${form.message}` : ''}
           message us on WhatsApp and we'll pick it up now.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-accent">
-            <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
+          <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-whatsapp">
+            <WhatsAppIcon className="h-[18px] w-[18px]" />
             Continue on WhatsApp
           </a>
           <button
@@ -199,7 +200,7 @@ ${form.message ? `\n${form.message}` : ''}
 
         <div className="flex flex-wrap items-center gap-3">
           <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-ghost">
-            <MessageCircle className="h-4 w-4" strokeWidth={1.75} /> WhatsApp instead
+            <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp instead
           </a>
           {/* Distinct keys so React swaps the DOM node instead of retyping one. */}
           {step < STEPS.length - 1 ? (

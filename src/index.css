@@ -131,6 +131,10 @@
   .btn-accent {
     @apply btn bg-sea-500 text-white hover:bg-sea-600 hover:shadow-lift;
   }
+  /* WhatsApp's own green, so the button is recognised before it is read. */
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1FBE59] hover:shadow-lift;
+  }
   .btn-ghost {
     @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40 hover:bg-ink/[0.04];
   }

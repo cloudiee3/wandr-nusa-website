@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu, X, MessageCircle } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
+import WhatsAppIcon from './WhatsAppIcon'
 import { nav, site, whatsappLink } from '../data/site'
 
 export default function Navbar() {
@@ -139,8 +140,8 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent mt-6 w-full">
-            <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
+          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-whatsapp mt-6 w-full">
+            <WhatsAppIcon className="h-[18px] w-[18px]" />
             Message us on WhatsApp
           </a>
         </div>

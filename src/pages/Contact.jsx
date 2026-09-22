@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom'
-import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import WhatsAppIcon from '../components/WhatsAppIcon'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import EnquiryForm from '../components/EnquiryForm'
@@ -67,8 +68,8 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={140} className="mt-8 space-y-1">
-            <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent w-full sm:w-auto">
-              <MessageCircle className="h-4 w-4" strokeWidth={1.75} /> Message on WhatsApp
+            <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-whatsapp w-full sm:w-auto">
+              <WhatsAppIcon className="h-[18px] w-[18px]" /> Message on WhatsApp
             </a>
           </Reveal>
 

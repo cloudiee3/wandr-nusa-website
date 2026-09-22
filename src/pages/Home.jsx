@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
@@ -9,6 +9,7 @@ import JourneyCard from '../components/JourneyCard'
 import IslandMap from '../components/IslandMap'
 import SearchWidget from '../components/SearchWidget'
 import Deals from '../components/Deals'
+import WhatsAppIcon from '../components/WhatsAppIcon'
 import AboutStrip from '../components/AboutStrip'
 import OfferSlider from '../components/OfferSlider'
 import Testimonials from '../components/Testimonials'
@@ -286,7 +287,7 @@ export default function Home() {
               Start an enquiry <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
             </Link>
             <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-ghost-light">
-              <MessageCircle className="h-4 w-4" strokeWidth={1.75} /> WhatsApp us
+              <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp us
             </a>
           </Reveal>
         </div>
