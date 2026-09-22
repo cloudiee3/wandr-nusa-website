@@ -44,26 +44,53 @@ export const hero = {
     'Handpicked stays, seamless booking, and local experiences, everything you need to plan your next adventure with confidence.',
 }
 
-// Where a transfer can start or finish.
-export const pickupPoints = [
-  'Lombok International Airport (LOP)',
-  'Bali — Ngurah Rai (DPS)',
-  'Bangsal Harbour',
-  'Senggigi Hotels',
-  'Kuta Lombok Hotels',
-  'Gili Islands Jetty',
-  'Somewhere else',
+// Where a road or boat transfer can start or finish. Both the pick-up and
+// drop-off selects use this list; "Somewhere else" is appended last.
+export const transferGroups = [
+  {
+    group: 'Airports',
+    options: [
+      'Lombok International Airport (LOP)',
+      'Bali \u2014 Ngurah Rai (DPS)',
+    ],
+  },
+  {
+    group: 'Harbours & Jetties',
+    options: [
+      'Bangsal Harbour',
+      'Lembar Harbour',
+      'Gili Islands Jetty',
+      'Padangbai, Bali',
+    ],
+  },
+  {
+    group: 'Towns & Hotel Areas',
+    options: [
+      'Senggigi',
+      'Mataram',
+      'Kuta Lombok',
+      'Tetebatu',
+      'Senaru',
+      'Gili Trawangan',
+      'Gili Air',
+      'Gili Meno',
+    ],
+  },
+  {
+    group: 'Rinjani Trailheads',
+    options: [
+      'Rinjani \u2014 Sembalun Gate',
+      'Rinjani \u2014 Senaru Gate',
+    ],
+  },
 ]
 
+export const OTHER_PLACE = 'Somewhere else'
+
 // Areas we can book a room in.
-export const stayAreas = [
-  'Senggigi',
-  'Kuta Lombok',
-  'Tetebatu',
-  'Senaru',
-  'Gili Air',
-  'Gili Trawangan',
-  'Gili Meno',
+export const stayGroups = [
+  { group: 'Lombok', options: ['Senggigi', 'Kuta Lombok', 'Mataram', 'Tetebatu', 'Senaru'] },
+  { group: 'Gili Islands', options: ['Gili Trawangan', 'Gili Air', 'Gili Meno'] },
 ]
 
 export const nav = [

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight, BedDouble, Car, Globe, Minus, Plus, Users } from 'lucide-react'
-import { destinations, optionValue, searchGroups } from '../data/destinations'
-import { pickupPoints, stayAreas } from '../data/site'
+import { optionValue, searchGroups } from '../data/destinations'
+import { OTHER_PLACE, stayGroups, transferGroups } from '../data/site'
 import { DateRangeFields, SingleDateField, addDays, toISO, usePopover } from './DatePicker'
 
 const TABS = [
@@ -23,9 +23,9 @@ export default function SearchWidget() {
   const [adults, setAdults] = useState(2)
   const [children, setChildren] = useState(0)
 
-  const [pickup, setPickup] = useState(pickupPoints[0])
-  const [dropoff, setDropoff] = useState(pickupPoints[3])
-  const [area, setArea] = useState(stayAreas[0])
+  const [pickup, setPickup] = useState(transferGroups[0].options[0])
+  const [dropoff, setDropoff] = useState('Senggigi')
+  const [area, setArea] = useState(stayGroups[0].options[0])
 
   function submit(e) {
     e.preventDefault()
@@ -101,21 +101,10 @@ export default function SearchWidget() {
       {tab === 'transport' && (
         <>
           <Row label="Pick-up" htmlFor="sw-pickup">
-            <div className="field">
-              <Car className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-              <select id="sw-pickup" value={pickup} onChange={(e) => setPickup(e.target.value)}>
-                {pickupPoints.map((p) => <option key={p} value={p}>{p}</option>)}
-              </select>
-            </div>
+            <GroupedSelect id="sw-pickup" icon={Car} value={pickup} onChange={setPickup} groups={transferGroups} tail={OTHER_PLACE} />
           </Row>
           <Row label="Drop-off" htmlFor="sw-dropoff">
-            <div className="field">
-              <Globe className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-              <select id="sw-dropoff" value={dropoff} onChange={(e) => setDropoff(e.target.value)}>
-                {pickupPoints.map((p) => <option key={p} value={p}>{p}</option>)}
-                {destinations.map((d) => <option key={d.slug} value={d.name}>{d.name}</option>)}
-              </select>
-            </div>
+            <GroupedSelect id="sw-dropoff" icon={Globe} value={dropoff} onChange={setDropoff} groups={transferGroups} tail={OTHER_PLACE} />
           </Row>
           <SingleDateField label="Date" value={from} onChange={setFrom} />
           <GuestsRow label="Passengers" {...{ adults, children, setAdults, setChildren }} />
@@ -125,12 +114,7 @@ export default function SearchWidget() {
       {tab === 'stays' && (
         <>
           <Row label="Area" htmlFor="sw-area">
-            <div className="field">
-              <BedDouble className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-              <select id="sw-area" value={area} onChange={(e) => setArea(e.target.value)}>
-                {stayAreas.map((a) => <option key={a} value={a}>{a}</option>)}
-              </select>
-            </div>
+            <GroupedSelect id="sw-area" icon={BedDouble} value={area} onChange={setArea} groups={stayGroups} />
           </Row>
           <DateRangeFields {...{ from, to, setFrom, setTo }} labels={['Check-in', 'Check-out']} />
           <GuestsRow label="Guests" {...{ adults, children, setAdults, setChildren }} />
@@ -147,6 +131,21 @@ export default function SearchWidget() {
     </form>
   )
 }
+
+/** Select whose options are grouped, with an optional ungrouped option last. */
+const GroupedSelect = ({ id, icon: Icon, value, onChange, groups, tail }) => (
+  <div className="field">
+    <Icon className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
+    <select id={id} value={value} onChange={(e) => onChange(e.target.value)}>
+      {groups.map((g) => (
+        <optgroup key={g.group} label={g.group}>
+          {g.options.map((o) => <option key={o} value={o}>{o}</option>)}
+        </optgroup>
+      ))}
+      {tail && <option value={tail}>{tail}</option>}
+    </select>
+  </div>
+)
 
 const Row = ({ label, htmlFor, children }) => (
   <div className="mt-5">
