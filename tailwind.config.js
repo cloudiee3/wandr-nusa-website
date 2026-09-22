@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Without this, `hover:` styles also fire on tap and then stick until you
+  // tap elsewhere — on a phone that leaves buttons looking permanently pressed.
+  future: { hoverOnlyWhenSupported: true },
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {

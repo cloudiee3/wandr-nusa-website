@@ -14,6 +14,11 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* Drops the 300ms wait mobile browsers keep for a possible double-tap. */
+  a, button, label, select, input, textarea, [role='button'], [role='tab'] {
+    touch-action: manipulation;
+  }
+
   body {
     @apply bg-sand-100 font-sans text-ink antialiased;
     overflow-x: hidden;
@@ -52,10 +57,10 @@
 
   /* Small tracked eyebrow above headings. */
   .label {
-    @apply font-sans text-[11px] font-semibold uppercase tracking-label text-sea-600;
+    @apply font-sans text-[12px] font-semibold uppercase tracking-label text-sea-600 sm:text-[11px];
   }
   .label-light {
-    @apply font-sans text-[11px] font-semibold uppercase tracking-label text-sea-300;
+    @apply font-sans text-[12px] font-semibold uppercase tracking-label text-sea-300 sm:text-[11px];
   }
 
   /* Editorial italic flourish used inside display headings. */
@@ -68,12 +73,14 @@
 
   /* Small rounded badge used as a section eyebrow — the dot is the tell. */
   .pill {
-    @apply inline-flex items-center gap-2 rounded-full bg-white px-4 py-2
-           text-[12px] font-medium text-ink shadow-[0_1px_3px_rgba(1,29,57,0.10)];
+    @apply inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5
+           text-[13px] font-medium text-ink shadow-[0_1px_3px_rgba(1,29,57,0.10)]
+           sm:py-2 sm:text-[12px];
   }
   .pill-light {
     @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10
-           px-4 py-2 text-[12px] font-medium text-white backdrop-blur-md;
+           px-4 py-2.5 text-[13px] font-medium text-white backdrop-blur-md
+           sm:py-2 sm:text-[12px];
   }
   .pill-dot {
     @apply h-[7px] w-[7px] shrink-0 rounded-full bg-sea-500;
@@ -81,31 +88,38 @@
 
   /* Filter chips */
   .chip {
-    @apply shrink-0 rounded-full border border-ink/10 bg-white px-4 py-2
-           text-sm text-ink-500 transition-all duration-300
-           hover:border-ink/30 hover:text-ink;
+    @apply inline-flex shrink-0 items-center justify-center rounded-full border border-ink/10
+           bg-white px-5 py-3 text-sm text-ink-500 transition-all duration-300
+           hover:border-ink/30 hover:text-ink sm:min-h-0 sm:px-4 sm:py-2;
   }
   .chip-on {
     @apply border-ink bg-ink text-white hover:border-ink hover:text-white;
   }
 
   /* Inputs inside the hero search widget */
+  /* 16px on a phone is not a style choice: below it, iOS Safari zooms the
+     whole page when the field takes focus. */
   .field {
-    @apply flex w-full items-center gap-2.5 rounded-xl bg-white px-4 py-3
-           text-[0.92rem] text-ink shadow-[0_1px_2px_rgba(1,29,57,0.06)]
-           transition-shadow duration-200 focus-within:shadow-[0_0_0_2px_rgba(18,160,168,0.45)];
+    @apply flex min-h-[52px] w-full items-center gap-2.5 rounded-xl bg-white px-4 py-3
+           text-base text-ink shadow-[0_1px_2px_rgba(1,29,57,0.06)]
+           transition-shadow duration-200 focus-within:shadow-[0_0_0_2px_rgba(18,160,168,0.45)]
+           sm:min-h-0 sm:text-[0.92rem];
   }
+  /* The control stretches over the row's padding so the whole field is the
+     tap target, not just the text inside it. */
   .field input, .field select {
-    @apply w-full bg-transparent text-ink outline-none placeholder:text-ink-200;
+    @apply -my-3 h-full w-full self-stretch bg-transparent py-3 text-ink outline-none
+           placeholder:text-ink-200;
   }
   .field-label {
-    @apply mb-1.5 block text-[10.5px] font-semibold uppercase tracking-label text-white/70;
+    @apply mb-1.5 block text-[12px] font-semibold uppercase tracking-label text-white/75
+           sm:text-[10.5px];
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3
            font-sans text-sm font-medium transition-all duration-300
-           active:scale-[0.97];
+           active:scale-[0.97] sm:min-h-[44px];
   }
   .btn-primary {
     @apply btn bg-ink text-white hover:bg-ink-600 hover:shadow-lift;
@@ -173,6 +187,15 @@
   .js-reveal .reveal.is-in { opacity: 1; transform: none; }
 
   .tnum { font-variant-numeric: tabular-nums; }
+
+  /* Wraps a small visual control in a thumb-sized hit area. */
+  .tap {
+    @apply relative;
+  }
+  .tap::after {
+    content: '';
+    @apply absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2;
+  }
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

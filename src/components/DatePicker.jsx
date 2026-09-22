@@ -63,7 +63,7 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
 
       <div className="mt-4 grid grid-cols-7 gap-y-1">
         {WEEKDAYS.map((w) => (
-          <span key={w} className="pb-2 text-center text-[0.76rem] font-semibold text-ink-400">{w}</span>
+          <span key={w} className="pb-2 text-center text-[0.8rem] font-semibold text-ink-400">{w}</span>
         ))}
 
         {Array.from({ length: firstWeekday }, (_, i) => <span key={`pad${i}`} />)}
@@ -86,8 +86,8 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
                 weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
               })}
               onClick={() => onPick(date)}
-              className={`mx-auto flex h-9 w-9 items-center justify-center rounded-lg text-[0.86rem] tnum
-                          transition-colors duration-150 ${
+              className={`mx-auto flex h-11 w-full max-w-[44px] items-center justify-center rounded-lg
+                          text-[0.92rem] tnum transition-colors duration-150 sm:h-9 sm:text-[0.86rem] ${
                 past
                   ? 'cursor-not-allowed text-ink-200'
                   : marked
@@ -105,7 +105,7 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
         <button
           type="button"
           onClick={onClose}
-          className="rounded-full px-4 py-1.5 text-[0.84rem] text-ink-500 transition-colors hover:text-ink"
+          className="min-h-[44px] rounded-full px-5 text-[0.9rem] font-medium text-ink-500 transition-colors hover:text-ink"
         >
           Done
         </button>
@@ -119,8 +119,8 @@ const NavBtn = ({ label, onClick, children }) => (
     type="button"
     aria-label={label}
     onClick={onClick}
-    className="inline-flex h-8 w-8 items-center justify-center rounded-full text-ink-500
-               transition-colors hover:bg-sand-200 hover:text-ink"
+    className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink-500
+               transition-colors active:scale-95 hover:bg-sand-200 hover:text-ink"
   >
     {children}
   </button>

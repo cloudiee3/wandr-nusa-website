@@ -18,9 +18,10 @@ export default function WhatsAppFab() {
       target="_blank"
       rel="noreferrer"
       aria-label="Message Wandr Nusa on WhatsApp"
-      className={`group fixed bottom-5 right-5 z-40 inline-flex items-center gap-3 rounded-full
-                  bg-[#25D366] py-3 pl-3 pr-4 text-white shadow-lift transition-all duration-500
-                  hover:bg-[#1FBE59] ${
+      style={{ bottom: 'calc(1.25rem + env(safe-area-inset-bottom, 0px))' }}
+      className={`group fixed right-5 z-40 inline-flex min-h-[56px] items-center gap-3 rounded-full
+                  bg-[#25D366] py-3 pl-3.5 pr-4 text-white shadow-lift transition-all duration-500
+                  active:scale-95 hover:bg-[#1FBE59] ${
                     show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
                   }`}
     >

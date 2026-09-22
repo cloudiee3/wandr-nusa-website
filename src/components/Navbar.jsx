@@ -36,7 +36,10 @@ export default function Navbar() {
 
       {/* The bar floats over the page; the rounded container only appears once
           you've scrolled, so at the top the logo sits straight on the photo. */}
-      <header className="fixed inset-x-0 top-0 z-50">
+      <header
+        className="fixed inset-x-0 top-0 z-50"
+        style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
+      >
         <div className="wrap pt-3 sm:pt-4">
           <div
             /* Frosted rather than opaque: over the hero you see the photograph
@@ -45,11 +48,11 @@ export default function Navbar() {
             className={`flex h-[60px] items-center justify-between gap-4 rounded-full border pl-5 pr-2.5
                         transition-all duration-500 sm:h-[68px] sm:pl-7 sm:pr-3 ${
               solid
-                ? 'border-white/60 bg-white/[0.62] shadow-[0_16px_50px_-14px_rgba(1,29,57,0.38)] backdrop-blur-2xl backdrop-saturate-150'
+                ? 'border-white/60 bg-white/[0.62] shadow-[0_16px_50px_-14px_rgba(1,29,57,0.38)] backdrop-blur-lg backdrop-saturate-150 sm:backdrop-blur-2xl'
                 : 'border-transparent bg-transparent shadow-none'
             }`}
           >
-            <Link to="/" aria-label={`${site.name} home`} className="shrink-0">
+            <Link to="/" aria-label={`${site.name} home`} className="-my-2 shrink-0 py-2">
               <Logo variant={solid ? 'navy' : 'white'} wordmarkOnly height="h-8 sm:h-9" />
             </Link>
 
@@ -86,7 +89,7 @@ export default function Navbar() {
                 onClick={() => setOpen((v) => !v)}
                 aria-label={open ? 'Close menu' : 'Open menu'}
                 aria-expanded={open}
-                className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors lg:hidden ${
+                className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors active:scale-95 lg:hidden ${
                   solid ? 'border-ink/15 bg-white text-ink' : 'border-white/30 bg-white/10 text-white backdrop-blur'
                 }`}
               >
@@ -114,7 +117,7 @@ export default function Navbar() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `border-b border-ink/[0.07] py-4 font-sans text-lg transition-colors ${
+                  `border-b border-ink/[0.07] py-4 font-sans text-[1.05rem] transition-colors ${
                     isActive ? 'text-sea-600' : 'text-ink'
                   }`
                 }

@@ -23,7 +23,7 @@ export default function Footer() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sea-400 opacity-70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sea-400" />
               </span>
-              <span className="font-sans text-[10px] uppercase tracking-label text-white/70">
+              <span className="font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-white/70">
                 Taking bookings for 2027
               </span>
             </span>
@@ -43,13 +43,13 @@ export default function Footer() {
 
           <FooterCol title="Get in touch">
             <li>
-              <a href={site.phoneHref} className="group inline-flex items-start gap-2.5 text-white/60 transition-colors hover:text-white">
+              <a href={site.phoneHref} className="group -my-2 inline-flex items-start gap-2.5 py-3 text-white/60 transition-colors hover:text-white">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-sea-400" strokeWidth={1.6} />
                 {site.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="inline-flex items-start gap-2.5 text-white/60 transition-colors hover:text-white">
+              <a href={`mailto:${site.email}`} className="-my-2 inline-flex items-start gap-2.5 py-3 text-white/60 transition-colors hover:text-white">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-sea-400" strokeWidth={1.6} />
                 {site.email}
               </a>
@@ -65,7 +65,7 @@ export default function Footer() {
             <li className="pt-2">
               <dl className="space-y-1">
                 {site.hours.map(([d, h]) => (
-                  <div key={d} className="flex justify-between gap-4 font-sans text-[11px]">
+                  <div key={d} className="flex justify-between gap-4 font-sans text-[12px] sm:text-[11px]">
                     <dt className="text-white/40">{d}</dt>
                     <dd className="text-white/65">{h}</dd>
                   </div>
@@ -76,18 +76,18 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col-reverse items-center justify-between gap-5 border-t border-white/10 pt-7 sm:flex-row">
-          <p className="font-sans text-[11px] text-white/35">
+          <p className="font-sans text-[12px] text-white/40 sm:text-[11px]">
             © {year} {site.legalName}. Registered in Nusa Tenggara Barat, Indonesia.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {site.socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
-                 className="link-underline font-sans text-[11px] uppercase tracking-label text-white/50 hover:text-white">
+                 className="link-underline -my-2 inline-block px-1 py-3.5 font-sans text-[12px] uppercase tracking-label text-white/55 hover:text-white sm:text-[11px]">
                 {s.label}
               </a>
             ))}
-            <Link to="/privacy" className="link-underline font-sans text-[11px] uppercase tracking-label text-white/50 hover:text-white">Privacy</Link>
-            <Link to="/terms" className="link-underline font-sans text-[11px] uppercase tracking-label text-white/50 hover:text-white">Terms</Link>
+            <Link to="/privacy" className="link-underline -my-2 inline-block px-1 py-3.5 font-sans text-[12px] uppercase tracking-label text-white/55 hover:text-white sm:text-[11px]">Privacy</Link>
+            <Link to="/terms" className="link-underline -my-2 inline-block px-1 py-3.5 font-sans text-[12px] uppercase tracking-label text-white/55 hover:text-white sm:text-[11px]">Terms</Link>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ const FooterCol = ({ title, children }) => (
 
 const FooterLink = ({ to, children }) => (
   <li>
-    <Link to={to} className="link-underline text-white/60 transition-colors hover:text-white">
+    <Link to={to} className="link-underline -my-2 inline-block py-3 text-white/60 transition-colors hover:text-white">
       {children}
     </Link>
   </li>

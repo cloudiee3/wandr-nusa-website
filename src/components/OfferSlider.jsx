@@ -60,7 +60,7 @@ export default function OfferSlider() {
         </div>
 
         <div className="mt-10 flex items-center justify-between gap-6">
-          <div className="flex items-center gap-2" role="tablist" aria-label="Offer">
+          <div className="-ml-2 flex items-center" role="tablist" aria-label="Offer">
             {offerSlides.map((s, n) => (
               <button
                 key={s.id}
@@ -69,10 +69,14 @@ export default function OfferSlider() {
                 aria-selected={n === i}
                 aria-label={s.kicker}
                 onClick={() => setI(n)}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  n === i ? 'w-8 bg-white' : 'w-1.5 bg-white/50 hover:bg-white/80'
-                }`}
-              />
+                className="flex h-11 w-11 items-center justify-center"
+              >
+                <span
+                  className={`block h-1.5 rounded-full transition-all duration-500 ${
+                    n === i ? 'w-8 bg-white' : 'w-1.5 bg-white/60'
+                  }`}
+                />
+              </button>
             ))}
           </div>
 

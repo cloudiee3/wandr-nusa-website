@@ -158,7 +158,7 @@ export default function IslandMap({ className = '' }) {
         />
       </div>
 
-      <figcaption className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-semibold uppercase tracking-label text-white/40">
+      <figcaption className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-white/40">
         <span className="inline-flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-sea-300" /> Where we run trips
         </span>

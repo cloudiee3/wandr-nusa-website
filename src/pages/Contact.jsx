@@ -74,10 +74,10 @@ export default function Contact() {
 
           <Reveal delay={200} className="mt-10 space-y-5 border-t border-ink/[0.07] pt-8">
             <ContactRow icon={Phone} label="Phone">
-              <a href={site.phoneHref} className="link-underline">{site.phone}</a>
+              <a href={site.phoneHref} className="link-underline -my-2.5 inline-block py-3">{site.phone}</a>
             </ContactRow>
             <ContactRow icon={Mail} label="Email">
-              <a href={`mailto:${site.email}`} className="link-underline">{site.email}</a>
+              <a href={`mailto:${site.email}`} className="link-underline -my-2.5 inline-block py-3">{site.email}</a>
             </ContactRow>
             <ContactRow icon={MapPin} label="Office">
               {site.address.line1}<br />
@@ -118,7 +118,7 @@ const ContactRow = ({ icon: Icon, label, children }) => (
       <Icon className="h-4 w-4" strokeWidth={1.75} />
     </span>
     <div>
-      <span className="font-sans text-[10px] uppercase tracking-label text-ink-300">{label}</span>
+      <span className="font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">{label}</span>
       <div className="mt-1 text-[0.98rem] leading-relaxed text-ink-600">{children}</div>
     </div>
   </div>

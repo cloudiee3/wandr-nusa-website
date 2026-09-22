@@ -14,7 +14,7 @@ export default function Deals() {
         <Reveal delay={90}>
           <Link
             to="/journeys"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/12 bg-white px-5 py-2.5
+            className="inline-flex min-h-[46px] items-center gap-2 rounded-full border border-ink/12 bg-white px-5
                        text-[0.88rem] text-ink transition-all duration-300 hover:border-ink hover:bg-ink hover:text-white"
           >
             See all journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
@@ -41,12 +41,12 @@ export default function Deals() {
                 <Percent className="h-5 w-5" strokeWidth={2} />
               </span>
 
-              <span className="absolute right-5 top-5 rounded-full border border-white/25 bg-white/15 px-4 py-1.5 text-[11.5px] text-white backdrop-blur-md">
+              <span className="absolute right-5 top-5 rounded-full border border-white/25 bg-white/15 px-4 py-1.5 text-[12.5px] sm:text-[11.5px] text-white backdrop-blur-md">
                 {d.valid}
               </span>
 
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                <span className="text-[11px] font-semibold uppercase tracking-label text-white/75">
+                <span className="text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-white/75">
                   {d.kicker}
                 </span>
                 <p className="mt-2 flex items-baseline gap-3">

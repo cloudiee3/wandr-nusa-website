@@ -75,8 +75,8 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 scrim" />
 
-        <div className="wrap relative w-full pb-10 pt-28 sm:pb-14 sm:pt-32">
-          <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_minmax(0,26.5rem)] lg:gap-12">
+        <div className="wrap relative w-full pb-8 pt-24 sm:pb-14 sm:pt-32">
+          <div className="grid items-end gap-7 sm:gap-10 lg:grid-cols-[1.15fr_minmax(0,26.5rem)] lg:gap-12">
             <div>
               <Reveal>
                 <span className="pill">
@@ -97,7 +97,7 @@ export default function Home() {
                 <span className="text-ember-300">{hero.headlineAccent}</span>
               </Reveal>
 
-              <Reveal as="p" delay={200} className="mt-6 max-w-xl text-[1.02rem] leading-relaxed text-white/80">
+              <Reveal as="p" delay={200} className="mt-5 max-w-xl text-[1rem] leading-relaxed text-white/80 sm:mt-6 sm:text-[1.02rem]">
                 {hero.subhead}
               </Reveal>
             </div>
@@ -197,12 +197,12 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 scrim-soft" />
                 <div className="relative flex h-full flex-col justify-end p-6">
-                  <span className="text-[11px] font-semibold uppercase tracking-label text-sea-300">{d.island}</span>
+                  <span className="text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-sea-300">{d.island}</span>
                   <h3 className={`mt-2 !text-white ${i === 0 ? 'text-3xl' : 'text-xl'}`}>{d.name}</h3>
                   <p className={`mt-2 max-w-sm text-[0.9rem] leading-relaxed text-white/70 ${i === 0 ? '' : 'line-clamp-2'}`}>
                     {d.blurb}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-label text-sea-300">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-sea-300">
                     Explore <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
                   </span>
                 </div>

@@ -65,7 +65,7 @@ export default function About() {
                 <span className="block font-display text-2xl font-semibold text-ink sm:text-3xl">
                   <CountUp value={s.value} suffix={s.suffix} />
                 </span>
-                <span className="mt-1 block font-sans text-[10px] uppercase tracking-label text-ink-300">{s.label}</span>
+                <span className="mt-1 block font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">{s.label}</span>
               </div>
             ))}
           </Reveal>

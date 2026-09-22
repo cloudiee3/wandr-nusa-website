@@ -53,7 +53,7 @@ export default function JourneyDetail() {
         <div className="wrap grid grid-cols-2 gap-px sm:grid-cols-3 lg:grid-cols-6">
           {facts.map(({ icon: Icon, label, value }) => (
             <div key={label} className="py-6 pr-6">
-              <span className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-label text-ink-300">
+              <span className="inline-flex items-center gap-2 font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">
                 <Icon className="h-3.5 w-3.5 text-sea-500" strokeWidth={1.75} />
                 {label}
               </span>
@@ -61,7 +61,7 @@ export default function JourneyDetail() {
             </div>
           ))}
           <div className="py-6">
-            <span className="font-sans text-[10px] uppercase tracking-label text-ink-300">
+            <span className="font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">
               {j.priceFrom ? 'From (per person)' : 'Pricing'}
             </span>
             <span className="mt-1.5 block font-display text-[1.15rem] font-semibold text-sea-600">
@@ -90,11 +90,11 @@ export default function JourneyDetail() {
                 {i < j.itinerary.length - 1 && (
                   <span aria-hidden="true" className="absolute left-[19px] top-11 h-[calc(100%-1.5rem)] w-px bg-ink/10" />
                 )}
-                <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-sea-500/25 bg-sea-100 font-sans text-[11px] text-sea-700">
+                <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-sea-500/25 bg-sea-100 font-sans text-[12px] sm:text-[11px] text-sea-700">
                   {i + 1}
                 </span>
                 <div className="pt-1">
-                  <span className="font-sans text-[10px] uppercase tracking-label text-ink-300">{d.day}</span>
+                  <span className="font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">{d.day}</span>
                   <h3 className="mt-1 text-[1.2rem]">{d.title}</h3>
                   <p className="mt-2 text-[0.96rem] leading-relaxed text-ink-500">{d.body}</p>
                 </div>

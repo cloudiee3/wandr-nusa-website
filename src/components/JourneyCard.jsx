@@ -55,15 +55,16 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
           onClick={toggleSave}
           aria-pressed={saved}
           aria-label={saved ? `Remove ${journey.title} from saved` : `Save ${journey.title}`}
-          className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full
-                     border border-white/25 bg-ink-900/25 text-white backdrop-blur-md
-                     transition-colors duration-300 hover:bg-ink-900/45"
+          className="absolute right-2.5 top-2.5 inline-flex h-11 w-11 items-center justify-center rounded-full
+                     border border-white/25 bg-ink-900/30 text-white backdrop-blur-md
+                     transition-colors duration-300 hover:bg-ink-900/45 active:scale-95"
         >
           <Heart className={`h-4 w-4 ${saved ? 'fill-white' : ''}`} strokeWidth={1.75} />
         </button>
 
+        {/* The dot is 6px; the thing you tap is 44. */}
         {shots.length > 1 && (
-          <div className="absolute inset-x-0 bottom-3 flex items-center justify-center gap-1.5">
+          <div className="absolute inset-x-0 bottom-0 flex h-12 items-center justify-center gap-0.5">
             {shots.map((s, n) => (
               <button
                 key={s}
@@ -71,17 +72,21 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
                 onClick={() => setI(n)}
                 aria-label={`Photo ${n + 1} of ${shots.length}`}
                 aria-current={n === i}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  n === i ? 'w-5 bg-white' : 'w-1.5 bg-white/55 hover:bg-white/80'
-                }`}
-              />
+                className="flex h-11 w-11 items-center justify-center"
+              >
+                <span
+                  className={`block h-1.5 rounded-full transition-all duration-300 ${
+                    n === i ? 'w-5 bg-white' : 'w-1.5 bg-white/60'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}
       </div>
 
       <h3 className="mt-4 text-[1.22rem] leading-snug">
-        <Link to={`/journeys/${journey.slug}`} className="transition-colors duration-300 hover:text-sea-600">
+        <Link to={`/journeys/${journey.slug}`} className="-my-3 inline-block py-3 transition-colors duration-300 hover:text-sea-600">
           {journey.title}
         </Link>
       </h3>
@@ -111,9 +116,9 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
         </span>
         <Link
           to={`/journeys/${journey.slug}`}
-          className="shrink-0 rounded-full border border-ink/10 bg-white px-5 py-2.5 text-[0.85rem]
-                     text-ink shadow-[0_1px_3px_rgba(1,29,57,0.08)] transition-all duration-300
-                     hover:border-ink hover:bg-ink hover:text-white"
+          className="inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-ink/10
+                     bg-white px-5 text-[0.88rem] text-ink shadow-[0_1px_3px_rgba(1,29,57,0.08)]
+                     transition-all duration-300 hover:border-ink hover:bg-ink hover:text-white active:scale-[0.97]"
         >
           View details
         </Link>

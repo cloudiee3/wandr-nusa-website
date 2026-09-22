@@ -127,7 +127,7 @@ ${form.message ? `\n${form.message}` : ''}
         {STEPS.map((s, i) => (
           <li key={s} className="flex flex-1 items-center gap-2">
             <span
-              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-sans text-[11px] transition-colors duration-300 ${
+              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-sans text-[12px] transition-colors duration-300 ${
                 i < step ? 'bg-sea-500 text-white'
                   : i === step ? 'bg-ink text-white'
                   : 'bg-ink/[0.07] text-ink-300'
@@ -224,16 +224,17 @@ function Field({ label, hint, error, children }) {
     <label className="mb-5 block">
       <span className="mb-2 flex items-baseline justify-between gap-3">
         <span className="font-sans text-sm font-medium text-ink">{label}</span>
-        {hint && <span className="font-sans text-[10px] text-ink-300">{hint}</span>}
+        {hint && <span className="font-sans text-[12px] text-ink-300 sm:text-[10px]">{hint}</span>}
       </span>
       {children}
-      {error && <span className="mt-1.5 block font-sans text-[11px] text-ember">{error}</span>}
+      {error && <span className="mt-1.5 block font-sans text-[12.5px] text-ember sm:text-[11px]">{error}</span>}
     </label>
   )
 }
 
+// text-base on phones: under 16px, iOS Safari zooms the page on focus.
 const inputCls = (error) =>
-  `w-full rounded-xl border bg-sand-100/60 px-4 py-3 text-[0.95rem] text-ink
+  `w-full min-h-[52px] rounded-xl border bg-sand-100/60 px-4 py-3 text-base text-ink
    transition-colors duration-200 placeholder:text-ink-200
-   focus:border-sea-500 focus:bg-white focus:outline-none
+   focus:border-sea-500 focus:bg-white focus:outline-none sm:min-h-0 sm:text-[0.95rem]
    ${error ? 'border-ember/60' : 'border-ink/12'}`

@@ -54,7 +54,7 @@ export default function SearchWidget() {
   return (
     <form
       onSubmit={submit}
-      className="w-full rounded-3xl border border-white/20 bg-white/[0.13] p-5 shadow-[0_24px_70px_-24px_rgba(1,15,31,0.7)] backdrop-blur-2xl sm:p-7"
+      className="w-full rounded-3xl border border-white/20 bg-white/[0.13] p-5 shadow-[0_24px_70px_-24px_rgba(1,15,31,0.7)] backdrop-blur-xl sm:p-7 sm:backdrop-blur-2xl"
     >
       <h2 className="text-[1.5rem] !text-white">Find the best Places</h2>
 
@@ -66,7 +66,7 @@ export default function SearchWidget() {
             role="tab"
             aria-selected={tab === t.id}
             onClick={() => setTab(t.id)}
-            className={`rounded-full py-2.5 text-[0.85rem] transition-all duration-300 ${
+            className={`min-h-[44px] rounded-full px-2 text-[0.88rem] transition-all duration-300 ${
               tab === t.id ? 'bg-white font-medium text-ink shadow-sm' : 'text-white/75 hover:text-white'
             }`}
           >
@@ -125,7 +125,7 @@ export default function SearchWidget() {
         Wander Now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
       </button>
 
-      <p className="mt-3 text-center text-[11.5px] text-white/55">
+      <p className="mt-3 text-center text-[12.5px] sm:text-[11.5px] text-white/55">
         No payment now — we reply with a routed plan and the real cost.
       </p>
     </form>
@@ -187,7 +187,7 @@ function GuestsField({ label, adults, children, setAdults, setChildren }) {
 
 function Stepper({ label, value, min, onChange, hint }) {
   return (
-    <div className="flex items-center justify-between gap-6 py-2">
+    <div className="flex items-center justify-between gap-6 py-1.5">
       <span>
         <span className="block text-[0.9rem] font-medium text-ink">{label}</span>
         {hint && <span className="block text-[0.75rem] text-ink-300">{hint}</span>}
@@ -211,8 +211,8 @@ const StepBtn = ({ label, disabled, onClick, children }) => (
     aria-label={label}
     disabled={disabled}
     onClick={onClick}
-    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-ink/15 text-ink
-               transition-colors hover:border-ink hover:bg-ink hover:text-white
+    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 text-ink
+               transition-colors active:scale-95 hover:border-ink hover:bg-ink hover:text-white
                disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-ink/15
                disabled:hover:bg-transparent disabled:hover:text-ink"
   >
