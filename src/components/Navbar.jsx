@@ -111,7 +111,7 @@ export default function Navbar() {
         <div
           style={{ top: 'calc(5rem + env(safe-area-inset-top, 0px))' }}
           className={`absolute inset-x-3 origin-top rounded-3xl border border-white/45 bg-sand-100/70
-                      px-6 pb-7 pt-3 shadow-lift backdrop-blur-2xl backdrop-saturate-150
+                      px-6 pb-6 pt-2 shadow-lift backdrop-blur-2xl backdrop-saturate-150
                       transition-all duration-300 ${
             open ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
           }`}
@@ -123,7 +123,7 @@ export default function Navbar() {
                 to={item.to}
                 style={{ transitionDelay: open ? `${80 + i * 45}ms` : '0ms' }}
                 className={({ isActive }) =>
-                  `border-b border-ink/10 py-4 font-display text-[1.45rem] font-medium tracking-[-0.01em]
+                  `border-b border-ink/10 py-3.5 font-display text-[1.18rem] font-medium tracking-[-0.01em]
                    transition-all duration-300 ${open ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'} ${
                     isActive ? 'text-sea-600' : 'text-ink'
                   }`
@@ -133,7 +133,7 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent mt-6 w-full">
+          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-accent mt-5 w-full">
             <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
             Message us on WhatsApp
           </a>

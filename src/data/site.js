@@ -109,11 +109,13 @@ export const stayGroups = [
   },
 ]
 
+// Order and labels follow the reference: Home, About, Discover, Escapes,
+// Contact. The routes are unchanged, so existing links still resolve.
 export const nav = [
   { label: 'Home', to: '/' },
-  { label: 'Destinations', to: '/destinations' },
-  { label: 'Journeys', to: '/journeys' },
   { label: 'About', to: '/about' },
+  { label: 'Discover', to: '/journeys' },
+  { label: 'Escapes', to: '/destinations' },
   { label: 'Contact', to: '/contact' },
 ]
 

@@ -29,13 +29,13 @@ export default function Footer() {
             </span>
           </div>
 
-          <FooterCol title="Destinations">
+          <FooterCol title="Escapes">
             {destinations.slice(0, 6).map((d) => (
               <FooterLink key={d.slug} to={`/destinations/${d.slug}`}>{d.name}</FooterLink>
             ))}
           </FooterCol>
 
-          <FooterCol title="Journeys">
+          <FooterCol title="Discover">
             {journeys.slice(0, 6).map((j) => (
               <FooterLink key={j.slug} to={`/journeys/${j.slug}`}>{j.kicker === 'Bespoke' ? 'Custom trips' : j.title.split(':')[0]}</FooterLink>
             ))}
