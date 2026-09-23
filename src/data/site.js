@@ -8,7 +8,7 @@ export const site = {
   legalName: 'Wandr Nusa Travel',
   tagline: 'Travel',
   blurb:
-    'Small-group and private journeys through Lombok, Mount Rinjani, Nusa Penida and the Gilis — planned and guided by people who live there.',
+    'Small-group and private journeys through Lombok, Mount Rinjani, Sumbawa and the islands east — planned and guided by people who live there.',
 
   phone: '+62 823 4081 9128',
   phoneHref: 'tel:+6282340819128',

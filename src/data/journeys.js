@@ -8,14 +8,22 @@ export const journeys = [
     priceNote: 'including park permits, guide, porters & all meals',
     title: 'Rinjani Summit & Crater Lake',
     kicker: 'Signature trek',
-    region: 'Mount Rinjani, Lombok',
+    region: 'Mount Rinjani, East Lombok',
     duration: '3 days · 2 nights',
     group: 'Max 8 trekkers',
     difficulty: 'Demanding',
     season: 'April – November',
-    priceFrom: 4650000,
-    image: 'segara-anak',
-    gallery: ['rinjani-crater', 'volcanic-plain', 'segara-anak'],
+    pricing: {
+      unit: 'per person',
+      tiers: [
+        { from: 2, to: 2, price: 4650000 },
+        { from: 3, to: 4, price: 4150000 },
+        { from: 5, to: 6, price: 3750000 },
+      ],
+      note: 'Private departure. The per-person price falls as the group grows.',
+    },
+    image: 'rinjani-sunrise',
+    gallery: ['rinjani-peak', 'rinjani-lake-view', 'segara-anak'],
     tags: ['Mountain & Hills', 'Nature'],
     summary:
       'Three days on Indonesia’s second-highest volcano — up through the pine ridge to Plawangan, a pre-dawn push to the 3,726 m rim, then down to camp beside the hot springs of Segara Anak.',
@@ -32,6 +40,85 @@ export const journeys = [
     ],
     includes: ['National park permits', 'Certified guide + porters', 'All camping equipment', 'All meals and drinking water on the mountain', 'Hotel transfers'],
     excludes: ['Personal trekking gear', 'Travel insurance', 'Tips for the crew'],
+  },
+  {
+    slug: 'rinjani-crater-rim',
+    rating: 4.9,
+    reviews: 206,
+    priceNote: 'including permits, guide, porters & all meals',
+    title: 'Rinjani Crater Rim from Sembalun',
+    kicker: 'Most booked trek',
+    region: 'Sembalun, East Lombok',
+    duration: '2 days · 1 night',
+    group: 'Max 8 trekkers',
+    difficulty: 'Challenging',
+    season: 'April – November',
+    pricing: {
+      unit: 'per person',
+      tiers: [
+        { from: 2, to: 2, price: 3450000 },
+        { from: 3, to: 4, price: 3050000 },
+        { from: 5, to: 6, price: 2750000 },
+      ],
+      note: 'Private departure. The per-person price falls as the group grows.',
+    },
+    image: 'rinjani-barujari',
+    gallery: ['rinjani-lake-view', 'rinjani-crater', 'rinjani-sunrise'],
+    tags: ['Mountain & Hills', 'Nature'],
+    summary:
+      'The view people come to Rinjani for, without the 2am summit push. Up through the Sembalun savannah to the rim at Plawangan, a night on the crater edge, and the lake and its cone laid out below at first light.',
+    highlights: [
+      'Segara Anak and the Barujari cone from the rim at sunrise',
+      'A night camped at 2,639 m on the crater edge',
+      'The long open savannah climb, with Rinjani ahead the whole way',
+      'Porters carry camp, food and water — you carry a daypack',
+    ],
+    itinerary: [
+      { day: 'Day 1', title: 'Sembalun to the rim', body: 'Morning pick-up and permits at the Sembalun gate. A long open climb across the savannah, then the steep pull up to the rim camp at 2,639 m. Camp is set and dinner cooked while the caldera goes dark below you.' },
+      { day: 'Day 2', title: 'Sunrise, then down', body: 'Up for first light over the lake and the cone. Breakfast at camp, then back down the way you came, off the mountain around the middle of the day and on to your hotel or the airport.' },
+    ],
+    includes: ['National park permits', 'Certified guide and porters', 'Tent, sleeping mat and sleeping bag', 'All meals and drinking water on the mountain', 'Hotel or airport transfers'],
+    excludes: ['Personal trekking gear and boots', 'Travel insurance', 'Tips for the crew', 'Weekend permit surcharge'],
+  },
+  {
+    slug: 'pergasingan-sunrise',
+    rating: 4.8,
+    reviews: 74,
+    priceNote: 'including transport, guide, permits & breakfast on the hill',
+    title: 'Pergasingan Hill Sunrise',
+    kicker: 'Day hike',
+    region: 'Sembalun, East Lombok',
+    duration: 'Full day',
+    group: 'Max 10 walkers',
+    difficulty: 'Moderate',
+    season: 'Year round',
+    pricing: {
+      unit: 'per person',
+      tiers: [
+        { from: 2, to: 2, price: 950000 },
+        { from: 3, to: 4, price: 750000 },
+        { from: 5, to: 6, price: 650000 },
+      ],
+      note: 'Private departure. The per-person price falls as the group grows.',
+    },
+    image: 'rinjani-peak',
+    gallery: ['volcanic-plain', 'rice-terraces', 'rinjani-sunrise'],
+    tags: ['Mountain & Hills', 'Nature', 'Day Trips'],
+    summary:
+      'The whole Sembalun valley from 1,670 m, with Rinjani filling the sky behind it. Three hours up in the dark, sunrise on the ridge, and down past the rice terraces before the heat arrives. The way to see Rinjani without committing to it.',
+    highlights: [
+      'Sunrise over the Sembalun valley from the ridge',
+      'Rinjani from base to summit, close enough to trace the trekking route',
+      'The patchwork terraces below Bukit Selong on the way down',
+      'Breakfast cooked on the hill',
+    ],
+    itinerary: [
+      { day: 'Pre-dawn', title: 'Into the dark', body: 'Pick-up in Sembalun and a short drive to the trailhead. Head-torches on for the climb — steep in places, about three hours at an unhurried pace, with the valley lights below you the whole way.' },
+      { day: 'Sunrise', title: 'The ridge', body: 'First light from the ridge, with Rinjani opposite and the valley opening underneath. Breakfast cooked up top, and time to walk the ridgeline before turning back.' },
+      { day: 'Morning', title: 'Down through the terraces', body: 'The descent takes around two and a half hours and comes out among the terraces. Back in Sembalun by late morning, with the option to add Bukit Selong on the way out.' },
+    ],
+    includes: ['Local guide', 'Village and trail fees', 'Breakfast and drinking water', 'Head-torch if you need one', 'Transfers within Sembalun'],
+    excludes: ['Transfers from outside East Lombok', 'Walking shoes', 'Travel insurance', 'Tips for the guide'],
   },
   {
     slug: 'tetebatu-highlands',
@@ -97,38 +184,6 @@ export const journeys = [
     excludes: ['Towel', 'Tips'],
   },
   {
-    slug: 'nusa-penida-island-hop',
-    rating: 4.7,
-    reviews: 184,
-    priceNote: 'including fast boat, private 4WD & lunch',
-    title: 'Nusa Penida: Kelingking & the West Coast',
-    kicker: 'Island hopping',
-    region: 'Nusa Penida',
-    duration: 'Full day',
-    group: 'Max 12 guests',
-    difficulty: 'Easy',
-    season: 'Year round',
-    priceFrom: 1250000,
-    image: 'kelingking-beach',
-    gallery: ['coastline-aerial', 'kelingking-beach', 'freediving'],
-    tags: ['Beaches', 'Nature', 'Day Trips'],
-    summary:
-      'Fast boat across the Badung Strait, then a 4WD along the west coast to Kelingking, Broken Beach and Angel’s Billabong — timed to reach the cliffs before the afternoon crowds.',
-    highlights: [
-      'The Kelingking headland from the upper viewpoint',
-      'Angel’s Billabong tidal pool and Broken Beach arch',
-      'Snorkel stop at Crystal Bay',
-      'Early departure to beat the tour buses',
-    ],
-    itinerary: [
-      { day: 'Morning', title: 'Crossing', body: 'Fast boat from Sanur, met on the pier by your driver and guide.' },
-      { day: 'Midday', title: 'The west coast', body: 'Kelingking viewpoint, Broken Beach, Angel’s Billabong, with lunch overlooking the strait.' },
-      { day: 'Afternoon', title: 'Crystal Bay', body: 'Snorkel or swim before the return boat.' },
-    ],
-    includes: ['Return fast-boat tickets', 'Private 4WD and driver', 'Guide', 'Lunch', 'Snorkel gear'],
-    excludes: ['Hotel transfer to Sanur pier', 'Drinks'],
-  },
-  {
     slug: 'gili-reef-freedive',
     rating: 4.8,
     reviews: 73,
@@ -142,7 +197,7 @@ export const journeys = [
     season: 'Year round',
     priceFrom: 2400000,
     image: 'freediving',
-    gallery: ['coastline-aerial', 'freediving', 'kelingking-beach'],
+    gallery: ['coastline-aerial', 'freediving', 'jungle-waterfall'],
     tags: ["Gili's", 'Diving & Snorkeling', 'Beaches'],
     summary:
       'Three car-free islands and the reef between them. A guided snorkel circuit, an intro freedive session with a certified instructor, and a night on Gili Air where the only traffic is bicycles.',
@@ -198,7 +253,7 @@ export const journeys = [
     priceNote: 'quoted per itinerary, itemised in full',
     title: 'A Journey Built Around You',
     kicker: 'Bespoke',
-    region: 'Anywhere in Nusa Tenggara & Bali',
+    region: 'Anywhere in Nusa Tenggara',
     duration: 'From 4 days',
     group: 'Private — any size',
     difficulty: 'Your pace',
@@ -245,6 +300,18 @@ export function priceFigure(value) {
   if (value >= 1_000_000) return (value / 1_000_000).toFixed(2).replace(/\.?0+$/, '') + 'm'
   return (value / 1000).toFixed(0) + 'k'
 }
+
+/**
+ * The lowest per-person price across a trip's group tiers â the figure a card
+ * shows. Derived rather than stored, so a headline price cannot drift away
+ * from the table it is meant to summarise.
+ */
+export const fromPrice = (j) =>
+  j.pricing ? Math.min(...j.pricing.tiers.map((t) => t.price)) : j.priceFrom
+
+/** "2", "3 â 4", "5 â 6" â how a tier is labelled in the price table. */
+export const tierLabel = (t) =>
+  t.from === t.to ? `${t.from}` : `${t.from} – ${t.to}`
 
 export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 

@@ -39,7 +39,7 @@ if (!js || !css) throw new Error('could not find built asset names in index.html
 
 mkdirSync('artifact', { recursive: true })
 writeFileSync('artifact/index.html', `<title>Wandr Nusa Travel</title>
-<meta name="description" content="Small-group and private journeys through Lombok, Mount Rinjani, Nusa Penida and the Gilis." />
+<meta name="description" content="Small-group and private journeys through Lombok, Mount Rinjani, Sumbawa and the islands east." />
 
 <link rel="stylesheet" href="${css}" />
 <style>

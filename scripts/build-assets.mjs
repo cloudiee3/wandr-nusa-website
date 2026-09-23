@@ -25,9 +25,12 @@ const PHOTO_MAP = {
   'volcanic-plain':      ['pexels-ilham-zovanka-2158121497-37550278.jpg', 'Volcanic sand plain below the Rinjani ridgeline'],
   'rice-road-aerial':    ['pexels-johan-armang-83912829-11175507.jpg', 'Aerial view of a road cutting through golden rice paddies'],
   'rice-field-huts':     ['pexels-line-knipst-574109081-19643773.jpg', 'Bamboo huts and palms among green rice fields'],
-  'kelingking-beach':    ['pexels-mikhail-nilov-8332428.jpg', 'Kelingking Beach cliff and turquoise bay, Nusa Penida'],
   'rinjani-crater':      ['pexels-roman-odintsov-4552425.jpg', 'Mount Rinjani crater rim above the lake'],
   'rinjani-rim':         ['Rinjani Crater Rim.jpg', 'Trekkers on the Rinjani crater rim above Segara Anak lake'],
+  'rinjani-sunrise':     ['Rinjani Summit Sunrise.jpg', 'Trekkers watching sunrise from a ridge above the clouds on Mount Rinjani'],
+  'rinjani-peak':        ['Rinjani Peak Clouds.jpg', 'The summit cone of Mount Rinjani catching first light through cloud'],
+  'rinjani-lake-view':   ['Rinjani Rim Lake View.jpg', 'Segara Anak and the Barujari cone seen from the Rinjani summit ridge'],
+  'rinjani-barujari':    ['Rinjani Barujari Cone.jpg', 'The Barujari cone rising from Segara Anak inside the Rinjani caldera'],
   'sendang-gile':        ['pexels-vincent-ma-janssen-2823154.jpg', 'Sendang Gile waterfall spilling down a mossy cliff'],
   'tiu-kelep':           ['pexels-vladimir-konoplev-155326297-10740707.jpg', 'Tiu Kelep waterfall in the northern Lombok rainforest'],
 }

@@ -3,7 +3,7 @@ import { ShieldCheck, Sparkles, Star, Users } from 'lucide-react'
 import Img from './Img'
 import Reveal from './Reveal'
 import { trustSignals } from '../data/site'
-import { bySlug, formatPrice, journeys } from '../data/journeys'
+import { bySlug, formatPrice, fromPrice, journeys } from '../data/journeys'
 
 const ICONS = [ShieldCheck, Users]
 
@@ -104,7 +104,7 @@ export default function AboutStrip() {
                 </span>
               </div>
               <span className="ml-auto shrink-0 font-display text-[0.98rem] font-semibold tnum text-ink">
-                {formatPrice(pick.priceFrom)}
+                {formatPrice(fromPrice(pick))}
               </span>
             </div>
           </Link>

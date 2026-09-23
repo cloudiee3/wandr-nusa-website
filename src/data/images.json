@@ -138,17 +138,6 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoUAA0APwFurk+rJqQiMAgBYCAJQBOgBDsSjPS/jh/wAP3h1nm133AVqlxzXHfkSuxoxDhlyzDyKGgxi7XHlsc0AAA="
   },
-  "kelingking-beach": {
-    "alt": "Kelingking Beach cliff and turquoise bay, Nusa Penida",
-    "ratio": 1.3343,
-    "sizes": [
-      480,
-      800,
-      1280,
-      1920
-    ],
-    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoUAA8APwFqrE6rJiQiMAgBYCAJbACdACG7KsOpHIEwDb5GAAD+uQ1wIAeDN7pu8+mst17Wuqu2M7D8EY8zz1yasNy+VXbcohPFkOLA34zImeXIMQAAAA=="
-  },
   "rinjani-crater": {
     "alt": "Mount Rinjani crater rim above the lake",
     "ratio": 1.5,
@@ -169,6 +158,50 @@
       1125
     ],
     "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQBQCdASoUACQAPwFyr1IrJqQiqqgBYCAJQBakKCrMAUUXBlxD2EQ7auSkDsqUeWNxTzEQGSHgANZ/fRR5pC9k5OdPulb6EPHpEuo21Erd568lnbbi9zy2ICBPoeESkGH+WDu/RblXLkXZ+26ZLspmXA+5QBlBZj+YIHfmpJvLS2BYHo6wAA=="
+  },
+  "rinjani-sunrise": {
+    "alt": "Trekkers watching sunrise from a ridge above the clouds on Mount Rinjani",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAwCdASoUAA0APwFwrk+rJqQiMAgBYCAJZQCdACP/3X3AXqyXVnLgAP6xYwn2MtuDis/uIvPFE8MsP9SaFHkhod0eZbbFVoKW4wAA"
+  },
+  "rinjani-peak": {
+    "alt": "The summit cone of Mount Rinjani catching first light through cloud",
+    "ratio": 1.5873,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJagCdMoABhHI24a5LkCVAAPxPI7J02QsoMvJaiGf6iZmD+BbfQ92yQXMxNSs2bFihx91Qrdfm/kqTYAA="
+  },
+  "rinjani-lake-view": {
+    "alt": "Segara Anak and the Barujari cone seen from the Rinjani summit ridge",
+    "ratio": 0.75,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1500
+    ],
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADwBACdASoUABsAPwFurlCrJiQisBgIAWAgCWIAsR8YAVYGuciWg9L0AR3xD47RUwAA/FqeO31XYkmR0w88LlGn3I3nLwHqh38GX9SOOu1+QSryOHHRXc/wbSYcAM3IAg++dx4DpZeXCba4A4b2IwU0HSaAAA=="
+  },
+  "rinjani-barujari": {
+    "alt": "The Barujari cone rising from Segara Anak inside the Rinjani caldera",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoUAA0APwFqr0+rJiQiMAgBYCAJYwDA3CHB1vhsfzAAAP2a2WzegtCoyI8eLtS5jeZbPYdbrkoNaluZNY4X7AAA"
   },
   "sendang-gile": {
     "alt": "Sendang Gile waterfall spilling down a mossy cliff",

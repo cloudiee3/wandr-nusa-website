@@ -9,7 +9,7 @@ export default function Destinations() {
   return (
     <>
       <PageHero
-        image="kelingking-beach"
+        image="coastline-aerial"
         eyebrow="Where we go"
         title={<>A small map, <span className="flourish-light">known well</span></>}
         lead="We stay inside a few hours of home. It is the only way to promise the guide, the weather call and the back-up plan."

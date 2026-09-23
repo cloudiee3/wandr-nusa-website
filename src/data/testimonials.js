@@ -2,10 +2,10 @@
 // /public or an embed URL) and the play control appears; without one it stays a
 // still with the quote over it.
 export const featured = {
-  quote: 'They rerouted our whole Penida day so we hit the cliffs before the buses. My daughter still talks about the turtles.',
+  quote: 'They moved our whole Gili day earlier so we had the Meno reef to ourselves. My daughter still talks about the turtles.',
   name: 'Priya S.',
   role: 'Family trip, 6 days',
-  image: 'kelingking-beach',
+  image: 'coastline-aerial',
   video: null,
 }
 

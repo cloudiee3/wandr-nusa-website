@@ -2,10 +2,8 @@ import islands from '../data/islands.json'
 
 // Real coordinates; the projection below matches the one in scripts/build-map.mjs.
 // `lead` is the leader-line length and `anchor` the text alignment — both are
-// tuned so the labels in the tight Bali–Lombok cluster don't collide.
+// tuned so the labels in the tight Lombok cluster don't collide.
 const PLACES = [
-  { name: 'Bali',         lon: 115.15, lat: -8.45, place: 'below', lead: 14, anchor: 'end',    dx: 6 },
-  { name: 'Nusa Penida',  lon: 115.54, lat: -8.73, place: 'below', lead: 14, anchor: 'middle', dx: 0 },
   { name: 'Gili Islands', lon: 116.04, lat: -8.35, place: 'above', lead: 30, anchor: 'end',    dx: 8 },
   { name: 'Mt Rinjani',   lon: 116.46, lat: -8.41, place: 'above', lead: 14, anchor: 'start',  dx: -6 },
   { name: 'Komodo',       lon: 119.49, lat: -8.58, place: 'below', lead: 14, anchor: 'middle', dx: 0 },
@@ -17,8 +15,6 @@ const BASE = { lon: 116.04, lat: -8.49 }
 // The drawn route. Between Lombok and Komodo it carries two waypoints in the
 // Flores Sea so the line rounds Sumbawa's north coast instead of crossing it.
 const ROUTE = [
-  { lon: 115.15, lat: -8.45 },
-  { lon: 115.54, lat: -8.73 },
   { lon: 116.04, lat: -8.35 },
   { lon: 116.46, lat: -8.41 },
   { lon: 117.20, lat: -8.05 },
@@ -51,7 +47,7 @@ export default function IslandMap({ className = '' }) {
           viewBox={islands.viewBox}
           className="h-auto w-[860px] min-w-[860px] sm:w-full sm:min-w-0"
           role="img"
-          aria-label="Map of the Lesser Sunda islands from Bali east through Lombok, Sumbawa and Flores, with the places Wandr Nusa runs trips to marked."
+          aria-label="Map of the Lesser Sunda islands from Lombok east through Sumbawa and Flores, with the places Wandr Nusa runs trips to marked."
         >
           <defs>
             <linearGradient id="landFill" x1="0" y1="0" x2="0" y2="1">
@@ -163,7 +159,7 @@ export default function IslandMap({ className = '' }) {
           <span className="h-2 w-2 rounded-full bg-sea-300" /> Where we run trips
         </span>
         <span className="inline-flex items-center gap-2">
-          <span className="h-px w-6 bg-sea-400" /> Bali to Komodo
+          <span className="h-px w-6 bg-sea-400" /> Lombok to Komodo
         </span>
         <span className="sm:hidden">Swipe the map →</span>
       </figcaption>

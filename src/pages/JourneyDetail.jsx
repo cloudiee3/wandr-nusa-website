@@ -8,7 +8,7 @@ import Reveal from '../components/Reveal'
 import JourneyCard from '../components/JourneyCard'
 import EnquiryForm from '../components/EnquiryForm'
 import WhatsAppIcon from '../components/WhatsAppIcon'
-import { bySlug, formatPrice, journeys } from '../data/journeys'
+import { bySlug, formatPrice, fromPrice, journeys, tierLabel } from '../data/journeys'
 import { whatsappLink } from '../data/site'
 
 export default function JourneyDetail() {
@@ -63,14 +63,42 @@ export default function JourneyDetail() {
           ))}
           <div className="py-6">
             <span className="font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">
-              {j.priceFrom ? 'From (per person)' : 'Pricing'}
+              {fromPrice(j) ? 'From (per person)' : 'Pricing'}
             </span>
             <span className="mt-1.5 block font-display text-[1.15rem] font-semibold text-sea-600">
-              {formatPrice(j.priceFrom)}
+              {formatPrice(fromPrice(j))}
             </span>
           </div>
         </div>
       </section>
+
+      {j.pricing && (
+        <section className="wrap pt-12 lg:pt-16">
+          <Reveal className="max-w-2xl">
+            <h2 className="text-[1.5rem] leading-tight">What it costs</h2>
+            <p className="mt-2 text-[0.95rem] text-ink-500">{j.pricing.note}</p>
+            <div className="mt-5 overflow-hidden rounded-2xl border border-ink/[0.09]">
+              {j.pricing.tiers.map((t, i) => (
+                <div
+                  key={tierLabel(t)}
+                  className={`flex items-baseline justify-between gap-6 px-5 py-4 ${
+                    i ? 'border-t border-ink/[0.07]' : ''
+                  }`}
+                >
+                  <span className="text-[0.95rem] text-ink-600">
+                    {tierLabel(t)} {t.to === 1 ? 'traveller' : 'travellers'}
+                  </span>
+                  <span className="font-sans text-[1.05rem] font-bold tnum text-ink">
+                    {formatPrice(t.price)}
+                    <span className="font-normal text-[0.82rem] text-ink-400"> {j.pricing.unit}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
+          </Reveal>
+        </section>
+      )}
 
       <section className="wrap grid gap-14 py-16 lg:grid-cols-[1.5fr_1fr] lg:gap-20 lg:py-24">
         <div>

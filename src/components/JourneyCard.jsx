@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CalendarDays, Heart, MapPin, Star } from 'lucide-react'
 import Img from './Img'
-import { formatPrice } from '../data/journeys'
+import { formatPrice, fromPrice } from '../data/journeys'
 
 const FAV_KEY = 'wandrnusa:saved'
 
@@ -110,9 +110,9 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
       <div className="mt-auto flex items-end justify-between gap-4 pt-5">
         <span className="leading-tight">
           <span className="font-sans text-[1.28rem] font-bold tnum text-ink">
-            {formatPrice(journey.priceFrom)}
+            {formatPrice(fromPrice(journey))}
           </span>
-          {journey.priceFrom && <span className="text-[0.85rem] text-ink-400"> / person</span>}
+          {fromPrice(journey) && <span className="text-[0.85rem] text-ink-400"> / person</span>}
         </span>
         <Link
           to={`/journeys/${journey.slug}`}

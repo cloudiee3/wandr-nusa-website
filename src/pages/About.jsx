@@ -47,8 +47,8 @@ export default function About() {
             seen only those four.
           </Reveal>
           <Reveal as="p" delay={90} className="mt-6 text-[1.02rem] leading-relaxed text-ink-500">
-            Lombok and the Nusa islands get compared to Bali constantly, usually by people trying to sell
-            you a day trip. We think that misses the point. These are quieter islands with harder mountains,
+            Lombok and the islands east of it get compared to Bali constantly, usually by people trying to
+            sell you a day trip. We think that misses the point. These are quieter islands with harder mountains,
             better reef, and a Sasak culture that is still lived rather than performed. What they do not have
             is much infrastructure for showing it to you properly.
           </Reveal>
