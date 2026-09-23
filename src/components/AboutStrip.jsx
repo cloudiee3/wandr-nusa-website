@@ -53,8 +53,8 @@ export default function AboutStrip() {
 
         <Reveal delay={140} className="relative">
           <Img
-            name="tetebatu-field"
-            sizes="(min-width:1024px) 46vw, 100vw"
+            name="rice-road-aerial"
+            sizes="(min-width:1280px) 600px, (min-width:1024px) 46vw, 100vw"
             className="aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[5/4] lg:aspect-auto lg:h-full"
           />
 
