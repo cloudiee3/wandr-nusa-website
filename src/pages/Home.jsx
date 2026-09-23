@@ -97,7 +97,7 @@ export default function Home() {
                 {hero.headline[1]}{' '}
                 {/* The accent word keeps the heavier weight it had, so the
                     lighter line throws it forward instead of matching it. */}
-                <span className="font-semibold text-ember-300">{hero.headlineAccent}</span>
+                <span className="font-semibold text-mist">{hero.headlineAccent}</span>
               </Reveal>
 
               <Reveal as="p" delay={200} className="mt-5 max-w-xl text-[0.92rem] leading-relaxed text-white/80 sm:mt-6 sm:text-[1.02rem]">
@@ -123,7 +123,7 @@ export default function Home() {
 
           <Reveal as="p" delay={90} className="mx-auto mt-9 max-w-4xl text-center font-display text-[1.5rem] leading-[1.45] sm:text-[2.05rem]">
             {MANIFESTO.map(([text, strong], i) => (
-              <span key={i} className={strong ? 'text-ink' : 'text-ink-300'}>{text}{' '}</span>
+              <span key={i} className={strong ? 'text-ink' : 'text-mist'}>{text}{' '}</span>
             ))}
           </Reveal>
 

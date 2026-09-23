@@ -7,6 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
+        // The accent the brand picked. `mist` is that value exactly, which
+        // carries beautifully over a photograph; `mist-600` is the same hue
+        // taken dark enough to read on the sand background, where the pale
+        // one falls to 1.7:1 against it.
+        mist: {
+          DEFAULT: '#89C3C7',
+          600: '#3E7F84',
+        },
         // Brand navy, sampled straight from the logo artwork.
         ink: {
           DEFAULT: '#011D39',
