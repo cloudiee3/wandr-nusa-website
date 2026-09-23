@@ -50,7 +50,7 @@ export default function Journeys() {
 
       <section className="wrap py-12 lg:py-16">
         {searched && (
-          <Reveal className="mb-8 flex flex-wrap items-center gap-3 rounded-2xl bg-white p-4 shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
+          <Reveal className="mb-8 flex flex-wrap items-center gap-3 rounded-2xl border border-ink/[0.09] bg-white p-4">
             <span className="text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-ink-300">Your search</span>
             <div className="flex flex-wrap items-center gap-2">
               {destination && <span className="chip chip-on">{destination.name}</span>}
@@ -89,7 +89,7 @@ export default function Journeys() {
         </p>
 
         {shown.length === 0 ? (
-          <div className="mt-8 rounded-2xl bg-white p-10 text-center shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
+          <div className="mt-8 rounded-2xl border border-ink/[0.09] bg-white p-10 text-center">
             <h2 className="text-[1.4rem]">
               {place ? <>No fixed departure for {place} — yet</> : 'Nothing matches that combination'}
             </h2>

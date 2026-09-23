@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* ── Who we are ───────────────────────────────────────── */}
-      <section id="about" className="bg-sand py-16 lg:py-24">
+      <section id="about" className="bg-white py-16 lg:py-24">
         <div className="wrap">
           <div className="text-center">
             <Reveal>
@@ -148,7 +148,7 @@ export default function Home() {
                 delay={i * 70}
                 className={i === stats.length - 1 && stats.length % 2 ? 'col-span-2 sm:col-span-1' : ''}
               >
-                <div className="flex h-full flex-col items-center justify-center rounded-2xl bg-white px-4 py-9 text-center shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
+                <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-ink/[0.09] bg-white px-4 py-9 text-center">
                   <span className="font-display text-[2.1rem] font-semibold leading-none tnum text-ink sm:text-[2.5rem]">
                     {s.text ?? <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />}
                   </span>
@@ -164,7 +164,7 @@ export default function Home() {
       <AboutStrip />
 
       {/* ── Featured journeys ────────────────────────────────── */}
-      <section id="discover" className="bg-sand py-16 lg:py-24">
+      <section id="discover" className="bg-white py-16 lg:py-24">
         <div className="wrap">
           {/* The reference sets the heading against its lead rather than above
               it, then runs the categories underneath as a filter. */}
@@ -201,7 +201,7 @@ export default function Home() {
           </div>
 
           {shown.length === 0 && (
-            <div className="mt-10 rounded-2xl bg-white p-10 text-center shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
+            <div className="mt-10 rounded-2xl border border-ink/[0.09] bg-white p-10 text-center">
               <h3 className="text-[1.3rem]">No fixed departure for {kind} — yet</h3>
               <p className="mx-auto mt-3 max-w-md text-ink-500">
                 We run this as a private trip rather than a scheduled one. Tell us your dates and
@@ -302,7 +302,7 @@ export default function Home() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {process.map((p, i) => (
             <Reveal key={p.n} delay={i * 100}>
-              <article className="h-full rounded-2xl bg-white p-7 shadow-[0_1px_3px_rgba(1,29,57,0.06)] transition-shadow duration-500 hover:shadow-card">
+              <article className="h-full rounded-2xl border border-ink/[0.09] bg-white p-7 transition-shadow duration-500 hover:shadow-card">
                 <span className="font-display text-[1.6rem] font-semibold text-sea-500">{p.n}</span>
                 <h3 className="mt-3 text-[1.22rem]">{p.title}</h3>
                 <p className="mt-2.5 text-[0.95rem] leading-relaxed text-ink-500">{p.body}</p>

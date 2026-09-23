@@ -55,7 +55,7 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
     <div
       role="dialog"
       aria-label="Choose dates"
-      className={`absolute inset-x-0 z-30 rounded-2xl bg-white p-4 shadow-lift sm:p-5 ${drop}`}
+      className={`absolute inset-x-0 z-30 rounded-2xl border border-ink/[0.09] bg-white p-4 shadow-lift sm:p-5 ${drop}`}
     >
       <div className="flex items-center justify-between">
         <NavBtn label="Previous month" onClick={() => shift(-1)}><ChevronLeft className="h-4 w-4" strokeWidth={2} /></NavBtn>

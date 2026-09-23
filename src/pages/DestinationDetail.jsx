@@ -57,7 +57,7 @@ export default function DestinationDetail() {
       </section>
 
       {trips.length > 0 && (
-        <section className="bg-sand py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <div className="wrap">
             <span className="pill"><span className="pill-dot" />Journeys here</span>
             <h2 className="mt-4 text-[1.9rem] sm:text-[2.3rem]">

@@ -176,7 +176,7 @@ function GuestsField({ label, adults, children, setAdults, setChildren }) {
       </button>
 
       {open && (
-        <div className={`absolute inset-x-0 z-30 rounded-2xl bg-white p-4 shadow-lift ${drop}`}>
+        <div className={`absolute inset-x-0 z-30 rounded-2xl border border-ink/[0.09] bg-white p-4 shadow-lift ${drop}`}>
           <Stepper label="Adults" min={1} value={adults} onChange={setAdults} />
           <Stepper label="Children" min={0} value={children} onChange={setChildren} hint="Under 12" />
         </div>

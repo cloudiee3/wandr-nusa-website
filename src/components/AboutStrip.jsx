@@ -38,12 +38,12 @@ export default function AboutStrip() {
               const Icon = ICONS[i] ?? Sparkles
               return (
                 <Reveal key={t.title} delay={i * 90}>
-                  <article className="rounded-2xl border border-ink/[0.08] bg-white p-6 transition-shadow duration-500 hover:shadow-card sm:p-7">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sand-200 text-ink">
-                      <Icon className="h-5 w-5" strokeWidth={1.7} />
+                  <article className="rounded-2xl border border-ink/[0.09] bg-white p-6 transition-shadow duration-500 hover:shadow-card">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-ink/[0.05] text-ink">
+                      <Icon className="h-[18px] w-[18px]" strokeWidth={1.7} />
                     </span>
-                    <h3 className="mt-5 font-sans text-[1.05rem] font-bold">{t.title}</h3>
-                    <p className="mt-2 text-[0.94rem] leading-relaxed text-ink-500">{t.body}</p>
+                    <h3 className="mt-4 font-sans text-[1rem] font-bold leading-snug">{t.title}</h3>
+                    <p className="mt-2 text-[0.9rem] leading-relaxed text-ink-500">{t.body}</p>
                   </article>
                 </Reveal>
               )

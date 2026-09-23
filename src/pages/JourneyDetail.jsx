@@ -143,7 +143,7 @@ export default function JourneyDetail() {
       </section>
 
       {/* enquiry */}
-      <section id="enquire" className="scroll-mt-24 bg-sand py-16 lg:py-24">
+      <section id="enquire" className="scroll-mt-24 bg-white py-16 lg:py-24">
         <div className="wrap grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
           <div>
             <span className="pill"><span className="pill-dot" />Enquire</span>

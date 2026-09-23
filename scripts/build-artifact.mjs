@@ -46,7 +46,7 @@ writeFileSync('artifact/index.html', `<title>Wandr Nusa Travel</title>
   /* The artifact skeleton ships a small reset of its own; these three lines
      hand the page back to the site's own styling. */
   :root { padding: 0; color-scheme: light; }
-  body { margin: 0; background: #FAF7F2; }
+  body { margin: 0; background: #FFFFFF; }
   #root { isolation: isolate; }
 </style>
 

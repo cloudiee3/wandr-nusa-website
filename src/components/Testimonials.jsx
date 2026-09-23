@@ -9,7 +9,7 @@ export default function Testimonials() {
   const [playing, setPlaying] = useState(false)
 
   return (
-    <section className="bg-sand py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="wrap">
         <SectionHead
           align="center"

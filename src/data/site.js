@@ -131,12 +131,12 @@ export function whatsappLink(message) {
 
 export const trustSignals = [
   {
-    title: 'Licensed Indonesian operator',
-    body: 'Registered travel bureau (BPW) with full public-liability cover on every departure.',
+    title: 'Discover Distinctive Journeys Across Nusa Tenggara',
+    body: 'Routes across Lombok, Sumbawa and Flores, walked by us before they were written down.',
   },
   {
-    title: 'One team, start to finish',
-    body: 'The person who answers your first message is the one who sees your trip through, from planning to the last transfer.',
+    title: '24/7 Dedicated Support',
+    body: 'Round-the-clock assistance to ensure a smooth and stress-free trip, from the first message to the last transfer.',
   },
 ]
 
