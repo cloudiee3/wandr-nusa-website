@@ -16,7 +16,7 @@ export const journeys = [
     priceFrom: 4650000,
     image: 'segara-anak',
     gallery: ['rinjani-crater', 'volcanic-plain', 'segara-anak'],
-    tags: ['Volcanoes', 'Trekking'],
+    tags: ['Mountain & Hills', 'Nature'],
     summary:
       'Three days on Indonesia’s second-highest volcano — up through the pine ridge to Plawangan, a pre-dawn push to the 3,726 m rim, then down to camp beside the hot springs of Segara Anak.',
     highlights: [
@@ -48,7 +48,7 @@ export const journeys = [
     priceFrom: 1850000,
     image: 'tetebatu-field',
     gallery: ['rice-terraces', 'monkey-forest', 'sasak-house'],
-    tags: ['Culture & villages', 'Trekking'],
+    tags: ['Mountain & Hills', 'Nature', 'Culture & Villages'],
     summary:
       'The green shoulder of Rinjani, at walking pace. Terraced paddies, a black-monkey forest, a tobacco-drying village, and a night in a homestay where dinner is cooked over wood.',
     highlights: [
@@ -79,7 +79,7 @@ export const journeys = [
     priceFrom: 750000,
     image: 'sendang-gile',
     gallery: ['tiu-kelep', 'jungle-waterfall', 'durian-indah'],
-    tags: ['Waterfalls', 'Trekking', 'Day trips'],
+    tags: ['Waterfalls', 'Nature', 'Day Trips'],
     summary:
       'Two of the best waterfalls in Indonesia, twenty minutes apart. A stone staircase to Sendang Gile, then a river crossing and jungle path to the wide amphitheatre of Tiu Kelep.',
     highlights: [
@@ -111,7 +111,7 @@ export const journeys = [
     priceFrom: 1250000,
     image: 'kelingking-beach',
     gallery: ['coastline-aerial', 'kelingking-beach', 'freediving'],
-    tags: ['Island hopping', 'Beaches', 'Day trips'],
+    tags: ['Beaches', 'Nature', 'Day Trips'],
     summary:
       'Fast boat across the Badung Strait, then a 4WD along the west coast to Kelingking, Broken Beach and Angel’s Billabong — timed to reach the cliffs before the afternoon crowds.',
     highlights: [
@@ -143,7 +143,7 @@ export const journeys = [
     priceFrom: 2400000,
     image: 'freediving',
     gallery: ['coastline-aerial', 'freediving', 'kelingking-beach'],
-    tags: ['Diving & snorkelling', 'Island hopping', 'Beaches'],
+    tags: ["Gili's", 'Diving & Snorkeling', 'Beaches'],
     summary:
       'Three car-free islands and the reef between them. A guided snorkel circuit, an intro freedive session with a certified instructor, and a night on Gili Air where the only traffic is bicycles.',
     highlights: [
@@ -174,7 +174,7 @@ export const journeys = [
     priceFrom: 680000,
     image: 'sasak-house',
     gallery: ['rice-field-huts', 'sasak-house', 'rice-road-aerial'],
-    tags: ['Culture & villages', 'Day trips'],
+    tags: ['Culture & Villages', 'Day Trips'],
     summary:
       'A day with the Sasak — the people of Lombok. Thatch-and-clay houses at Sade, backstrap looms at Sukarara, and the coil-built pottery of Penujak, with time to try each craft yourself.',
     highlights: [
@@ -206,7 +206,7 @@ export const journeys = [
     priceFrom: null,
     image: 'rice-road-aerial',
     gallery: ['tetebatu-plant', 'volcanic-plain', 'coastline-aerial'],
-    tags: ['Private & custom'],
+    tags: ['Private & Custom Trips', 'Sailing'],
     summary:
       'Tell us how long you have, what you like, and how hard you want to walk. We’ll come back with a routed itinerary, honest costs, and the same guides we use on our own departures.',
     highlights: [
@@ -227,15 +227,16 @@ export const journeys = [
 
 export const categories = [
   'All',
-  'Volcanoes',
-  'Trekking',
-  'Beaches',
-  'Island hopping',
-  'Diving & snorkelling',
+  'Mountain & Hills',
   'Waterfalls',
-  'Culture & villages',
-  'Day trips',
-  'Private & custom',
+  'Beaches',
+  'Nature',
+  "Gili's",
+  'Diving & Snorkeling',
+  'Sailing',
+  'Culture & Villages',
+  'Day Trips',
+  'Private & Custom Trips',
 ]
 
 /** "4.65m" / "750k" — the figure only, for cards that render the currency separately. */

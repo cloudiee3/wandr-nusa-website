@@ -178,7 +178,7 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={120} className="no-scrollbar -mx-5 mt-9 flex gap-2.5 overflow-x-auto px-5 sm:-mx-8 sm:px-8 lg:mx-0 lg:flex-wrap lg:px-0">
+          <Reveal delay={120} className="no-scrollbar -mx-5 mt-9 flex gap-2.5 overflow-x-auto scroll-smooth px-5 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
             {categories.map((c) => (
               <button
                 key={c}
@@ -201,9 +201,16 @@ export default function Home() {
           </div>
 
           {shown.length === 0 && (
-            <p className="mt-10 text-ink-500">
-              Nothing fixed in that category yet — tell us your dates and we will plan it.
-            </p>
+            <div className="mt-10 rounded-2xl bg-white p-10 text-center shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
+              <h3 className="text-[1.3rem]">No fixed departure for {kind} — yet</h3>
+              <p className="mx-auto mt-3 max-w-md text-ink-500">
+                We run this as a private trip rather than a scheduled one. Tell us your dates and
+                we will come back with a routed plan and the real cost.
+              </p>
+              <Link to="/journeys/custom-private-journey" className="btn-primary mt-7">
+                Plan it with us <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              </Link>
+            </div>
           )}
 
           <Reveal delay={120} className="mt-12 text-center">
