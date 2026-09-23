@@ -32,7 +32,7 @@ export default function Journeys() {
     let list = journeys
     if (destination) list = list.filter((j) => destination.journeys.includes(j.slug))
     if (kind === 'day') list = list.filter((j) => j.duration.toLowerCase().includes('day') && !j.duration.includes('·'))
-    if (active !== 'All') list = list.filter((j) => j.category === active)
+    if (active !== 'All') list = list.filter((j) => j.tags.includes(active))
     return list
   }, [destination, place, kind, active])
 

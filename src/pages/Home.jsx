@@ -67,7 +67,7 @@ function useParallax() {
 export default function Home() {
   const [kind, setKind] = useState('All')
   const shown = useMemo(
-    () => journeys.filter((j) => kind === 'All' || j.category === kind).slice(0, FEATURED_COUNT),
+    () => journeys.filter((j) => kind === 'All' || j.tags.includes(kind)).slice(0, FEATURED_COUNT),
     [kind],
   )
 
@@ -170,10 +170,11 @@ export default function Home() {
               it, then runs the categories underneath as a filter. */}
           <div className="grid gap-5 lg:grid-cols-2 lg:items-end lg:gap-16">
             <Reveal as="h2" className="text-[2rem] leading-[1.12] sm:text-[2.7rem]">
-              Routes we run <span className="flourish">again and again</span>
+              Best travel destinations <span className="flourish">in Nusa Tenggara</span>
             </Reveal>
             <Reveal as="p" delay={80} className="text-[1.02rem] leading-relaxed text-ink-500 lg:pb-2">
-              Fixed departures for the classics, and a blank page for everything else.
+              Explore the best of Lombok, Sumbawa and Nusa Tenggara Timur, and take the next step
+              towards the journey you have been putting off.
             </Reveal>
           </div>
 
