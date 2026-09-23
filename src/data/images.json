@@ -35,7 +35,8 @@
     "ratio": 1.5,
     "sizes": [
       480,
-      800
+      800,
+      1200
     ],
     "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoUAA0APwForE6rJiQiMAgBYCAJaAC06B6KLNHPufd6wiCYAPsFLeXIiZcuMH+7br3s+pCabkVSu89LFdWkunEQGxmW+W0Z8HfNMo5N10DSFYp4vliOyJrRV8gAAA=="
   },
@@ -45,7 +46,8 @@
     "sizes": [
       480,
       800,
-      1280
+      1280,
+      1439
     ],
     "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAA4APwFqrU6rJiQiMAgBYCAJQBhQBDuF45v2utQAAP7VD45wn4JoywEdSjBHRjnVfYw+lN6Ew18zinOYr6zcTAAAAA=="
   },
@@ -54,7 +56,8 @@
     "ratio": 1.5,
     "sizes": [
       480,
-      800
+      800,
+      1200
     ],
     "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoUAA0APwFqrU8rJiQiMAgBYCAJagAAW1JOD1YZKUc0AADLzN2MBn4RAbaX8c+0/47v+ImMw8PjODQaw4fSWkUPzlB94h4s2joNlv3FAwA9RAAA"
   },
@@ -108,7 +111,8 @@
     "sizes": [
       480,
       800,
-      1280
+      1280,
+      1902
     ],
     "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQBACdASoUABkAPwFusFCrJiSisBgIAWAgCWcAxNgLNNHjRQx7+sApWufI4QAA/fxg/hVjAt8wsIp8lU8tjX0vpWR63llG7Rm5gd8zAlEHzIC+CfpTXL7aWuO+4Dc+e2/bgcmQuAAAAA=="
   },
@@ -155,6 +159,16 @@
       1920
     ],
     "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUAA0APwFqrU6rJiQiMAgBYCAJQBjeg9XtIPTUAaSuIAD+qSaTDIgqTdgXeFK4KVIBmW9uiPSq2yRpiQEvv6cDT3iD7/JmmWAAAA=="
+  },
+  "rinjani-rim": {
+    "alt": "Trekkers on the Rinjani crater rim above Segara Anak lake",
+    "ratio": 0.5625,
+    "sizes": [
+      480,
+      800,
+      1125
+    ],
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQBQCdASoUACQAPwFyr1IrJqQiqqgBYCAJQBakKCrMAUUXBlxD2EQ7auSkDsqUeWNxTzEQGSHgANZ/fRR5pC9k5OdPulb6EPHpEuo21Erd568lnbbi9zy2ICBPoeESkGH+WDu/RblXLkXZ+26ZLspmXA+5QBlBZj+YIHfmpJvLS2BYHo6wAA=="
   },
   "sendang-gile": {
     "alt": "Sendang Gile waterfall spilling down a mossy cliff",

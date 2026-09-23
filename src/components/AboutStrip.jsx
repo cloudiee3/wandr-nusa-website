@@ -53,9 +53,10 @@ export default function AboutStrip() {
 
         <Reveal delay={140} className="relative">
           <Img
-            name="rice-road-aerial"
+            name="rinjani-rim"
             sizes="(min-width:1280px) 600px, (min-width:1024px) 46vw, 100vw"
-            className="aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[5/4] lg:aspect-auto lg:h-full"
+            className="aspect-[3/4] w-full overflow-hidden rounded-3xl lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+            imgClassName="object-[50%_100%]"
           />
 
           {/* Floating cards — the reference's device, with travel content in it. */}
@@ -83,7 +84,7 @@ export default function AboutStrip() {
 
           <Link
             to={`/journeys/${pick.slug}`}
-            className="group absolute bottom-6 left-4 right-4 rounded-2xl bg-white/95 p-4 shadow-lift backdrop-blur-sm sm:left-auto sm:right-6 sm:w-[21rem]"
+            className="group absolute left-4 right-4 top-[8.5rem] rounded-2xl bg-white/95 p-4 shadow-lift backdrop-blur-sm sm:bottom-6 sm:left-auto sm:right-6 sm:top-auto sm:w-[21rem]"
           >
             <span className="text-[0.82rem] font-semibold text-ink">Most booked this season</span>
             <div className="mt-3 flex items-center gap-3">

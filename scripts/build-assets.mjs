@@ -27,6 +27,7 @@ const PHOTO_MAP = {
   'rice-field-huts':     ['pexels-line-knipst-574109081-19643773.jpg', 'Bamboo huts and palms among green rice fields'],
   'kelingking-beach':    ['pexels-mikhail-nilov-8332428.jpg', 'Kelingking Beach cliff and turquoise bay, Nusa Penida'],
   'rinjani-crater':      ['pexels-roman-odintsov-4552425.jpg', 'Mount Rinjani crater rim above the lake'],
+  'rinjani-rim':         ['Rinjani Crater Rim.jpg', 'Trekkers on the Rinjani crater rim above Segara Anak lake'],
   'sendang-gile':        ['pexels-vincent-ma-janssen-2823154.jpg', 'Sendang Gile waterfall spilling down a mossy cliff'],
   'tiu-kelep':           ['pexels-vladimir-konoplev-155326297-10740707.jpg', 'Tiu Kelep waterfall in the northern Lombok rainforest'],
 }
@@ -57,8 +58,10 @@ for (const [slug, [file, alt]] of Object.entries(PHOTO_MAP)) {
       .toFile(path.join(OUT_IMG, `${slug}-${w}.webp`))
     sizes.push(w)
   }
-  if (!sizes.length) {
-    await sharp(src, { failOn: 'none' }).webp({ quality: 78 })
+  // A source between two steps would otherwise be served at the step below
+  // it, throwing away detail we already hold. Emit its own width as well.
+  if (width > (sizes.at(-1) ?? 0) && width < WIDTHS.at(-1)) {
+    await sharp(src, { failOn: 'none' }).webp({ quality: 78, effort: 5 })
       .toFile(path.join(OUT_IMG, `${slug}-${width}.webp`))
     sizes.push(width)
   }
