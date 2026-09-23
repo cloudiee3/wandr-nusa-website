@@ -28,10 +28,12 @@ export const startOfToday = () => {
 /** "Tue, 22 Sep 2026", or without the weekday when space is tight. */
 export const prettyDate = (value, short = false) => {
   if (!value) return 'Pick a date'
-  return fromISO(value).toLocaleDateString('en-GB', {
-    ...(short ? {} : { weekday: 'short' }),
-    day: 'numeric', month: 'short', year: 'numeric',
+  const d = fromISO(value)
+  if (!short) return d.toLocaleDateString('en-GB', {
+    weekday: 'short', day: 'numeric', month: 'short', year: 'numeric',
   })
+  const [day, month] = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }).split(' ')
+  return `${day} ${month} ’${String(d.getFullYear()).slice(-2)}`
 }
 
 function Panel({ from, to, mode, onPick, onClose, drop }) {
@@ -90,9 +92,11 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
                           text-[0.92rem] tnum transition-colors duration-150 sm:h-9 sm:text-[0.86rem] ${
                 past
                   ? 'cursor-not-allowed text-ink-200'
-                  : marked
-                    ? 'bg-sand-300/70 font-medium text-ink'
-                    : 'text-ink hover:bg-sand-200'
+                  : isFrom || isTo
+                    ? 'bg-ink-600 font-medium text-white'
+                    : inRange
+                      ? 'bg-ink-600/15 font-medium text-ink'
+                      : 'text-ink hover:bg-ink-600/10'
               }`}
             >
               {i + 1}
@@ -120,7 +124,7 @@ const NavBtn = ({ label, onClick, children }) => (
     aria-label={label}
     onClick={onClick}
     className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink-500
-               transition-colors active:scale-95 hover:bg-sand-200 hover:text-ink"
+               transition-colors active:scale-95 hover:bg-ink-600/10 hover:text-ink"
   >
     {children}
   </button>
@@ -156,18 +160,18 @@ export function usePopover(open, close, panelHeight = 420) {
   return { box, up, drop: up ? 'bottom-full mb-2' : 'top-full mt-2' }
 }
 
-const Trigger = ({ label, value, active, onClick }) => (
+const Trigger = ({ label, value, active, onClick, showLabel = true }) => (
   <div>
-    <span className="field-label" aria-hidden="true">{label}</span>
+    {showLabel && <span className="field-label" aria-hidden="true">{label}</span>}
     <button
       type="button"
       onClick={onClick}
       aria-expanded={active}
       aria-label={`${label}: ${prettyDate(value)}`}
-      className={`field !gap-2 !px-3.5 text-left ${active ? 'shadow-[0_0_0_2px_rgba(18,160,168,0.55)]' : ''}`}
+      className={`field text-left ${active ? 'shadow-[0_0_0_2px_rgba(18,160,168,0.55)]' : ''}`}
     >
       <CalendarDays className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
-      <span className="truncate text-[0.82rem]">
+      <span className="truncate">
         {/* the weekday doesn't fit two-up on a phone */}
         <span className="sm:hidden">{prettyDate(value, true)}</span>
         <span className="hidden sm:inline">{prettyDate(value)}</span>
@@ -177,7 +181,7 @@ const Trigger = ({ label, value, active, onClick }) => (
 )
 
 /** Two fields sharing one calendar, the way the reference does it. */
-export function DateRangeFields({ from, to, setFrom, setTo, labels }) {
+export function DateRangeFields({ from, to, setFrom, setTo, labels, label = 'Date' }) {
   const [open, setOpen] = useState(null) // null | 'from' | 'to'
   const { box, drop } = usePopover(open, () => setOpen(null))
 
@@ -199,9 +203,12 @@ export function DateRangeFields({ from, to, setFrom, setTo, labels }) {
 
   return (
     <div ref={box} className="relative mt-5">
+      {/* One label over both ends. `labels` still names each field for a
+          screen reader, which the dates alone would not. */}
+      <span className="field-label">{label}</span>
       <div className="grid grid-cols-2 gap-3">
-        <Trigger label={labels[0]} value={from} active={open === 'from'} onClick={() => setOpen(open === 'from' ? null : 'from')} />
-        <Trigger label={labels[1]} value={to} active={open === 'to'} onClick={() => setOpen(open === 'to' ? null : 'to')} />
+        <Trigger showLabel={false} label={labels[0]} value={from} active={open === 'from'} onClick={() => setOpen(open === 'from' ? null : 'from')} />
+        <Trigger showLabel={false} label={labels[1]} value={to} active={open === 'to'} onClick={() => setOpen(open === 'to' ? null : 'to')} />
       </div>
       {open && <Panel from={from} to={to} mode="range" drop={drop} onPick={pick} onClose={() => setOpen(null)} />}
     </div>

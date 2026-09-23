@@ -100,7 +100,7 @@ export default function Home() {
                 <span className="font-semibold text-ember-300">{hero.headlineAccent}</span>
               </Reveal>
 
-              <Reveal as="p" delay={200} className="mt-5 max-w-xl text-[1rem] leading-relaxed text-white/80 sm:mt-6 sm:text-[1.02rem]">
+              <Reveal as="p" delay={200} className="mt-5 max-w-xl text-[0.92rem] leading-relaxed text-white/80 sm:mt-6 sm:text-[1.02rem]">
                 {hero.subhead}
               </Reveal>
             </div>

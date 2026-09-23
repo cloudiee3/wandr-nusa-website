@@ -94,7 +94,7 @@ export default function SearchWidget() {
             </div>
           </Row>
           <DateRangeFields {...{ from, to, setFrom, setTo }} labels={['Arrive', 'Leave']} />
-          <GuestsRow label="Travellers" {...{ adults, children, setAdults, setChildren }} />
+          <GuestsRow label="Peoples" {...{ adults, children, setAdults, setChildren }} />
         </>
       )}
 
