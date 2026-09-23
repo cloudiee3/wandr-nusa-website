@@ -144,10 +144,14 @@ export const trustSignals = [
   },
 ]
 
+// A new agency has no track record to point at, so these are promises we keep
+// from day one rather than totals we have not earned yet. Every one of them is
+// within our control — check each still holds before it goes live.
+// `text` renders as written; anything with `value` counts up when it scrolls in.
 export const stats = [
-  { value: 1400, suffix: '+', label: 'Travellers guided' },
-  { value: 63, suffix: '+', label: 'Itineraries designed' },
-  { value: 6, suffix: '', label: 'Islands covered' },
-  { value: 98, suffix: '%', label: 'Would travel again' },
-  { value: 12, suffix: '+', label: 'Years on these islands' },
+  { value: 6, suffix: '', label: 'Islands we cover' },
+  { value: 100, suffix: '%', label: 'Locally owned and guided' },
+  { text: '24/7', label: 'Support while you travel' },
+  { value: 1, prefix: '<', suffix: ' hr', label: 'Typical WhatsApp reply' },
+  { value: 12, suffix: '', label: 'Most travellers per group' },
 ]

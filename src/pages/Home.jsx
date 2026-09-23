@@ -22,12 +22,12 @@ const featured = ['rinjani-summit-trek', 'nusa-penida-island-hop', 'tetebatu-hig
 // Alternating emphasis, the way the reference sets its opening statement:
 // the dark phrases carry the claim, the light ones carry the connective tissue.
 const MANIFESTO = [
-  ["We're a Lombok company —", true],
-  ['guides, drivers and planners who live on the islands they show you.', false],
-  ['Not a booking platform reselling somebody else’s day tour.', true],
-  ['Every route here was walked before it was written down,', false],
-  ['and the person who answers your first message', true],
-  ['is still with you on the last transfer.', false],
+  ['We’re a Lombok travel company,', true],
+  ['planners and guides who never stopped wandering our own islands.', false],
+  ['We plan, guide and organise trips across Lombok and further east,', true],
+  ['and every route we share, we’ve walked ourselves.', false],
+  ['From your first message to the last goodbye,', true],
+  ['you’re with us.', false],
 ]
 
 
@@ -132,11 +132,17 @@ export default function Home() {
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {/* An odd count leaves the last card alone on the two-column phone
+                grid, so it takes the whole row instead. */}
             {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 70}>
+              <Reveal
+                key={s.label}
+                delay={i * 70}
+                className={i === stats.length - 1 && stats.length % 2 ? 'col-span-2 sm:col-span-1' : ''}
+              >
                 <div className="flex h-full flex-col items-center justify-center rounded-2xl bg-white px-4 py-9 text-center shadow-[0_1px_3px_rgba(1,29,57,0.06)]">
                   <span className="font-display text-[2.1rem] font-semibold leading-none tnum text-ink sm:text-[2.5rem]">
-                    <CountUp value={s.value} suffix={s.suffix} />
+                    {s.text ?? <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />}
                   </span>
                   <span className="mt-3 text-[0.82rem] text-ink-400">{s.label}</span>
                 </div>

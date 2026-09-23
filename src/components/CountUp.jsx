@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 /** Counts from 0 to `value` once, when it first becomes visible. */
-export default function CountUp({ value, suffix = '', duration = 1600, className = '' }) {
+export default function CountUp({ value, prefix = '', suffix = '', duration = 1600, className = '' }) {
   const ref = useRef(null)
   const [n, setN] = useState(0)
 
@@ -39,6 +39,7 @@ export default function CountUp({ value, suffix = '', duration = 1600, className
 
   return (
     <span ref={ref} className={className}>
+      {prefix}
       {n.toLocaleString('en-US')}
       {suffix}
     </span>
