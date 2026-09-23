@@ -22,12 +22,12 @@ const featured = ['rinjani-summit-trek', 'nusa-penida-island-hop', 'tetebatu-hig
 // Alternating emphasis, the way the reference sets its opening statement:
 // the dark phrases carry the claim, the light ones carry the connective tissue.
 const MANIFESTO = [
-  ['We’re a Lombok travel company,', true],
-  ['planners and guides who never stopped wandering our own islands.', false],
-  ['We plan, guide and organise trips across Lombok and further east,', true],
-  ['and every route we share, we’ve walked ourselves.', false],
-  ['From your first message to the last goodbye,', true],
-  ['you’re with us.', false],
+  ['We’re a Lombok travel company —', true],
+  ['planners, guides and experience designers who never stopped wandering our own islands,', false],
+  ['working together to create journeys across Lombok and further east.', true],
+  ['From the first search to the last goodbye,', false],
+  ['we take care of the details', true],
+  ['so your trip feels effortless and personal.', false],
 ]
 
 

@@ -74,7 +74,7 @@
   /* Small rounded badge used as a section eyebrow — the dot is the tell. */
   .pill {
     @apply inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/45
-           px-4 py-2.5 text-[13px] font-medium text-ink
+           px-4 py-2.5 text-[13px] font-bold text-ink
            shadow-[0_2px_12px_rgba(1,29,57,0.07)]
            backdrop-blur-xl backdrop-saturate-150 sm:py-2 sm:text-[12px];
   }
