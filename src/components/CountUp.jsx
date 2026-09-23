@@ -4,13 +4,16 @@ import { useEffect, useRef, useState } from 'react'
 export default function CountUp({ value, prefix = '', suffix = '', duration = 1600, className = '' }) {
   const ref = useRef(null)
   const [n, setN] = useState(0)
+  // Guarded so a stat with no numeric value renders as 0 rather than throwing
+  // and taking the whole page with it.
+  const target = Number.isFinite(Number(value)) ? Number(value) : 0
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setN(value)
+      setN(target)
       return
     }
 
@@ -23,7 +26,7 @@ export default function CountUp({ value, prefix = '', suffix = '', duration = 16
         const tick = (now) => {
           const t = Math.min((now - start) / duration, 1)
           const eased = 1 - Math.pow(1 - t, 3) // easeOutCubic
-          setN(Math.round(value * eased))
+          setN(Math.round(target * eased))
           if (t < 1) raf = requestAnimationFrame(tick)
         }
         raf = requestAnimationFrame(tick)
@@ -35,7 +38,7 @@ export default function CountUp({ value, prefix = '', suffix = '', duration = 16
       io.disconnect()
       cancelAnimationFrame(raf)
     }
-  }, [value, duration])
+  }, [target, duration])
 
   return (
     <span ref={ref} className={className}>

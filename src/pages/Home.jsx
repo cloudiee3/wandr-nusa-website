@@ -90,12 +90,14 @@ export default function Home() {
                 as="h1"
                 delay={100}
                 /* balance is on h1 globally; here the line break is deliberate */
-                className="mt-7 text-[2.05rem] leading-[1.1] !text-white [text-wrap:initial] sm:text-[3.1rem] lg:text-[3.65rem]"
+                className="mt-7 font-normal text-[2.05rem] leading-[1.1] !text-white [text-wrap:initial] sm:text-[3.1rem] lg:text-[3.65rem]"
               >
                 {hero.headline[0]}
                 <br />
                 {hero.headline[1]}{' '}
-                <span className="text-ember-300">{hero.headlineAccent}</span>
+                {/* The accent word keeps the heavier weight it had, so the
+                    lighter line throws it forward instead of matching it. */}
+                <span className="font-semibold text-ember-300">{hero.headlineAccent}</span>
               </Reveal>
 
               <Reveal as="p" delay={200} className="mt-5 max-w-xl text-[1rem] leading-relaxed text-white/80 sm:mt-6 sm:text-[1.02rem]">

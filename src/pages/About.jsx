@@ -59,11 +59,19 @@ export default function About() {
             the trail conditions on Rinjani with something other than a guess.
           </Reveal>
 
-          <Reveal delay={210} className="mt-10 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-ink/[0.08] bg-ink/[0.06]">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-white px-4 py-6 text-center">
+          {/* Three columns crush these labels on a phone, and an odd count leaves
+              the divider grid showing an empty cell — so the last stat stretches
+              across whatever is left of its row. With five, that fills both. */}
+          <Reveal delay={210} className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/[0.08] bg-ink/[0.06] sm:grid-cols-3">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`bg-white px-4 py-6 text-center ${
+                  i === stats.length - 1 && stats.length % 3 !== 0 ? 'col-span-2' : ''
+                }`}
+              >
                 <span className="block font-display text-2xl font-semibold text-ink sm:text-3xl">
-                  <CountUp value={s.value} suffix={s.suffix} />
+                  {s.text ?? <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />}
                 </span>
                 <span className="mt-1 block font-sans text-[12px] sm:text-[10px] uppercase tracking-label text-ink-300">{s.label}</span>
               </div>
