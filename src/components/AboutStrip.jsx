@@ -17,40 +17,45 @@ export default function AboutStrip() {
 
   return (
     <section className="wrap py-16 lg:py-24">
-      <Reveal>
-        <span className="pill"><span className="pill-dot" />About us</span>
-      </Reveal>
+      {/* Two columns for the whole section, the way the reference builds it:
+          eyebrow, heading and cards down the left, and the photograph holding
+          the right for the full height of them rather than hanging below. */}
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-14">
+        <div>
+          <Reveal>
+            <span className="pill"><span className="pill-dot" />About us</span>
+          </Reveal>
 
-      <Reveal as="h2" delay={80} className="mt-5 max-w-2xl font-normal text-[2rem] leading-[1.12] sm:text-[2.7rem]">
-        Handpicked routes, honest prices
-      </Reveal>
-      <Reveal as="p" delay={150} className="mt-4 max-w-xl text-[1.02rem] text-ink-500">
-        Itineraries we have walked ourselves, costed line by line, with nothing buried in the margin.
-      </Reveal>
+          <Reveal as="h2" delay={80} className="mt-5 text-[2rem] leading-[1.12] sm:text-[2.7rem]">
+            Handpicked routes, <span className="flourish">honest prices</span>
+          </Reveal>
+          <Reveal as="p" delay={150} className="mt-4 text-[1.02rem] text-ink-500">
+            Itineraries we have walked ourselves, costed line by line, with nothing buried in the margin.
+          </Reveal>
 
-      <div className="mt-12 grid items-start gap-6 lg:grid-cols-2 lg:gap-10">
-        <div className="space-y-4">
-          {trustSignals.map((t, i) => {
-            const Icon = ICONS[i] ?? Sparkles
-            return (
-              <Reveal key={t.title} delay={i * 90}>
-                <article className="rounded-2xl border border-ink/[0.08] bg-white p-6 transition-shadow duration-500 hover:shadow-card sm:p-7">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sand-200 text-ink">
-                    <Icon className="h-5 w-5" strokeWidth={1.7} />
-                  </span>
-                  <h3 className="mt-5 font-sans text-[1.05rem] font-bold">{t.title}</h3>
-                  <p className="mt-2 text-[0.94rem] leading-relaxed text-ink-500">{t.body}</p>
-                </article>
-              </Reveal>
-            )
-          })}
+          <div className="mt-10 space-y-4">
+            {trustSignals.map((t, i) => {
+              const Icon = ICONS[i] ?? Sparkles
+              return (
+                <Reveal key={t.title} delay={i * 90}>
+                  <article className="rounded-2xl border border-ink/[0.08] bg-white p-6 transition-shadow duration-500 hover:shadow-card sm:p-7">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sand-200 text-ink">
+                      <Icon className="h-5 w-5" strokeWidth={1.7} />
+                    </span>
+                    <h3 className="mt-5 font-sans text-[1.05rem] font-bold">{t.title}</h3>
+                    <p className="mt-2 text-[0.94rem] leading-relaxed text-ink-500">{t.body}</p>
+                  </article>
+                </Reveal>
+              )
+            })}
+          </div>
         </div>
 
         <Reveal delay={140} className="relative">
           <Img
             name="tetebatu-field"
             sizes="(min-width:1024px) 46vw, 100vw"
-            className="aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[5/4] lg:aspect-[4/5]"
+            className="aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[5/4] lg:aspect-auto lg:h-full"
           />
 
           {/* Floating cards — the reference's device, with travel content in it. */}
