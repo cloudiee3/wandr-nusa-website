@@ -10,3 +10,7 @@ dist-ssr
 npm-debug.log*
 dist-artifact
 artifact
+
+# Playwright screenshots from the local test harness.
+undefined
+shots
