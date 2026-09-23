@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Compass, ShieldCheck, Sparkles, Star, Users } from 'lucide-react'
+import { ShieldCheck, Sparkles, Star, Users } from 'lucide-react'
 import Img from './Img'
 import Reveal from './Reveal'
 import { trustSignals } from '../data/site'
 import { bySlug, formatPrice, journeys } from '../data/journeys'
 
-const ICONS = [ShieldCheck, Compass, Sparkles]
+const ICONS = [ShieldCheck, Users]
 
 // Computed from the journey data rather than written in, so it can't drift.
 const rated = journeys.filter((j) => j.rating)
@@ -21,8 +21,8 @@ export default function AboutStrip() {
         <span className="pill"><span className="pill-dot" />About us</span>
       </Reveal>
 
-      <Reveal as="h2" delay={80} className="mt-5 max-w-2xl text-[2rem] leading-[1.12] sm:text-[2.7rem]">
-        Handpicked routes, <span className="flourish">honest prices</span>
+      <Reveal as="h2" delay={80} className="mt-5 max-w-2xl font-normal text-[2rem] leading-[1.12] sm:text-[2.7rem]">
+        Handpicked routes, honest prices
       </Reveal>
       <Reveal as="p" delay={150} className="mt-4 max-w-xl text-[1.02rem] text-ink-500">
         Itineraries we have walked ourselves, costed line by line, with nothing buried in the margin.
@@ -38,7 +38,7 @@ export default function AboutStrip() {
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sand-200 text-ink">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </span>
-                  <h3 className="mt-5 text-[1.12rem]">{t.title}</h3>
+                  <h3 className="mt-5 font-sans text-[1.05rem] font-bold">{t.title}</h3>
                   <p className="mt-2 text-[0.94rem] leading-relaxed text-ink-500">{t.body}</p>
                 </article>
               </Reveal>

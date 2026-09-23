@@ -135,12 +135,8 @@ export const trustSignals = [
     body: 'Registered travel bureau (BPW) with full public-liability cover on every departure.',
   },
   {
-    title: 'Certified mountain guides',
-    body: 'Rinjani treks run with permitted, wilderness-first-aid trained guides and porters.',
-  },
-  {
-    title: 'Fair-wage local crew',
-    body: 'Guides, drivers and porters are hired directly and paid above the regional standard.',
+    title: 'One team, start to finish',
+    body: 'The person who answers your first message is the one who sees your trip through, from planning to the last transfer.',
   },
 ]
 
