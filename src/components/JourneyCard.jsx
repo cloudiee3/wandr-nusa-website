@@ -85,7 +85,7 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
         )}
       </div>
 
-      <h3 className="mt-4 text-[1.22rem] leading-snug">
+      <h3 className="mt-4 font-sans text-[1.06rem] font-bold leading-snug">
         <Link to={`/journeys/${journey.slug}`} className="-my-3 inline-block py-3 transition-colors duration-300 hover:text-sea-600">
           {journey.title}
         </Link>
@@ -109,7 +109,7 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
 
       <div className="mt-auto flex items-end justify-between gap-4 pt-5">
         <span className="leading-tight">
-          <span className="font-display text-[1.35rem] font-semibold tnum text-ink">
+          <span className="font-sans text-[1.28rem] font-bold tnum text-ink">
             {formatPrice(journey.priceFrom)}
           </span>
           {journey.priceFrom && <span className="text-[0.85rem] text-ink-400"> / person</span>}

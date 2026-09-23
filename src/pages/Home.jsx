@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import Img from '../components/Img'
@@ -13,11 +13,11 @@ import WhatsAppIcon from '../components/WhatsAppIcon'
 import AboutStrip from '../components/AboutStrip'
 import OfferSlider from '../components/OfferSlider'
 import Testimonials from '../components/Testimonials'
-import { journeys } from '../data/journeys'
+import { categories, journeys } from '../data/journeys'
 import { destinations } from '../data/destinations'
 import { hero, site, stats, whatsappLink } from '../data/site'
 
-const featured = ['rinjani-summit-trek', 'nusa-penida-island-hop', 'tetebatu-highlands']
+const FEATURED_COUNT = 6
 
 // Alternating emphasis, the way the reference sets its opening statement:
 // the dark phrases carry the claim, the light ones carry the connective tissue.
@@ -65,6 +65,12 @@ function useParallax() {
 }
 
 export default function Home() {
+  const [kind, setKind] = useState('All')
+  const shown = useMemo(
+    () => journeys.filter((j) => kind === 'All' || j.category === kind).slice(0, FEATURED_COUNT),
+    [kind],
+  )
+
   const heroPhoto = useParallax()
 
   return (
@@ -160,24 +166,50 @@ export default function Home() {
       {/* ── Featured journeys ────────────────────────────────── */}
       <section id="discover" className="bg-sand py-16 lg:py-24">
         <div className="wrap">
-          <SectionHead
-            eyebrow="Journeys"
-            title={<>Routes we run <span className="flourish">again and again</span></>}
-            lead="Fixed departures for the classics, and a blank page for everything else."
-            action={
-              <Link to="/journeys" className="btn-ghost">
-                All journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-              </Link>
-            }
-          />
+          {/* The reference sets the heading against its lead rather than above
+              it, then runs the categories underneath as a filter. */}
+          <div className="grid gap-5 lg:grid-cols-2 lg:items-end lg:gap-16">
+            <Reveal as="h2" className="text-[2rem] leading-[1.12] sm:text-[2.7rem]">
+              Routes we run <span className="flourish">again and again</span>
+            </Reveal>
+            <Reveal as="p" delay={80} className="text-[1.02rem] leading-relaxed text-ink-500 lg:pb-2">
+              Fixed departures for the classics, and a blank page for everything else.
+            </Reveal>
+          </div>
 
-          <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((slug, i) => (
-              <Reveal key={slug} delay={i * 110}>
-                <JourneyCard journey={journeys.find((x) => x.slug === slug)} />
+          <Reveal delay={120} className="no-scrollbar -mx-5 mt-9 flex gap-2.5 overflow-x-auto px-5 sm:-mx-8 sm:px-8 lg:mx-0 lg:flex-wrap lg:px-0">
+            {categories.map((c) => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => setKind(c)}
+                aria-pressed={kind === c}
+                className={`chip ${kind === c ? 'chip-on' : ''}`}
+              >
+                {c}
+              </button>
+            ))}
+          </Reveal>
+
+          <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {shown.map((j, i) => (
+              <Reveal key={j.slug} delay={i * 90}>
+                <JourneyCard journey={j} />
               </Reveal>
             ))}
           </div>
+
+          {shown.length === 0 && (
+            <p className="mt-10 text-ink-500">
+              Nothing fixed in that category yet — tell us your dates and we will plan it.
+            </p>
+          )}
+
+          <Reveal delay={120} className="mt-12 text-center">
+            <Link to="/journeys" className="btn-ghost">
+              All journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
