@@ -2,120 +2,97 @@
 
 export const journeys = [
   {
-    slug: 'rinjani-summit-trek',
-    rating: 4.9,
-    reviews: 148,
-    priceNote: 'including park permits, guide, porters & all meals',
-    title: 'Rinjani Summit & Crater Lake',
-    kicker: 'Signature trek',
-    region: 'Mount Rinjani, East Lombok',
-    duration: '3 days · 2 nights',
-    group: 'Max 8 trekkers',
-    difficulty: 'Demanding',
-    season: 'April – November',
-    pricing: {
-      unit: 'per person',
-      tiers: [
-        { from: 2, to: 2, price: 4650000 },
-        { from: 3, to: 4, price: 4150000 },
-        { from: 5, to: 6, price: 3750000 },
-      ],
-      note: 'Private departure. The per-person price falls as the group grows.',
-    },
-    image: 'rinjani-sunrise',
-    gallery: ['rinjani-peak', 'rinjani-lake-view', 'segara-anak'],
-    tags: ['Mountain & Hills', 'Nature'],
-    summary:
-      'Three days on Indonesia’s second-highest volcano — up through the pine ridge to Plawangan, a pre-dawn push to the 3,726 m rim, then down to camp beside the hot springs of Segara Anak.',
-    highlights: [
-      'Sunrise from the summit ridge, with Bali’s Agung on the horizon',
-      'Two nights camped on the crater rim and lakeshore',
-      'Soak in the Aik Kalak hot springs below Segara Anak',
-      'Porters carry camp, food and water — you carry a daypack',
-    ],
-    itinerary: [
-      { day: 'Day 1', title: 'Sembalun to Plawangan II', body: 'Pick-up from your hotel, permits at the Sembalun gate, then a long open climb across the savannah to the rim camp at 2,639 m. Dinner cooked at camp as the light goes.' },
-      { day: 'Day 2', title: 'Summit, then down to the lake', body: 'A 2am start for the scree push to the summit for sunrise. Back to camp for breakfast, then the descent to Segara Anak — swim, fish, and sit in the hot springs.' },
-      { day: 'Day 3', title: 'Senaru rim and out', body: 'Climb to the Senaru rim through cloud forest and descend to the village. Lunch, shower, and transfer back to your hotel or the airport.' },
-    ],
-    includes: ['National park permits', 'Certified guide + porters', 'All camping equipment', 'All meals and drinking water on the mountain', 'Hotel transfers'],
-    excludes: ['Personal trekking gear', 'Travel insurance', 'Tips for the crew'],
-  },
-  {
-    slug: 'rinjani-crater-rim',
+    slug: 'rinjani-trek',
     rating: 4.9,
     reviews: 206,
-    priceNote: 'including permits, guide, porters & all meals',
-    title: 'Rinjani Crater Rim from Sembalun',
-    kicker: 'Most booked trek',
+    priceNote: 'including park permits, guide, porters & all meals',
+    title: 'Mount Rinjani Trek',
+    kicker: 'Signature trek',
     region: 'Sembalun, East Lombok',
-    duration: '2 days · 1 night',
+    duration: '2 or 3 days',
     group: 'Max 8 trekkers',
     difficulty: 'Challenging',
     season: 'April – November',
     pricing: {
       unit: 'per person',
-      tiers: [
-        { from: 2, to: 2, price: 3450000 },
-        { from: 3, to: 4, price: 3050000 },
-        { from: 5, to: 6, price: 2750000 },
+      note: 'Private departure on either route. The per-person price falls as the group grows.',
+      variants: [
+        {
+          name: 'Crater rim — 2 days, 1 night',
+          tiers: [
+            { from: 2, to: 2, price: 3450000 },
+            { from: 3, to: 4, price: 3050000 },
+            { from: 5, to: 6, price: 2750000 },
+          ],
+        },
+        {
+          name: 'Summit and crater lake — 3 days, 2 nights',
+          tiers: [
+            { from: 2, to: 2, price: 4650000 },
+            { from: 3, to: 4, price: 4150000 },
+            { from: 5, to: 6, price: 3750000 },
+          ],
+        },
       ],
-      note: 'Private departure. The per-person price falls as the group grows.',
     },
-    image: 'rinjani-barujari',
-    gallery: ['rinjani-lake-view', 'rinjani-crater', 'rinjani-sunrise'],
+    image: 'rinjani-caldera',
+    gallery: ['rinjani-sunrise', 'rinjani-lake-view', 'rinjani-barujari'],
     tags: ['Mountain & Hills', 'Nature'],
     summary:
-      'The view people come to Rinjani for, without the 2am summit push. Up through the Sembalun savannah to the rim at Plawangan, a night on the crater edge, and the lake and its cone laid out below at first light.',
+      'One mountain, two ways up it. Both climb the Sembalun savannah to the crater rim for sunrise over Segara Anak; the longer one carries on to the 3,726 m summit and down to the lake itself. Tell us which and we will run it privately.',
     highlights: [
-      'Segara Anak and the Barujari cone from the rim at sunrise',
+      'Sunrise over Segara Anak and the Barujari cone from the rim',
       'A night camped at 2,639 m on the crater edge',
-      'The long open savannah climb, with Rinjani ahead the whole way',
+      'On the longer route, the summit ridge with Bali’s Agung on the horizon',
+      'On the longer route, the hot springs below the lake',
       'Porters carry camp, food and water — you carry a daypack',
     ],
     itinerary: [
-      { day: 'Day 1', title: 'Sembalun to the rim', body: 'Morning pick-up and permits at the Sembalun gate. A long open climb across the savannah, then the steep pull up to the rim camp at 2,639 m. Camp is set and dinner cooked while the caldera goes dark below you.' },
-      { day: 'Day 2', title: 'Sunrise, then down', body: 'Up for first light over the lake and the cone. Breakfast at camp, then back down the way you came, off the mountain around the middle of the day and on to your hotel or the airport.' },
+      { day: 'Day 1', title: 'Sembalun to the rim', body: 'Shared by both routes. Morning pick-up and permits at the Sembalun gate, then a long open climb across the savannah and the steep pull up to the rim camp at 2,639 m. Camp set and dinner cooked while the caldera goes dark below you.' },
+      { day: 'Day 2 · two-day route', title: 'Sunrise, then down', body: 'Up for first light over the lake and the cone. Breakfast at camp, then back down the way you came, off the mountain around the middle of the day and on to your hotel or the airport.' },
+      { day: 'Day 2 · three-day route', title: 'Summit, then the lake', body: 'A pre-dawn start for the scree push to the 3,726 m summit for sunrise. Back to camp for breakfast, then the long descent to Segara Anak — swim, fish, and sit in the hot springs.' },
+      { day: 'Day 3 · three-day route', title: 'Senaru rim and out', body: 'Climb to the Senaru rim through cloud forest and descend to the village. Lunch, a shower, and the transfer back.' },
     ],
     includes: ['National park permits', 'Certified guide and porters', 'Tent, sleeping mat and sleeping bag', 'All meals and drinking water on the mountain', 'Hotel or airport transfers'],
     excludes: ['Personal trekking gear and boots', 'Travel insurance', 'Tips for the crew', 'Weekend permit surcharge'],
   },
   {
-    slug: 'pergasingan-sunrise',
+    slug: 'sembalun-hills',
     rating: 4.8,
     reviews: 74,
-    priceNote: 'including transport, guide, permits & breakfast on the hill',
-    title: 'Pergasingan Hill Sunrise',
+    priceNote: 'including transport in Sembalun, guide, trail fees & breakfast',
+    title: 'Sembalun Hills Hike',
     kicker: 'Day hike',
     region: 'Sembalun, East Lombok',
-    duration: 'Full day',
+    duration: 'Half or full day',
     group: 'Max 10 walkers',
-    difficulty: 'Moderate',
+    difficulty: 'Easy to moderate',
     season: 'Year round',
     pricing: {
       unit: 'per person',
+      note: 'Private departure. The per-person price falls as the group grows.',
       tiers: [
         { from: 2, to: 2, price: 950000 },
         { from: 3, to: 4, price: 750000 },
         { from: 5, to: 6, price: 650000 },
       ],
-      note: 'Private departure. The per-person price falls as the group grows.',
     },
-    image: 'rinjani-peak',
-    gallery: ['volcanic-plain', 'rice-terraces', 'rinjani-sunrise'],
+    image: 'sembalun-valley',
+    gallery: ['sembalun-ridge', 'sembalun-fields', 'sembalun-sign'],
     tags: ['Mountain & Hills', 'Nature', 'Day Trips'],
     summary:
-      'The whole Sembalun valley from 1,670 m, with Rinjani filling the sky behind it. Three hours up in the dark, sunrise on the ridge, and down past the rice terraces before the heat arrives. The way to see Rinjani without committing to it.',
+      'Sembalun sits in a ring of hills, and the right one depends on the morning. Some are an hour of easy climbing to a ridge above the fields; others are three hours and a proper summit. Tell us how far you want to walk and we will pick the hill — Rinjani is the backdrop from all of them.',
     highlights: [
-      'Sunrise over the Sembalun valley from the ridge',
-      'Rinjani from base to summit, close enough to trace the trekking route',
-      'The patchwork terraces below Bukit Selong on the way down',
+      'Sunrise over the valley from a ridge, with Rinjani opposite',
+      'A route matched to your legs rather than a fixed itinerary',
+      'The patchwork of onion, garlic and rice fields on the way down',
       'Breakfast cooked on the hill',
     ],
     itinerary: [
-      { day: 'Pre-dawn', title: 'Into the dark', body: 'Pick-up in Sembalun and a short drive to the trailhead. Head-torches on for the climb — steep in places, about three hours at an unhurried pace, with the valley lights below you the whole way.' },
-      { day: 'Sunrise', title: 'The ridge', body: 'First light from the ridge, with Rinjani opposite and the valley opening underneath. Breakfast cooked up top, and time to walk the ridgeline before turning back.' },
-      { day: 'Morning', title: 'Down through the terraces', body: 'The descent takes around two and a half hours and comes out among the terraces. Back in Sembalun by late morning, with the option to add Bukit Selong on the way out.' },
+      { day: 'Before we go', title: 'Pick the hill', body: 'We ask how far you want to walk and how early you want to start, then choose from the ridges around the valley. An easy one is about an hour up; the longer ones run to three, and a couple can be camped on overnight if you would rather wake up there.' },
+      { day: 'Pre-dawn', title: 'Into the dark', body: 'Pick-up in Sembalun and a short drive to whichever trailhead we have settled on. Head-torches for the climb, with the valley lights below you the whole way.' },
+      { day: 'Sunrise', title: 'The ridge', body: 'First light from the ridge, Rinjani opposite and the valley opening underneath. Breakfast cooked up top, and time to walk the ridgeline before turning back.' },
+      { day: 'Morning', title: 'Down through the fields', body: 'Back down among the terraces and market gardens, and into Sembalun by late morning. Add a valley viewpoint or a coffee stop on the way out if you have the time.' },
     ],
     includes: ['Local guide', 'Village and trail fees', 'Breakfast and drinking water', 'Head-torch if you need one', 'Transfers within Sembalun'],
     excludes: ['Transfers from outside East Lombok', 'Walking shoes', 'Travel insurance', 'Tips for the guide'],
@@ -134,7 +111,7 @@ export const journeys = [
     season: 'Year round',
     priceFrom: 1850000,
     image: 'tetebatu-field',
-    gallery: ['rice-terraces', 'monkey-forest', 'sasak-house'],
+    gallery: ['rice-terraces', 'monkey-forest', 'tetebatu-plant'],
     tags: ['Mountain & Hills', 'Nature', 'Culture & Villages'],
     summary:
       'The green shoulder of Rinjani, at walking pace. Terraced paddies, a black-monkey forest, a tobacco-drying village, and a night in a homestay where dinner is cooked over wood.',
@@ -197,7 +174,7 @@ export const journeys = [
     season: 'Year round',
     priceFrom: 2400000,
     image: 'freediving',
-    gallery: ['coastline-aerial', 'freediving', 'jungle-waterfall'],
+    gallery: ['coastline-aerial'],
     tags: ["Gili's", 'Diving & Snorkeling', 'Beaches'],
     summary:
       'Three car-free islands and the reef between them. A guided snorkel circuit, an intro freedive session with a certified instructor, and a night on Gili Air where the only traffic is bicycles.',
@@ -228,7 +205,7 @@ export const journeys = [
     season: 'Year round',
     priceFrom: 680000,
     image: 'sasak-house',
-    gallery: ['rice-field-huts', 'sasak-house', 'rice-road-aerial'],
+    gallery: ['rice-field-huts'],
     tags: ['Culture & Villages', 'Day Trips'],
     summary:
       'A day with the Sasak — the people of Lombok. Thatch-and-clay houses at Sade, backstrap looms at Sukarara, and the coil-built pottery of Penujak, with time to try each craft yourself.',
@@ -260,7 +237,7 @@ export const journeys = [
     season: 'Year round',
     priceFrom: null,
     image: 'rice-road-aerial',
-    gallery: ['tetebatu-plant', 'volcanic-plain', 'coastline-aerial'],
+    gallery: ['volcanic-plain', 'rinjani-rim'],
     tags: ['Private & Custom Trips', 'Sailing'],
     summary:
       'Tell us how long you have, what you like, and how hard you want to walk. We’ll come back with a routed itinerary, honest costs, and the same guides we use on our own departures.',
@@ -306,8 +283,13 @@ export function priceFigure(value) {
  * shows. Derived rather than stored, so a headline price cannot drift away
  * from the table it is meant to summarise.
  */
-export const fromPrice = (j) =>
-  j.pricing ? Math.min(...j.pricing.tiers.map((t) => t.price)) : j.priceFrom
+export const priceTiers = (j) =>
+  j.pricing?.variants ? j.pricing.variants.flatMap((v) => v.tiers) : (j.pricing?.tiers ?? [])
+
+export const fromPrice = (j) => {
+  const tiers = priceTiers(j)
+  return tiers.length ? Math.min(...tiers.map((t) => t.price)) : j.priceFrom
+}
 
 /** "2", "3 â 4", "5 â 6" â how a tier is labelled in the price table. */
 export const tierLabel = (t) =>

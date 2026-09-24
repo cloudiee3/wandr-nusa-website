@@ -77,24 +77,33 @@ export default function JourneyDetail() {
           <Reveal className="max-w-2xl">
             <h2 className="text-[1.5rem] leading-tight">What it costs</h2>
             <p className="mt-2 text-[0.95rem] text-ink-500">{j.pricing.note}</p>
-            <div className="mt-5 overflow-hidden rounded-2xl border border-ink/[0.09]">
-              {j.pricing.tiers.map((t, i) => (
-                <div
-                  key={tierLabel(t)}
-                  className={`flex items-baseline justify-between gap-6 px-5 py-4 ${
-                    i ? 'border-t border-ink/[0.07]' : ''
-                  }`}
-                >
-                  <span className="text-[0.95rem] text-ink-600">
-                    {tierLabel(t)} {t.to === 1 ? 'traveller' : 'travellers'}
-                  </span>
-                  <span className="font-sans text-[1.05rem] font-bold tnum text-ink">
-                    {formatPrice(t.price)}
-                    <span className="font-normal text-[0.82rem] text-ink-400"> {j.pricing.unit}</span>
-                  </span>
-                </div>
-              ))}
-            </div>
+            {/* One route or several — a trip that runs two ways prices each
+                of them, rather than pretending they cost the same. */}
+            {(j.pricing.variants ?? [{ tiers: j.pricing.tiers }]).map((v) => (
+              <div key={v.name ?? 'only'} className="mt-5 overflow-hidden rounded-2xl border border-ink/[0.09]">
+                {v.name && (
+                  <div className="border-b border-ink/[0.07] bg-ink/[0.02] px-5 py-3">
+                    <span className="font-sans text-[0.9rem] font-bold text-ink">{v.name}</span>
+                  </div>
+                )}
+                {v.tiers.map((t, i) => (
+                  <div
+                    key={tierLabel(t)}
+                    className={`flex items-baseline justify-between gap-6 px-5 py-4 ${
+                      i ? 'border-t border-ink/[0.07]' : ''
+                    }`}
+                  >
+                    <span className="text-[0.95rem] text-ink-600">
+                      {tierLabel(t)} {t.to === 1 ? 'traveller' : 'travellers'}
+                    </span>
+                    <span className="font-sans text-[1.05rem] font-bold tnum text-ink">
+                      {formatPrice(t.price)}
+                      <span className="font-normal text-[0.82rem] text-ink-400"> {j.pricing.unit}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ))}
             <p className="mt-3 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
           </Reveal>
         </section>

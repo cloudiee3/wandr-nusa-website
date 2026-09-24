@@ -13,7 +13,7 @@ const avgRating = (rated.reduce((n, j) => n + j.rating, 0) / rated.length).toFix
 const totalReviews = rated.reduce((n, j) => n + j.reviews, 0)
 
 export default function AboutStrip() {
-  const pick = bySlug('rinjani-summit-trek')
+  const pick = bySlug('rinjani-trek')
 
   return (
     <section className="wrap py-16 lg:py-24">

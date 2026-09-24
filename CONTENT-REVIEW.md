@@ -12,33 +12,27 @@ once it's confirmed.
 
 ## East Lombok — Mountain & Hills
 
-### Rinjani Summit & Crater Lake — `rinjani-summit-trek` (3 days · 2 nights)
+### Mount Rinjani Trek — `rinjani-trek` (2 or 3 days)
+
+One card, two routes priced separately.
 
 | Field | I put | Confirm? |
 |---|---|---|
-| Price, 2 travellers | IDR 4,650,000 pp | ☐ |
-| Price, 3–4 travellers | IDR 4,150,000 pp | ☐ |
-| Price, 5–6 travellers | IDR 3,750,000 pp | ☐ |
-| Group cap | Max 8 trekkers | ☐ |
-| Rating / reviews | 4.9 · 148 | ☐ — real figures or remove |
-
-Market check: private 3D/2N runs **USD 235–285** (IDR 3.8m–4.6m) with other
-operators, so this sits at the top of the range. Deliberate?
-
-### Rinjani Crater Rim from Sembalun — `rinjani-crater-rim` (2 days · 1 night) — NEW
-
-| Field | I put | Confirm? |
-|---|---|---|
-| Price, 2 travellers | IDR 3,450,000 pp | ☐ |
-| Price, 3–4 travellers | IDR 3,050,000 pp | ☐ |
-| Price, 5–6 travellers | IDR 2,750,000 pp | ☐ |
+| Crater rim 2D/1N — 2 travellers | IDR 3,450,000 pp | ☐ |
+| Crater rim 2D/1N — 3–4 | IDR 3,050,000 pp | ☐ |
+| Crater rim 2D/1N — 5–6 | IDR 2,750,000 pp | ☐ |
+| Summit 3D/2N — 2 travellers | IDR 4,650,000 pp | ☐ |
+| Summit 3D/2N — 3–4 | IDR 4,150,000 pp | ☐ |
+| Summit 3D/2N — 5–6 | IDR 3,750,000 pp | ☐ |
 | Group cap | Max 8 trekkers | ☐ |
 | Rating / reviews | 4.9 · 206 | ☐ — real figures or remove |
-| Season | April – November | ☐ |
 
-Market check: 2D/1N packages advertise **USD 160–185**; private runs higher.
+Market check: 2D/1N advertises **USD 160–185**; private 3D/2N runs
+**USD 235–285** (IDR 3.8m–4.6m), so the summit tier sits at the top.
 
-### Pergasingan Hill Sunrise — `pergasingan-sunrise` (full day) — NEW
+### Sembalun Hills Hike — `sembalun-hills` (half or full day)
+
+No named hill — the route is chosen on the day, as you asked.
 
 | Field | I put | Confirm? |
 |---|---|---|
@@ -47,9 +41,8 @@ Market check: 2D/1N packages advertise **USD 160–185**; private runs higher.
 | Price, 5–6 travellers | IDR 650,000 pp | ☐ |
 | Group cap | Max 10 walkers | ☐ |
 | Rating / reviews | 4.8 · 74 | ☐ — real figures or remove |
-| Transfers | "within Sembalun" only — pick-ups from Senggigi/Kuta excluded | ☐ |
-
----
+| Transfers | within Sembalun only | ☐ |
+| Overnight camping mentioned as an option | ☐ — do you actually offer it? |
 
 ## Researched facts — sourced, but worth a local sanity check
 
@@ -70,8 +63,13 @@ If you absorb it instead, say so and I'll move it.
 
 ## Still missing
 
-- **A Sembalun photo.** The Pergasingan trip currently uses a Rinjani summit
-  shot. It wants the valley, the terraces, or the ridge at dawn.
+- **Bigger Sembalun photos.** The four you sent are 1,080–1,280px. They are
+  sharp on cards but the trip page hero is full-bleed and needs about 3,000px,
+  so it renders at 0.41 of a real pixel. Same originals at full size would fix
+  it. Same for `tetebatu-field` (1,439px) and the Rinjani drone shot (2,000px).
+- **Sea photos.** There are exactly two — `coastline-aerial` and `freediving` —
+  shared between the Gili trip, the Gili destination and the south coast. Any
+  beach or island trip you add will have nothing of its own.
 - **Real ratings.** Every rating and review count on the site is invented. They
   are the most legally exposed thing on the page — made-up reviews are
   actionable in most of your source markets. Either give me real numbers or I

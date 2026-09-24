@@ -8,7 +8,7 @@ const PHOTOS = 'source-assets/photos'
 const BRAND = 'source-assets/brand'
 const OUT_IMG = 'public/img'
 const OUT_BRAND = 'public/brand'
-const WIDTHS = [480, 800, 1280, 1920]
+const WIDTHS = [480, 800, 1280, 1920, 2560]
 
 // slug -> { file, alt } . Slugs are what the site references.
 const PHOTO_MAP = {
@@ -31,6 +31,11 @@ const PHOTO_MAP = {
   'rinjani-peak':        ['Rinjani Peak Clouds.jpg', 'The summit cone of Mount Rinjani catching first light through cloud'],
   'rinjani-lake-view':   ['Rinjani Rim Lake View.jpg', 'Segara Anak and the Barujari cone seen from the Rinjani summit ridge'],
   'rinjani-barujari':    ['Rinjani Barujari Cone.jpg', 'The Barujari cone rising from Segara Anak inside the Rinjani caldera'],
+  'rinjani-caldera':     ['Rinjani Caldera Aerial.jpg', 'The Barujari cone and Segara Anak from the air inside the Rinjani caldera'],
+  'sembalun-valley':     ['Sembalun Valley Fields.webp', 'A walker above the Sembalun valley with the hills rising behind the fields'],
+  'sembalun-ridge':      ['Sembalun Ridge Trail.jpg', 'A walker on a ridge path above the green hills of Sembalun'],
+  'sembalun-fields':     ['Sembalun Fields Aerial.webp', 'The patchwork fields of the Sembalun valley from above'],
+  'sembalun-sign':       ['Sembalun Summit Sign.jpg', 'A weathered summit marker on a hill above Sembalun'],
   'sendang-gile':        ['pexels-vincent-ma-janssen-2823154.jpg', 'Sendang Gile waterfall spilling down a mossy cliff'],
   'tiu-kelep':           ['pexels-vladimir-konoplev-155326297-10740707.jpg', 'Tiu Kelep waterfall in the northern Lombok rainforest'],
 }

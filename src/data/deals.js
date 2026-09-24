@@ -19,7 +19,7 @@ export const deals = [
     body: 'Permits for the summit route are capped. Book early, pay less, and pick your date rather than take one.',
     valid: 'For departures Apr – Nov',
     image: 'rinjani-crater',
-    journey: 'rinjani-summit-trek',
+    journey: 'rinjani-trek',
   },
 ]
 
@@ -39,7 +39,7 @@ export const offerSlides = [
     headline: 'Book Rinjani 90 days out and pick your own date',
     amount: '15% off',
     image: 'volcanic-plain',
-    to: '/journeys/rinjani-summit-trek',
+    to: '/journeys/rinjani-trek',
   },
   {
     id: 'two-island',
