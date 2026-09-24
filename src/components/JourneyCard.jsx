@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CalendarDays, Heart, MapPin, Star } from 'lucide-react'
-import Display from './Display'
 import Img from './Img'
 import { formatPrice, fromPrice } from '../data/journeys'
 
@@ -88,7 +87,7 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
 
       <h3 className="mt-4 font-sans text-[1.06rem] font-bold leading-snug">
         <Link to={`/journeys/${journey.slug}`} className="-my-3 inline-block py-3 transition-colors duration-300 hover:text-sea-600">
-          <Display>{journey.title}</Display>
+          {journey.title}
         </Link>
       </h3>
 

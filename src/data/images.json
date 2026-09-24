@@ -99,6 +99,54 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoUAA8APwFqrU8rJiQiMAgBYCAJQBadAxuuJ7GHojOU1gAA/tj+jTHed2f2aKcHIWR/t9IrxWLqimnUQ8mFt/K5H4AAAA=="
   },
+  "pink-beach-boat": {
+    "alt": "A wooden boat drawn up on the pink sand at Tangsi, with green hills behind",
+    "ratio": 1.7794,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoUAAsAPwFqrE6rJiQiMAgBYCAJagCxHn8AvML5vHDd6qRUAPxnMqrF2RI6ct5tkpvZbsC+0YLliMMgFMYRm6KwWLUsNkf+YbfN7aQboAA="
+  },
+  "pink-beach-wide": {
+    "alt": "The long pink sweep of Pink Beach with hills across the bay",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoUAA0APwFIu1grIqckmAFgIAlqAJ0yhHAAImhwNHbrGlCAAP7FeV42NoHxMW1Cev4FYitnlPJl5HzR852oOpIFQPKDhA+g46mdEAAA"
+  },
+  "reef-bay-aerial": {
+    "alt": "Aerial view of a reef-flecked bay with fishing boats moored off the sand",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoUAA0APwFsrU8rJiQiMAgBYCAJaACdMoMYAEn2Yb3kxTwAAP3iVCciLfhyrLMnTTS6AmMf1E04lYjGPMQE1LKLYlI/6lEMkN4LAAAA"
+  },
+  "outrigger-aerial": {
+    "alt": "An outrigger boat from directly above, on the line between reef and deep water",
+    "ratio": 1.7778,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoUAAsAPwFqrE6rJiQiMAgBYCAJZACw7B4QsKy0vQAAAP7EPpkA6sr4IJM+eaS2XYj+58r97ofwb8RdjygamVCAAAA="
+  },
   "freediving": {
     "alt": "Freediver descending over a coral reef",
     "ratio": 0.723,

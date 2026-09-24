@@ -71,10 +71,9 @@ wrote the copy from scratch. None of their wording is on your site.
 Also unconfirmed on both: group cap (I put max 10), ratings, and whether you
 run them privately or as a shared departure.
 
-**Neither has a photograph.** Pink Beach is borrowing a generic reef shot,
-which is worse than it sounds — the pink sand *is* the product, and the
-current image shows white. `npm run check` flags both on every run until you
-send photos. These two want them more than anything else on the site.
+**Photographs: done.** Both trips have their own now, including pink sand in
+the Pink Beach hero. Every journey and destination on the site has a unique
+cover, and nothing borrows a frame.
 
 ## Researched facts — sourced, but worth a local sanity check
 

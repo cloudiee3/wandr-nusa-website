@@ -86,6 +86,19 @@ for (const file of source) {
   }
 }
 
+// ── No ampersands in a title ──────────────────────────────────────────
+// The display serif's ampersand sits heavy, its italic is too ornamental for
+// a heading, and the sans one looks borrowed. The brand's answer after all
+// three was to spell the word, so a stray "&" is a mistake rather than a
+// style choice. Chip labels keep theirs — they are set in the sans already.
+for (const [kind, items, field] of [['journey', journeys, 'title'], ['destination', destinations, 'name']]) {
+  for (const it of items) {
+    if (it[field].includes('&')) {
+      problems.push(`${kind} "${it.slug}" has an ampersand in its ${field} — spell it "and"`)
+    }
+  }
+}
+
 // ── Every filter chip needs at least one trip ─────────────────────────
 console.log('\nfilters')
 for (const c of categories) {
