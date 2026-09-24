@@ -54,6 +54,28 @@ transfer table.
 | | Half day = 3 stops, 4–5 hours | my guess | ☐ |
 | | Rating / reviews | 4.8 · 96 | ☐ real or remove |
 
+## The two boat days
+
+Both were built from another operator's flyers (`lombok.travelers.id`). I took
+the **places**, the **inclusions** and the **price** as facts — those are the
+standard product on that coast and every operator runs the same islands — and
+wrote the copy from scratch. None of their wording is on your site.
+
+**But their price is currently on your page as yours.** Replace it.
+
+| Trip | Published from-price | Whose number is that |
+|---|---|---|
+| Pink Beach & the Southeast Gilis | IDR 1,000,000 pp | **theirs** ☐ replace |
+| Gili Kondo, Bidara & Petagan | IDR 1,300,000 pp | **theirs** ☐ replace |
+
+Also unconfirmed on both: group cap (I put max 10), ratings, and whether you
+run them privately or as a shared departure.
+
+**Neither has a photograph.** Pink Beach is borrowing a generic reef shot,
+which is worse than it sounds — the pink sand *is* the product, and the
+current image shows white. `npm run check` flags both on every run until you
+send photos. These two want them more than anything else on the site.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |

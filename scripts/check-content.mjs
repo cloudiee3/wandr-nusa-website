@@ -37,11 +37,24 @@ withinItem(journeys, 'journey')
 withinItem(destinations, 'destination')
 
 // ── No two covers the same ────────────────────────────────────────────
-for (const [kind, items] of [['journey', journeys], ['destination', destinations]]) {
-  const byCover = new Map()
-  for (const it of items) byCover.set(it.image, [...(byCover.get(it.image) ?? []), it.slug])
-  for (const [img, who] of byCover) {
-    if (who.length > 1) problems.push(`${kind} cover ${img} shared by ${who.join(' + ')}`)
+// A trip that says `needsPhoto` is borrowing one on purpose until its own
+// arrives. That is a gap we are tracking, not a regression, so it is listed
+// rather than failed — but it is listed every single run.
+const awaiting = journeys.filter((j) => j.needsPhoto).map((j) => j.slug)
+const covers = new Map()
+for (const it of [...journeys, ...destinations]) {
+  covers.set(it.image, [...(covers.get(it.image) ?? []), it.slug])
+}
+for (const [img, who] of covers) {
+  if (who.length < 2) continue
+  if (who.some((w) => awaiting.includes(w))) continue
+  problems.push(`cover ${img} shared by ${who.join(' + ')}`)
+}
+if (awaiting.length) {
+  console.log('\nawaiting their own photographs')
+  for (const slug of awaiting) {
+    const j = journeys.find((x) => x.slug === slug)
+    note(`\u2691 ${slug.padEnd(28)} borrowing ${j.image}`)
   }
 }
 
