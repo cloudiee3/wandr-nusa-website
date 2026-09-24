@@ -15,25 +15,8 @@ export const journeys = [
     season: 'April – November',
     pricing: {
       unit: 'per person',
-      note: 'Private departure on either route. The per-person price falls as the group grows.',
-      variants: [
-        {
-          name: 'Crater rim — 2 days, 1 night',
-          tiers: [
-            { from: 2, to: 2, price: 3450000 },
-            { from: 3, to: 4, price: 3050000 },
-            { from: 5, to: 6, price: 2750000 },
-          ],
-        },
-        {
-          name: 'Summit and crater lake — 3 days, 2 nights',
-          tiers: [
-            { from: 2, to: 2, price: 4650000 },
-            { from: 3, to: 4, price: 4150000 },
-            { from: 5, to: 6, price: 3750000 },
-          ],
-        },
-      ],
+      from: 2750000,
+      note: 'Private departure, two days to the crater rim or three to the summit. The exact figure depends on the route, the size of your group and where we collect you — ask and we will quote it.',
     },
     image: 'rinjani-caldera',
     gallery: ['rinjani-sunrise', 'rinjani-lake-view', 'rinjani-barujari'],
@@ -70,12 +53,8 @@ export const journeys = [
     season: 'Year round',
     pricing: {
       unit: 'per person',
-      note: 'Private departure. The per-person price falls as the group grows.',
-      tiers: [
-        { from: 2, to: 2, price: 950000 },
-        { from: 3, to: 4, price: 750000 },
-        { from: 5, to: 6, price: 650000 },
-      ],
+      from: 650000,
+      note: 'Private departure. The exact figure depends on the hill, the size of your group and where we collect you — ask and we will quote it.',
     },
     image: 'sembalun-valley',
     gallery: ['sembalun-ridge', 'sembalun-fields', 'sembalun-sign'],
@@ -104,19 +83,15 @@ export const journeys = [
     priceNote: 'including entrance tickets, guide & a driver within Tetebatu',
     title: 'Tetebatu Village Life',
     kicker: 'Day trip',
-    region: 'Tetebatu, Central Lombok',
+    region: 'Tetebatu, East Lombok',
     duration: 'Half or full day',
     group: 'Max 10 guests',
     difficulty: 'Easy',
     season: 'Year round',
     pricing: {
       unit: 'per person',
-      note: 'One price, whatever the group size. Getting here is priced separately below.',
-      tiers: [{ from: 1, to: 10, price: 400000 }],
-      transfers: {
-        note: 'Charged per vehicle, not per person. The trip price already covers the driver once you are in Tetebatu.',
-        rows: [{ from: 'Kuta Lombok', oneWay: 600000, round: 1000000 }],
-      },
+      from: 400000,
+      note: 'Covers the day itself — tickets, guide and a driver within Tetebatu. Transport from elsewhere on the island is quoted separately; tell us where you are staying.',
     },
     image: 'tetebatu-walk',
     gallery: ['tetebatu-field', 'monkey-forest', 'tetebatu-plant'],
@@ -292,28 +267,12 @@ export function priceFigure(value) {
 }
 
 /**
- * The lowest per-person price across a trip's group tiers â the figure a card
- * shows. Derived rather than stored, so a headline price cannot drift away
- * from the table it is meant to summarise.
+ * The figure a card leads with. What a trip actually costs depends on the
+ * route, the group and where we collect people, and that conversation happens
+ * privately — so only the starting point is published, and only the starting
+ * point is in this file.
  */
-export const priceTiers = (j) =>
-  j.pricing?.variants ? j.pricing.variants.flatMap((v) => v.tiers) : (j.pricing?.tiers ?? [])
-
-export const fromPrice = (j) => {
-  const tiers = priceTiers(j)
-  return tiers.length ? Math.min(...tiers.map((t) => t.price)) : j.priceFrom
-}
-
-/** "2", "3 â 4", "5 â 6" â how a tier is labelled in the price table. */
-export const tierLabel = (t) =>
-  t.from === t.to ? `${t.from}` : `${t.from} – ${t.to}`
-
-/**
- * The exact figure, for a charge someone is about to pay — a transfer quoted
- * as "IDR 1m" beside one quoted as "IDR 600k" reads like two different kinds
- * of number. The compact form stays for headline prices.
- */
-export const formatRupiah = (value) => `IDR ${value.toLocaleString('en-US')}`
+export const fromPrice = (j) => j.pricing?.from ?? j.priceFrom
 
 export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 

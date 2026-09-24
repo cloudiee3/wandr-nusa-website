@@ -10,85 +10,55 @@ once it's confirmed.
 
 ---
 
-## East Lombok — Mountain & Hills
+## Rates are not in this repository
 
-### Mount Rinjani — `rinjani-trek` (2 or 3 days)
+`github.com/cloudiee3/wandr-nusa-website` is **public**. Anything committed
+here can be read by anyone, including the competitors you are trying not to
+hand a rate card to. So the group tiers, the transfer charges and the
+per-route prices have been taken out of the site data *and* out of this file.
+Only the "from" figure each trip publishes remains.
 
-One card, two routes priced separately. USD at **17,878 IDR/USD** (23 Sep 2026).
+**Two things worth doing:**
 
-| Route | Travellers | I put | in USD | Confirm? |
-|---|---|---|---|---|
-| Crater rim 2D/1N | 2 | IDR 3,450,000 | USD 193 | ☐ |
-| | 3–4 | IDR 3,050,000 | USD 171 | ☐ |
-| | 5–6 | IDR 2,750,000 | USD 154 | ☐ |
-| Summit 3D/2N | 2 | IDR 4,650,000 | **USD 260** | ☐ |
-| | 3–4 | IDR 4,150,000 | USD 232 | ☐ |
-| | 5–6 | IDR 3,750,000 | USD 210 | ☐ |
-| Group cap | | Max 8 trekkers | | ☐ |
-| Rating / reviews | | 4.9 · 206 | | ☐ real or remove |
+1. **Make the repository private** — Settings → General → Danger Zone →
+   Change visibility. Git history still holds every rate that was pushed
+   before now, and making it private is the only thing that closes that.
+2. Keep the real rate card somewhere outside the repo. Send me figures when
+   you want them changed; I will put them in the page without writing them
+   down here.
 
-**Your friend's USD 300 is above everything here.** At today's rate that is
-IDR 5,363,400 — 15% more than our highest tier. Two things decide what to do
-about it:
+---
 
-1. **Which route did they do?** If that was the 3-day summit, we are 15% under
-   and the top tier should probably move to about IDR 5,350,000. If it was the
-   2-day rim, we are 55% under and the whole rim column is wrong.
-2. **How many were in the group?** USD 300 each for two people means something
-   very different from USD 300 each for six. Our price drops with group size;
-   theirs may not have.
+## East Lombok — what is published
 
-Worth knowing: the rupiah has weakened. The same IDR price is worth less in USD
-than it was, so our numbers look cheaper to a foreign traveller than they did
-when I set them. That cuts both ways — competitive, but you may be leaving
-money on the table.
-
-### Sembalun Hills Hike — `sembalun-hills` (half or full day)
-
-No named hill — the route is chosen on the day, as you asked.
-
-| Field | I put | Confirm? |
+| Trip | Published as | Confirm? |
 |---|---|---|
-| Price, 2 travellers | IDR 950,000 pp (USD 53) | ☐ |
-| Price, 3–4 travellers | IDR 750,000 pp (USD 42) | ☐ |
-| Price, 5–6 travellers | IDR 650,000 pp (USD 36) | ☐ |
-| Group cap | Max 10 walkers | ☐ |
-| Rating / reviews | 4.8 · 74 | ☐ — real figures or remove |
-| Transfers | within Sembalun only | ☐ |
-| Overnight camping mentioned as an option | ☐ — do you actually offer it? |
+| Mount Rinjani | From IDR 2.75m per person | ☐ |
+| Sembalun Hills Hike | From IDR 650k per person | ☐ |
+| Tetebatu Village Life | From IDR 400k per person | ☐ |
 
-### Tetebatu Village Life — `tetebatu-village-life` (half or full day)
+Each page says the exact figure depends on route, group size and pick-up, and
+sends people to WhatsApp or the enquiry form for a quote. No tier table, no
+transfer table.
 
-Your GYG price, your five stops, your inclusions. What I had to assume:
+**Still to confirm, none of it a price:**
 
-| Field | I put | Confirm? |
-|---|---|---|
-| Trip price | IDR 400,000 **per person** | ☐ — or is 400k the whole group? |
-| Transfer, Kuta one way | IDR 600,000 **per vehicle** | ☐ — per car or per person? |
-| Transfer, Kuta return | IDR 1,000,000 per vehicle | ☐ |
-| Group cap | Max 10 guests | ☐ |
-| Half-day version | "four or five hours, three stops" | ☐ — is that how you run it? |
-| Rating / reviews | 4.8 · 96 | ☐ real or remove |
-
-**Transfer rates I still need.** Kuta is the only route priced. A traveller
-coming from anywhere else sees nothing:
-
-| From | One way | Return |
-|---|---|---|
-| Senggigi | ☐ | ☐ |
-| Lombok airport (LOP) | ☐ | ☐ |
-| Mataram | ☐ | ☐ |
-| Senaru / North Lombok | ☐ | ☐ |
-| Gili jetty (Bangsal) | ☐ | ☐ |
-
-Same table will be wanted on every trip. Send the rates once and I will apply
-them across the catalogue.
+| Trip | Field | I put | ☐ |
+|---|---|---|---|
+| Mount Rinjani | Group cap | Max 8 trekkers | ☐ |
+| | Rating / reviews | 4.9 · 206 | ☐ real or remove |
+| Sembalun Hills | Group cap | Max 10 walkers | ☐ |
+| | Overnight camping offered? | mentioned as an option | ☐ |
+| | Rating / reviews | 4.8 · 74 | ☐ real or remove |
+| Tetebatu | Group cap | Max 10 guests | ☐ |
+| | Half day = 3 stops, 4–5 hours | my guess | ☐ |
+| | Rating / reviews | 4.8 · 96 | ☐ real or remove |
 
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |
 |---|---|---|
-| Rinjani permit, Class 1 routes (Sembalun, Senaru, Torean), foreign visitor | IDR 250,000 /person/day weekday · IDR 375,000 weekend | New tariff from 3 Nov 2025, Ministerial Reg. 17/2025 |
+| Rinjani permit, Class 1 routes (Sembalun, Senaru, Torean), foreign visitor | see park tariff | Ministerial Reg. 17/2025, effective 3 Nov 2025 |
 | Plawangan II rim camp altitude | 2,639 m | widely quoted |
 | Rinjani summit | 3,726 m | — |
 | Pergasingan Hill summit | ~1,670–1,700 m | |

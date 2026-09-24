@@ -8,7 +8,7 @@ import Reveal from '../components/Reveal'
 import JourneyCard from '../components/JourneyCard'
 import EnquiryForm from '../components/EnquiryForm'
 import WhatsAppIcon from '../components/WhatsAppIcon'
-import { bySlug, formatPrice, formatRupiah, fromPrice, journeys, tierLabel } from '../data/journeys'
+import { bySlug, formatPrice, fromPrice, journeys } from '../data/journeys'
 import { byRequest, whatsappLink } from '../data/site'
 
 export default function JourneyDetail() {
@@ -73,67 +73,30 @@ export default function JourneyDetail() {
         </div>
       </section>
 
+      {/* A starting figure and an invitation, not a rate card. What a trip
+          costs turns on the route, the group and the pick-up, and that is a
+          conversation rather than a table a competitor can lift. */}
       {j.pricing && (
         <section className="wrap pt-12 lg:pt-16">
           <Reveal className="max-w-2xl">
             <h2 className="text-[1.5rem] leading-tight">What it costs</h2>
-            <p className="mt-2 text-[0.95rem] text-ink-500">{j.pricing.note}</p>
-            {/* One route or several — a trip that runs two ways prices each
-                of them, rather than pretending they cost the same. */}
-            {(j.pricing.variants ?? [{ tiers: j.pricing.tiers }]).map((v) => (
-              <div key={v.name ?? 'only'} className="mt-5 overflow-hidden rounded-2xl border border-ink/[0.09]">
-                {v.name && (
-                  <div className="border-b border-ink/[0.07] bg-ink/[0.02] px-5 py-3">
-                    <span className="font-sans text-[0.9rem] font-bold text-ink">{v.name}</span>
-                  </div>
-                )}
-                {v.tiers.map((t, i) => (
-                  <div
-                    key={tierLabel(t)}
-                    className={`flex items-baseline justify-between gap-6 px-5 py-4 ${
-                      i ? 'border-t border-ink/[0.07]' : ''
-                    }`}
-                  >
-                    <span className="text-[0.95rem] text-ink-600">
-                      {tierLabel(t)} {t.to === 1 ? 'traveller' : 'travellers'}
-                    </span>
-                    <span className="font-sans text-[1.05rem] font-bold tnum text-ink">
-                      {formatPrice(t.price)}
-                      <span className="font-normal text-[0.82rem] text-ink-400"> {j.pricing.unit}</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
-            ))}
-            <p className="mt-3 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
-
-            {j.pricing.transfers && (
-              <div className="mt-8">
-                <h3 className="font-sans text-[1rem] font-bold">Getting there</h3>
-                <p className="mt-2 text-[0.95rem] text-ink-500">{j.pricing.transfers.note}</p>
-                <div className="mt-4 overflow-hidden rounded-2xl border border-ink/[0.09]">
-                  <div className="flex items-baseline justify-between gap-6 border-b border-ink/[0.07] bg-ink/[0.02] px-5 py-3">
-                    <span className="font-sans text-[0.8rem] font-bold uppercase tracking-label text-ink-400">From</span>
-                    <span className="flex gap-8">
-                      <span className="w-28 text-right font-sans text-[0.8rem] font-bold uppercase tracking-label text-ink-400">One way</span>
-                      <span className="w-28 text-right font-sans text-[0.8rem] font-bold uppercase tracking-label text-ink-400">Return</span>
-                    </span>
-                  </div>
-                  {j.pricing.transfers.rows.map((r, i) => (
-                    <div
-                      key={r.from}
-                      className={`flex items-baseline justify-between gap-6 px-5 py-4 ${i ? 'border-t border-ink/[0.07]' : ''}`}
-                    >
-                      <span className="text-[0.95rem] text-ink-600">{r.from}</span>
-                      <span className="flex gap-8">
-                        <span className="w-28 text-right font-sans text-[0.95rem] font-bold tnum text-ink">{formatRupiah(r.oneWay)}</span>
-                        <span className="w-28 text-right font-sans text-[0.95rem] font-bold tnum text-ink">{formatRupiah(r.round)}</span>
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            <p className="mt-4 text-[1.4rem] font-semibold text-sea-600">
+              From {formatPrice(fromPrice(j))}
+              <span className="font-sans text-[0.9rem] font-normal text-ink-400"> {j.pricing.unit}</span>
+            </p>
+            <p className="mt-3 text-[0.98rem] leading-relaxed text-ink-500">{j.pricing.note}</p>
+            <p className="mt-2 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#enquire" className="btn-primary">Get a quote</a>
+              <a
+                href={whatsappLink(`Hi! What would "${j.title}" cost for my group?`)}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost"
+              >
+                <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask on WhatsApp
+              </a>
+            </div>
           </Reveal>
         </section>
       )}
