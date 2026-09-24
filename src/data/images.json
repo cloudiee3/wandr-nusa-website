@@ -206,6 +206,50 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUAAsAPwFqrU6rJiQiMAgBYCAJQBOgAsiRLW3AcrSvAAD9zx8kMiKTfV7Fz61YoouBJEjEjA0NIFTMZuJ8M0AA"
   },
+  "benang-kelambu": {
+    "alt": "Benang Kelambu falling in many strands through the vegetation into a shallow pool",
+    "ratio": 1.5092,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1799
+    ],
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAwCdASoUAA0APwFqrU6rJiQiMAgBYCAJQBUehH0/+NVQV9Jh04AA/ZrYyyE4a2jG8e4dtWCeTBx8iLv3J8KlaXUtLFHkgAA="
+  },
+  "benang-kelambu-curtain": {
+    "alt": "A curtain of water dropping through dense green over a mossy wall at Benang Kelambu",
+    "ratio": 0.5625,
+    "sizes": [
+      480,
+      800,
+      1125
+    ],
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABQBgCdASoUACQAPv1sqU6rJiOiNVQIAWAfiUAZv4bcGjoiFLBOX+766dsRC8MCeu4sqRYVXGWPRuHgAAD+wFCItC6iurZFaLCWNrgFJaJmBXWUBPh3kCd4L7w2IeXYqOxi+j9etMvKlpnvpXOLHtAcUR1A3p/xWP0VRDq8UPIQcAncbb5Dps9AS0sjLAAAAAA="
+  },
+  "benang-stokel": {
+    "alt": "Benang Stokel dropping in a single column into the forest below",
+    "ratio": 1.5015,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1500
+    ],
+    "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAwCdASoUAA0APwFsrU8rJiQiMAgBYCAJYwC/OB6VZ9DAB1fAAAD+6/56p+GE3QRKbKJxIaG+GWzkxymhBAAA"
+  },
+  "aik-berik-tubing": {
+    "alt": "A raft running the whitewater on the river at Aik Berik",
+    "ratio": 1.506,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJYgCsACP53zvCIo0FAoRAAPvr/xD5xDh8TObQdoJkiX77Wz3BIH5GWMuV9EsKblnW1ZnWPwGJlfYAAAA="
+  },
   "freediving": {
     "alt": "Freediver descending over a coral reef",
     "ratio": 0.723,

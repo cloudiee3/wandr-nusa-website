@@ -30,6 +30,12 @@ const PHOTO_MAP = {
   'gili-kondo-snorkel':  ['Gili Kondo Snorkel.jpg', 'A snorkeller swimming over coral among a shoal of fish'],
   'gili-kondo-spit':     ['Gili Kondo Spit.jpg', 'A curving sand spit from the air, with boats drawn up alongside it'],
   'gili-kondo-boats':    ['Gili Kondo Boats.jpg', 'Fishing boats moored along a white sand beach, seen from directly above'],
+  'benang-kelambu':      ['Benang Kelambu.webp', 'Benang Kelambu falling in many strands through the vegetation into a shallow pool'],
+  'benang-kelambu-curtain':['Benang Kelambu Curtain.jpg', 'A curtain of water dropping through dense green over a mossy wall at Benang Kelambu'],
+  'benang-stokel':       ['Benang Stokel.jpg', 'Benang Stokel dropping in a single column into the forest below'],
+  // Registered but unused: river tubing at Aik Berik is priced separately and
+  // is not part of the waterfall day, so it stays off that card.
+  'aik-berik-tubing':    ['Aik Berik Tubing.jpg', 'A raft running the whitewater on the river at Aik Berik'],
   'freediving':          ['pexels-ericjo-31973396.jpg', 'Freediver descending over a coral reef'],
   'jungle-waterfall':    ['pexels-firman-fatthul-154779494-27572318.jpg', 'Twin waterfalls in dense rainforest'],
   'volcanic-plain':      ['pexels-ilham-zovanka-2158121497-37550278.jpg', 'Volcanic sand plain below the Rinjani ridgeline'],

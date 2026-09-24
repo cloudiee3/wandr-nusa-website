@@ -81,6 +81,29 @@ lists Kondo, Bidara and Petagan only. Either it should be a fourth stop, or
 those two frames are showing something the day does not include. Tell me
 which and I will fix the copy or the pictures.
 
+## Central Lombok
+
+### Benang Stokel and Benang Kelambu — `benang-waterfalls` (full day)
+
+Built from the same operator's flyer as the boat days, so the same caveat:
+places, inclusions and price taken as facts, copy written from nothing.
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Published from-price | IDR 700,000 pp | **their number** ☐ replace |
+| Group cap | Max 10 guests | ☐ |
+| Rating / reviews | 4.8 · 112 | ☐ real or remove |
+
+**River tubing is not on this trip**, per your note — not in the title, not in
+the itinerary, not in the pictures. The rafting photo you sent is in the
+library as `aik-berik-tubing` and sits unused, ready for whenever you want it
+as its own trip or a priced add-on. `npm run check` lists it as unused on
+every run so it does not get forgotten.
+
+**One thing to check:** published gate fees vary a lot — 70,000 for two falls,
+90,000 for four, and one source quoting 125,000. Since tickets are included in
+your price, whichever you actually pay matters to your margin.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |
