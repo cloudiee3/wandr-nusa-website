@@ -71,9 +71,14 @@ wrote the copy from scratch. None of their wording is on your site.
 Also unconfirmed on both: group cap (I put max 10), ratings, and whether you
 run them privately or as a shared departure.
 
-**Photographs: done.** Both trips have their own now, including pink sand in
-the Pink Beach hero. Every journey and destination on the site has a unique
-cover, and nothing borrows a frame.
+**Photographs: Pink Beach only.** All four frames you sent are Pink Beach, and
+all four are on it now — the wide sweep leads, the boat, the bay and the
+outrigger follow.
+
+**Gili Kondo still has none.** It is borrowing the generic reef shot that the
+Gili Islands page also uses, and `npm run check` flags it on every run until
+you send something. Three white-sand islets and a mangrove channel, and the
+page currently shows none of them.
 
 ## Researched facts — sourced, but worth a local sanity check
 
