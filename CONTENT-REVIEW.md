@@ -71,14 +71,15 @@ wrote the copy from scratch. None of their wording is on your site.
 Also unconfirmed on both: group cap (I put max 10), ratings, and whether you
 run them privately or as a shared departure.
 
-**Photographs: Pink Beach only.** All four frames you sent are Pink Beach, and
-all four are on it now — the wide sweep leads, the boat, the bay and the
-outrigger follow.
+**Photographs: both done.** Pink Beach leads on the wide sweep; Gili Kondo on
+the green island. Every journey and destination on the site now has a cover
+nothing else uses, and nothing is borrowing a frame.
 
-**Gili Kondo still has none.** It is borrowing the generic reef shot that the
-Gili Islands page also uses, and `npm run check` flags it on every run until
-you send something. Three white-sand islets and a mangrove channel, and the
-page currently shows none of them.
+**One question on the Gili Kondo set.** Two of the five are bare sandbars. If
+those are **Gili Kapal**, it is not currently in the itinerary — the trip
+lists Kondo, Bidara and Petagan only. Either it should be a fourth stop, or
+those two frames are showing something the day does not include. Tell me
+which and I will fix the copy or the pictures.
 
 ## Researched facts — sourced, but worth a local sanity check
 

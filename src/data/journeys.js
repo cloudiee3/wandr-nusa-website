@@ -127,14 +127,13 @@ export const journeys = [
     group: 'Max 10 guests',
     difficulty: 'Easy',
     season: 'Year round',
-    needsPhoto: true,
     pricing: {
       unit: 'per person',
       from: 1300000,
       note: 'Covers the boat, the guide, lunch and every ticket. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
     },
-    image: 'coastline-aerial',
-    gallery: ['freediving'],
+    image: 'gili-kondo-island',
+    gallery: ['gili-kondo-sandbar', 'gili-kondo-snorkel', 'gili-kondo-spit', 'gili-kondo-boats'],
     tags: ["Gili's", 'Beaches', 'Diving & Snorkeling', 'Day Trips', 'Nature'],
     summary:
       'Three uninhabited islands off the northeast coast, an hour past where most people stop. White sand and shallow coral at Kondo and Bidara, then mangrove channels at Petagan you can swim through when the tide is low enough.',

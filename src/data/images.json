@@ -147,6 +147,65 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoUAAsAPwFqrE6rJiQiMAgBYCAJZACw7B4QsKy0vQAAAP7EPpkA6sr4IJM+eaS2XYj+58r97ofwb8RdjygamVCAAAA="
   },
+  "gili-kondo-island": {
+    "alt": "A wooded island ringed with white sand and moored boats, off the northeast coast of Lombok",
+    "ratio": 1.3333,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1500
+    ],
+    "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoUAA8APwFqrE8rJiQiMAgBYCAJZgCdACHOJuWTxTSRwAAA/p2IQ/Z6ETkwKY2GZsHGQF/IJ3WiccMP1S37L0i6M0WRRGStIhwIQ2VacM43ahIAAAA="
+  },
+  "gili-kondo-sandbar": {
+    "alt": "A bare sandbar standing alone in shallow turquoise water",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoUAA0APwFsrU8rJiQiMAgBYCAJZACdMoLT9AYR5RR/cCSAAN1xm/XxAbQ7ysvSqF1kuyJq+VPp/Snyu3ptDiRKbpY4IbOoAAA="
+  },
+  "gili-kondo-snorkel": {
+    "alt": "A snorkeller swimming over coral among a shoal of fish",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwBACdASoUAA0APwFqrE6rJiQiMAgBYCAJaACdMoMYAE5NQOtB0mBUyP4IgAD2C2enVcPP+acVmY2zdL3wb0Zhsn1YKWKj6hyHZE5fe0tc0e31Hvwf2+e9t3R8UWhgzlAdIJAA"
+  },
+  "gili-kondo-spit": {
+    "alt": "A curving sand spit from the air, with boats drawn up alongside it",
+    "ratio": 1.4993,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAwCdASoUAA0APwFqrU6rJiQiMAgBYCAJaACdACG7a3Q4PK3K+I4AAP6jAhB1pANbqinofbWGLHef74mF3zynytGSxWe4vr2vWi3qnyfbsNnrKohaDI4AAAA="
+  },
+  "gili-kondo-boats": {
+    "alt": "Fishing boats moored along a white sand beach, seen from directly above",
+    "ratio": 1.7778,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUAAsAPwFqrU6rJiQiMAgBYCAJQBOgAsiRLW3AcrSvAAD9zx8kMiKTfV7Fz61YoouBJEjEjA0NIFTMZuJ8M0AA"
+  },
   "freediving": {
     "alt": "Freediver descending over a coral reef",
     "ratio": 0.723,
