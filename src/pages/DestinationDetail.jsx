@@ -17,7 +17,13 @@ export default function DestinationDetail() {
 
   return (
     <>
-      <PageHero image={d.image} eyebrow={d.island} title={d.name} lead={d.blurb} />
+      <PageHero
+        back={{ to: '/destinations', label: 'All destinations' }}
+        image={d.image}
+        eyebrow={d.island}
+        title={d.name}
+        lead={d.blurb}
+      />
 
       <section className="wrap grid gap-14 py-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-24">
         <div>

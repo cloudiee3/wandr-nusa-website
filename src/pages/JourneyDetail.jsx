@@ -35,6 +35,7 @@ export default function JourneyDetail() {
   return (
     <>
       <PageHero
+        back={{ to: '/journeys', label: 'All journeys' }}
         tall
         image={j.image}
         eyebrow={`${j.kicker} · ${j.region}`}

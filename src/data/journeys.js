@@ -6,7 +6,7 @@ export const journeys = [
     rating: 4.9,
     reviews: 206,
     priceNote: 'including park permits, guide, porters & all meals',
-    title: 'Mount Rinjani Trek',
+    title: 'Mount Rinjani Summit & Crater Rim',
     kicker: 'Signature trek',
     region: 'Sembalun, East Lombok',
     duration: '2 or 3 days',
