@@ -144,6 +144,17 @@ export const trustSignals = [
 // from day one rather than totals we have not earned yet. Every one of them is
 // within our control — check each still holds before it goes live.
 // `text` renders as written; anything with `value` counts up when it scrolls in.
+// Offered on every trip, not just the ones that say so. A day trip can grow
+// into a stay, and the driver, the room and the table are all arrangeable —
+// which is the difference between an operator and a listing.
+export const byRequest = [
+  { title: 'Somewhere to stay', body: 'Homestays, guesthouses and villas near the route, booked and paid on your behalf.' },
+  { title: 'Transport from anywhere', body: 'Airport, harbour or hotel, one way or return, priced per vehicle rather than per head.' },
+  { title: 'More days', body: 'Most day trips extend into two or three, with the extra nights arranged around them.' },
+  { title: 'Food', body: 'Local warungs or a restaurant booking, and dietary needs passed on before you arrive.' },
+  { title: 'A guide who speaks your language', body: 'English as standard; other languages when we can arrange them in advance.' },
+]
+
 export const stats = [
   { value: 6, suffix: '', label: 'Islands we cover' },
   { value: 100, suffix: '%', label: 'Locally owned and guided' },

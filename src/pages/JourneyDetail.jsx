@@ -8,8 +8,8 @@ import Reveal from '../components/Reveal'
 import JourneyCard from '../components/JourneyCard'
 import EnquiryForm from '../components/EnquiryForm'
 import WhatsAppIcon from '../components/WhatsAppIcon'
-import { bySlug, formatPrice, fromPrice, journeys, tierLabel } from '../data/journeys'
-import { whatsappLink } from '../data/site'
+import { bySlug, formatPrice, formatRupiah, fromPrice, journeys, tierLabel } from '../data/journeys'
+import { byRequest, whatsappLink } from '../data/site'
 
 export default function JourneyDetail() {
   const { slug } = useParams()
@@ -106,6 +106,34 @@ export default function JourneyDetail() {
               </div>
             ))}
             <p className="mt-3 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
+
+            {j.pricing.transfers && (
+              <div className="mt-8">
+                <h3 className="font-sans text-[1rem] font-bold">Getting there</h3>
+                <p className="mt-2 text-[0.95rem] text-ink-500">{j.pricing.transfers.note}</p>
+                <div className="mt-4 overflow-hidden rounded-2xl border border-ink/[0.09]">
+                  <div className="flex items-baseline justify-between gap-6 border-b border-ink/[0.07] bg-ink/[0.02] px-5 py-3">
+                    <span className="font-sans text-[0.8rem] font-bold uppercase tracking-label text-ink-400">From</span>
+                    <span className="flex gap-8">
+                      <span className="w-28 text-right font-sans text-[0.8rem] font-bold uppercase tracking-label text-ink-400">One way</span>
+                      <span className="w-28 text-right font-sans text-[0.8rem] font-bold uppercase tracking-label text-ink-400">Return</span>
+                    </span>
+                  </div>
+                  {j.pricing.transfers.rows.map((r, i) => (
+                    <div
+                      key={r.from}
+                      className={`flex items-baseline justify-between gap-6 px-5 py-4 ${i ? 'border-t border-ink/[0.07]' : ''}`}
+                    >
+                      <span className="text-[0.95rem] text-ink-600">{r.from}</span>
+                      <span className="flex gap-8">
+                        <span className="w-28 text-right font-sans text-[0.95rem] font-bold tnum text-ink">{formatRupiah(r.oneWay)}</span>
+                        <span className="w-28 text-right font-sans text-[0.95rem] font-bold tnum text-ink">{formatRupiah(r.round)}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </Reveal>
         </section>
       )}
@@ -178,6 +206,28 @@ export default function JourneyDetail() {
             ))}
           </div>
         </Reveal>
+      </section>
+
+      {/* Anything on this list can be added to any trip — a day out becomes a
+          stay, and the room, the driver and the table come with it. */}
+      <section className="wrap pb-4 lg:pb-8">
+        <Reveal>
+          <h2 className="text-[1.5rem] leading-tight">Ask us to add anything</h2>
+          <p className="mt-2 max-w-xl text-[0.95rem] text-ink-500">
+            The price above covers the trip itself. Everything here is arranged on request, quoted
+            before you commit to it.
+          </p>
+        </Reveal>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {byRequest.map((r, i) => (
+            <Reveal key={r.title} delay={i * 70}>
+              <div className="h-full rounded-2xl border border-ink/[0.09] bg-white p-5">
+                <h3 className="font-sans text-[0.98rem] font-bold">{r.title}</h3>
+                <p className="mt-1.5 text-[0.88rem] leading-relaxed text-ink-500">{r.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* enquiry */}

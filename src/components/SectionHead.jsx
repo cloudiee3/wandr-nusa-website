@@ -15,7 +15,7 @@ export default function SectionHead({ eyebrow, title, lead, align = 'left', ligh
         </Reveal>
       )}
       <Reveal as="h2" delay={80} className={`mt-5 text-[2rem] leading-[1.12] sm:text-[2.7rem] ${light ? '!text-white' : ''}`}>
-        <Display light={light}>{title}</Display>
+        <Display>{title}</Display>
       </Reveal>
       {lead && (
         <Reveal as="p" delay={160} className={`mt-5 text-[1.02rem] leading-relaxed ${light ? 'text-white/65' : 'text-ink-500'}`}>

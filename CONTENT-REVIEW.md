@@ -57,6 +57,33 @@ No named hill — the route is chosen on the day, as you asked.
 | Transfers | within Sembalun only | ☐ |
 | Overnight camping mentioned as an option | ☐ — do you actually offer it? |
 
+### Tetebatu Village Life — `tetebatu-village-life` (half or full day)
+
+Your GYG price, your five stops, your inclusions. What I had to assume:
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Trip price | IDR 400,000 **per person** | ☐ — or is 400k the whole group? |
+| Transfer, Kuta one way | IDR 600,000 **per vehicle** | ☐ — per car or per person? |
+| Transfer, Kuta return | IDR 1,000,000 per vehicle | ☐ |
+| Group cap | Max 10 guests | ☐ |
+| Half-day version | "four or five hours, three stops" | ☐ — is that how you run it? |
+| Rating / reviews | 4.8 · 96 | ☐ real or remove |
+
+**Transfer rates I still need.** Kuta is the only route priced. A traveller
+coming from anywhere else sees nothing:
+
+| From | One way | Return |
+|---|---|---|
+| Senggigi | ☐ | ☐ |
+| Lombok airport (LOP) | ☐ | ☐ |
+| Mataram | ☐ | ☐ |
+| Senaru / North Lombok | ☐ | ☐ |
+| Gili jetty (Bangsal) | ☐ | ☐ |
+
+Same table will be wanted on every trip. Send the rates once and I will apply
+them across the catalogue.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |

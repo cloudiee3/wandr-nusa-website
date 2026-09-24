@@ -98,35 +98,48 @@ export const journeys = [
     excludes: ['Transfers from outside East Lombok', 'Walking shoes', 'Travel insurance', 'Tips for the guide'],
   },
   {
-    slug: 'tetebatu-highlands',
+    slug: 'tetebatu-village-life',
     rating: 4.8,
     reviews: 96,
-    priceNote: 'including homestay, all meals & village fees',
-    title: 'Tetebatu Rice Terraces & Sasak Villages',
-    kicker: 'Slow travel',
-    region: 'Central Lombok',
-    duration: '2 days · 1 night',
+    priceNote: 'including entrance tickets, guide & a driver within Tetebatu',
+    title: 'Tetebatu Village Life',
+    kicker: 'Day trip',
+    region: 'Tetebatu, Central Lombok',
+    duration: 'Half or full day',
     group: 'Max 10 guests',
     difficulty: 'Easy',
     season: 'Year round',
-    priceFrom: 1850000,
-    image: 'tetebatu-field',
-    gallery: ['rice-terraces', 'monkey-forest', 'tetebatu-plant'],
-    tags: ['Mountain & Hills', 'Nature', 'Culture & Villages'],
+    pricing: {
+      unit: 'per person',
+      note: 'One price, whatever the group size. Getting here is priced separately below.',
+      tiers: [{ from: 1, to: 10, price: 400000 }],
+      transfers: {
+        note: 'Charged per vehicle, not per person. The trip price already covers the driver once you are in Tetebatu.',
+        rows: [{ from: 'Kuta Lombok', oneWay: 600000, round: 1000000 }],
+      },
+    },
+    image: 'tetebatu-walk',
+    gallery: ['tetebatu-field', 'monkey-forest', 'tetebatu-plant'],
+    tags: ['Culture & Villages', 'Nature', 'Day Trips'],
     summary:
-      'The green shoulder of Rinjani, at walking pace. Terraced paddies, a black-monkey forest, a tobacco-drying village, and a night in a homestay where dinner is cooked over wood.',
+      'A day on the green shoulder of Rinjani, at walking pace. Black monkeys in the forest, terraces worked by hand, a waterfall to stand under, and the two crafts the village still lives on — bamboo and the backstrap loom.',
     highlights: [
-      'Morning walk through working rice terraces with a farmer',
-      'Ebony langurs in the Taman Wisata monkey forest',
-      'Weaving and pottery in a Sasak village compound',
-      'Homestay dinner — ayam taliwang and plecing kangkung',
+      'Ebony langurs in the monkey forest above the village',
+      'Rice terraces walked with someone who farms them',
+      'A waterfall in the forest, with time to swim',
+      'Cloves, vanilla and coffee drying in the yards',
+      'Bamboo craft and hand weaving, watched from the workshop floor',
     ],
     itinerary: [
-      { day: 'Day 1', title: 'Into the highlands', body: 'Drive up through Kotaraja, stop at the market, then a slow afternoon loop through the paddies. Sunset over the terraces with Rinjani behind them.' },
-      { day: 'Day 2', title: 'Forest and craft', body: 'Early walk to the monkey forest and Ulem-Ulem waterfall, then a weaving compound in Pringgasela before the drive back to the coast.' },
+      { day: 'Stop 1', title: 'Monkey forest', body: 'The forest above the village, where black langurs come down through the canopy. Early is better — they are active and the light is still coming through the trees.' },
+      { day: 'Stop 2', title: 'Rice terraces', body: 'Out on the paths between the paddies with a guide who works them, through whichever stage the season is at: flooded and mirrored, green, or gold and being cut.' },
+      { day: 'Stop 3', title: 'Waterfall', body: 'Down through the trees to one of the falls on the Rinjani side. Bring something to swim in.' },
+      { day: 'Stop 4', title: 'Spice gardens', body: 'Cloves, vanilla, coffee and cacao growing and drying around the houses — close enough to crush a leaf and smell it.' },
+      { day: 'Stop 5', title: 'Bamboo and weaving', body: 'The two crafts the village still lives on: bamboo worked by hand, and songket woven on a backstrap loom. Try either if you want to.' },
+      { day: 'Half day', title: 'A shorter version', body: 'Four or five hours covers the monkey forest, the terraces and one more stop. Tell us which of the five matter most and we will build the morning around them.' },
     ],
-    includes: ['Private driver and guide', 'One night homestay', 'All meals', 'Village and forest entrance fees'],
-    excludes: ['Drinks beyond meals', 'Personal shopping'],
+    includes: ['Entrance ticket at every stop', 'Local guide', 'Private driver within Tetebatu', 'Drinking water'],
+    excludes: ['Meals', 'Transport to and from Tetebatu', 'Tips for the guide and driver'],
   },
   {
     slug: 'north-lombok-waterfalls',
@@ -294,6 +307,13 @@ export const fromPrice = (j) => {
 /** "2", "3 â 4", "5 â 6" â how a tier is labelled in the price table. */
 export const tierLabel = (t) =>
   t.from === t.to ? `${t.from}` : `${t.from} – ${t.to}`
+
+/**
+ * The exact figure, for a charge someone is about to pay — a transfer quoted
+ * as "IDR 1m" beside one quoted as "IDR 600k" reads like two different kinds
+ * of number. The compact form stays for headline prices.
+ */
+export const formatRupiah = (value) => `IDR ${value.toLocaleString('en-US')}`
 
 export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 

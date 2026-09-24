@@ -53,6 +53,18 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAA4APwFqrU6rJiQiMAgBYCAJQBhQBDuF45v2utQAAP7VD45wn4JoywEdSjBHRjnVfYw+lN6Ew18zinOYr6zcTAAAAA=="
   },
+  "tetebatu-walk": {
+    "alt": "A farmer on a path between the rice terraces at Tetebatu",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoUAA0APwFsrU8rJiQiMAgBYCAJZABTAAefUOymFElAAP3YGmc8Wwwe1+HD98Nx35n9sK3T963Z7MgbNDaeWkwA"
+  },
   "tetebatu-plant": {
     "alt": "Close view of rice terraces around Tetebatu",
     "ratio": 1.5,

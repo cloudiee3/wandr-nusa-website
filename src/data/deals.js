@@ -9,7 +9,7 @@ export const deals = [
     body: 'Fewer people on the trail, waterfalls at full flow, and the rice terraces at their greenest.',
     valid: 'Valid 01 Feb – 31 Mar',
     image: 'jungle-waterfall',
-    journey: 'tetebatu-highlands',
+    journey: 'tetebatu-village-life',
   },
   {
     id: 'early-rinjani',
@@ -31,7 +31,7 @@ export const offerSlides = [
     headline: 'Lower prices when the islands are at their greenest',
     amount: '20% off',
     image: 'rice-terraces',
-    to: '/journeys/tetebatu-highlands',
+    to: '/journeys/tetebatu-village-life',
   },
   {
     id: 'rinjani-early',

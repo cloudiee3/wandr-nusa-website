@@ -17,6 +17,7 @@ const PHOTO_MAP = {
   'durian-indah':        ['Durian Indah Waterfall 2.avif', 'Durian Indah waterfall falling through jungle rock'],
   'monkey-forest':       ['Monkey Forest .avif', 'Monkey forest canopy in central Lombok'],
   'tetebatu-field':      ['Tetebatu Rice Field.jpg', 'Rice fields at Tetebatu with Mount Rinjani behind'],
+  'tetebatu-walk':       ['Tetebatu Rice Walk.jpg', 'A farmer on a path between the rice terraces at Tetebatu'],
   'tetebatu-plant':      ['Tetebatu Rice Plant.avif', 'Close view of rice terraces around Tetebatu'],
   'rice-terraces':       ['pexels-ari-setiawan-2156420701-35432028.jpg', 'Layered green rice terraces in the Lombok highlands'],
   'coastline-aerial':    ['pexels-bongvideos-production-1310991-2524370.jpg', 'Aerial view of a turquoise reef and empty sand beach'],

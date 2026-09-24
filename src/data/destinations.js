@@ -23,7 +23,7 @@ export const destinations = [
     blurb: 'Rice terraces on the southern shoulder of Rinjani, and the quietest nights on the island.',
     body:
       'Tetebatu sits high enough that the air cools after dark and low enough that everything grows. The paddies are worked by hand in terraces that step down the hillside, broken up by stands of ebony and a forest full of black langurs. It is the part of Lombok people mean when they say it feels like Bali did forty years ago.',
-    journeys: ['tetebatu-highlands', 'sasak-culture-day'],
+    journeys: ['tetebatu-village-life', 'sasak-culture-day'],
   },
   {
     slug: 'gili-islands',
