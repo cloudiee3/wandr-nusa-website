@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Mountain, CalendarDays } from 'lucide-react'
+import Display from '../components/Display'
 import PageHero from '../components/PageHero'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
@@ -32,7 +33,7 @@ export default function Destinations() {
                 <div className="flex flex-col justify-center p-7 sm:p-10">
                   <span className="label">{d.island}</span>
                   <h2 className="mt-3 text-[1.8rem] leading-tight transition-colors duration-300 group-hover:text-sea-600 sm:text-[2.1rem]">
-                    {d.name}
+                    <Display>{d.name}</Display>
                   </h2>
                   <p className="mt-4 text-[1rem] leading-relaxed text-ink-500">{d.blurb}</p>
 

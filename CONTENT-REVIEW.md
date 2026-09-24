@@ -12,23 +12,36 @@ once it's confirmed.
 
 ## East Lombok — Mountain & Hills
 
-### Mount Rinjani Trek — `rinjani-trek` (2 or 3 days)
+### Mount Rinjani — `rinjani-trek` (2 or 3 days)
 
-One card, two routes priced separately.
+One card, two routes priced separately. USD at **17,878 IDR/USD** (23 Sep 2026).
 
-| Field | I put | Confirm? |
-|---|---|---|
-| Crater rim 2D/1N — 2 travellers | IDR 3,450,000 pp | ☐ |
-| Crater rim 2D/1N — 3–4 | IDR 3,050,000 pp | ☐ |
-| Crater rim 2D/1N — 5–6 | IDR 2,750,000 pp | ☐ |
-| Summit 3D/2N — 2 travellers | IDR 4,650,000 pp | ☐ |
-| Summit 3D/2N — 3–4 | IDR 4,150,000 pp | ☐ |
-| Summit 3D/2N — 5–6 | IDR 3,750,000 pp | ☐ |
-| Group cap | Max 8 trekkers | ☐ |
-| Rating / reviews | 4.9 · 206 | ☐ — real figures or remove |
+| Route | Travellers | I put | in USD | Confirm? |
+|---|---|---|---|---|
+| Crater rim 2D/1N | 2 | IDR 3,450,000 | USD 193 | ☐ |
+| | 3–4 | IDR 3,050,000 | USD 171 | ☐ |
+| | 5–6 | IDR 2,750,000 | USD 154 | ☐ |
+| Summit 3D/2N | 2 | IDR 4,650,000 | **USD 260** | ☐ |
+| | 3–4 | IDR 4,150,000 | USD 232 | ☐ |
+| | 5–6 | IDR 3,750,000 | USD 210 | ☐ |
+| Group cap | | Max 8 trekkers | | ☐ |
+| Rating / reviews | | 4.9 · 206 | | ☐ real or remove |
 
-Market check: 2D/1N advertises **USD 160–185**; private 3D/2N runs
-**USD 235–285** (IDR 3.8m–4.6m), so the summit tier sits at the top.
+**Your friend's USD 300 is above everything here.** At today's rate that is
+IDR 5,363,400 — 15% more than our highest tier. Two things decide what to do
+about it:
+
+1. **Which route did they do?** If that was the 3-day summit, we are 15% under
+   and the top tier should probably move to about IDR 5,350,000. If it was the
+   2-day rim, we are 55% under and the whole rim column is wrong.
+2. **How many were in the group?** USD 300 each for two people means something
+   very different from USD 300 each for six. Our price drops with group size;
+   theirs may not have.
+
+Worth knowing: the rupiah has weakened. The same IDR price is worth less in USD
+than it was, so our numbers look cheaper to a foreign traveller than they did
+when I set them. That cuts both ways — competitive, but you may be leaving
+money on the table.
 
 ### Sembalun Hills Hike — `sembalun-hills` (half or full day)
 
@@ -36,9 +49,9 @@ No named hill — the route is chosen on the day, as you asked.
 
 | Field | I put | Confirm? |
 |---|---|---|
-| Price, 2 travellers | IDR 950,000 pp | ☐ |
-| Price, 3–4 travellers | IDR 750,000 pp | ☐ |
-| Price, 5–6 travellers | IDR 650,000 pp | ☐ |
+| Price, 2 travellers | IDR 950,000 pp (USD 53) | ☐ |
+| Price, 3–4 travellers | IDR 750,000 pp (USD 42) | ☐ |
+| Price, 5–6 travellers | IDR 650,000 pp (USD 36) | ☐ |
 | Group cap | Max 10 walkers | ☐ |
 | Rating / reviews | 4.8 · 74 | ☐ — real figures or remove |
 | Transfers | within Sembalun only | ☐ |

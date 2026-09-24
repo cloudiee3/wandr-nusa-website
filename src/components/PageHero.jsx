@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import Display from './Display'
 import Img from './Img'
 import Reveal from './Reveal'
 
@@ -32,7 +33,7 @@ export default function PageHero({ image, eyebrow, title, lead, children, tall =
             </Reveal>
           )}
           <Reveal as="h1" delay={90} className="mt-5 text-[2.4rem] leading-[1.06] !text-white sm:text-[3.4rem] lg:text-[4rem]">
-            {title}
+            <Display light>{title}</Display>
           </Reveal>
           {lead && (
             <Reveal as="p" delay={180} className="mt-6 max-w-xl text-[1.05rem] leading-relaxed text-white/75">
