@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, ChevronDown } from 'lucide-react'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
@@ -17,7 +17,10 @@ import { categories, journeys } from '../data/journeys'
 import { destinations } from '../data/destinations'
 import { hero, site, stats, whatsappLink } from '../data/site'
 
-const FEATURED_COUNT = 6
+// The home grid carries the whole catalogue while it still fits inside a
+// reasonable scroll. Past this the remainder goes behind one button that
+// opens it in place, rather than making people leave the page to see it.
+const FEATURED_COUNT = 12
 
 // Alternating emphasis, the way the reference sets its opening statement:
 // the dark phrases carry the claim, the light ones carry the connective tissue.
@@ -66,10 +69,19 @@ function useParallax() {
 
 export default function Home() {
   const [kind, setKind] = useState('All')
-  const shown = useMemo(
-    () => journeys.filter((j) => kind === 'All' || j.tags.includes(kind)).slice(0, FEATURED_COUNT),
+  const [showAll, setShowAll] = useState(false)
+  const matching = useMemo(
+    () => journeys.filter((j) => kind === 'All' || j.tags.includes(kind)),
     [kind],
   )
+  const shown = showAll ? matching : matching.slice(0, FEATURED_COUNT)
+  const hidden = matching.length - shown.length
+
+  // A new filter starts closed again, so picking one never dumps a long list.
+  const pick = (c) => {
+    setKind(c)
+    setShowAll(false)
+  }
 
   const heroPhoto = useParallax()
 
@@ -183,7 +195,7 @@ export default function Home() {
               <button
                 key={c}
                 type="button"
-                onClick={() => setKind(c)}
+                onClick={() => pick(c)}
                 aria-pressed={kind === c}
                 className={`chip ${kind === c ? 'chip-on' : ''}`}
               >
@@ -194,7 +206,7 @@ export default function Home() {
 
           <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {shown.map((j, i) => (
-              <Reveal key={j.slug} delay={i * 90}>
+              <Reveal key={j.slug} delay={(i % 3) * 90}>
                 <JourneyCard journey={j} />
               </Reveal>
             ))}
@@ -213,7 +225,12 @@ export default function Home() {
             </div>
           )}
 
-          <Reveal delay={120} className="mt-12 text-center">
+          <Reveal delay={120} className="mt-12 flex flex-wrap items-center justify-center gap-3">
+            {hidden > 0 && (
+              <button type="button" onClick={() => setShowAll(true)} className="btn-ghost">
+                Show {hidden} more <ChevronDown className="h-4 w-4" strokeWidth={1.75} />
+              </button>
+            )}
             <Link to="/journeys" className="btn-ghost">
               All journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
             </Link>
