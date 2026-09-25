@@ -83,7 +83,7 @@ export default function About() {
           <Img name="rice-field-huts" sizes="(min-width:1024px) 34vw, 100vw" className="aspect-[4/5] w-full overflow-hidden rounded-2xl" />
           <div className="grid grid-cols-2 gap-4">
             <Img name="monkey-forest" sizes="17vw" className="aspect-square w-full overflow-hidden rounded-2xl" />
-            <Img name="durian-indah" sizes="17vw" className="aspect-square w-full overflow-hidden rounded-2xl" />
+            <Img name="sarang-walet" sizes="17vw" className="aspect-square w-full overflow-hidden rounded-2xl" />
           </div>
         </Reveal>
       </section>

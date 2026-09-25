@@ -14,7 +14,7 @@ const WIDTHS = [480, 800, 1280, 1920, 2560]
 const PHOTO_MAP = {
   'sasak-house':         ['1755652-indonesia-lombok-rooster-house-wallpaper-traditional.jpg', 'Traditional Sasak lumbung rice barn in a Lombok village'],
   'segara-anak':         ['1952517.jpg', 'Segara Anak crater lake inside Mount Rinjani'],
-  'durian-indah':        ['Durian Indah Waterfall 2.avif', 'Durian Indah waterfall falling through jungle rock'],
+  'sarang-walet':        ['Sarang Walet Waterfall.avif', 'Sarang Walet waterfall dropping through the forest above Tetebatu'],
   'monkey-forest':       ['Monkey Forest .avif', 'Monkey forest canopy in central Lombok'],
   'tetebatu-field':      ['Tetebatu Rice Field.jpg', 'Rice fields at Tetebatu with Mount Rinjani behind'],
   'tetebatu-walk':       ['Tetebatu Rice Walk.jpg', 'A farmer on a path between the rice terraces at Tetebatu'],

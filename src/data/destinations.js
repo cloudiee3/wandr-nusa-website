@@ -43,7 +43,7 @@ export const destinations = [
     name: 'North Lombok',
     island: 'Lombok',
     image: 'tiu-kelep',
-    gallery: ['jungle-waterfall', 'durian-indah'],
+    gallery: ['jungle-waterfall', 'sendang-gile'],
     elevation: '600 m',
     bestTime: 'Year round',
     blurb: 'Rainforest on the north flank of Rinjani, and the two waterfalls at the end of it.',

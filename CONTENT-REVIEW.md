@@ -81,6 +81,37 @@ lists Kondo, Bidara and Petagan only. Either it should be a fourth stop, or
 those two frames are showing something the day does not include. Tell me
 which and I will fix the copy or the pictures.
 
+## North Lombok
+
+### Sendang Gile and Tiu Kelep — `north-lombok-waterfalls` (full day)
+
+Rebuilt against the operator flyer, so the same caveat as the boat days:
+places, inclusions and price taken as facts, copy written from nothing. The
+old version of this card was mine from before you started sending material —
+it had a Sasak lunch in Senaru and a stop at Durian Indah on the way home,
+neither of which is on the flyer. Both are gone.
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Published from-price | IDR 800,000 pp | **their number** ☐ replace |
+| Group cap | Max 10 guests | ☐ |
+| Rating / reviews | 4.9 · 212 | ☐ real or remove |
+
+**No meals**, per your rule for day trips. Includes are the flyer's five:
+transport, entrance tickets, local guide, drinking water, and photographs of
+the day — "Documentation" on the flyer, written the way the Benang card
+already writes it.
+
+**One question: which monkey forest?** The flyer says "Monkey Forest Area"
+without naming it. Two candidates and they are nowhere near each other —
+Pusuk Pass on the inland road from Mataram, or the forest road above Senaru.
+The page currently says neither, just "the forest road", which is true of
+both. Tell me which one the car actually stops at and I will name it.
+
+**Also honest on the page:** that the Tiu Kelep river crossing closes after
+heavy rain and that we say so before you travel. If that is not how you
+handle it, say so and I will take it out.
+
 ## Central Lombok
 
 ### Benang Stokel and Benang Kelambu — `benang-waterfalls` (full day)
@@ -93,6 +124,14 @@ places, inclusions and price taken as facts, copy written from nothing.
 | Published from-price | IDR 700,000 pp | **their number** ☐ replace |
 | Group cap | Max 10 guests | ☐ |
 | Rating / reviews | 4.8 · 112 | ☐ real or remove |
+
+**Photo correction, your catch.** The fourth frame on the Sendang Gile card
+was a narrow fall in deep forest that I had filed as Durian Indah and put on
+the north Lombok trip. It is **Sarang Walet**, which is Tetebatu — so it has
+moved to the Tetebatu card, the photo is renamed `sarang-walet` in the
+library, and the Tetebatu itinerary now names the waterfall stop instead of
+calling it "a waterfall". North Lombok is down to three frames, all of them
+actually north Lombok.
 
 **River tubing is not on this trip**, per your note — not in the title, not in
 the itinerary, not in the pictures. The rafting photo you sent is in the
@@ -123,13 +162,15 @@ If you absorb it instead, say so and I'll move it.
 
 ## Still missing
 
+- **North Lombok photos.** The trip runs on `sendang-gile`, `tiu-kelep` and
+  one stock rainforest frame. Nothing of the monkey forest, nothing of the
+  tunnel or the river crossing, and no Rinjani-from-Senaru shot even though
+  that is now stop one. Four or five of your own would replace the stock one
+  and give the card a full set like Pink Beach and Gili Kondo have.
 - **Bigger Sembalun photos.** The four you sent are 1,080–1,280px. They are
   sharp on cards but the trip page hero is full-bleed and needs about 3,000px,
   so it renders at 0.41 of a real pixel. Same originals at full size would fix
   it. Same for `tetebatu-field` (1,439px) and the Rinjani drone shot (2,000px).
-- **Sea photos.** There are exactly two — `coastline-aerial` and `freediving` —
-  shared between the Gili trip, the Gili destination and the south coast. Any
-  beach or island trip you add will have nothing of its own.
 - **Real ratings.** Every rating and review count on the site is invented. They
   are the most legally exposed thing on the page — made-up reviews are
   actionable in most of your source markets. Either give me real numbers or I
