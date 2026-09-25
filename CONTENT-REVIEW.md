@@ -112,6 +112,55 @@ both. Tell me which one the car actually stops at and I will name it.
 heavy rain and that we say so before you travel. If that is not how you
 handle it, say so and I will take it out.
 
+## The Gili Islands
+
+### Gili Trawangan, Meno and Air — `three-gilis` (full day)
+
+**This replaced a trip rather than adding one.** The card that was there,
+"Gili Reefs: Snorkel, Freedive, Turtles", was mine from before you sent
+material: two days, a night in a beachfront guesthouse, an intro freedive
+session with a certified instructor, IDR 2.4m. None of that came from you.
+Your flyer is a one-day boat trip to the same three islands, so keeping both
+would have put two overlapping Gili cards in the catalogue. The invented one
+is gone and the real one is in its place, on the same slot in the Gili
+Islands destination page and the same offer tile.
+
+If you **do** run an overnight version, say so and it comes back as its own
+card — with your inclusions, not my guesses.
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Published from-price | IDR 1,500,000 pp | **their number** ☐ replace |
+| Group cap | Max 10 guests | ☐ |
+| Rating / reviews | 4.9 · 184 | ☐ real or remove |
+| Departure point | Bangsal | ☐ |
+
+**No meals**, per your rule for day trips — the flyer lists none either.
+Includes are the flyer's five: private boat, guide, snorkelling equipment,
+GoPro and drinking water. The GoPro is on the page as "GoPro footage of the
+day", which is what the guest actually gets.
+
+**Also honest on the page:** that the channel turns choppy in the west
+monsoon, roughly December to February, and that we say the night before if
+the crossing is not worth making. Change it if that is not how you call it.
+
+**Three photo questions, all quick:**
+
+1. **Which gili is which?** Two of the three you sent are aerials with a salt
+   lake in them. I have not named the island in either caption because I am
+   not certain, and I would rather ask than guess — the last time I guessed a
+   photo it turned out to be Sarang Walet. Tell me and I will name them.
+2. **The lighthouse islet** is not one of the three — small, wooded, a beacon
+   at one end, no village. It is in the library as `gili-beacon-islet` and
+   sits unused until you tell me which island it is and which trip it belongs
+   on. `npm run check` lists it every run.
+3. **The cover.** The dive picture you wanted leading is a ring of underwater
+   statues with a snorkeller above them — which is lucky, because the statues
+   off Meno are on the page as a highlight. But it is a stock frame and I
+   cannot prove it was shot at Meno rather than another installation. If you
+   have one of your own from the Nest, it should replace this. The caption
+   describes the statues without claiming where they are.
+
 ## Central Lombok
 
 ### Benang Stokel and Benang Kelambu — `benang-waterfalls` (full day)
@@ -162,6 +211,10 @@ If you absorb it instead, say so and I'll move it.
 
 ## Still missing
 
+- **Gili photos of your own.** The day runs on three frames of yours and one
+  stock aerial. Nothing of the boat, nothing of the turtles, nothing of the
+  statues, nothing ashore on Trawangan or Air. Those are the four that would
+  sell this trip.
 - **North Lombok photos.** The trip runs on `sendang-gile`, `tiu-kelep` and
   one stock rainforest frame. Nothing of the monkey forest, nothing of the
   tunnel or the river crossing, and no Rinjani-from-Senaru shot even though

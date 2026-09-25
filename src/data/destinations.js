@@ -30,13 +30,13 @@ export const destinations = [
     name: 'The Gili Islands',
     island: 'Gili Islands',
     image: 'coastline-aerial',
-    gallery: ['freediving'],
+    gallery: ['underwater-statues'],
     elevation: 'Sea level',
     bestTime: 'Year round',
     blurb: 'Three car-free islands off the north-west coast. Bicycles, reef, and nothing with an engine.',
     body:
       'Trawangan is the loud one, Air the liveable one, Meno the quiet one — and the reef between them is better than any of their reputations suggest. Green turtles feed on the shelf off Meno most mornings. There are no cars or motorbikes on any of the three; you walk, cycle, or take a cidomo pony cart.',
-    journeys: ['gili-reef-freedive'],
+    journeys: ['three-gilis'],
   },
   {
     slug: 'north-lombok',

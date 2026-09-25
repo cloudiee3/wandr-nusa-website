@@ -36,7 +36,14 @@ const PHOTO_MAP = {
   // Registered but unused: river tubing at Aik Berik is priced separately and
   // is not part of the waterfall day, so it stays off that card.
   'aik-berik-tubing':    ['Aik Berik Tubing.jpg', 'A raft running the whitewater on the river at Aik Berik'],
-  'freediving':          ['pexels-ericjo-31973396.jpg', 'Freediver descending over a coral reef'],
+  'underwater-statues':  ['pexels-ericjo-31973396.jpg', 'A ring of underwater statues standing on the sand, a snorkeller above them'],
+  // Which gili is which in these two is still open — see CONTENT-REVIEW.md.
+  // The alt text says what is in the frame rather than guessing a name.
+  'gili-islands-aerial': ['Gili Islands Aerial.webp', 'Two of the Gili islands from the air, reef and moored boats below and Lombok on the horizon'],
+  'gili-salt-lake':      ['Gili Salt Lake.webp', 'A Gili island from above, its salt lake inland and the reef flat running all the way round it'],
+  // Registered but unused: a small wooded gili that is not one of the three
+  // this trip visits, waiting on an identification before it goes anywhere.
+  'gili-beacon-islet':   ['Gili Beacon Islet.jpg', 'A small wooded islet ringed with white sand, a navigation beacon at one end'],
   'jungle-waterfall':    ['pexels-firman-fatthul-154779494-27572318.jpg', 'Twin waterfalls in dense rainforest'],
   'volcanic-plain':      ['pexels-ilham-zovanka-2158121497-37550278.jpg', 'Volcanic sand plain below the Rinjani ridgeline'],
   'rice-road-aerial':    ['pexels-johan-armang-83912829-11175507.jpg', 'Aerial view of a road cutting through golden rice paddies'],

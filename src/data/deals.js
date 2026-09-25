@@ -47,6 +47,6 @@ export const offerSlides = [
     headline: 'Pair any Lombok journey with the Gilis and save the transfer',
     amount: 'Free boat transfers',
     image: 'coastline-aerial',
-    to: '/journeys/gili-reef-freedive',
+    to: '/journeys/three-gilis',
   },
 ]

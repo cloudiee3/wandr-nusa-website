@@ -250,8 +250,8 @@
     ],
     "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJYgCsACP53zvCIo0FAoRAAPvr/xD5xDh8TObQdoJkiX77Wz3BIH5GWMuV9EsKblnW1ZnWPwGJlfYAAAA="
   },
-  "freediving": {
-    "alt": "Freediver descending over a coral reef",
+  "underwater-statues": {
+    "alt": "A ring of underwater statues standing on the sand, a snorkeller above them",
     "ratio": 0.723,
     "sizes": [
       480,
@@ -261,6 +261,41 @@
       2560
     ],
     "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwBACdASoUABwAPwFurk6rJqQiMAgBYCAJQBTihDvZCVRF9yuMJEWjX1qnRqgAAP7oziROsun783yTjeb01BNNEmLhq63Brni5AkhfNAQE/+reaPMVsut98kiFvASSW8m+D9ficbw90UCVQAA="
+  },
+  "gili-islands-aerial": {
+    "alt": "Two of the Gili islands from the air, reef and moored boats below and Lombok on the horizon",
+    "ratio": 1.5004,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACQBACdASoUAA0APwFqrU8rJiQiMAgBYCAJaACdMoRwIr/S/4DelrmlrzlOOwAA/lXfIdDV5l1BmSLrb8DfDMtfwebwr/5enFiAtAWhuIajmhN70DDYl6I0eFwAAA=="
+  },
+  "gili-salt-lake": {
+    "alt": "A Gili island from above, its salt lake inland and the reef flat running all the way round it",
+    "ratio": 1.5012,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920
+    ],
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACQBACdASoUAA0APwFurU6rJqQiMAgBYCAJbACdMoMYPYEGAAYoEccoWIQvLQAA/I6Gf3raI3m7dSwmgMaAYRpknY8X16i2L5VxGrbuicaTQp0OM8uNziNrYxSnNFfOlxotmcGr10Re16G8kmnQZhjyB4AAAA=="
+  },
+  "gili-beacon-islet": {
+    "alt": "A small wooded islet ringed with white sand, a navigation beacon at one end",
+    "ratio": 1.3333,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAwCdASoUAA8APwFwrk+rJqQiMAgBYCAJZQCw7B6GK+bDaRRrwiAA/tS0Xjg1jdFmwoCI1JBCbEAB6kSqK6vS1OAAAA=="
   },
   "jungle-waterfall": {
     "alt": "Twin waterfalls in dense rainforest",
