@@ -192,6 +192,32 @@ every run so it does not get forgotten.
 90,000 for four, and one source quoting 125,000. Since tickets are included in
 your price, whichever you actually pay matters to your margin.
 
+## The craft villages are no longer a trip of their own
+
+"Sasak Weaving, Pottery and Village Life" — Sade, Sukarara, Penujak, IDR 680k —
+is deleted. Your call, and the right one: every one of those stops sits on a
+road another trip already drives down, so selling it separately was selling
+the same drive twice.
+
+Where the stops went:
+
+| Craft | Village | Now on |
+|---|---|---|
+| Spices, bamboo, hand weaving | Tetebatu | `tetebatu-village-life`, already there |
+| Pottery | **Masbagik** | `tetebatu-village-life`, added as stop 6 |
+| Weaving | **Sukarara** | **nothing yet** — goes on the Kuta day when you build it |
+| Sade village | — | nothing yet; same Kuta day, if you want it |
+
+Masbagik is about twenty minutes down from Tetebatu, so it is on the full day
+and not the half. That also means the driver now covers a bit more ground
+than "within Tetebatu", and the page says "between the stops" instead. If
+that pushes your cost up, tell me and the 400k moves.
+
+**One loose end.** The South Coast destination page had that trip as its only
+way in. Until the Kuta day exists it points at the private-trip card instead,
+so the page still has a call to action rather than a dead end. Swap it the
+moment the Kuta trip lands — and that is where Sukarara and Sade belong.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |

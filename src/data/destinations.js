@@ -23,7 +23,7 @@ export const destinations = [
     blurb: 'Rice terraces on the southern shoulder of Rinjani, and the quietest nights on the island.',
     body:
       'Tetebatu sits high enough that the air cools after dark and low enough that everything grows. The paddies are worked by hand in terraces that step down the hillside, broken up by stands of ebony and a forest full of black langurs. It is the part of Lombok people mean when they say it feels like Bali did forty years ago.',
-    journeys: ['tetebatu-village-life', 'sasak-culture-day'],
+    journeys: ['tetebatu-village-life'],
   },
   {
     slug: 'gili-islands',
@@ -62,7 +62,7 @@ export const destinations = [
     blurb: 'Wide empty bays, surf breaks, and the Sasak villages inland from them.',
     body:
       'The south is drier and more open than the rest of the island — headland after headland of pale sand with very little built on it. Inland are the craft villages: weaving at Sukarara, pottery at Penujak, and the preserved compound at Sade where the houses are still built of bamboo, thatch and clay.',
-    journeys: ['sasak-culture-day'],
+    journeys: ['custom-private-journey'],
   },
 ]
 
