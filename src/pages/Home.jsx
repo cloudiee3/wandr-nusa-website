@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, ChevronDown } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
@@ -8,13 +8,11 @@ import SectionHead from '../components/SectionHead'
 import JourneyCard from '../components/JourneyCard'
 import SearchWidget from '../components/SearchWidget'
 import Deals from '../components/Deals'
+import DestinationSlider from '../components/DestinationSlider'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import AboutStrip from '../components/AboutStrip'
-import OfferSlider from '../components/OfferSlider'
 import Testimonials from '../components/Testimonials'
 import { categories, journeys } from '../data/journeys'
-import { destinations } from '../data/destinations'
-import { spell } from '../lib/spell'
 import { hero, site, stats, whatsappLink } from '../data/site'
 
 // The home grid carries the whole catalogue while it still fits inside a
@@ -245,50 +243,7 @@ export default function Home() {
       <Testimonials />
 
       {/* ── Destinations ─────────────────────────────────────── */}
-      <section id="escapes" className="wrap pb-16 lg:pb-24">
-        <SectionHead
-          eyebrow="Where we go"
-          title={<>{spell(destinations.length).replace(/^./, (c) => c.toUpperCase())} places worth <span className="flourish">the flight</span></>}
-          lead="Everything we run is within a few hours of home — which is why we can promise the guide, the weather call and the back-up plan."
-          action={
-            <Link to="/destinations" className="btn-ghost">
-              All destinations <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-            </Link>
-          }
-        />
-
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {destinations.map((d, i) => (
-            <Reveal key={d.slug} delay={(i % 3) * 90} className={i === 0 ? 'sm:col-span-2 lg:row-span-2' : ''}>
-              <Link
-                to={`/destinations/${d.slug}`}
-                className={`group relative block h-full overflow-hidden rounded-2xl ${i === 0 ? 'min-h-[22rem] lg:min-h-[34rem]' : 'min-h-[16rem]'}`}
-              >
-                <Img
-                  name={d.image}
-                  sizes={i === 0 ? '(min-width:1024px) 40vw, 100vw' : '(min-width:1024px) 27vw, 50vw'}
-                  className="absolute inset-0 h-full w-full"
-                  imgClassName="transition-transform duration-[1400ms] ease-out group-hover:scale-[1.08]"
-                />
-                <div className="absolute inset-0 scrim-soft" />
-                <div className="relative flex h-full flex-col justify-end p-6">
-                  <span className="text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-sea-300">{d.island}</span>
-                  <h3 className={`mt-2 !text-white ${i === 0 ? 'text-3xl' : 'text-xl'}`}>{d.name}</h3>
-                  <p className={`mt-2 max-w-sm text-[0.9rem] leading-relaxed text-white/70 ${i === 0 ? '' : 'line-clamp-2'}`}>
-                    {d.blurb}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-sea-300">
-                    Explore <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Special offers ───────────────────────────────────── */}
-      <OfferSlider />
+      <DestinationSlider />
 
       {/* ── How it works ─────────────────────────────────────── */}
       <section className="wrap py-16 lg:py-24">

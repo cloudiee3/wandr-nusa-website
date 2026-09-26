@@ -65,7 +65,7 @@ Same originals at full size would fix all of them.
 | ☐ | **No sort.** Price, duration, popularity. |
 | ☐ | **"Check availability" goes to a form,** not a calendar. Real availability is a much bigger build — worth it only once departures are fixed. |
 | ☐ | **No currency switch.** Everything is IDR; your own flyers quote USD as well. |
-| ☐ | **The island map is off the site entirely.** `IslandMap` and `scripts/build-map.mjs` are still in the tree, just not rendered anywhere. Put it back on the home page, give it to the trip pages, or delete the component and the script — but decide, rather than leaving it to rot. |
+| ☐ | **Two components are in the tree but on no page.** `IslandMap` with `scripts/build-map.mjs`, and `OfferSlider` with the `offerSlides` data behind it. Both came off the home page in a layout pass rather than being deleted. Put them somewhere, or delete them properly — but decide, rather than leaving them to rot. The offers themselves are still on the page as the "Offers running right now" cards; it is only the full-bleed banner that went. |
 
 ## 5. Technical
 
