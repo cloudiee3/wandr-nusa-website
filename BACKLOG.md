@@ -16,6 +16,7 @@ polish.
 
 | | What | Why it matters |
 |---|---|---|
+| ☐ | **The testimonials are written, not collected.** Named people, towns, five stars, and a line under the heading saying "every quote here is from someone we guided". That sentence makes it a claim rather than placeholder copy, and it is the most exposed thing on the site — more than the star ratings. Real quotes with permission, or the section comes out. |
 | ☐ | **Ratings and review counts are placeholders.** All ten cards carry invented figures. | Made-up reviews are actionable in most of the markets these guests come from. Either real numbers or the row comes off the cards entirely. |
 | ☐ | **Six trips publish a competitor's price.** Pink Beach, Gili Kondo, Benang, Sendang Gile, the three Gilis, Kuta. | They are `lombok.travelers.id` figures sitting on the page as ours. One message with the real from-prices clears all six. |
 | ☐ | **Contact details are invented.** `hello@wandrnusa.com` and the Senggigi street address. | A guest emailing that address reaches nobody. |

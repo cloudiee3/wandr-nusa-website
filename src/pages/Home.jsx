@@ -242,6 +242,9 @@ export default function Home() {
       {/* ── About us ─────────────────────────────────────────── */}
       <AboutStrip />
 
+      {/* ── Testimonials ─────────────────────────────────────── */}
+      <Testimonials />
+
       {/* ── Special offers ───────────────────────────────────── */}
       <OfferSlider />
 
@@ -330,9 +333,6 @@ export default function Home() {
         </div>
 
       </section>
-
-      {/* ── Testimonials ─────────────────────────────────────── */}
-      <Testimonials />
 
       {/* ── Closing CTA ──────────────────────────────────────── */}
       <section id="contact" className="relative overflow-hidden">
