@@ -176,6 +176,9 @@ export default function Home() {
       {/* ── About us ─────────────────────────────────────────── */}
       <AboutStrip />
 
+      {/* ── Offers ───────────────────────────────────────────── */}
+      <Deals />
+
       {/* ── Featured journeys ────────────────────────────────── */}
       <section id="discover" className="bg-white py-16 lg:py-24">
         <div className="wrap">
@@ -238,9 +241,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-
-      {/* ── Offers ───────────────────────────────────────────── */}
-      <Deals />
 
       {/* ── Special offers ───────────────────────────────────── */}
       <OfferSlider />
