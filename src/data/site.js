@@ -8,16 +8,16 @@ export const site = {
   legalName: 'Wandr Nusa Travel',
   tagline: 'Travel',
   blurb:
-    'Small-group and private journeys through Lombok, Mount Rinjani, Sumbawa and the islands east — planned and guided by people who live there.',
+    'Day trips and multi-day packages across Lombok, Sumbawa and the islands east — planned and guided by people who live here.',
 
   phone: '+62 823 4081 9128',
   phoneHref: 'tel:+6282340819128',
   whatsapp: '6282340819128', // digits only, country code first
-  email: 'hello@wandrnusa.com',
+  email: 'wandrnusa@gmail.com',
 
   address: {
-    line1: 'Jl. Raya Senggigi',
-    city: 'Senggigi, Lombok',
+    line1: 'Tetebatu',
+    city: 'East Lombok',
     region: 'West Nusa Tenggara',
     country: 'Indonesia',
   },
@@ -28,10 +28,14 @@ export const site = {
     ['Sunday', 'Messages answered'],
   ],
 
+  // `icon` picks the mark the footer draws. The GetYourGuide one is a
+  // stand-in: their real wordmark would have to come from their partner
+  // assets rather than be drawn from memory.
   socials: [
-    { label: 'Instagram', href: 'https://instagram.com/' },
-    { label: 'WhatsApp', href: 'https://wa.me/6282340819128' },
-    { label: 'TripAdvisor', href: 'https://tripadvisor.com/' },
+    { label: 'Instagram', href: 'https://instagram.com/', icon: 'instagram' },
+    { label: 'Facebook', href: 'https://facebook.com/', icon: 'facebook' },
+    { label: 'GetYourGuide', href: 'https://www.getyourguide.com/', icon: 'getyourguide' },
+    { label: 'WhatsApp', href: 'https://wa.me/6282340819128', icon: 'whatsapp' },
   ],
 }
 
