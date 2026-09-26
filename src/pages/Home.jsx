@@ -238,6 +238,11 @@ export default function Home() {
       {/* ── Destinations ─────────────────────────────────────── */}
       <DestinationSlider />
 
+      {/* The destinations slider and the contact banner are both full-bleed
+          photographs; without this they meet edge to edge and read as one
+          heavy block. Purely a breath — nothing to announce. */}
+      <div aria-hidden="true" className="h-16 bg-white lg:h-24" />
+
       {/* ── Closing CTA ──────────────────────────────────────── */}
       <section id="contact" className="relative overflow-hidden">
         <Img name="coastline-aerial" sizes="100vw" className="absolute inset-0 h-full w-full" />
