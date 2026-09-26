@@ -4,7 +4,6 @@ import { ArrowRight, ChevronDown } from 'lucide-react'
 import Img from '../components/Img'
 import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
-import SectionHead from '../components/SectionHead'
 import JourneyCard from '../components/JourneyCard'
 import SearchWidget from '../components/SearchWidget'
 import Deals from '../components/Deals'
@@ -31,12 +30,6 @@ const MANIFESTO = [
   ['so your trip feels effortless and personal.', false],
 ]
 
-
-const process = [
-  { n: '01', title: 'Tell us the shape of it', body: 'Dates, how many of you, how hard you want to walk, what you cannot miss. A two-line WhatsApp message is a perfectly good start.' },
-  { n: '02', title: 'We draft the route', body: 'Within two working days you get a day-by-day itinerary with costs broken out line by line, plus alternatives where we think you have a better option.' },
-  { n: '03', title: 'We guide it ourselves', body: 'Permits, boats, drivers and guides are all ours. One planner stays with you throughout, and there is a real phone number while you travel.' },
-]
 
 /** Drifts the hero photograph as you scroll, so there is movement behind the
  *  navbar glass rather than a static image. */
@@ -244,28 +237,6 @@ export default function Home() {
 
       {/* ── Destinations ─────────────────────────────────────── */}
       <DestinationSlider />
-
-      {/* ── How it works ─────────────────────────────────────── */}
-      <section className="wrap py-16 lg:py-24">
-        <SectionHead
-          eyebrow="How it works"
-          title={<>Three steps, <span className="flourish">one person</span></>}
-          lead="The same planner takes you from the first message to the last transfer. No hand-offs, no call centre."
-        />
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {process.map((p, i) => (
-            <Reveal key={p.n} delay={i * 100}>
-              <article className="h-full rounded-2xl border border-ink/[0.09] bg-white p-7 transition-shadow duration-500 hover:shadow-card">
-                <span className="font-display text-[1.6rem] font-semibold text-sea-500">{p.n}</span>
-                <h3 className="mt-3 text-[1.22rem]">{p.title}</h3>
-                <p className="mt-2.5 text-[0.95rem] leading-relaxed text-ink-500">{p.body}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-
-      </section>
 
       {/* ── Closing CTA ──────────────────────────────────────── */}
       <section id="contact" className="relative overflow-hidden">
