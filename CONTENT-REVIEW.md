@@ -357,6 +357,24 @@ has no gallery, so it reads properly rather than leaving half the page empty —
 but three more photographs would fix it properly. Moyo, a whale shark and one
 of the west islands would do it.
 
+## The custom card
+
+`custom-private-journey` now runs on one photograph — three travellers at a
+lake working out where to go — and no gallery, as asked. It is the first frame
+in the library with people in it, which is the thing the whole library is
+short of.
+
+One thing to know: it is a stock frame and it is **not recognisably Nusa
+Tenggara**. It claims no place, so nothing on the page is untrue, and for a
+build-your-own card the subject matters more than the setting. But it is the
+only photograph on the site that could have been taken anywhere, and if that
+bothers you, one of your own guides with guests would be better.
+
+The two Rinjani frames it was holding — `volcanic-plain` and `rinjani-rim`,
+which has trekkers on the rim — moved to the Mount Rinjani destination page,
+which only had two photographs. `rice-road-aerial` came off the card and has
+no obvious home; it is in the library, unused, listed on every check.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |

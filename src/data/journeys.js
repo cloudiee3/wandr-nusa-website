@@ -444,8 +444,8 @@ export const journeys = [
     difficulty: 'Your pace',
     season: 'Year round',
     priceFrom: null,
-    image: 'rice-road-aerial',
-    gallery: ['volcanic-plain', 'rinjani-rim'],
+    image: 'travellers-viewpoint',
+    gallery: [],
     tags: ['Private & Custom Trips', 'Sailing'],
     summary:
       'Tell us how long you have, what you like, and how hard you want to walk. We’ll come back with a routed itinerary, honest costs, and the same guides we use on our own departures.',

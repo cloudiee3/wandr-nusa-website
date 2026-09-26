@@ -4,7 +4,7 @@ export const destinations = [
     name: 'Mount Rinjani',
     island: 'Lombok',
     image: 'rinjani-crater',
-    gallery: ['segara-anak', 'rinjani-peak'],
+    gallery: ['segara-anak', 'rinjani-peak', 'rinjani-rim', 'volcanic-plain'],
     elevation: '3,726 m',
     bestTime: 'Apr – Nov',
     blurb: 'A live volcano with a lake in its chest. The hardest and the best thing you can do on Lombok.',

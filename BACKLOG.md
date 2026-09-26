@@ -29,13 +29,13 @@ polish.
 |---|---|
 | ☐ | **Sukarara is on the Explore Lombok package but not the Kuta day trip.** Either a stop on that day too, or an on-request add. |
 | ☐ | **The Sendang Gile day trip and day three of the package are different days.** One has the monkey forest, the other has Bayan, Malimbu and Villa Hantu. Deliberate or an oversight? |
-| ☐ | **Two photographs registered but unused** — `aik-berik-tubing` (river tubing, priced separately) and `gili-beacon-islet` (unidentified island). `npm run check` lists them every run. |
+| ☐ | **Three photographs registered but unused** — `aik-berik-tubing` (river tubing, priced separately), `gili-beacon-islet` (unidentified island) and `rice-road-aerial` (came off the custom card and has no obvious home). `npm run check` lists them every run. |
 | ☐ | **Which gili is which** in the two aerials on the three-Gili card. |
 | ☐ | **Which monkey forest** the Senaru day actually stops at — Pusuk or the Senaru forest road. |
 | ☐ | **Benang gate fee** varies by source (70k / 90k / 125k). Tickets are included, so it is a margin question. |
 | ☐ | **Sumbawa and NTT have no destination pages.** Six destinations, all Lombok. |
 | ☐ | **Explore Sumbawa has one photograph and no gallery.** Moyo, a whale shark and one of the west islands would complete the card. |
-| ☐ | **Nothing with people in it.** No guides, no guests, no food, no boats. Every photograph is landscape. That is the single biggest thing missing from the library. |
+| ☐ | **Almost nothing with people in it.** `travellers-viewpoint` on the custom card and `rinjani-rim` on the mountain are the only two. No guides, no guests at a table, no food, no boats with anyone aboard. Still the single biggest gap in the library. |
 
 ## 3. Photographs that are too small
 

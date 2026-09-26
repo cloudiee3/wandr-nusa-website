@@ -20,6 +20,8 @@ const PHOTO_MAP = {
   'tetebatu-walk':       ['Tetebatu Rice Walk.jpg', 'A farmer on a path between the rice terraces at Tetebatu'],
   'tetebatu-plant':      ['Tetebatu Rice Plant.avif', 'Close view of rice terraces around Tetebatu'],
   'rice-terraces':       ['pexels-ari-setiawan-2156420701-35432028.jpg', 'Layered green rice terraces in the Lombok highlands'],
+  // The first frame in the library with people in it.
+  'travellers-viewpoint':['Travellers Viewpoint.jpg', 'Three travellers at the edge of a lake, one pointing out across the water towards the hills'],
   'kenawa-island':       ['Kenawa Island.webp', 'Kenawa island from the air — one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind'],
   'lombok-beach-stay':   ['Lombok Beach Stay.jpg', 'Beachfront villas and a pool above white sand and clear water on the Lombok coast'],
   'selong-belanak':      ['Selong Belanak Bay.jpg', 'The long white curve of Selong Belanak, a fishing fleet moored off it and green hills behind'],
