@@ -2,6 +2,45 @@
 
 export const journeys = [
   {
+    slug: 'explore-lombok',
+    rating: 5.0,
+    reviews: 94,
+    priceNote: 'including three nights, transport, guide, tickets and most meals',
+    title: 'Explore Lombok',
+    kicker: 'Package',
+    region: 'Lombok, airport to airport',
+    duration: '4 days · 3 nights',
+    group: 'Max 10 guests',
+    difficulty: 'Easy to moderate',
+    season: 'Year round',
+    pricing: {
+      unit: 'per person',
+      from: 5500000,
+      note: 'Covers three nights, all the driving, the boat, a guide, tickets and most of the meals. The exact figure depends on the size of your group and which hotel you want — ask and we will quote it.',
+    },
+    image: 'lombok-beach-stay',
+    gallery: ['bukit-merese', 'gili-islands-aerial', 'tiu-kelep', 'sade-village', 'underwater-statues', 'selong-belanak'],
+    tags: ['Packages', 'Beaches', "Gili's", 'Diving & Snorkeling', 'Culture & Villages', 'Waterfalls', 'Nature'],
+    summary:
+      'Four days and three nights, airport to airport, covering what people actually come to Lombok for. The south coast and the Sasak villages on the first day, the three Gilis and their reefs on the second, the north and its waterfalls on the third, and the potters and the pearl market on the way back to your flight.',
+    highlights: [
+      'Three snorkel stops in one morning — the fish gardens off Air, the statues and the turtle point off Meno',
+      'Bukit Merese at the end of the first afternoon, with the light going',
+      'Sendang Gile and Tiu Kelep, and the river crossing to the second one',
+      'All three Sasak crafts: weaving at Sukarara, the houses at Sade, the potters at Banyumulek',
+      'The Bayan mosque, the oldest on Lombok, still bamboo and thatch',
+      'Three nights, all the driving and most of the meals in one figure',
+    ],
+    itinerary: [
+      { day: 'Day 1', title: 'The south coast and the Sasak villages', body: 'Collected at the airport and straight out. Sukarara for the weaving, Sade for the houses, then Kuta beach and lunch on it. The afternoon runs east — Seger hill, the Mandalika circuit, Tanjung Aan, and Bukit Merese with the light going. Selong Belanak on the way back, dinner, and into the hotel.' },
+      { day: 'Day 2', title: 'The three Gilis', body: 'Out of Kecinan by boat. Gili Air first for the fish gardens, then Meno for the underwater statues and the turtle point, then Trawangan for lunch and the rest of the afternoon — bicycles and horse carts are there if you want them, at your own cost. Back to Kecinan, dinner, hotel.' },
+      { day: 'Day 3', title: 'North Lombok and the waterfalls', body: 'Up the coast to Bayan, where the oldest mosque on the island still stands in bamboo and thatch, then Senaru for Sendang Gile and Tiu Kelep. Lunch, then back down the coast road with the Malimbu and Villa Hantu viewpoints on the way — the best half hour of driving in Lombok, and it is better late in the day.' },
+      { day: 'Day 4', title: 'Mataram, the potters and your flight', body: 'Check out and into town. The souvenir centre for pearls, cloth and honey, then Banyumulek, where the pots are coil-built and open-fired by hand. The airport after that, with time to spare.' },
+    ],
+    includes: ['Three nights of hotel', 'Airport pick-up and drop-off', 'Private transport and driver throughout', 'Local guide', 'Private boat to the Gilis', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Lunch and dinner on days one to three', 'Drinking water'],
+    excludes: ['Flights', 'Bicycles, horse carts and anything else you do in your own time on Trawangan', 'Anything you buy at the souvenir centre or the craft villages', 'Tips for the guide and driver'],
+  },
+  {
     slug: 'rinjani-trek',
     rating: 4.9,
     reviews: 206,
@@ -396,6 +435,7 @@ export const categories = [
   'Diving & Snorkeling',
   'Sailing',
   'Culture & Villages',
+  'Packages',
   'Day Trips',
   'Private & Custom Trips',
 ]

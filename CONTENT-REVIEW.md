@@ -259,6 +259,51 @@ that were not the south coast at all. It now leads on Bukit Merese with
 Selong Belanak behind it. The rice-field frame moved to the Tetebatu
 highlands, where it actually belongs.
 
+## Packages
+
+### Explore Lombok — `explore-lombok` (4 days, 3 nights)
+
+The first multi-day product, and the first card under the new **Packages**
+chip. It leads the catalogue, because it is the trip that contains the others.
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Published from-price | IDR 5,500,000 pp | ☐ **yours or theirs?** |
+| Group cap | Max 10 guests | ☐ |
+| Rating / reviews | 5.0 · 94 | ☐ real or remove |
+
+**The price is the one I am least sure about.** Every figure you have sent so
+far has been off a competitor's flyer, and this itinerary arrived in the same
+shape as those. If 5.5m is your number, say so and I will take it off the
+watch list. If it is theirs, it joins the other six.
+
+**Four things the itinerary does not say, so the page does not claim them:**
+
+1. **Hotel standard.** The price note says the figure depends on "which hotel
+   you want", which is honest and gives you room to quote up. But guests will
+   ask what three nights buys. Three stars? Four? A villa?
+2. **Breakfast.** Lunch and dinner are on days one to three, and that is what
+   the page says. Hotels almost always include breakfast, but yours does not
+   say so, so I have not put it in writing.
+3. **Photographs.** Every day-trip flyer lists "Documentation"; this itinerary
+   does not. If the package includes it too, say so and it goes in.
+4. **Airport transfers** are on the page as included, because the itinerary
+   starts with a pick-up and ends with a drop-off. Shout if that is wrong.
+
+**One difference worth a look.** Day three of this package runs Bayan mosque,
+Senaru, both falls, Malimbu and Villa Hantu — no monkey forest. The Sendang
+Gile **day trip** has the monkey forest and none of the other three. Two
+different days on the same coast is fine if it is deliberate; I just want to
+know it is.
+
+**Two open questions this itinerary answered:**
+
+- **Sukarara has a home** — day one of this package. It is still not on the
+  Kuta day trip, so that question stands on its own.
+- **The underwater statues are at Gili Meno**, per your own day two. The
+  photograph on the three-Gili card is still a stock frame I cannot place, but
+  at least the copy is now backed by your itinerary rather than my research.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |

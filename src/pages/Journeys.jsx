@@ -3,6 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom'
 import { X } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import JourneyCard from '../components/JourneyCard'
+import { spell } from '../lib/spell'
 import Reveal from '../components/Reveal'
 import { journeys, categories } from '../data/journeys'
 import { destinations, destBySlug } from '../data/destinations'
@@ -45,7 +46,7 @@ export default function Journeys() {
         image="rinjani-crater"
         eyebrow="Our journeys"
         title={<>Trips with a <span className="flourish-light">point to them</span></>}
-        lead="Seven routes we know street by street and ridge by ridge — plus a blank page if none of them is quite it."
+        lead={`${spell(journeys.filter((j) => j.slug !== 'custom-private-journey').length)} routes we know street by street and ridge by ridge — plus a blank page if none of them is quite it.`.replace(/^./, (c) => c.toUpperCase())}
       />
 
       <section className="wrap py-12 lg:py-16">

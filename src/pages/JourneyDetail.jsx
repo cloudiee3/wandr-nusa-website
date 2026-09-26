@@ -22,7 +22,12 @@ export default function JourneyDetail() {
   const adults = params.get('adults')
   const children = params.get('children')
 
-  const others = journeys.filter((x) => x.slug !== j.slug).slice(0, 3)
+  const others = journeys
+    .filter((x) => x.slug !== j.slug)
+    .map((x) => [x, x.tags.filter((t) => j.tags.includes(t)).length])
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([x]) => x)
 
   const facts = [
     { icon: Clock, label: 'Duration', value: j.duration },

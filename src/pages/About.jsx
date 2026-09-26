@@ -21,7 +21,7 @@ const values = [
   {
     icon: Leaf,
     title: 'Small groups only',
-    body: 'Eight on the mountain, twelve on a day trip. Big enough to share the cost, small enough not to be a nuisance.',
+    body: 'Eight on the mountain, ten on everything else. Big enough to share the cost, small enough not to be a nuisance.',
   },
   {
     icon: ShieldCheck,

@@ -27,7 +27,8 @@ polish.
 
 | | What |
 |---|---|
-| ☐ | **Sukarara has nowhere to go.** Not on the Kuta flyer; either a stop on that day or an on-request add. |
+| ☐ | **Sukarara is on the Explore Lombok package but not the Kuta day trip.** Either a stop on that day too, or an on-request add. |
+| ☐ | **The Sendang Gile day trip and day three of the package are different days.** One has the monkey forest, the other has Bayan, Malimbu and Villa Hantu. Deliberate or an oversight? |
 | ☐ | **Two photographs registered but unused** — `aik-berik-tubing` (river tubing, priced separately) and `gili-beacon-islet` (unidentified island). `npm run check` lists them every run. |
 | ☐ | **Which gili is which** in the two aerials on the three-Gili card. |
 | ☐ | **Which monkey forest** the Senaru day actually stops at — Pusuk or the Senaru forest road. |
@@ -46,6 +47,7 @@ Heroes run full-bleed and want roughly 3,000px. These render soft:
 | `rinjani-rim` | 2,000px | Rinjani |
 | `benang-kelambu-curtain` | 1,125px | Benang |
 | `jungle-waterfall` | stock | the only non-yours frame on the Senaru day |
+| `lombok-beach-stay` | 1,500px | the Explore Lombok hero — the flagship card, so the softest one that matters most |
 
 Same originals at full size would fix all of them.
 
@@ -55,7 +57,7 @@ Same originals at full size would fix all of them.
 |---|---|
 | ☐ | **Featuring a few trips on the home page.** It shows all ten now; past twelve a "Show N more" opens the rest in place. When the catalogue is large you said you would rather feature a handful — that is a one-line change to a curated list. |
 | ☐ | **Filters beyond category.** Duration, price band and region. The chip row alone stops being enough somewhere around twenty trips. |
-| ☐ | **Day trip vs multi-day.** Eight of ten cards are day trips and there is no way to filter them apart. The packages make this urgent. |
+| ☑ | ~~Day trip vs multi-day.~~ Done — a **Packages** chip now sits next to Day Trips, and a day trip's page surfaces the package that contains it, by shared tags rather than list order. |
 | ☐ | **The card slider caps at four photographs.** Fine now; worth revisiting if a trip deserves more. |
 | ☐ | **No sort.** Price, duration, popularity. |
 | ☐ | **"Check availability" goes to a form,** not a calendar. Real availability is a much bigger build — worth it only once departures are fixed. |

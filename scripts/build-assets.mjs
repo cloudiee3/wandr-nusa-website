@@ -20,6 +20,7 @@ const PHOTO_MAP = {
   'tetebatu-walk':       ['Tetebatu Rice Walk.jpg', 'A farmer on a path between the rice terraces at Tetebatu'],
   'tetebatu-plant':      ['Tetebatu Rice Plant.avif', 'Close view of rice terraces around Tetebatu'],
   'rice-terraces':       ['pexels-ari-setiawan-2156420701-35432028.jpg', 'Layered green rice terraces in the Lombok highlands'],
+  'lombok-beach-stay':   ['Lombok Beach Stay.jpg', 'Beachfront villas and a pool above white sand and clear water on the Lombok coast'],
   'selong-belanak':      ['Selong Belanak Bay.jpg', 'The long white curve of Selong Belanak, a fishing fleet moored off it and green hills behind'],
   'bukit-merese':        ['Bukit Merese.jpg', 'The green headland of Bukit Merese running out into the sea, with surf breaking along the rocks'],
   'mandalika-circuit':   ['Mandalika Circuit.jpg', 'The Mandalika circuit laid out on its headland above the south coast, with the bay beyond'],

@@ -15,6 +15,7 @@ import OfferSlider from '../components/OfferSlider'
 import Testimonials from '../components/Testimonials'
 import { categories, journeys } from '../data/journeys'
 import { destinations } from '../data/destinations'
+import { spell } from '../lib/spell'
 import { hero, site, stats, whatsappLink } from '../data/site'
 
 // The home grid carries the whole catalogue while it still fits inside a
@@ -248,7 +249,7 @@ export default function Home() {
       <section id="escapes" className="wrap pb-16 lg:pb-24">
         <SectionHead
           eyebrow="Where we go"
-          title={<>Six places worth <span className="flourish">the flight</span></>}
+          title={<>{spell(destinations.length).replace(/^./, (c) => c.toUpperCase())} places worth <span className="flourish">the flight</span></>}
           lead="Everything we run is within a few hours of home — which is why we can promise the guide, the weather call and the back-up plan."
           action={
             <Link to="/destinations" className="btn-ghost">
