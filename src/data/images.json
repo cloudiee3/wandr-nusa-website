@@ -87,6 +87,54 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoUAA0APwForE6rJaQiMAgBYCAJZgBTAAefURd1KwxRgAD92BpnPFsMIGhZ/n9O7hG3BTD+ZBAIxmnJVcyJJctJgAA="
   },
+  "selong-belanak": {
+    "alt": "The long white curve of Selong Belanak, a fishing fleet moored off it and green hills behind",
+    "ratio": 1.7778,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAAsAPwFsrk+rJiQiMAgBYCAJQBOmXkBfFHI515FYAP7D+WQz2FS1huCKurERojz9XR1jtR4pzFPVa6EYnlexoJqgAA=="
+  },
+  "bukit-merese": {
+    "alt": "The green headland of Bukit Merese running out into the sea, with surf breaking along the rocks",
+    "ratio": 1.7778,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoUAAsAPwFqr0+rJiQiMAgBYCAJYgCdACFpTv5H2kOwAAD+VdpQZdyfESqgEojZZf7y9DHPOdeE7TF4J5ZAAA=="
+  },
+  "mandalika-circuit": {
+    "alt": "The Mandalika circuit laid out on its headland above the south coast, with the bay beyond",
+    "ratio": 1.7778,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoUAAsAPwFqrk8rJiQiMAgBYCAJZgCdMoADS9ROHArJh0AA/eHib4/x88dDLQxw0Nc4BsqlZ1y/o0Sgt0eX2wgQjZl8hR9DLHSwMAAA"
+  },
+  "sade-village": {
+    "alt": "The welcome gate at Sade, thatched roofs and woven bamboo walls on either side",
+    "ratio": 2.1858,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAABwAwCdASoUAAkAPwFsrU8rJiQiMAgBYCAJQBdgAwdyXPGz4+AA/uxD43hh+fZiRzwOpYdjiS2K/daNxQgg3wZM41sS6BJ+nRvYmO7SOAA="
+  },
   "coastline-aerial": {
     "alt": "Aerial view of a turquoise reef and empty sand beach",
     "ratio": 1.3342,

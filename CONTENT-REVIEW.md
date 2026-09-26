@@ -205,18 +205,59 @@ Where the stops went:
 |---|---|---|
 | Spices, bamboo, hand weaving | Tetebatu | `tetebatu-village-life`, already there |
 | Pottery | **Masbagik** | `tetebatu-village-life`, added as stop 6 |
-| Weaving | **Sukarara** | **nothing yet** — goes on the Kuta day when you build it |
-| Sade village | — | nothing yet; same Kuta day, if you want it |
+| Weaving | **Sukarara** | **still nowhere** — see the question below |
+| Sade village | — | `kuta-mandalika`, stop 1 |
 
 Masbagik is about twenty minutes down from Tetebatu, so it is on the full day
 and not the half. That also means the driver now covers a bit more ground
 than "within Tetebatu", and the page says "between the stops" instead. If
 that pushes your cost up, tell me and the 400k moves.
 
-**One loose end.** The South Coast destination page had that trip as its only
-way in. Until the Kuta day exists it points at the private-trip card instead,
-so the page still has a call to action rather than a dead end. Swap it the
-moment the Kuta trip lands — and that is where Sukarara and Sade belong.
+**Sade has landed** on the Kuta day, and the South Coast destination page now
+points at that trip rather than the private-trip card it was holding.
+
+**Sukarara still has nowhere to go.** It is not on your Kuta flyer — that runs
+Sade, Kuta Beach, Seger, the circuit, Tanjung Aan, Merese and Selong Belanak,
+and adding an eighth stop to a day that already has seven would make it a
+rush. Two options and I will do whichever you say: put it on the Kuta day and
+drop something, or list it under "ask us to add anything" as a stop you will
+fit in on request.
+
+## The South Coast
+
+### Kuta Mandalika and the South Coast — `kuta-mandalika` (full day)
+
+Built from your flyer, all seven stops, in the order it lists them — which is
+also the sensible driving order, since Selong Belanak puts you on the road
+north to Praya for the run home.
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Published from-price | IDR 1,000,000 pp | **their number** ☐ replace |
+| Group cap | Max 10 guests | ☐ |
+| Rating / reviews | 4.9 · 168 | ☐ real or remove |
+
+**Lunch is included on this one** — your flyer lists it, unlike the other day
+trips — so it is in the included column rather than the excluded one. The
+page says lunch usually happens at the warungs behind Kuta beach; tell me if
+you take people somewhere specific instead.
+
+**Two things I wrote carefully, check them both:**
+
+1. **The circuit.** The page says you see it from the road and the viewpoints,
+   and that whether you can go inside depends on what is running that week —
+   and that we tell people before they book. Access there changes, and
+   promising a pit-lane walk you cannot always deliver is the kind of thing
+   that earns a bad review. Say if you have standing access and I will
+   strengthen it.
+2. **Sade's clay floors.** The stop says to ask the guide how they are made
+   rather than spelling it out. It reads better as something you are told on
+   the spot, and it keeps a squeamish reader on the page.
+
+**The South Coast destination page** was running on rice-field stock photos
+that were not the south coast at all. It now leads on Bukit Merese with
+Selong Belanak behind it. The rice-field frame moved to the Tetebatu
+highlands, where it actually belongs.
 
 ## Researched facts — sourced, but worth a local sanity check
 
@@ -229,6 +270,8 @@ moment the Kuta trip lands — and that is where Sukarara and Sade belong.
 | Pergasingan walking time | ~3 h up, ~2.5 h down | |
 | Bukit Selong viewpoint | IDR 10,000 pp + IDR 5,000 parking, ~20 min walk | |
 | Sendang Gile / Tiu Kelep gate | IDR 20,000, open 07:00–17:00 | used on the waterfalls trip |
+| Bau Nyale festival at Seger | February, date set by the Sasak calendar | on the Kuta day as colour, not a promise |
+| Sade | ~150 houses, Rembitan, still lived in | |
 
 The weekend permit surcharge is listed under **Not included** on both treks.
 If you absorb it instead, say so and I'll move it.

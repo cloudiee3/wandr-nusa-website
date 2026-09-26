@@ -17,7 +17,7 @@ export const destinations = [
     name: 'Tetebatu Highlands',
     island: 'Lombok',
     image: 'rice-terraces',
-    gallery: ['monkey-forest', 'tetebatu-plant'],
+    gallery: ['monkey-forest', 'tetebatu-plant', 'rice-field-huts'],
     elevation: '600 m',
     bestTime: 'Year round',
     blurb: 'Rice terraces on the southern shoulder of Rinjani, and the quietest nights on the island.',
@@ -55,14 +55,14 @@ export const destinations = [
     slug: 'south-coast',
     name: 'The South Coast',
     island: 'Lombok',
-    image: 'rice-field-huts',
-    gallery: ['rice-road-aerial', 'sasak-house'],
+    image: 'bukit-merese',
+    gallery: ['selong-belanak', 'sasak-house'],
     elevation: 'Sea level',
     bestTime: 'May – Sep',
     blurb: 'Wide empty bays, surf breaks, and the Sasak villages inland from them.',
     body:
       'The south is drier and more open than the rest of the island — headland after headland of pale sand with very little built on it. Inland are the craft villages: weaving at Sukarara, pottery at Penujak, and the preserved compound at Sade where the houses are still built of bamboo, thatch and clay.',
-    journeys: ['custom-private-journey'],
+    journeys: ['kuta-mandalika'],
   },
 ]
 

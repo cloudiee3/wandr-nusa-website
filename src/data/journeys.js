@@ -76,7 +76,7 @@ export const journeys = [
     includes: ['Local guide', 'Village and trail fees', 'Breakfast and drinking water', 'Head-torch if you need one', 'Transfers within Sembalun'],
     excludes: ['Transfers from outside East Lombok', 'Walking shoes', 'Travel insurance', 'Tips for the guide'],
   },
-    {
+  {
     slug: 'pink-beach-southeast-gilis',
     rating: 4.8,
     reviews: 131,
@@ -153,7 +153,7 @@ export const journeys = [
     includes: ['Boat and captain', 'Local guide', 'Snorkelling equipment', 'Lunch', 'Entrance ticket at every stop', 'Drinking water', 'Photographs of the day'],
     excludes: ['Transport to Labuan Pandan', 'Tips for the guide and crew'],
   },
-{
+  {
     slug: 'tetebatu-village-life',
     rating: 4.8,
     reviews: 96,
@@ -195,7 +195,7 @@ export const journeys = [
     includes: ['Entrance ticket at every stop', 'Local guide', 'Private driver between the stops', 'Drinking water'],
     excludes: ['Meals', 'Transport to and from Tetebatu', 'Tips for the guide and driver'],
   },
-    {
+  {
     slug: 'benang-waterfalls',
     rating: 4.8,
     reviews: 112,
@@ -233,7 +233,49 @@ export const journeys = [
     includes: ['Air-conditioned transport', 'Entrance tickets at the gate', 'Local guide for the walk', 'Drinking water', 'Photographs of the day'],
     excludes: ['Meals', 'Tips for the guide and driver'],
   },
-{
+  {
+    slug: 'kuta-mandalika',
+    rating: 4.9,
+    reviews: 168,
+    priceNote: 'including transport, guide, tickets at every stop, lunch and water',
+    title: 'Kuta Mandalika and the South Coast',
+    kicker: 'Day trip',
+    region: 'Kuta, Central Lombok',
+    duration: 'Full day',
+    group: 'Max 10 guests',
+    difficulty: 'Easy',
+    season: 'Year round',
+    pricing: {
+      unit: 'per person',
+      from: 1000000,
+      note: 'Covers the driving, the tickets, a guide and lunch. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+    },
+    image: 'selong-belanak',
+    gallery: ['bukit-merese', 'mandalika-circuit', 'sade-village'],
+    tags: ['Beaches', 'Culture & Villages', 'Day Trips', 'Nature'],
+    summary:
+      'The whole south coast in one day. A Sasak village still built of bamboo and clay, a MotoGP circuit laid out on a headland above the sea, two hills worth the ten minutes it takes to climb them, and the widest white beach on the island to finish on.',
+    highlights: [
+      'Bukit Merese late in the afternoon, Tanjung Aan on one side and open ocean on the other',
+      'Sade, where the houses are still bamboo, thatch and swept clay',
+      'The Mandalika circuit on its headland, with the bay behind it',
+      'Selong Belanak — a kilometre of white sand and the gentlest surf in Lombok',
+      'The sand at Tanjung Aan, coarse round grains that really do look like peppercorns',
+      'Photographs of the day, taken as you go',
+    ],
+    itinerary: [
+      { day: 'Stop 1', title: 'Sade', body: 'On the main road down to the coast, so it goes first. Around 150 houses of bamboo, thatch and packed clay, lived in rather than preserved. Someone from the village walks you through it, including how the floors are made — ask, it is the part everyone remembers.' },
+      { day: 'Stop 2', title: 'Kuta Beach', body: 'The town beach and the reason the rest of this exists. Coarse pale sand, a bay calm enough to swim in, and the warungs behind it where lunch usually happens.' },
+      { day: 'Stop 3', title: 'Bukit Seger', body: 'Ten minutes up the grass just east of Kuta for the view back across the bay. This is the hill in the Putri Mandalika story, and every February the whole coast comes down here for the Bau Nyale sea-worm festival.' },
+      { day: 'Stop 4', title: 'The Mandalika circuit', body: 'The MotoGP track, built across the headland with the sea on three sides — one of very few circuits anywhere with that view. You see it from the road and the viewpoints above it; whether you can go inside depends on what is running that week, and we will tell you before you book.' },
+      { day: 'Stop 5', title: 'Tanjung Aan', body: 'A double horseshoe bay east of the circuit, and the strangest sand on the island: coarse round grains like peppercorns that will not stick to you.' },
+      { day: 'Stop 6', title: 'Bukit Merese', body: 'The grass headland past Tanjung Aan. Fifteen minutes up and you have the bay on one side, open ocean on the other and the cliffs running away east. The best half hour on this coast, and it is better the later you leave it.' },
+      { day: 'Stop 7', title: 'Selong Belanak', body: 'West of Kuta and worth the drive out. A kilometre of white sand, a fishing fleet moored off it, and waves gentle enough that this is where most of Lombok learns to surf. Boards and instructors are right there on the sand if you want an hour of it.' },
+    ],
+    includes: ['Private transport and driver', 'Local guide', 'Entrance ticket at every stop', 'Lunch', 'Drinking water', 'Photographs of the day'],
+    excludes: ['Surfboard hire or a lesson at Selong Belanak', 'Tips for the guide and driver'],
+  },
+  {
     slug: 'north-lombok-waterfalls',
     rating: 4.9,
     reviews: 212,
