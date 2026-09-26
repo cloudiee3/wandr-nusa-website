@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin, Ticket } from 'lucide-react'
+import { Ticket } from 'lucide-react'
 import Logo from './Logo'
 import WhatsAppIcon from './WhatsAppIcon'
 import { InstagramIcon, FacebookIcon } from './SocialIcons'
@@ -12,13 +12,11 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-ink-900 text-white">
-      <div className="absolute inset-0 grid-bg opacity-60" aria-hidden="true" />
-
       <div className="wrap relative py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div>
             <Logo variant="white" wordmarkOnly height="h-8" />
-            <p className="mt-6 max-w-xs text-[0.95rem] leading-relaxed text-white/60">{site.blurb}</p>
+            <p className="mt-7 max-w-[15rem] text-[1.05rem] leading-snug text-white/70">{site.blurb}</p>
           </div>
 
           <FooterCol title="Escapes">
@@ -35,24 +33,19 @@ export default function Footer() {
 
           <FooterCol title="Get in touch">
             <li>
-              <a href={site.phoneHref} className="group -my-2 inline-flex items-start gap-2.5 py-3 text-white/60 transition-colors hover:text-white">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-sea-400" strokeWidth={1.6} />
+              <a href={site.phoneHref} className="link-underline -my-2 inline-block py-3 text-white/60 transition-colors hover:text-white">
                 {site.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="-my-2 inline-flex items-start gap-2.5 py-3 text-white/60 transition-colors hover:text-white">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-sea-400" strokeWidth={1.6} />
+              <a href={`mailto:${site.email}`} className="link-underline -my-2 inline-block py-3 text-white/60 transition-colors hover:text-white">
                 {site.email}
               </a>
             </li>
-            <li className="flex items-start gap-2.5 text-white/60">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sea-400" strokeWidth={1.6} />
-              <span>
-                {site.address.line1}<br />
-                {site.address.city}<br />
-                {site.address.region}, {site.address.country}
-              </span>
+            <li className="pt-1 text-white/60">
+              {site.address.line1}, {site.address.city}
+              <br />
+              {site.address.region}, {site.address.country}
             </li>
           </FooterCol>
         </div>
@@ -65,7 +58,7 @@ export default function Footer() {
             <Link to="/privacy" className="link-underline -my-2 inline-block py-3 font-sans text-[12px] text-white/45 hover:text-white sm:text-[11px]">Privacy</Link>
             <Link to="/terms" className="link-underline -my-2 inline-block py-3 font-sans text-[12px] text-white/45 hover:text-white sm:text-[11px]">Terms</Link>
           </div>
-          <div className="flex items-center gap-2.5">
+          <div className="-mx-2 flex items-center">
             {site.socials.map((s) => (
               <a
                 key={s.label}
@@ -74,9 +67,8 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label={s.label}
                 title={s.label}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12
-                           bg-white/[0.04] text-white/65 transition-all duration-300
-                           hover:border-white/30 hover:bg-white/10 hover:text-white"
+                className="inline-flex h-11 w-11 items-center justify-center opacity-90 transition-all
+                           duration-300 hover:scale-110 hover:opacity-100"
               >
                 <SocialMark name={s.icon} />
               </a>
@@ -91,11 +83,13 @@ export default function Footer() {
 /** GetYourGuide has no mark in the icon set and theirs is a trademark, so a
  *  ticket stands in until their own artwork is dropped into the project. */
 const SocialMark = ({ name }) => {
-  const cls = 'h-[18px] w-[18px]'
+  const cls = 'h-[22px] w-[22px]'
   if (name === 'instagram') return <InstagramIcon className={cls} />
   if (name === 'facebook') return <FacebookIcon className={cls} />
-  if (name === 'whatsapp') return <WhatsAppIcon className={cls} />
-  return <Ticket className={cls} strokeWidth={1.7} />
+  if (name === 'whatsapp') return <WhatsAppIcon className={`${cls} text-[#25D366]`} />
+  // The GetYourGuide stand-in stays in our own accent rather than borrowing a
+  // brand colour it has no right to.
+  return <Ticket className={`${cls} text-sea-400`} strokeWidth={1.7} />
 }
 
 const FooterCol = ({ title, children }) => (

@@ -7,8 +7,7 @@ export const site = {
   name: 'Wandr Nusa',
   legalName: 'Wandr Nusa Travel',
   tagline: 'Travel',
-  blurb:
-    'Day trips and multi-day packages across Lombok, Sumbawa and the islands east — planned and guided by people who live here.',
+  blurb: 'A Team Committed to Enhancing Every Journey',
 
   phone: '+62 823 4081 9128',
   phoneHref: 'tel:+6282340819128',
