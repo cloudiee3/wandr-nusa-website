@@ -173,9 +173,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── About us ─────────────────────────────────────────── */}
-      <AboutStrip />
-
       {/* ── Offers ───────────────────────────────────────────── */}
       <Deals />
 
@@ -241,6 +238,9 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* ── About us ─────────────────────────────────────────── */}
+      <AboutStrip />
 
       {/* ── Special offers ───────────────────────────────────── */}
       <OfferSlider />
