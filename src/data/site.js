@@ -7,7 +7,7 @@ export const site = {
   name: 'Wandr Nusa',
   legalName: 'Wandr Nusa Travel',
   tagline: 'Travel',
-  blurb: 'A Team Committed to Enhancing Every Journey',
+  blurb: ['A Team Committed to', 'Enhancing Every Journey'],
 
   phone: '+62 823 4081 9128',
   phoneHref: 'tel:+6282340819128',
@@ -31,9 +31,9 @@ export const site = {
   // stand-in: their real wordmark would have to come from their partner
   // assets rather than be drawn from memory.
   socials: [
+    { label: 'GetYourGuide', href: 'https://www.getyourguide.com/', icon: 'getyourguide' },
     { label: 'Instagram', href: 'https://instagram.com/', icon: 'instagram' },
     { label: 'Facebook', href: 'https://facebook.com/', icon: 'facebook' },
-    { label: 'GetYourGuide', href: 'https://www.getyourguide.com/', icon: 'getyourguide' },
     { label: 'WhatsApp', href: 'https://wa.me/6282340819128', icon: 'whatsapp' },
   ],
 }

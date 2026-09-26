@@ -4,8 +4,6 @@ import Logo from './Logo'
 import WhatsAppIcon from './WhatsAppIcon'
 import { InstagramIcon, FacebookIcon } from './SocialIcons'
 import { site } from '../data/site'
-import { journeys } from '../data/journeys'
-import { destinations } from '../data/destinations'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -13,23 +11,18 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ink-900 text-white">
       <div className="wrap relative py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
+        <div className="flex flex-col gap-12 sm:flex-row sm:items-start sm:justify-between sm:gap-16">
           <div>
-            <Logo variant="white" wordmarkOnly height="h-8" />
-            <p className="mt-7 max-w-[15rem] text-[1.05rem] leading-snug text-white/70">{site.blurb}</p>
+            <Logo variant="white" wordmarkOnly height="h-9" />
+            <p className="mt-5 text-[1.05rem] leading-[1.45] text-white/70">
+              {site.blurb.map((line, i) => (
+                <span key={line}>
+                  {i > 0 && <br />}
+                  {line}
+                </span>
+              ))}
+            </p>
           </div>
-
-          <FooterCol title="Escapes">
-            {destinations.slice(0, 6).map((d) => (
-              <FooterLink key={d.slug} to={`/destinations/${d.slug}`}>{d.name}</FooterLink>
-            ))}
-          </FooterCol>
-
-          <FooterCol title="Discover">
-            {journeys.slice(0, 6).map((j) => (
-              <FooterLink key={j.slug} to={`/journeys/${j.slug}`}>{j.kicker === 'Bespoke' ? 'Custom trips' : j.title.split(':')[0]}</FooterLink>
-            ))}
-          </FooterCol>
 
           <FooterCol title="Get in touch">
             <li>
@@ -97,12 +90,4 @@ const FooterCol = ({ title, children }) => (
     <h4 className="label-light mb-4">{title}</h4>
     <ul className="space-y-2.5 text-[0.93rem]">{children}</ul>
   </div>
-)
-
-const FooterLink = ({ to, children }) => (
-  <li>
-    <Link to={to} className="link-underline -my-2 inline-block py-3 text-white/60 transition-colors hover:text-white">
-      {children}
-    </Link>
-  </li>
 )
