@@ -238,20 +238,16 @@ export default function Home() {
       {/* ── Destinations ─────────────────────────────────────── */}
       <DestinationSlider />
 
-      {/* The destinations slider and the contact banner are both full-bleed
-          photographs; without this they meet edge to edge and read as one
-          heavy block. Purely a breath — nothing to announce. */}
-      <div aria-hidden="true" className="h-16 bg-white lg:h-24" />
-
       {/* ── Closing CTA ──────────────────────────────────────── */}
-      <section id="contact" className="relative overflow-hidden">
+      <section
+        id="contact"
+        className="relative z-10 -mt-10 overflow-hidden rounded-t-[2rem] shadow-[0_-30px_60px_-20px_rgba(11,26,40,0.55)]
+                   lg:-mt-16 lg:rounded-t-[3rem]"
+      >
         <Img name="coastline-aerial" sizes="100vw" className="absolute inset-0 h-full w-full" />
         <div className="absolute inset-0 bg-ink-900/70" />
         <div className="wrap relative py-20 text-center lg:py-28">
-          <Reveal>
-            <span className="pill-light"><span className="pill-dot" />Ready when you are</span>
-          </Reveal>
-          <Reveal as="h2" delay={90} className="mx-auto mt-5 max-w-2xl text-[2rem] leading-[1.12] !text-white sm:text-[2.9rem]">
+          <Reveal as="h2" delay={90} className="mx-auto max-w-2xl text-[2rem] leading-[1.12] !text-white sm:text-[2.9rem]">
             Tell us roughly what you want. <span className="flourish-light">We'll do the rest.</span>
           </Reveal>
           <Reveal as="p" delay={170} className="mx-auto mt-5 max-w-lg text-white/65">

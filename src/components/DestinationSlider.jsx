@@ -52,13 +52,9 @@ export default function DestinationSlider() {
       <div className="absolute inset-0 bg-gradient-to-r from-ink-900/85 via-ink-900/55 to-ink-900/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink-900/75 via-transparent to-ink-900/40" />
 
-      <div className="wrap relative flex min-h-[36rem] flex-col py-14 lg:min-h-[44rem]">
+      <div className="wrap relative flex min-h-[36rem] flex-col pb-20 pt-14 lg:min-h-[44rem] lg:pb-28">
         <div>
-          <span className="pill-light">
-            <span className="pill-dot" />
-            Where we go
-          </span>
-          <h2 className="mt-5 max-w-xl text-[1.6rem] leading-[1.15] !text-white sm:text-[2rem]">
+          <h2 className="max-w-xl text-[1.6rem] leading-[1.15] !text-white sm:text-[2rem]">
             {spell(destinations.length).replace(/^./, (c) => c.toUpperCase())} places worth{' '}
             <span className="flourish-light">the flight</span>
           </h2>
