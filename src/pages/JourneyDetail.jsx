@@ -106,8 +106,12 @@ export default function JourneyDetail() {
         </section>
       )}
 
-      <section className="wrap grid gap-14 py-16 lg:grid-cols-[1.5fr_1fr] lg:gap-20 lg:py-24">
-        <div>
+      <section
+        className={`wrap grid gap-14 py-16 lg:gap-20 lg:py-24 ${
+          j.gallery.length ? 'lg:grid-cols-[1.5fr_1fr]' : ''
+        }`}
+      >
+        <div className={j.gallery.length ? '' : 'max-w-3xl'}>
           <Reveal as="h2" className="text-[1.9rem] leading-tight">What you'll do</Reveal>
           <ul className="mt-6 space-y-3.5">
             {j.highlights.map((h, i) => (
@@ -162,6 +166,7 @@ export default function JourneyDetail() {
         </div>
 
         {/* gallery rail */}
+        {j.gallery.length > 0 && (
         <Reveal delay={140}>
           <div className="sticky top-28 space-y-4">
             {j.gallery.map((g, i) => (
@@ -174,6 +179,7 @@ export default function JourneyDetail() {
             ))}
           </div>
         </Reveal>
+        )}
       </section>
 
       {/* Anything on this list can be added to any trip — a day out becomes a

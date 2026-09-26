@@ -34,6 +34,7 @@ polish.
 | ☐ | **Which monkey forest** the Senaru day actually stops at — Pusuk or the Senaru forest road. |
 | ☐ | **Benang gate fee** varies by source (70k / 90k / 125k). Tickets are included, so it is a margin question. |
 | ☐ | **Sumbawa and NTT have no destination pages.** Six destinations, all Lombok. |
+| ☐ | **Explore Sumbawa has one photograph and no gallery.** Moyo, a whale shark and one of the west islands would complete the card. |
 | ☐ | **Nothing with people in it.** No guides, no guests, no food, no boats. Every photograph is landscape. That is the single biggest thing missing from the library. |
 
 ## 3. Photographs that are too small
@@ -47,7 +48,8 @@ Heroes run full-bleed and want roughly 3,000px. These render soft:
 | `rinjani-rim` | 2,000px | Rinjani |
 | `benang-kelambu-curtain` | 1,125px | Benang |
 | `jungle-waterfall` | stock | the only non-yours frame on the Senaru day |
-| `lombok-beach-stay` | 1,500px | the Explore Lombok hero — the flagship card, so the softest one that matters most |
+| `lombok-beach-stay` | 1,500px | the Explore Lombok hero |
+| `kenawa-island` | **1,024px** | the Explore Sumbawa hero — the smallest source in the library, on a flagship card |
 
 Same originals at full size would fix all of them.
 

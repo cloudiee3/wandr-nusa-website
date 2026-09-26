@@ -304,6 +304,59 @@ know it is.
   photograph on the three-Gili card is still a stock frame I cannot place, but
   at least the copy is now backed by your itinerary rather than my research.
 
+### Explore Sumbawa — `explore-sumbawa` (5 days, 4 nights)
+
+**The stops are yours. The days are mine.** You sent thirteen places with no
+day breakdown, so I routed them the way the geography wants to go: across the
+ferry and up to Mantar, the west islands, east to Sumbawa Besar, Moyo, then
+Saleh Bay at dawn and the drive home. **Check the order before anything else
+on this page** — it is the one part I invented outright.
+
+| Field | I put | Confirm? |
+|---|---|---|
+| Published from-price | IDR 4,999,999 pp | ☐ yours or theirs? |
+| Group cap | Max 10 guests | ☐ |
+| Best season | April – November | ☐ my call, see below |
+| Rating / reviews | 5.0 · 41 | ☐ real or remove |
+
+**Meals are in the Not included column**, because your list does not mention
+them and the Lombok package does. Under-promising is the safe direction on a
+five-day trip, but if meals are in, say so and it moves — that is an upgrade
+for the guest, not a correction.
+
+**Season.** I put April to November. The field is labelled "best season", not
+"only season", so it advises rather than shuts the door — but four of the five
+days involve small boats, and the west monsoon makes that channel unpleasant.
+Overrule me if you run it year round.
+
+**Where does it start and end?** I wrote it ferry to ferry from Lombok, which
+is how a Lombok-based operator would run it. If people fly into Sumbawa Besar
+or Bima instead, day one and day five both change.
+
+**Three things in your list I had to interpret:**
+
+1. **Mantar is not an island.** It is a village on a plateau about six hundred
+   metres up in West Sumbawa, known for the sunrise and the paragliding. Your
+   list has it among the islands. The page describes it as the village on the
+   hill, because a guest expecting a boat ride would be annoyed. Tell me if
+   you meant somewhere else.
+2. **Mata Jitu, the blue pool and the Lady Diana pool are one place.** Mata
+   Jitu on Moyo is nicknamed the Lady Diana waterfall — she swam there in
+   1993 — and the pools above it are its upper terraces. Your list has all
+   three as separate lines. The page treats them as one stop with its parts,
+   which is what a guest will experience. Say if they are genuinely three.
+3. **The whale sharks are not promised.** The page says Saleh Bay is as close
+   to reliable as Indonesia gets and that nobody can guarantee a wild animal.
+   That sentence is there on purpose. Do not let anyone talk you into removing
+   it — a guaranteed sighting that does not happen is a refund and a review.
+
+**The card has one photograph.** Cover only, no gallery, because nothing else
+in the library is Sumbawa and borrowing a Lombok frame is how the Sarang Walet
+mistake happened. The page layout now collapses to a single column when a trip
+has no gallery, so it reads properly rather than leaving half the page empty —
+but three more photographs would fix it properly. Moyo, a whale shark and one
+of the west islands would do it.
+
 ## Researched facts — sourced, but worth a local sanity check
 
 | Fact | Value | Source |

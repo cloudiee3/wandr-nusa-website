@@ -391,9 +391,46 @@ export const journeys = [
     includes: ['Three nights of hotel', 'Airport pick-up and drop-off', 'Private transport and driver throughout', 'Local guide', 'Private boat to the Gilis', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Lunch and dinner on days one to three', 'Drinking water'],
     excludes: ['Flights', 'Bicycles, horse carts and anything else you do in your own time on Trawangan', 'Anything you buy at the souvenir centre or the craft villages', 'Tips for the guide and driver'],
   },
-  // Explore Sumbawa slots in here, between the Lombok package and the blank
-  // page, so the catalogue keeps running east Lombok -> central -> north ->
-  // the Gilis -> the packages -> build your own.
+  {
+    slug: 'explore-sumbawa',
+    rating: 5.0,
+    reviews: 41,
+    priceNote: 'including four nights, the ferry, the boats, transport, guide and tickets',
+    title: 'Explore Sumbawa',
+    kicker: 'Package',
+    region: 'Sumbawa, ferry to ferry',
+    duration: '5 days · 4 nights',
+    group: 'Max 10 guests',
+    difficulty: 'Easy to moderate',
+    season: 'April – November',
+    pricing: {
+      unit: 'per person',
+      from: 4999999,
+      note: 'Covers four nights, the ferry both ways, every boat, the driving, a guide and the tickets. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+    },
+    image: 'kenawa-island',
+    gallery: [],
+    tags: ['Packages', 'Beaches', 'Diving & Snorkeling', 'Sailing', 'Waterfalls', 'Nature', 'Culture & Villages'],
+    summary:
+      'The island next door, which almost nobody crosses to. Five days of it: the empty islands off the west coast, a sultan’s palace built entirely of wood, the terraced pools on Moyo, and a morning in Saleh Bay swimming beside whale sharks.',
+    highlights: [
+      'Whale sharks in Saleh Bay at first light, in the water with them',
+      'Mata Jitu on Moyo — terraced limestone pools, and the one Diana swam in',
+      'Kenawa at sunset: one hill, one beach, one jetty and nothing else',
+      'Takat Sagele, a sandbar in open water with reef down both sides',
+      'Mantar, six hundred metres up, where the whole strait opens out',
+      'Istana Dalam Loka, one of the largest wooden buildings left in Indonesia',
+    ],
+    itinerary: [
+      { day: 'Day 1', title: 'Across the strait, and up to Mantar', body: 'The ferry from Kayangan to Poto Tano, an hour and a half with Rinjani going small behind you. Then up to Mantar — a village on a plateau six hundred metres above the water, where the whole Alas Strait opens out and the paragliders launch. Down to the coast for the night.' },
+      { day: 'Day 2', title: 'Kenawa and the islands around it', body: 'Kenawa first: one green hill, one white beach, one wooden jetty, nothing else. Then Paserang and Kambing, and Pasir Bintang for the sand it is named after. Takat Sagele in the middle of the day — a bare sandbar in open water with reef running down both sides, and the best snorkelling on this coast.' },
+      { day: 'Day 3', title: 'East to Sumbawa Besar', body: 'The drive east along the north coast. Istana Dalam Loka in town — the sultan’s palace, raised on ironwood stilts in 1885 and still one of the largest wooden buildings in the country. Kalela waterfall in the hills inland before the light goes.' },
+      { day: 'Day 4', title: 'Moyo', body: 'Boat across to Moyo. Mata Jitu is what people come for: limestone terraces holding pool after pool of water the colour of glass, and the one Diana swam in when she came here in 1993. The blue pool above it is colder and usually empty. The rest of the island is forest, deer and macaques.' },
+      { day: 'Day 5', title: 'Whale sharks, then the road home', body: 'Out before dawn to Saleh Bay, where whale sharks come up under the fishing platforms to feed on what spills from the nets. You go in with a mask and a guide and swim alongside them. Nobody can promise a sighting — they are wild — but this is as close to reliable as Indonesia gets. Then the long drive west and the ferry back.' },
+    ],
+    includes: ['Four nights of accommodation', 'The Kayangan to Poto Tano ferry, both ways', 'Private transport and driver throughout', 'Local guide', 'Boats to every island', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Drinking water'],
+    excludes: ['Flights', 'Meals', 'Tips for the guide and crew'],
+  },
   {
     slug: 'custom-private-journey',
     rating: 5.0,
@@ -464,8 +501,8 @@ export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 export function formatPrice(value) {
   if (!value) return 'On request'
   if (value >= 1_000_000) {
-    const m = (value / 1_000_000).toFixed(2).replace(/\.?0+$/, '')
+    const m = String(Math.floor(value / 10_000) / 100).replace(/\.?0+$/, '')
     return `IDR ${m}m`
   }
-  return `IDR ${(value / 1000).toFixed(0)}k`
+  return `IDR ${Math.floor(value / 1000)}k`
 }
