@@ -65,7 +65,7 @@ Same originals at full size would fix all of them.
 | ☐ | **No sort.** Price, duration, popularity. |
 | ☐ | **"Check availability" goes to a form,** not a calendar. Real availability is a much bigger build — worth it only once departures are fixed. |
 | ☐ | **No currency switch.** Everything is IDR; your own flyers quote USD as well. |
-| ☐ | **No map on trip pages.** The island map is only on the home page. |
+| ☐ | **The island map is off the site entirely.** `IslandMap` and `scripts/build-map.mjs` are still in the tree, just not rendered anywhere. Put it back on the home page, give it to the trip pages, or delete the component and the script — but decide, rather than leaving it to rot. |
 
 ## 5. Technical
 

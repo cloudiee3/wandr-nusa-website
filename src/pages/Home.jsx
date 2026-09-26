@@ -6,7 +6,6 @@ import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
 import SectionHead from '../components/SectionHead'
 import JourneyCard from '../components/JourneyCard'
-import IslandMap from '../components/IslandMap'
 import SearchWidget from '../components/SearchWidget'
 import Deals from '../components/Deals'
 import WhatsAppIcon from '../components/WhatsAppIcon'
@@ -245,9 +244,6 @@ export default function Home() {
       {/* ── Testimonials ─────────────────────────────────────── */}
       <Testimonials />
 
-      {/* ── Special offers ───────────────────────────────────── */}
-      <OfferSlider />
-
       {/* ── Destinations ─────────────────────────────────────── */}
       <section id="escapes" className="wrap pb-16 lg:pb-24">
         <SectionHead
@@ -291,26 +287,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Where we go: the map ─────────────────────────────── */}
-      <section className="wrap py-16 lg:py-24">
-        <Reveal className="relative overflow-hidden rounded-3xl bg-ink-900 px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
-          <div className="absolute inset-0 grid-bg opacity-50" aria-hidden="true" />
-          <div className="relative">
-            <span className="pill-light"><span className="pill-dot" />Our patch</span>
-            <h2 className="mt-5 max-w-xl text-[1.9rem] leading-[1.14] !text-white sm:text-[2.5rem]">
-              A small map, <span className="flourish-light">known well</span>
-            </h2>
-            <p className="mt-4 max-w-xl text-white/60">
-              Everything we run sits within a few hours of the office in Senggigi. That is why we can answer a
-              question about trail conditions with something other than a guess.
-            </p>
-
-            <div className="mt-10">
-              <IslandMap />
-            </div>
-          </div>
-        </Reveal>
-      </section>
+      {/* ── Special offers ───────────────────────────────────── */}
+      <OfferSlider />
 
       {/* ── How it works ─────────────────────────────────────── */}
       <section className="wrap py-16 lg:py-24">
