@@ -30,7 +30,7 @@ export default function AboutStrip() {
             Handpicked routes, <span className="flourish">honest prices</span>
           </Reveal>
           <Reveal as="p" delay={150} className="mt-4 text-[1.02rem] text-ink-500">
-            Itineraries we have walked ourselves, costed line by line, with nothing buried in the margin.
+            Carefully selected accommodations that combine comfort, quality, and affordability.
           </Reveal>
 
           <div className="mt-10 space-y-4">
