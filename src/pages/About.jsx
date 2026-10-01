@@ -42,7 +42,7 @@ export default function About() {
 
       <section className="wrap grid gap-14 py-16 lg:grid-cols-[1.35fr_1fr] lg:gap-20 lg:py-24">
         <div>
-          <Reveal as="p" className="font-serif text-[1.4rem] italic leading-relaxed text-ink-600">
+          <Reveal as="p" className="font-serif text-[1.4rem] leading-relaxed text-ink-600">
             We started because visitors kept being sold the same four photographs, and going home having
             seen only those four.
           </Reveal>

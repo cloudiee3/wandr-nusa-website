@@ -27,7 +27,7 @@ export default function DestinationDetail() {
 
       <section className="wrap grid gap-14 py-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-24">
         <div>
-          <Reveal as="p" className="font-serif text-[1.35rem] italic leading-relaxed text-ink-600">
+          <Reveal as="p" className="font-serif text-[1.35rem] leading-relaxed text-ink-600">
             {d.body.split('. ')[0]}.
           </Reveal>
           <Reveal as="p" delay={90} className="mt-6 text-[1.02rem] leading-relaxed text-ink-500">

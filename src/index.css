@@ -63,12 +63,13 @@
     @apply font-sans text-[12px] font-semibold uppercase tracking-label text-sea-300 sm:text-[11px];
   }
 
-  /* Editorial italic flourish used inside display headings. */
+  /* The accent inside a display heading: a weight heavier than the heading
+     around it, in the brand teal. */
   .flourish {
-    @apply font-serif italic font-normal tracking-[0] text-sea-600;
+    @apply font-serif font-bold tracking-[0] text-sea-600;
   }
   .flourish-light {
-    @apply font-serif italic font-normal tracking-[0] text-sea-300;
+    @apply font-serif font-bold tracking-[0] text-sea-300;
   }
 
   /* Small rounded badge used as a section eyebrow — the dot is the tell. */

@@ -17,7 +17,7 @@ export default function Deals() {
             className="inline-flex min-h-[46px] items-center gap-2 rounded-full border border-ink/12 bg-white px-5
                        text-[0.88rem] text-ink transition-all duration-300 hover:border-ink hover:bg-ink hover:text-white"
           >
-            See all journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+            See All <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
           </Link>
         </Reveal>
       </div>
