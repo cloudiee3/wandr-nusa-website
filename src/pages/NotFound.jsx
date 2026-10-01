@@ -18,9 +18,9 @@ export default function NotFound() {
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link to="/" className="btn-accent">
-            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> Back home
+            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> Back Home
           </Link>
-          <Link to="/journeys" className="btn-ghost-light">Browse journeys</Link>
+          <Link to="/journeys" className="btn-ghost-light">Browse Journeys</Link>
         </div>
       </div>
     </section>

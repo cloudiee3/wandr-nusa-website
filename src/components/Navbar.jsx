@@ -62,7 +62,7 @@ export default function Navbar() {
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60]
                    focus:rounded-full focus:bg-white focus:px-5 focus:py-2 focus:text-sm focus:text-ink"
       >
-        Skip to content
+        Skip to Content
       </a>
 
       {/* The bar floats over the page; the rounded container only appears once
@@ -116,7 +116,7 @@ export default function Navbar() {
                 rel="noreferrer"
                 className="btn btn-alive hidden bg-ink !px-6 !py-2.5 !text-[0.85rem] text-white hover:-translate-y-0.5 hover:bg-ink-600 sm:inline-flex"
               >
-                Get started
+                Get Started
               </a>
 
               <button
@@ -176,7 +176,7 @@ export default function Navbar() {
           </nav>
           <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-whatsapp mt-6 w-full">
             <WhatsAppIcon className="h-[18px] w-[18px]" />
-            Message us on WhatsApp
+            Message Us on WhatsApp
           </a>
         </div>
       </div>

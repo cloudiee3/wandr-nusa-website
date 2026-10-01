@@ -131,7 +131,7 @@ export default function About() {
 
         <Reveal delay={200} className="mt-14 text-center">
           <Link to="/contact" className="btn-primary">
-            Talk to us <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+            Talk to Us <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
           </Link>
         </Reveal>
       </section>

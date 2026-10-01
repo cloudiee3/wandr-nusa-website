@@ -216,7 +216,7 @@ export default function Home() {
                 we will come back with a routed plan and the real cost.
               </p>
               <Link to="/journeys/custom-private-journey" className="btn-primary mt-7">
-                Plan it with us <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+                Plan It With Us <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
               </Link>
             </div>
           )}
@@ -224,11 +224,11 @@ export default function Home() {
           <Reveal delay={120} className="mt-12 flex flex-wrap items-center justify-center gap-3">
             {hidden > 0 && (
               <button type="button" onClick={() => setShowAll(true)} className="btn-ghost">
-                Show {hidden} more <ChevronDown className="h-4 w-4" strokeWidth={1.75} />
+                Show {hidden} More <ChevronDown className="h-4 w-4" strokeWidth={1.75} />
               </button>
             )}
             <Link to="/journeys" className="btn-ghost">
-              All journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              All Journeys <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
             </Link>
           </Reveal>
         </div>
@@ -260,10 +260,10 @@ export default function Home() {
           </Reveal>
           <Reveal delay={250} className="mt-9 flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="btn-accent">
-              Start an enquiry <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              Start an Enquiry <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
             </Link>
             <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-ghost-light">
-              <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp us
+              <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp Us
             </a>
           </Reveal>
         </div>

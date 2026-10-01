@@ -102,7 +102,7 @@ ${form.message ? `\n${form.message}` : ''}
             className="btn-ghost"
             onClick={() => { setForm({ ...EMPTY, trip: defaultTrip, message: defaultMessage, travellers: defaultTravellers || EMPTY.travellers, dates: defaultDates }); setStep(0); setStatus('idle') }}
           >
-            Send another
+            Send Another
           </button>
         </div>
       </div>
@@ -200,7 +200,7 @@ ${form.message ? `\n${form.message}` : ''}
 
         <div className="flex flex-wrap items-center gap-3">
           <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-ghost">
-            <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp instead
+            <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp Instead
           </a>
           {/* Distinct keys so React swaps the DOM node instead of retyping one. */}
           {step < STEPS.length - 1 ? (
@@ -211,7 +211,7 @@ ${form.message ? `\n${form.message}` : ''}
             <button key="send" type="submit" disabled={status === 'sending'} className="btn-accent disabled:opacity-60">
               {status === 'sending'
                 ? <><Loader2 className="h-4 w-4 animate-spin" strokeWidth={1.75} /> Sending…</>
-                : <><Send className="h-4 w-4" strokeWidth={1.75} /> Send enquiry</>}
+                : <><Send className="h-4 w-4" strokeWidth={1.75} /> Send Enquiry</>}
             </button>
           )}
         </div>

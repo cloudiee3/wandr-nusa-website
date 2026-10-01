@@ -40,7 +40,7 @@ export default function JourneyDetail() {
   return (
     <>
       <PageHero
-        back={{ to: '/journeys', label: 'All journeys' }}
+        back={{ to: '/journeys', label: 'All Journeys' }}
         tall
         image={j.image}
         eyebrow={`${j.kicker} · ${j.region}`}
@@ -48,9 +48,9 @@ export default function JourneyDetail() {
         lead={j.summary}
       >
         <div className="flex flex-wrap items-center gap-3">
-          <a href="#enquire" className="btn-accent">Check availability</a>
+          <a href="#enquire" className="btn-accent">Check Availability</a>
           <a href={whatsappLink(`Hi! I’d like to ask about "${j.title}".`)} target="_blank" rel="noreferrer" className="btn-ghost-light">
-            <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask a question
+            <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask a Question
           </a>
         </div>
       </PageHero>
@@ -92,7 +92,7 @@ export default function JourneyDetail() {
             <p className="mt-3 text-[0.98rem] leading-relaxed text-ink-500">{j.pricing.note}</p>
             <p className="mt-2 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#enquire" className="btn-primary">Get a quote</a>
+              <a href="#enquire" className="btn-primary">Get a Quote</a>
               <a
                 href={whatsappLink(`Hi! What would "${j.title}" cost for my group?`)}
                 target="_blank"
@@ -217,7 +217,7 @@ export default function JourneyDetail() {
               group size, and anything you’d want to know before booking.
             </p>
             <Link to="/journeys" className="btn-ghost mt-8">
-              <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All journeys
+              <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All Journeys
             </Link>
           </div>
           <EnquiryForm

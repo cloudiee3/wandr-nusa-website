@@ -120,11 +120,14 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
                      bg-white px-5 text-[0.88rem] text-ink shadow-[0_1px_3px_rgba(1,29,57,0.08)]
                      transition-all duration-300 hover:border-ink hover:bg-ink hover:text-white active:scale-[0.97]"
         >
-          View details
+          View Details
         </Link>
       </div>
 
-      <p className="mt-2 text-[0.76rem] text-ink-300">*{journey.priceNote}</p>
+      {/* Two lines of room whatever the note says: the price row above it is
+          pushed down by mt-auto, so a one-line note on one card and a two-line
+          note on the next left their prices 18px out of line. */}
+      <p className="mt-2 min-h-[2.25rem] text-[0.76rem] text-ink-300">*{journey.priceNote}</p>
     </article>
   )
 }

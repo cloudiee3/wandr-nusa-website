@@ -18,7 +18,7 @@ export default function DestinationDetail() {
   return (
     <>
       <PageHero
-        back={{ to: '/destinations', label: 'All destinations' }}
+        back={{ to: '/destinations', label: 'All Destinations' }}
         image={d.image}
         eyebrow={d.island}
         title={d.name}
@@ -82,7 +82,7 @@ export default function DestinationDetail() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <h2 className="text-[1.7rem]">Nearby</h2>
           <Link to="/destinations" className="btn-ghost">
-            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All destinations
+            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All Destinations
           </Link>
         </div>
         <div className="mt-8 grid gap-5 sm:grid-cols-3">

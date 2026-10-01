@@ -101,7 +101,7 @@ export default function DestinationSlider() {
               className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3
                          text-[0.88rem] text-white backdrop-blur-md transition-colors hover:bg-white/20 sm:inline-flex"
             >
-              All destinations <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              All Destinations <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
             </Link>
             <Link
               to={`/destinations/${d.slug}`}

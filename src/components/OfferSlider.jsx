@@ -86,7 +86,7 @@ export default function OfferSlider() {
               className="hidden rounded-full border border-white/30 bg-white/10 px-6 py-3 text-[0.88rem]
                          text-white backdrop-blur-md transition-colors hover:bg-white/20 sm:inline-flex"
             >
-              See the trip
+              See the Trip
             </Link>
             <button
               type="button"
