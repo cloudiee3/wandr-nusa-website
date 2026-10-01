@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Play, Quote, Star } from 'lucide-react'
 import Img from './Img'
 import Reveal from './Reveal'
-import SectionHead from './SectionHead'
 import { featured, testimonials } from '../data/testimonials'
 
 export default function Testimonials() {
@@ -11,17 +10,23 @@ export default function Testimonials() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="wrap">
-        <SectionHead
-          align="center"
-          eyebrow="Testimonials"
-          title={<>What travellers say <span className="flourish">afterwards</span></>}
-          lead="Every quote here is from someone we guided. Names shortened, nothing else changed."
-        />
+        {/* The reference runs this section without an eyebrow — the heading
+            carries it, with the lead directly underneath. */}
+        <div className="mx-auto max-w-2xl text-center">
+          <Reveal as="h2" className="text-[2rem] leading-[1.12] sm:text-[2.7rem]">
+            What our travellers <span className="flourish">say</span>
+          </Reveal>
+          <Reveal as="p" delay={90} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
+            Trusted by travellers from all over — here are their stories.
+          </Reveal>
+        </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        {/* Not an even split: the reference gives the written reviews about a
+            third more width than the photograph beside them. */}
+        <div className="mt-12 grid gap-7 lg:grid-cols-[0.74fr_1fr] lg:gap-9">
           {/* featured story */}
           <Reveal>
-            <figure className="relative m-0 h-full min-h-[24rem] overflow-hidden rounded-3xl lg:min-h-[32rem]">
+            <figure className="relative m-0 h-full min-h-[26rem] overflow-hidden rounded-3xl lg:min-h-[34rem]">
               {playing && featured.video ? (
                 <video
                   src={featured.video}
@@ -31,28 +36,30 @@ export default function Testimonials() {
                 />
               ) : (
                 <>
-                  <Img name={featured.image} sizes="(min-width:1024px) 46vw, 100vw" className="absolute inset-0 h-full w-full" />
+                  <Img name={featured.image} sizes="(min-width:1024px) 38vw, 100vw" className="absolute inset-0 h-full w-full" />
                   <div className="absolute inset-0 scrim-soft" />
 
+                  {/* Only when there is something to play. A play control over a
+                      still that does nothing is worse than no control at all. */}
                   {featured.video && (
                     <button
                       type="button"
                       onClick={() => setPlaying(true)}
                       aria-label={`Play ${featured.name}'s story`}
-                      className="absolute left-1/2 top-1/2 inline-flex h-16 w-16 -translate-x-1/2 -translate-y-1/2
+                      className="absolute left-1/2 top-1/2 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2
                                  items-center justify-center rounded-full border border-white/40 bg-white/20
                                  text-white backdrop-blur-md transition-transform duration-300 hover:scale-105"
                     >
-                      <Play className="ml-0.5 h-6 w-6 fill-current" strokeWidth={0} />
+                      <Play className="ml-1 h-7 w-7 fill-current" strokeWidth={0} />
                     </button>
                   )}
 
-                  <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                    <blockquote className="max-w-md text-[1.25rem] leading-snug !text-white font-display font-semibold sm:text-[1.5rem]">
-                      “{featured.quote}”
+                  <figcaption className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
+                    <blockquote className="max-w-md font-sans text-[1.2rem] font-semibold leading-snug !text-white sm:text-[1.4rem]">
+                      {featured.quote}
                     </blockquote>
-                    <p className="mt-5 text-[0.95rem] font-medium text-white">{featured.name}</p>
-                    <p className="text-[0.82rem] text-white/60">{featured.role}</p>
+                    <p className="mt-6 text-[0.95rem] font-semibold text-white">{featured.name}</p>
+                    <p className="mt-0.5 text-[0.84rem] text-white/60">{featured.role}</p>
                   </figcaption>
                 </>
               )}
@@ -60,36 +67,38 @@ export default function Testimonials() {
           </Reveal>
 
           {/* written reviews */}
-          <div className="grid gap-6">
+          <div className="grid gap-7 lg:gap-9">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={(i + 1) * 110}>
-                <figure className="m-0 flex h-full flex-col rounded-3xl border border-ink/[0.08] bg-white p-7 sm:p-8">
+                <figure className="m-0 flex h-full flex-col rounded-3xl border border-ink/[0.08] bg-white p-7 sm:p-9">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-[1.15rem]">{t.title}</h3>
-                    <Quote className="h-6 w-6 shrink-0 text-ink-200" strokeWidth={1.5} />
+                    <h3 className="font-sans text-[1.15rem] font-bold leading-snug">{t.title}</h3>
+                    <Quote className="h-7 w-7 shrink-0 fill-ink-100 text-ink-100" strokeWidth={0} />
                   </div>
 
                   <blockquote className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-ink-500">
                     {t.quote}
                   </blockquote>
 
-                  <figcaption className="mt-7 flex items-center gap-3 border-t border-ink/[0.07] pt-5">
+                  <figcaption className="mt-7 flex items-center gap-3.5 border-t border-ink/[0.07] pt-6">
+                    {/* Initials rather than a face: we have no photograph of
+                        the people quoted, and a stock one would be a lie. */}
                     <span
                       aria-hidden="true"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sea-100
-                                 font-display text-sm font-semibold text-sea-700"
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sea-100
+                                 font-display text-[0.95rem] font-semibold text-sea-700"
                     >
                       {t.name.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('')}
                     </span>
                     <span className="min-w-0">
-                      <span className="block truncate text-[0.92rem] font-medium text-ink">{t.name}</span>
-                      <span className="block text-[0.8rem] text-ink-400">{t.role}</span>
+                      <span className="block truncate text-[0.95rem] font-semibold text-ink">{t.name}</span>
+                      <span className="block text-[0.82rem] text-ink-400">{t.role}</span>
                     </span>
                     <span className="ml-auto flex shrink-0 gap-0.5" aria-label={`${t.rating} out of 5`}>
                       {Array.from({ length: 5 }, (_, n) => (
                         <Star
                           key={n}
-                          className={`h-4 w-4 ${n < t.rating ? 'fill-ember text-ember' : 'fill-ink-100 text-ink-100'}`}
+                          className={`h-[18px] w-[18px] ${n < t.rating ? 'fill-ember text-ember' : 'fill-ink-100 text-ink-100'}`}
                           strokeWidth={0}
                         />
                       ))}

@@ -22,6 +22,7 @@ const PHOTO_MAP = {
   'rice-terraces':       ['pexels-ari-setiawan-2156420701-35432028.jpg', 'Layered green rice terraces in the Lombok highlands'],
   // The first frame in the library with people in it.
   'travellers-viewpoint':['Travellers Viewpoint.jpg', 'Three travellers at the edge of a lake, one pointing out across the water towards the hills'],
+  'travellers-laughing': ['Travellers Laughing.jpg', 'Four travellers laughing together on a morning walk, one pointing off towards the hills behind them'],
   'kenawa-island':       ['Kenawa Island.webp', 'Kenawa island from the air — one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind'],
   'lombok-beach-stay':   ['Lombok Beach Stay.jpg', 'Beachfront villas and a pool above white sand and clear water on the Lombok coast'],
   'selong-belanak':      ['Selong Belanak Bay.jpg', 'The long white curve of Selong Belanak, a fishing fleet moored off it and green hills behind'],

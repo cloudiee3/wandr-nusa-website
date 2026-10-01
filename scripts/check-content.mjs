@@ -4,6 +4,7 @@
 //   npm run check
 import { journeys, categories } from '../src/data/journeys.js'
 import { destinations } from '../src/data/destinations.js'
+import { featured } from '../src/data/testimonials.js'
 import images from '../src/data/images.json' with { type: 'json' }
 import { readFileSync } from 'node:fs'
 
@@ -18,6 +19,8 @@ for (const j of journeys) {
 for (const d of destinations) {
   slots.push([d.image, `${d.slug} cover`], ...(d.gallery ?? []).map((g) => [g, `${d.slug} gallery`]))
 }
+// The testimonial card is the one photo slot outside the two catalogues.
+slots.push([featured.image, 'testimonials featured'])
 for (const [name, where] of slots) {
   if (!images[name]) problems.push(`missing photo "${name}" (${where})`)
 }

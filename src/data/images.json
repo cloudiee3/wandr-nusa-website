@@ -99,6 +99,17 @@
     ],
     "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABwAwCdASoUAA0APwFsrk+rJiQiMAgBYCAJQAAKQp7VL+XvcoAA/lP57HpJatDKwbXLtqvAl9TjM4yFgakvQOVT/6qpnIiQAAA="
   },
+  "travellers-laughing": {
+    "alt": "Four travellers laughing together on a morning walk, one pointing off towards the hills behind them",
+    "ratio": 0.8,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1600
+    ],
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBQCdASoUABkAPvlop06qpiMiMAwBUB8JZQC90CElwcIy6oPITy1n0aSdS8qekScBPAD+w1mLvWg9wUdNJCMCKZF1rAapEAecDpphZJy32CfMcDRX+Prg69uLAFrkZAg2sp8AQbk0dl1JoPF1msUGvKAAAA=="
+  },
   "kenawa-island": {
     "alt": "Kenawa island from the air — one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind",
     "ratio": 1.7778,

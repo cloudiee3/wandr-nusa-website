@@ -5,7 +5,7 @@ export const featured = {
   quote: 'They moved our whole Gili day earlier so we had the Meno reef to ourselves. My daughter still talks about the turtles.',
   name: 'Priya S.',
   role: 'Family trip, 6 days',
-  image: 'coastline-aerial',
+  image: 'travellers-laughing',
   video: null,
 }
 
