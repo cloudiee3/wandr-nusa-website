@@ -54,7 +54,7 @@ export const transferGroups = [
   {
     group: 'Airports',
     options: [
-      'Lombok International Airport (LOP)',
+      'Lombok Airport (LOP)',
       'Bali \u2014 Ngurah Rai (DPS)',
     ],
   },

@@ -63,7 +63,7 @@ export default {
         sans: ['Figtree', 'system-ui', 'sans-serif'],
       },
       letterSpacing: { label: '0.18em' },
-      maxWidth: { wrap: '80rem' },
+      maxWidth: { wrap: '88rem' },
       boxShadow: {
         lift: '0 24px 60px -24px rgba(1,29,57,0.35)',
         card: '0 2px 10px -2px rgba(1,29,57,0.10), 0 12px 32px -12px rgba(1,29,57,0.18)',

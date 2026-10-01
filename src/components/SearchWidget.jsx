@@ -7,8 +7,8 @@ import { DateRangeFields, SingleDateField, addDays, toISO, usePopover } from './
 
 const TABS = [
   { id: 'journeys', label: 'Journeys' },
-  { id: 'transport', label: 'Transport' },
   { id: 'stays', label: 'Hotels' },
+  { id: 'transport', label: 'Transport' },
 ]
 
 const plusDays = (n) => addDays(toISO(new Date()), n)
@@ -113,12 +113,20 @@ export default function SearchWidget() {
             tab === 'transport' ? 'opacity-100' : 'pointer-events-none opacity-0'
           }`}
         >
-          <Row label="Pick-up" htmlFor="sw-pickup">
-            <GroupedSelect id="sw-pickup" icon={Car} value={pickup} onChange={setPickup} groups={transferGroups} tail={OTHER_PLACE} />
-          </Row>
-          <Row label="Drop-off" htmlFor="sw-dropoff">
-            <GroupedSelect id="sw-dropoff" icon={Globe} value={dropoff} onChange={setDropoff} groups={transferGroups} tail={OTHER_PLACE} />
-          </Row>
+          {/* Side by side once there is room for the labels to be read. On a
+              phone half a field clipped "Lombok Airport (LOP)" to "Lombok A",
+              and knowing where the car is coming from matters more than the
+              tab being exactly as tall as the other two. */}
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div>
+              <label className="field-label" htmlFor="sw-pickup">Pick-up</label>
+              <GroupedSelect id="sw-pickup" icon={Car} value={pickup} onChange={setPickup} groups={transferGroups} tail={OTHER_PLACE} />
+            </div>
+            <div>
+              <label className="field-label" htmlFor="sw-dropoff">Drop-off</label>
+              <GroupedSelect id="sw-dropoff" icon={Globe} value={dropoff} onChange={setDropoff} groups={transferGroups} tail={OTHER_PLACE} />
+            </div>
+          </div>
           <SingleDateField label="Date" value={from} onChange={setFrom} />
           <GuestsRow label="Passengers" {...{ adults, children, setAdults, setChildren }} />
         </div>

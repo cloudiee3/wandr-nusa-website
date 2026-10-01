@@ -86,7 +86,7 @@ export default function Home() {
         <div className="absolute inset-0 scrim" />
 
         <div className="wrap relative w-full pb-8 pt-24 sm:pb-14 sm:pt-32">
-          <div className="grid items-end gap-7 sm:gap-10 lg:grid-cols-[1.15fr_minmax(0,26.5rem)] lg:gap-12">
+          <div className="grid items-end gap-7 sm:gap-10 lg:grid-cols-[1fr_minmax(0,26.5rem)] min-[1408px]:grid-cols-[1fr_minmax(0,33.5rem)] lg:gap-12">
             <div>
               <Reveal>
                 <span className="pill-light">
@@ -99,7 +99,7 @@ export default function Home() {
                 as="h1"
                 delay={100}
                 /* balance is on h1 globally; here the line break is deliberate */
-                className="mt-7 font-normal text-[2.05rem] leading-[1.1] !text-white [text-wrap:initial] sm:text-[3.1rem] lg:text-[3.65rem]"
+                className="mt-7 font-normal text-[2.05rem] leading-[1.1] !text-white [text-wrap:initial] sm:text-[3.1rem] min-[1408px]:text-[3.65rem]"
               >
                 {hero.headline[0]}
                 <br />
