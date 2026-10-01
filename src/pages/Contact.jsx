@@ -56,14 +56,14 @@ export default function Contact() {
         image="tiu-kelep"
         eyebrow="Contact"
         title={<>Start with a <span className="flourish-light">rough idea</span></>}
-        lead="You don't need dates or a plan. Tell us roughly what you want and we'll come back with something routed, costed and honest."
+        lead="You don’t need dates or a plan. Tell us roughly what you want and we’ll come back with something routed, costed and honest."
       />
 
       <section className="wrap grid gap-12 py-16 lg:grid-cols-[1fr_1.3fr] lg:gap-16 lg:py-24">
         <div>
           <Reveal as="h2" className="text-[1.8rem] leading-tight">Reach us directly</Reveal>
           <Reveal as="p" delay={80} className="mt-4 text-ink-500">
-            WhatsApp is fastest — it is on someone's phone from 08:00 to 19:00 WITA, and messages sent
+            WhatsApp is fastest — it is on someone’s phone from 08:00 to 19:00 WITA, and messages sent
             overnight are answered first thing.
           </Reveal>
 

@@ -253,7 +253,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-ink-900/70" />
         <div className="wrap relative py-20 text-center lg:py-28">
           <Reveal as="h2" delay={90} className="mx-auto max-w-2xl text-[2rem] leading-[1.12] !text-white sm:text-[2.9rem]">
-            Tell us roughly what you want. <span className="flourish-light">We'll do the rest.</span>
+            Tell us roughly what you want. <span className="flourish-light">We’ll do the rest.</span>
           </Reveal>
           <Reveal as="p" delay={170} className="mx-auto mt-5 max-w-lg text-white/65">
             Every enquiry is answered by a person, usually within one working day.

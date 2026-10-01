@@ -33,6 +33,13 @@
     text-wrap: balance;
   }
 
+  /* A heading that carries an accent goes light, so the accent does the work
+     — the same contrast the hero headline already uses. Browsers without
+     :has() keep the semibold, which is the old look rather than a broken one. */
+  :is(h1, h2, h3):has(:is(.flourish, .flourish-light)) {
+    @apply font-normal;
+  }
+
   p { text-wrap: pretty; }
 
   /* Keyboard focus only — never a ring on mouse click. */

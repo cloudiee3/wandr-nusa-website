@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-//  Everything you'll want to edit first lives in this file.
+//  Everything you’ll want to edit first lives in this file.
 //  Swap the placeholders below for the real Wandr Nusa details.
 // ─────────────────────────────────────────────────────────────
 
@@ -127,7 +127,7 @@ export const nav = [
 /** Builds a wa.me link with a message already typed for the traveller. */
 export function whatsappLink(message) {
   const text = encodeURIComponent(
-    message || `Hi ${site.name}! I'd like to ask about a trip.`,
+    message || `Hi ${site.name}! I’d like to ask about a trip.`,
   )
   return `https://wa.me/${site.whatsapp}?text=${text}`
 }

@@ -28,7 +28,7 @@ export default function Journeys() {
   const destination = dest ? destBySlug(dest) : null
 
   const shown = useMemo(() => {
-    // A "place" is somewhere we don't run a fixed departure yet.
+    // A "place" is somewhere we don’t run a fixed departure yet.
     if (place) return []
     let list = journeys
     if (destination) list = list.filter((j) => destination.journeys.includes(j.slug))
@@ -96,7 +96,7 @@ export default function Journeys() {
             </h2>
             <p className="mx-auto mt-3 max-w-md text-ink-500">
               {place
-                ? `We run ${place} as a private trip rather than a scheduled one. Tell us your dates and we'll come back with a routed plan and the real cost.`
+                ? `We run ${place} as a private trip rather than a scheduled one. Tell us your dates and we’ll come back with a routed plan and the real cost.`
                 : 'Widen the filters, or let us build something around your dates instead — most of what we run started as a request rather than a listing.'}
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">

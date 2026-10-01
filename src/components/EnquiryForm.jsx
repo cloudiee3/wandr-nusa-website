@@ -70,12 +70,12 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
       if (!res.ok) throw new Error(String(res.status))
       setStatus('sent')
     } catch {
-      // Local dev has no form handler; don't leave the traveller stuck.
+      // Local dev has no form handler; don’t leave the traveller stuck.
       setStatus(import.meta.env.DEV ? 'sent' : 'error')
     }
   }
 
-  const waMessage = `Hi ${site.name}! I'd like to enquire about: ${form.trip || 'a trip to Lombok'}.
+  const waMessage = `Hi ${site.name}! I’d like to enquire about: ${form.trip || 'a trip to Lombok'}.
 Dates: ${form.dates || 'flexible'}
 Travellers: ${form.travellers}
 ${form.message ? `\n${form.message}` : ''}
@@ -89,8 +89,8 @@ ${form.message ? `\n${form.message}` : ''}
         </span>
         <h3 className="mt-6 text-2xl">Your enquiry is with us</h3>
         <p className="mx-auto mt-3 max-w-md text-ink-500">
-          We answer every message personally, usually within one working day. If you'd rather not wait,
-          message us on WhatsApp and we'll pick it up now.
+          We answer every message personally, usually within one working day. If you’d rather not wait,
+          message us on WhatsApp and we’ll pick it up now.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-whatsapp">
@@ -183,12 +183,12 @@ ${form.message ? `\n${form.message}` : ''}
       {/* Step 3 */}
       <fieldset className={step === 2 ? 'block' : 'hidden'}>
         <legend className="sr-only">Anything else</legend>
-        <Field label="Tell us about the trip" hint="Fitness, diet, what you'd love to see — all useful">
+        <Field label="Tell us about the trip" hint="Fitness, diet, what you’d love to see — all useful">
           <textarea name="message" rows={5} value={form.message} onChange={set('message')} className={`${inputCls()} resize-y`} />
         </Field>
         {status === 'error' && (
           <p className="mb-4 rounded-xl bg-ember/10 px-4 py-3 text-sm text-ember">
-            That didn't send. Try again, or reach us on WhatsApp — we'll get it either way.
+            That didn’t send. Try again, or reach us on WhatsApp — we’ll get it either way.
           </p>
         )}
       </fieldset>

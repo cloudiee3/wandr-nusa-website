@@ -5,7 +5,7 @@ import { site } from '../data/site'
  * The brand artwork itself, not a font approximation of it.
  *
  * `wordmarkOnly` drops the four-tile mark and shows just "wandrnusa TRAVEL" —
- * that's the treatment used over the hero, where the photograph is already
+ * that’s the treatment used over the hero, where the photograph is already
  * carrying the visual weight.
  */
 export default function Logo({

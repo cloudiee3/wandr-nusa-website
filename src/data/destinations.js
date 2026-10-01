@@ -70,7 +70,7 @@ export const destBySlug = (slug) => destinations.find((d) => d.slug === slug)
 
 // ── Hero search dropdown ────────────────────────────────────
 // The top destinations across the three regions we cover, grouped and ordered
-// by how much they're actually visited. `dest` points at one of the
+// by how much they’re actually visited. `dest` points at one of the
 // destination pages above; options without one have no fixed itinerary yet, so
 // the journeys page offers to build the trip instead.
 export const searchGroups = [

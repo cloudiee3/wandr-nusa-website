@@ -94,7 +94,7 @@ export default function About() {
           <SectionHead
             light
             eyebrow="How we work"
-            title={<>Four things we <span className="flourish-light">won't bend on</span></>}
+            title={<>Four things we <span className="flourish-light">won’t bend on</span></>}
           />
           <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
             {values.map((v, i) => (

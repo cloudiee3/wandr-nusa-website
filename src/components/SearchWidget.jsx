@@ -45,7 +45,7 @@ export default function SearchWidget() {
     }
     const q = new URLSearchParams({ kind: 'journeys', from, to, ...people })
     // A destination slug filters the catalogue; a "place:" option is somewhere
-    // we don't run a fixed departure yet, so the journeys page offers to plan it.
+    // we don’t run a fixed departure yet, so the journeys page offers to plan it.
     if (dest.startsWith('place:')) q.set('place', dest.slice(6))
     else if (dest) q.set('dest', dest)
     navigate(`/journeys?${q}`)

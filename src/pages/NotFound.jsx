@@ -11,10 +11,10 @@ export default function NotFound() {
       <div className="wrap relative text-center">
         <p className="label-light">Error 404</p>
         <h1 className="mx-auto mt-4 max-w-xl text-[2.4rem] leading-[1.08] !text-white sm:text-[3.4rem]">
-          This track doesn't <span className="flourish-light">go anywhere</span>
+          This track doesn’t <span className="flourish-light">go anywhere</span>
         </h1>
         <p className="mx-auto mt-5 max-w-md text-white/65">
-          The page you're after has moved or never existed. The map below still works.
+          The page you’re after has moved or never existed. The map below still works.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link to="/" className="btn-accent">

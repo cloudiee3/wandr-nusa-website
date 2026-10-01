@@ -66,7 +66,7 @@ export default function Navbar() {
       </a>
 
       {/* The bar floats over the page; the rounded container only appears once
-          you've scrolled, so at the top the logo sits straight on the photo. */}
+          you’ve scrolled, so at the top the logo sits straight on the photo. */}
       <header
         className="fixed inset-x-0 top-0 z-50"
         style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}

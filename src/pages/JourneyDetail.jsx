@@ -17,7 +17,7 @@ export default function JourneyDetail() {
   const j = bySlug(slug)
   if (!j) return <Navigate to="/journeys" replace />
 
-  // Arriving from the hero search with a place we don't run a fixed trip to.
+  // Arriving from the hero search with a place we don’t run a fixed trip to.
   const place = params.get('place')
   const adults = params.get('adults')
   const children = params.get('children')
@@ -49,7 +49,7 @@ export default function JourneyDetail() {
       >
         <div className="flex flex-wrap items-center gap-3">
           <a href="#enquire" className="btn-accent">Check availability</a>
-          <a href={whatsappLink(`Hi! I'd like to ask about "${j.title}".`)} target="_blank" rel="noreferrer" className="btn-ghost-light">
+          <a href={whatsappLink(`Hi! I’d like to ask about "${j.title}".`)} target="_blank" rel="noreferrer" className="btn-ghost-light">
             <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask a question
           </a>
         </div>
@@ -112,7 +112,7 @@ export default function JourneyDetail() {
         }`}
       >
         <div className={j.gallery.length ? '' : 'max-w-3xl'}>
-          <Reveal as="h2" className="text-[1.9rem] leading-tight">What you'll do</Reveal>
+          <Reveal as="h2" className="text-[1.9rem] leading-tight">What you’ll do</Reveal>
           <ul className="mt-6 space-y-3.5">
             {j.highlights.map((h, i) => (
               <Reveal as="li" key={h} delay={i * 70} className="flex gap-3.5 text-[1rem] leading-relaxed text-ink-600">
@@ -143,7 +143,7 @@ export default function JourneyDetail() {
 
           <div className="mt-16 grid gap-8 sm:grid-cols-2">
             <Reveal>
-              <h3 className="label">What's included</h3>
+              <h3 className="label">What’s included</h3>
               <ul className="mt-4 space-y-2.5">
                 {j.includes.map((x) => (
                   <li key={x} className="flex gap-3 text-[0.94rem] text-ink-600">
@@ -213,8 +213,8 @@ export default function JourneyDetail() {
               Ask about <span className="flourish">{j.title.split(':')[0]}</span>
             </h2>
             <p className="mt-5 text-ink-500">
-              Tell us when you're thinking of coming and we'll confirm availability, the exact price for your
-              group size, and anything you'd want to know before booking.
+              Tell us when you’re thinking of coming and we’ll confirm availability, the exact price for your
+              group size, and anything you’d want to know before booking.
             </p>
             <Link to="/journeys" className="btn-ghost mt-8">
               <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All journeys
@@ -222,7 +222,7 @@ export default function JourneyDetail() {
           </div>
           <EnquiryForm
             defaultTrip={j.title}
-            defaultMessage={place ? `I'd like to go to ${place}.` : ''}
+            defaultMessage={place ? `I’d like to go to ${place}.` : ''}
             defaultTravellers={
               adults
                 ? `${adults} ${adults === '1' ? 'adult' : 'adults'}, ${children ?? 0} ${children === '1' ? 'child' : 'children'}`

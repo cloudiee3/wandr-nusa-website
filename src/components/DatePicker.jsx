@@ -172,7 +172,7 @@ const Trigger = ({ label, value, active, onClick, showLabel = true }) => (
     >
       <CalendarDays className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
       <span className="truncate">
-        {/* the weekday doesn't fit two-up on a phone */}
+        {/* the weekday doesn’t fit two-up on a phone */}
         <span className="sm:hidden">{prettyDate(value, true)}</span>
         <span className="hidden sm:inline">{prettyDate(value)}</span>
       </span>

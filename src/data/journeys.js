@@ -137,7 +137,7 @@ export const journeys = [
     },
     image: 'gili-kondo-island',
     gallery: ['gili-kondo-sandbar', 'gili-kondo-snorkel', 'gili-kondo-spit', 'gili-kondo-boats'],
-    tags: ["Gili's", 'Beaches', 'Diving & Snorkeling', 'Day Trips', 'Nature'],
+    tags: ["Gili’s", 'Beaches', 'Diving & Snorkeling', 'Day Trips', 'Nature'],
     summary:
       'Three uninhabited islands off the northeast coast, an hour past where most people stop. White sand and shallow coral at Kondo and Bidara, then mangrove channels at Petagan you can swim through when the tide is low enough.',
     highlights: [
@@ -333,7 +333,7 @@ export const journeys = [
     },
     image: 'underwater-statues',
     gallery: ['gili-islands-aerial', 'gili-salt-lake', 'coastline-aerial'],
-    tags: ["Gili's", 'Beaches', 'Diving & Snorkeling', 'Day Trips', 'Nature'],
+    tags: ["Gili’s", 'Beaches', 'Diving & Snorkeling', 'Day Trips', 'Nature'],
     summary:
       'All three of the famous Gilis in one day, on a boat that is yours for it. Turtles on the shelf off Meno, a ring of statues standing on the sand just offshore, and long enough ashore on each island to work out which one you would come back to.',
     highlights: [
@@ -371,7 +371,7 @@ export const journeys = [
     },
     image: 'lombok-beach-stay',
     gallery: ['bukit-merese', 'gili-islands-aerial', 'tiu-kelep', 'sade-village', 'underwater-statues', 'selong-belanak'],
-    tags: ['Packages', 'Beaches', "Gili's", 'Diving & Snorkeling', 'Culture & Villages', 'Waterfalls', 'Nature'],
+    tags: ['Packages', 'Beaches', "Gili’s", 'Diving & Snorkeling', 'Culture & Villages', 'Waterfalls', 'Nature'],
     summary:
       'Four days and three nights, airport to airport, covering what people actually come to Lombok for. The south coast and the Sasak villages on the first day, the three Gilis and their reefs on the second, the north and its waterfalls on the third, and the potters and the pearl market on the way back to your flight.',
     highlights: [
@@ -471,7 +471,7 @@ export const categories = [
   'Waterfalls',
   'Beaches',
   'Nature',
-  "Gili's",
+  "Gili’s",
   'Diving & Snorkeling',
   'Sailing',
   'Culture & Villages',
