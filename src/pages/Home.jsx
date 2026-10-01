@@ -130,13 +130,18 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <Reveal as="p" delay={90} className="mx-auto mt-9 max-w-4xl text-center font-display text-[1.5rem] leading-[1.45] sm:text-[2.05rem]">
+          <Reveal
+            as="p"
+            delay={90}
+            className="mx-auto mt-9 max-w-[77rem] text-center font-display text-[1.5rem]
+                       leading-[1.45] sm:text-[2.05rem] lg:mt-[4.25rem]"
+          >
             {MANIFESTO.map(([text, strong], i) => (
               <span key={i} className={strong ? 'text-ink' : 'text-mist'}>{text}{' '}</span>
             ))}
           </Reveal>
 
-          <div className="mt-14 text-center">
+          <div className="mt-14 text-center lg:mt-[9.5rem]">
             <Reveal>
               <span className="pill"><span className="pill-dot" />By the numbers</span>
             </Reveal>
