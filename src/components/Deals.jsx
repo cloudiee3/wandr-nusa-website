@@ -9,7 +9,7 @@ export default function Deals() {
     <section className="wrap py-16 lg:py-24">
       <div className="flex flex-wrap items-center justify-between gap-5">
         <Reveal as="h2" className="text-[2rem] leading-tight sm:text-[2.7rem]">
-          Offers running <span className="flourish">right now</span>
+          Exclusive deals <span className="flourish">just for you!</span>
         </Reveal>
         <Reveal delay={90}>
           <Link
@@ -22,7 +22,7 @@ export default function Deals() {
         </Reveal>
       </div>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid gap-[30px] lg:grid-cols-2">
         {deals.map((d, i) => (
           <Reveal key={d.id} delay={i * 110}>
             <Link
@@ -32,7 +32,7 @@ export default function Deals() {
               <Img
                 name={d.image}
                 sizes="(min-width:1024px) 45vw, 100vw"
-                className="aspect-[16/9] w-full"
+                className="aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[2/1]"
                 imgClassName="transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-ink-900/85 via-ink-900/45 to-transparent" />
@@ -41,7 +41,8 @@ export default function Deals() {
                 <Percent className="h-5 w-5" strokeWidth={2} />
               </span>
 
-              <span className="absolute right-5 top-5 rounded-full border border-white/25 bg-white/15 px-4 py-1.5 text-[12.5px] sm:text-[11.5px] text-white backdrop-blur-md">
+              <span className="absolute right-5 top-5 rounded-full border border-white/25 bg-ink-900/45 px-4 py-1.5
+                               text-[12.5px] text-white backdrop-blur-md sm:text-[11.5px]">
                 {d.valid}
               </span>
 
@@ -49,13 +50,10 @@ export default function Deals() {
                 <span className="text-[12px] sm:text-[11px] font-semibold uppercase tracking-label text-white/75">
                   {d.kicker}
                 </span>
-                <p className="mt-2 flex items-baseline gap-3">
-                  <span className="font-display text-[3.2rem] font-semibold leading-none text-ember">
-                    {d.amount}
-                  </span>
-                  <span className="text-[1.05rem] text-white">{d.headline}</span>
+                <p className="mt-2 font-display text-[3.4rem] font-semibold leading-none text-ember">
+                  {d.amount}
                 </p>
-                <p className="mt-3 max-w-md text-[0.9rem] leading-relaxed text-white/65">{d.body}</p>
+                <p className="mt-2 max-w-sm text-[1.05rem] leading-snug text-white">{d.headline}</p>
               </div>
             </Link>
           </Reveal>
