@@ -114,7 +114,7 @@ export default function Navbar() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-primary hidden !px-6 !py-2.5 !text-[0.85rem] sm:inline-flex"
+                className="btn-primary btn-sheen hidden !px-6 !py-2.5 !text-[0.85rem] transition-transform hover:-translate-y-0.5 sm:inline-flex"
               >
                 Get started
               </a>

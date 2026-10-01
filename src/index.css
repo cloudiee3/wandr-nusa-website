@@ -138,6 +138,31 @@
   .btn-ghost {
     @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40 hover:bg-ink/[0.04];
   }
+  /* A band of light crossing the face of a dark button on hover, on the same
+     easing as the page's reveals. Transform and opacity only, so it costs a
+     compositor frame and nothing else, and the reduced-motion rule above
+     flattens it to a still. Pairs with .btn on the two main calls to action. */
+  .btn-sheen {
+    @apply relative isolate overflow-hidden;
+  }
+  .btn-sheen::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / 0.26) 50%, transparent 62%);
+    transform: translateX(-110%);
+    /* No duration at rest, so leaving the button snaps the band back off the
+       left edge instead of sweeping it backwards across the face. */
+    transition: transform 0s;
+  }
+  .btn-sheen:hover::after,
+  .btn-sheen:focus-visible::after {
+    transform: translateX(110%);
+    /* Even in and out: the page's reveal curve covers two thirds of the
+       distance in the first sixth of the time, which reads as a flicker
+       rather than a sweep. */
+    transition: transform 0.7s ease-in-out;
+  }
+
   .btn-ghost-light {
     @apply btn border border-white/25 bg-white/[0.06] text-white backdrop-blur
            hover:border-white/60 hover:bg-white/15;

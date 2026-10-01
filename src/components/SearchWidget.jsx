@@ -145,8 +145,16 @@ export default function SearchWidget() {
         </div>
       </div>
 
-      <button type="submit" className="btn mt-7 w-full bg-ink-900 py-4 text-white hover:bg-ink">
-        Wander Now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+      <button
+        type="submit"
+        className="btn btn-sheen group mt-7 w-full bg-ink-900 py-4 text-white
+                   hover:-translate-y-0.5 hover:bg-ink hover:shadow-lift"
+      >
+        Wander Now
+        <ArrowRight
+          className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
+          strokeWidth={1.75}
+        />
       </button>
 
       <p className="mt-3 text-center text-[12.5px] sm:text-[11.5px] text-white/55">
