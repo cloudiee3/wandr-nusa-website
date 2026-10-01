@@ -138,29 +138,24 @@
   .btn-ghost {
     @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40 hover:bg-ink/[0.04];
   }
-  /* A band of light crossing the face of a dark button on hover, on the same
-     easing as the page's reveals. Transform and opacity only, so it costs a
-     compositor frame and nothing else, and the reduced-motion rule above
-     flattens it to a still. Pairs with .btn on the two main calls to action. */
-  .btn-sheen {
-    @apply relative isolate overflow-hidden;
+  /* The two main calls to action breathe at rest: a teal glow swelling and
+     fading behind the pill, so the button looks live before anyone touches it.
+     Hover holds it open. This is a box-shadow rather than a blurred pseudo-
+     element on purpose — the buttons lift and press with transforms, and a
+     transform makes the element a stacking context, which drags a negative-z
+     pseudo-element in front of its own background. A shadow is drawn outside
+     the border box and is immune to that. */
+  .btn-alive {
+    animation: cta-breathe 3.4s ease-in-out infinite;
   }
-  .btn-sheen::after {
-    content: '';
-    @apply pointer-events-none absolute inset-0;
-    background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / 0.26) 50%, transparent 62%);
-    transform: translateX(-110%);
-    /* No duration at rest, so leaving the button snaps the band back off the
-       left edge instead of sweeping it backwards across the face. */
-    transition: transform 0s;
-  }
-  .btn-sheen:hover::after,
-  .btn-sheen:focus-visible::after {
-    transform: translateX(110%);
-    /* Even in and out: the page's reveal curve covers two thirds of the
-       distance in the first sixth of the time, which reads as a flicker
-       rather than a sweep. */
-    transition: transform 0.7s ease-in-out;
+  .btn-alive:hover,
+  .btn-alive:focus-visible {
+    /* Dropping the animation rather than pausing it: a paused animation still
+       holds the property, so the shadow below would never be reached. */
+    animation: none;
+    box-shadow:
+      0 0 0 4px rgb(18 160 168 / 0.22),
+      0 0 30px 8px rgb(18 160 168 / 0.5);
   }
 
   .btn-ghost-light {
@@ -255,4 +250,14 @@
   0%        { offset-distance: 0%;   opacity: 0; }
   6%        { opacity: 1; }
   70%, 100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* The resting pulse under the two main calls to action. */
+@keyframes cta-breathe {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgb(18 160 168 / 0.18), 0 0 12px 1px rgb(18 160 168 / 0.12);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgb(18 160 168 / 0.2), 0 0 28px 6px rgb(18 160 168 / 0.42);
+  }
 }

@@ -147,8 +147,8 @@ export default function SearchWidget() {
 
       <button
         type="submit"
-        className="btn btn-sheen group mt-7 w-full bg-ink-900 py-4 text-white
-                   hover:-translate-y-0.5 hover:bg-ink hover:shadow-lift"
+        className="btn btn-alive group mt-7 w-full bg-ink-900 py-4 text-white
+                   hover:-translate-y-0.5 hover:bg-ink"
       >
         Wander Now
         <ArrowRight
