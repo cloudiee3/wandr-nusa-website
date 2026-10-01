@@ -75,8 +75,18 @@ export default function SearchWidget() {
         ))}
       </div>
 
-      {tab === 'journeys' && (
-        <>
+      {/* All three panels sit in the same grid cell, so the card is always as
+          tall as the tallest of them and never jumps when you change tab. The
+          two that are not showing are inert — out of the tab order and out of
+          the accessibility tree — rather than merely transparent. */}
+      <div className="grid">
+        <div
+          key="journeys"
+          inert={tab !== 'journeys'}
+          className={`col-start-1 row-start-1 transition-opacity duration-300 ${
+            tab === 'journeys' ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
+        >
           <Row label="Destination" htmlFor="sw-dest">
             <div className="field">
               <Globe className="h-4 w-4 shrink-0 text-sea-600" strokeWidth={1.75} />
@@ -95,11 +105,14 @@ export default function SearchWidget() {
           </Row>
           <DateRangeFields {...{ from, to, setFrom, setTo }} labels={['Arrive', 'Leave']} />
           <GuestsRow label="Peoples" {...{ adults, children, setAdults, setChildren }} />
-        </>
-      )}
-
-      {tab === 'transport' && (
-        <>
+        </div>
+        <div
+          key="transport"
+          inert={tab !== 'transport'}
+          className={`col-start-1 row-start-1 transition-opacity duration-300 ${
+            tab === 'transport' ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
+        >
           <Row label="Pick-up" htmlFor="sw-pickup">
             <GroupedSelect id="sw-pickup" icon={Car} value={pickup} onChange={setPickup} groups={transferGroups} tail={OTHER_PLACE} />
           </Row>
@@ -108,18 +121,21 @@ export default function SearchWidget() {
           </Row>
           <SingleDateField label="Date" value={from} onChange={setFrom} />
           <GuestsRow label="Passengers" {...{ adults, children, setAdults, setChildren }} />
-        </>
-      )}
-
-      {tab === 'stays' && (
-        <>
+        </div>
+        <div
+          key="stays"
+          inert={tab !== 'stays'}
+          className={`col-start-1 row-start-1 transition-opacity duration-300 ${
+            tab === 'stays' ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
+        >
           <Row label="Area" htmlFor="sw-area">
             <GroupedSelect id="sw-area" icon={BedDouble} value={area} onChange={setArea} groups={stayGroups} />
           </Row>
           <DateRangeFields {...{ from, to, setFrom, setTo }} labels={['Check-in', 'Check-out']} />
           <GuestsRow label="Guests" {...{ adults, children, setAdults, setChildren }} />
-        </>
-      )}
+        </div>
+      </div>
 
       <button type="submit" className="btn mt-7 w-full bg-ink-900 py-4 text-white hover:bg-ink">
         Wander Now <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
