@@ -19,8 +19,14 @@ for (const j of journeys) {
 for (const d of destinations) {
   slots.push([d.image, `${d.slug} cover`], ...(d.gallery ?? []).map((g) => [g, `${d.slug} gallery`]))
 }
-// The testimonial card is the one photo slot outside the two catalogues.
+// Slots outside the two catalogues: the testimonial card, and the hero at the
+// top of each page. Without these the linter calls a page hero "unused", which
+// is how a real orphan gets lost among false ones.
 slots.push([featured.image, 'testimonials featured'])
+for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.jsx'))) {
+  const src = readFileSync(`src/pages/${file}`, 'utf8')
+  for (const m of src.matchAll(/image="([a-z0-9-]+)"/g)) slots.push([m[1], `${file} hero`])
+}
 for (const t of testimonials) {
   if (t.avatar) slots.push([t.avatar, `testimonial avatar (${t.name})`])
 }
