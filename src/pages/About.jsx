@@ -35,7 +35,7 @@ export default function About() {
   return (
     <>
       <PageHero
-        image="rice-road-aerial"
+        image="cliff-coast-aerial"
         eyebrow="About us"
         title={<>A small outfit, <span className="flourish-light">from here</span></>}
         lead={`${site.name} is a Lombok-based travel bureau. One island group, a short list of trips, and nothing on that list we have not done ourselves.`}

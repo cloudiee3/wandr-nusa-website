@@ -23,6 +23,7 @@ const PHOTO_MAP = {
   // The first frame in the library with people in it.
   'travellers-viewpoint':['Travellers Viewpoint.jpg', 'Three travellers at the edge of a lake, one pointing out across the water towards the hills'],
   'travellers-laughing': ['Travellers Laughing.jpg', 'Four travellers laughing together on a morning walk, one pointing off towards the hills behind them'],
+  'cliff-coast-aerial':  ['Cliff Coast Aerial.jpg', 'A turquoise bay seen from directly above, with wooded limestone stacks standing off a white beach and terraced headlands behind it'],
   // Square head-and-shoulders crops, sized for the testimonial avatars.
   'portrait-train':      ['Portrait Train.jpg', 'A traveller with a backpack leaning out of a train doorway, smiling'],
   'portrait-ferry':      ['Portrait Ferry.jpg', 'A traveller waving from the deck of a ferry, a case in one hand'],

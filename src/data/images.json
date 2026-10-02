@@ -110,6 +110,18 @@
     ],
     "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBQCdASoUABkAPvlop06qpiMiMAwBUB8JZQC90CElwcIy6oPITy1n0aSdS8qekScBPAD+w1mLvWg9wUdNJCMCKZF1rAapEAecDpphZJy32CfMcDRX+Prg69uLAFrkZAg2sp8AQbk0dl1JoPF1msUGvKAAAA=="
   },
+  "cliff-coast-aerial": {
+    "alt": "A turquoise bay seen from directly above, with wooded limestone stacks standing off a white beach and terraced headlands behind it",
+    "ratio": 1.3342,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwBACdASoUAA8APwFqrU8rJaQiMAgBYCAJbACdACG7kHBFmwVFZ1bWgBAA/rkNdMUthhiC3TZ0hYgZ7JTKJ+Y9h+CMeZ56s22iYtv3VK2PD9QrImeXIMQA"
+  },
   "portrait-train": {
     "alt": "A traveller with a backpack leaning out of a train doorway, smiling",
     "ratio": 1,
