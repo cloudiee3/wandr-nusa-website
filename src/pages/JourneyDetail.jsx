@@ -10,6 +10,7 @@ import EnquiryForm from '../components/EnquiryForm'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import { bySlug, formatPrice, fromPrice, journeys } from '../data/journeys'
 import { byRequest, whatsappLink } from '../data/site'
+import { readSearch } from '../lib/search'
 
 export default function JourneyDetail() {
   const { slug } = useParams()
@@ -17,10 +18,8 @@ export default function JourneyDetail() {
   const j = bySlug(slug)
   if (!j) return <Navigate to="/journeys" replace />
 
-  // Arriving from the hero search with a place we don’t run a fixed trip to.
-  const place = params.get('place')
-  const adults = params.get('adults')
-  const children = params.get('children')
+  // Arriving from the hero search, which carries the dates and the party size.
+  const search = readSearch(params)
 
   const others = journeys
     .filter((x) => x.slug !== j.slug)
@@ -222,12 +221,9 @@ export default function JourneyDetail() {
           </div>
           <EnquiryForm
             defaultTrip={j.title}
-            defaultMessage={place ? `I’d like to go to ${place}.` : ''}
-            defaultTravellers={
-              adults
-                ? `${adults} ${adults === '1' ? 'adult' : 'adults'}, ${children ?? 0} ${children === '1' ? 'child' : 'children'}`
-                : ''
-            }
+            defaultMessage={search.place ? `I’d like to go to ${search.place}.` : ''}
+            defaultTravellers={search.travellers}
+            defaultDates={search.dates}
           />
         </div>
       </section>

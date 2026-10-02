@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { buildSearch } from '../lib/search'
 import { ArrowRight, BedDouble, Car, Globe, Minus, Plus, Users } from 'lucide-react'
 import { optionValue, searchGroups } from '../data/destinations'
 import { OTHER_PLACE, stayGroups, transferGroups } from '../data/site'
@@ -32,18 +33,18 @@ export default function SearchWidget() {
     const people = { adults: String(adults), children: String(children) }
 
     if (tab === 'transport') {
-      navigate(`/contact?${new URLSearchParams({ type: 'transport', pickup, dropoff, date: from, ...people })}`)
+      navigate(`/contact?${buildSearch({ type: 'transport', pickup, dropoff, date: from, ...people })}`)
       return
     }
     if (tab === 'stays') {
-      navigate(`/contact?${new URLSearchParams({ type: 'stay', area, from, to, ...people })}`)
+      navigate(`/contact?${buildSearch({ type: 'stay', area, from, to, ...people })}`)
       return
     }
     if (dest === 'custom') {
-      navigate(`/journeys/custom-private-journey?from=${from}&to=${to}&adults=${adults}&children=${children}`)
+      navigate(`/journeys/custom-private-journey?${buildSearch({ from, to, ...people })}`)
       return
     }
-    const q = new URLSearchParams({ kind: 'journeys', from, to, ...people })
+    const q = new URLSearchParams(buildSearch({ kind: 'journeys', from, to, ...people }))
     // A destination slug filters the catalogue; a "place:" option is somewhere
     // we don’t run a fixed departure yet, so the journeys page offers to plan it.
     if (dest.startsWith('place:')) q.set('place', dest.slice(6))

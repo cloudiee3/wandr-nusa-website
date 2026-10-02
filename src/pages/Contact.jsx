@@ -5,42 +5,35 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import EnquiryForm from '../components/EnquiryForm'
 import { site, whatsappLink } from '../data/site'
-
-const fmt = (s) => {
-  const d = new Date(s)
-  return Number.isNaN(+d) ? s : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
-}
+import { readSearch } from '../lib/search'
 
 /** The hero widget sends Transport and Stays enquiries here with their answers
  *  in the query string; turn those into a message the traveller can edit. */
 function prefillFrom(params) {
-  const type = params.get('type')
-  const adults = params.get('adults') ?? '2'
-  const kids = params.get('children') ?? '0'
-  const who = `${adults} ${adults === '1' ? 'adult' : 'adults'}, ${kids} ${kids === '1' ? 'child' : 'children'}`
+  const s = readSearch(params)
 
-  if (type === 'transport') {
+  if (s.type === 'transport') {
     return {
       trip: 'Transport / airport transfer',
-      travellers: who,
-      dates: fmt(params.get('date') ?? ''),
+      travellers: s.travellers,
+      dates: s.dates,
       message:
         `Transfer request.\n` +
-        `Pick-up: ${params.get('pickup') ?? ''}\n` +
-        `Drop-off: ${params.get('dropoff') ?? ''}\n` +
-        `Date: ${fmt(params.get('date') ?? '')}`,
+        `Pick-up: ${s.pickup}\n` +
+        `Drop-off: ${s.dropoff}\n` +
+        `Date: ${s.date ?? ''}`,
     }
   }
-  if (type === 'stay') {
+  if (s.type === 'stay') {
     return {
       trip: 'Accommodation',
-      travellers: who,
-      dates: `${fmt(params.get('from') ?? '')} – ${fmt(params.get('to') ?? '')}`,
+      travellers: s.travellers,
+      dates: s.dates,
       message:
         `Room request.\n` +
-        `Area: ${params.get('area') ?? ''}\n` +
-        `Check-in: ${fmt(params.get('from') ?? '')}\n` +
-        `Check-out: ${fmt(params.get('to') ?? '')}`,
+        `Area: ${s.area}\n` +
+        `Check-in: ${s.from ?? ''}\n` +
+        `Check-out: ${s.to ?? ''}`,
     }
   }
   return { trip: '', travellers: '', message: '', dates: '' }

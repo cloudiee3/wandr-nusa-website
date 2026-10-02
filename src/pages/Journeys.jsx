@@ -4,27 +4,18 @@ import { X } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import JourneyCard from '../components/JourneyCard'
 import { spell } from '../lib/spell'
+import { readSearch } from '../lib/search'
 import Reveal from '../components/Reveal'
 import { journeys, categories } from '../data/journeys'
 import { destinations, destBySlug } from '../data/destinations'
 
-const fmtDate = (s) => {
-  if (!s) return null
-  const d = new Date(s)
-  return Number.isNaN(+d) ? null : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
-}
 
 export default function Journeys() {
   const [params, setParams] = useSearchParams()
   const [active, setActive] = useState('All')
 
   // Set by the hero search widget.
-  const dest = params.get('dest')
-  const place = params.get('place')
-  const kind = params.get('kind')
-  const from = fmtDate(params.get('from'))
-  const to = fmtDate(params.get('to'))
-  const people = params.get('people')
+  const { dest, place, kind, from, to, travellers } = readSearch(params)
   const destination = dest ? destBySlug(dest) : null
 
   const shown = useMemo(() => {
@@ -37,7 +28,7 @@ export default function Journeys() {
     return list
   }, [destination, place, kind, active])
 
-  const searched = destination || place || kind || from || people
+  const searched = destination || place || kind || from || travellers
   const clearSearch = () => setParams({}, { replace: true })
 
   return (
@@ -58,7 +49,7 @@ export default function Journeys() {
               {place && <span className="chip chip-on">{place}</span>}
               {kind === 'day' && <span className="chip chip-on">Day trips</span>}
               {from && to && <span className="chip">{from} – {to}</span>}
-              {people && <span className="chip">{people} {people === '1' ? 'traveller' : 'travellers'}</span>}
+              {travellers && <span className="chip">{travellers}</span>}
             </div>
             <button
               type="button"
