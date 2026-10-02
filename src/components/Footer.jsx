@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Ticket } from 'lucide-react'
+import { ArrowRight, Ticket } from 'lucide-react'
 import Logo from './Logo'
 import WhatsAppIcon from './WhatsAppIcon'
 import { InstagramIcon, FacebookIcon } from './SocialIcons'
-import { nav, site } from '../data/site'
+import { nav, site, whatsappLink } from '../data/site'
 
 const links = [...nav, { label: 'Privacy', to: '/privacy' }, { label: 'Terms', to: '/terms' }]
 
@@ -11,7 +11,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-ink-900 text-white">
+    <footer id="contact" className="relative overflow-hidden bg-ink-900 text-white">
       <div className="wrap relative pt-16 lg:pt-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
           {/* The statement leads, the way the reference builds it: wordmark
@@ -28,21 +28,17 @@ export default function Footer() {
               ))}
             </p>
 
-            {/* Two lines rather than a stacked list, so this column finishes
-                at roughly the height of the one beside it. */}
-            <div className="mt-7 text-[0.93rem] text-white/55">
-              <p className="-my-2 flex flex-wrap items-center gap-x-3">
-                <a href={site.phoneHref} className="link-underline py-2 transition-colors hover:text-white">
-                  {site.phone}
-                </a>
-                <span aria-hidden="true" className="text-white/25">·</span>
-                <a href={`mailto:${site.email}`} className="link-underline py-2 transition-colors hover:text-white">
-                  {site.email}
-                </a>
-              </p>
-              <p className="mt-2.5">
-                {site.address.city}, {site.address.region}, {site.address.country}
-              </p>
+            {/* The two actions the closing banner used to carry. The statement
+                above is already the closing line, so they need no heading of
+                their own, and they now reach every page rather than the home
+                page only. */}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/contact" className="btn-accent">
+                Start an Enquiry <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              </Link>
+              <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-ghost-light">
+                <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp Us
+              </a>
             </div>
           </div>
 
@@ -58,6 +54,23 @@ export default function Footer() {
                 </Link>
               ))}
             </nav>
+
+            {/* Over here rather than under the buttons: with the two actions on
+                the left, this is what keeps the columns level. */}
+            <div className="mt-8 text-[0.93rem] text-white/55">
+              <p className="-my-2 flex flex-wrap items-center gap-x-3 lg:justify-end">
+                <a href={site.phoneHref} className="link-underline py-2 transition-colors hover:text-white">
+                  {site.phone}
+                </a>
+                <span aria-hidden="true" className="text-white/25">·</span>
+                <a href={`mailto:${site.email}`} className="link-underline py-2 transition-colors hover:text-white">
+                  {site.email}
+                </a>
+              </p>
+              <p className="mt-2.5">
+                {site.address.city}, {site.address.region}, {site.address.country}
+              </p>
+            </div>
 
             {/* Discs rather than bare glyphs, so four marks in four different
                 brand colours still read as one row. */}

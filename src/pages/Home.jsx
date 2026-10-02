@@ -8,11 +8,10 @@ import JourneyCard from '../components/JourneyCard'
 import SearchWidget from '../components/SearchWidget'
 import Deals from '../components/Deals'
 import DestinationSlider from '../components/DestinationSlider'
-import WhatsAppIcon from '../components/WhatsAppIcon'
 import AboutStrip from '../components/AboutStrip'
 import Testimonials from '../components/Testimonials'
 import { categories, journeys } from '../data/journeys'
-import { hero, site, stats, whatsappLink } from '../data/site'
+import { hero, site, stats } from '../data/site'
 
 // The home grid carries the whole catalogue while it still fits inside a
 // reasonable scroll. Past this the remainder goes behind one button that
@@ -243,31 +242,6 @@ export default function Home() {
       {/* ── Destinations ─────────────────────────────────────── */}
       <DestinationSlider />
 
-      {/* ── Closing CTA ──────────────────────────────────────── */}
-      <section
-        id="contact"
-        className="relative z-10 -mt-10 overflow-hidden rounded-t-[2rem] shadow-[0_-30px_60px_-20px_rgba(11,26,40,0.55)]
-                   lg:-mt-16 lg:rounded-t-[3rem]"
-      >
-        <Img name="coastline-aerial" sizes="100vw" className="absolute inset-0 h-full w-full" />
-        <div className="absolute inset-0 bg-ink-900/70" />
-        <div className="wrap relative py-20 text-center lg:py-28">
-          <Reveal as="h2" delay={90} className="mx-auto max-w-2xl text-[2rem] leading-[1.12] !text-white sm:text-[2.9rem]">
-            Tell us roughly what you want. <span className="flourish-light">We’ll do the rest.</span>
-          </Reveal>
-          <Reveal as="p" delay={170} className="mx-auto mt-5 max-w-lg text-white/65">
-            Every enquiry is answered by a person, usually within one working day.
-          </Reveal>
-          <Reveal delay={250} className="mt-9 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="btn-accent">
-              Start an Enquiry <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-            </Link>
-            <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-ghost-light">
-              <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp Us
-            </a>
-          </Reveal>
-        </div>
-      </section>
     </>
   )
 }
