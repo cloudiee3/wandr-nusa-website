@@ -2,7 +2,7 @@
 // twice in one card, two cards sharing a cover, a link to a trip that no
 // longer exists, a filter chip with nothing behind it.
 //   npm run check
-import { journeys, categories } from '../src/data/journeys.js'
+import { journeys, categories, formatPrice } from '../src/data/journeys.js'
 import { destinations } from '../src/data/destinations.js'
 import { featured, testimonials } from '../src/data/testimonials.js'
 import images from '../src/data/images.json' with { type: 'json' }
@@ -108,6 +108,24 @@ for (const [kind, items, fields] of [
       }
     }
   }
+}
+
+// ── The price formatter, pinned by example ───────────────────────────
+// A round ten million used to publish as "IDR 1m", because the old trailing
+// zero strip was not guarded on the decimal point. These cases cover that,
+// the truncation that keeps 4,999,999 off 5M, and the capital M and K.
+for (const [value, want] of [
+  [0, 'On request'],
+  [400_000, 'IDR 400K'],
+  [999_999, 'IDR 999K'],
+  [2_750_000, 'IDR 2.75M'],
+  [4_999_999, 'IDR 4.99M'],
+  [5_500_000, 'IDR 5.5M'],
+  [10_000_000, 'IDR 10M'],
+  [100_000_000, 'IDR 100M'],
+]) {
+  const got = formatPrice(value)
+  if (got !== want) problems.push(`formatPrice(${value}) is "${got}", expected "${want}"`)
 }
 
 // ── No em dashes anywhere a visitor can read ──────────────────────────

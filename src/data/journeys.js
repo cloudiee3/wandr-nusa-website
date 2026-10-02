@@ -480,11 +480,23 @@ export const categories = [
   'Private & Custom Trips',
 ]
 
-/** "4.65m" / "750k": the figure only, for cards that render the currency separately. */
+// Trailing zeros only count after a decimal point. Guarding on the dot is the
+// whole fix: the old /\.?0+$/ ate the last digit of a round "10", so a trip at
+// ten million published as "IDR 1m".
+const trimZeros = (s) => (s.includes('.') ? s.replace(/0+$/, '').replace(/\.$/, '') : s)
+
+/**
+ * Truncates rather than rounds, so 4,999,999 reads 4.99M and never 5M. A
+ * published figure that rounds up is one we would have to defend on the phone.
+ */
+function compact(value) {
+  if (value >= 1_000_000) return `${trimZeros((Math.floor(value / 10_000) / 100).toFixed(2))}M`
+  return `${Math.floor(value / 1000)}K`
+}
+
+/** "4.65M" / "750K": the figure only, for cards that render the currency separately. */
 export function priceFigure(value) {
-  if (!value) return null
-  if (value >= 1_000_000) return (value / 1_000_000).toFixed(2).replace(/\.?0+$/, '') + 'm'
-  return (value / 1000).toFixed(0) + 'k'
+  return value ? compact(value) : null
 }
 
 /**
@@ -497,12 +509,7 @@ export const fromPrice = (j) => j.pricing?.from ?? j.priceFrom
 
 export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 
-/** 4 650 000 -> "IDR 4.65m", compact enough for a card. */
+/** 4 650 000 -> "IDR 4.65M", compact enough for a card. */
 export function formatPrice(value) {
-  if (!value) return 'On request'
-  if (value >= 1_000_000) {
-    const m = String(Math.floor(value / 10_000) / 100).replace(/\.?0+$/, '')
-    return `IDR ${m}m`
-  }
-  return `IDR ${Math.floor(value / 1000)}k`
+  return value ? `IDR ${compact(value)}` : 'On request'
 }
