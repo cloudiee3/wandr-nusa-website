@@ -25,7 +25,11 @@ for (const d of destinations) {
 slots.push([featured.image, 'testimonials featured'])
 for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.jsx'))) {
   const src = readFileSync(`src/pages/${file}`, 'utf8')
+  // PageHero takes `image`; an <Img> dropped straight into a page takes `name`.
+  // Matching bare name="…" would also catch every form field, so the second
+  // pattern is anchored to the tag.
   for (const m of src.matchAll(/image="([a-z0-9-]+)"/g)) slots.push([m[1], `${file} hero`])
+  for (const m of src.matchAll(/<Img[\s\S]{0,240}?name="([a-z0-9-]+)"/g)) slots.push([m[1], `${file} image`])
 }
 for (const t of testimonials) {
   if (t.avatar) slots.push([t.avatar, `testimonial avatar (${t.name})`])

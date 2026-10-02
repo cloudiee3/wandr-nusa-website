@@ -82,7 +82,7 @@ export default function About() {
             whatever the copy grows or shrinks to. */}
         <Reveal delay={120} className="group lg:h-full">
           <Img
-            name="rice-field-huts"
+            name="gili-meno-beach"
             sizes="(min-width:1024px) 38vw, 100vw"
             className="aspect-[4/5] w-full overflow-hidden rounded-3xl lg:aspect-auto lg:h-full"
             imgClassName="transition-transform duration-[1600ms] ease-out group-hover:scale-[1.05]"

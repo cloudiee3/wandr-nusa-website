@@ -122,6 +122,18 @@
     ],
     "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwBACdASoUAA8APwFqrU8rJaQiMAgBYCAJbACdACG7kHBFmwVFZ1bWgBAA/rkNdMUthhiC3TZ0hYgZ7JTKJ+Y9h+CMeZ56s22iYtv3VK2PD9QrImeXIMQA"
   },
+  "gili-meno-beach": {
+    "alt": "A thatched umbrella and a driftwood swing standing on the sand at Gili Meno, with the mountains of Lombok across the water behind them",
+    "ratio": 1.7778,
+    "sizes": [
+      480,
+      800,
+      1280,
+      1920,
+      2000
+    ],
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoUAAsAPwFqrE6rJiQiMAgBYCAJbACdEf/gMRSaMqqKLE2+AAD9lstYNgG/nj1YCnZYO4iSCYWqI9xtvjc40U6Elqye3xafotifQCNwGrfVwkRwo4AAAA=="
+  },
   "portrait-train": {
     "alt": "A traveller with a backpack leaning out of a train doorway, smiling",
     "ratio": 1,
