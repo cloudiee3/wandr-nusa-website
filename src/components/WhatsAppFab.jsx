@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import WhatsAppIcon from './WhatsAppIcon'
 import { whatsappLink } from '../data/site'
 
-/** Floating WhatsApp button — appears once the hero is behind you. */
+/** Floating WhatsApp button, shown once the hero is behind you. */
 export default function WhatsAppFab() {
   const [show, setShow] = useState(false)
 

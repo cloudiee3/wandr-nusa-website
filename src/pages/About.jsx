@@ -16,7 +16,7 @@ const values = [
   {
     icon: HeartHandshake,
     title: 'Direct, fair pay',
-    body: 'Guides, drivers and porters are hired directly and paid above the regional standard — no agency taking a cut in the middle.',
+    body: 'Guides, drivers and porters are hired directly and paid above the regional standard, with no agency taking a cut in the middle.',
   },
   {
     icon: Leaf,
@@ -54,13 +54,13 @@ export default function About() {
           </Reveal>
           <Reveal as="p" delay={150} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
             So we built it. A permanent crew of guides and drivers, a fleet we maintain ourselves, and routes
-            that were walked before they were written down. We keep the map small on purpose — everything we
+            that were walked before they were written down. We keep the map small on purpose. Everything we
             run is within a few hours of the office in Senggigi, which is why we can answer a question about
             the trail conditions on Rinjani with something other than a guess.
           </Reveal>
 
           {/* Three columns crush these labels on a phone, and an odd count leaves
-              the divider grid showing an empty cell — so the last stat stretches
+              the divider grid showing an empty cell, so the last stat stretches
               across whatever is left of its row. With five, that fills both. */}
           <Reveal delay={210} className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/[0.08] bg-ink/[0.06] sm:grid-cols-3">
             {stats.map((s, i) => (

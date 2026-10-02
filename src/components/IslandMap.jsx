@@ -1,7 +1,7 @@
 import islands from '../data/islands.json'
 
 // Real coordinates; the projection below matches the one in scripts/build-map.mjs.
-// `lead` is the leader-line length and `anchor` the text alignment — both are
+// `lead` is the leader-line length and `anchor` the text alignment. Both are
 // tuned so the labels in the tight Lombok cluster don’t collide.
 const PLACES = [
   { name: 'Gili Islands', lon: 116.04, lat: -8.35, place: 'above', lead: 30, anchor: 'end',    dx: 8 },
@@ -9,7 +9,7 @@ const PLACES = [
   { name: 'Komodo',       lon: 119.49, lat: -8.58, place: 'below', lead: 14, anchor: 'middle', dx: 0 },
 ]
 
-// Where we’re based — gets the pulse.
+// Where we’re based, so it gets the pulse.
 const BASE = { lon: 116.04, lat: -8.49 }
 
 // The drawn route. Between Lombok and Komodo it carries two waypoints in the

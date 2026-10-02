@@ -182,7 +182,7 @@ export default function JourneyDetail() {
         )}
       </section>
 
-      {/* Anything on this list can be added to any trip — a day out becomes a
+      {/* Anything on this list can be added to any trip: a day out becomes a
           stay, and the room, the driver and the table come with it. */}
       <section className="wrap pb-4 lg:pb-8">
         <Reveal>

@@ -38,7 +38,7 @@ export const site = {
   ],
 }
 
-// Hero copy — edit here rather than in the component.
+// Hero copy. Edit here rather than in the component.
 export const hero = {
   badge: 'Top Destination',
   // The last word is picked out in the accent colour.
@@ -55,7 +55,7 @@ export const transferGroups = [
     group: 'Airports',
     options: [
       'Lombok Airport (LOP)',
-      'Bali \u2014 Ngurah Rai (DPS)',
+      'Ngurah Rai, Bali (DPS)',
     ],
   },
   {
@@ -83,8 +83,8 @@ export const transferGroups = [
   {
     group: 'Rinjani Trailheads',
     options: [
-      'Rinjani \u2014 Sembalun Gate',
-      'Rinjani \u2014 Senaru Gate',
+      'Sembalun Gate, Rinjani',
+      'Senaru Gate, Rinjani',
     ],
   },
 ]
@@ -145,10 +145,10 @@ export const trustSignals = [
 
 // A new agency has no track record to point at, so these are promises we keep
 // from day one rather than totals we have not earned yet. Every one of them is
-// within our control — check each still holds before it goes live.
+// within our control, so check each still holds before it goes live.
 // `text` renders as written; anything with `value` counts up when it scrolls in.
 // Offered on every trip, not just the ones that say so. A day trip can grow
-// into a stay, and the driver, the room and the table are all arrangeable —
+// into a stay, and the driver, the room and the table are all arrangeable,
 // which is the difference between an operator and a listing.
 export const byRequest = [
   { title: 'Somewhere to stay', body: 'Homestays, guesthouses and villas near the route, booked and paid on your behalf.' },

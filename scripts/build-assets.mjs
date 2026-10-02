@@ -26,7 +26,7 @@ const PHOTO_MAP = {
   // Square head-and-shoulders crops, sized for the testimonial avatars.
   'portrait-train':      ['Portrait Train.jpg', 'A traveller with a backpack leaning out of a train doorway, smiling'],
   'portrait-ferry':      ['Portrait Ferry.jpg', 'A traveller waving from the deck of a ferry, a case in one hand'],
-  'kenawa-island':       ['Kenawa Island.webp', 'Kenawa island from the air — one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind'],
+  'kenawa-island':       ['Kenawa Island.webp', 'Kenawa island from the air: one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind'],
   'lombok-beach-stay':   ['Lombok Beach Stay.jpg', 'Beachfront villas and a pool above white sand and clear water on the Lombok coast'],
   'selong-belanak':      ['Selong Belanak Bay.jpg', 'The long white curve of Selong Belanak, a fishing fleet moored off it and green hills behind'],
   'bukit-merese':        ['Bukit Merese.jpg', 'The green headland of Bukit Merese running out into the sea, with surf breaking along the rocks'],
@@ -49,7 +49,7 @@ const PHOTO_MAP = {
   // is not part of the waterfall day, so it stays off that card.
   'aik-berik-tubing':    ['Aik Berik Tubing.jpg', 'A raft running the whitewater on the river at Aik Berik'],
   'underwater-statues':  ['pexels-ericjo-31973396.jpg', 'A ring of underwater statues standing on the sand, a snorkeller above them'],
-  // Which gili is which in these two is still open — see CONTENT-REVIEW.md.
+  // Which gili is which in these two is still open: see CONTENT-REVIEW.md.
   // The alt text says what is in the frame rather than guessing a name.
   'gili-islands-aerial': ['Gili Islands Aerial.webp', 'Two of the Gili islands from the air, reef and moored boats below and Lombok on the horizon'],
   'gili-salt-lake':      ['Gili Salt Lake.webp', 'A Gili island from above, its salt lake inland and the reef flat running all the way round it'],

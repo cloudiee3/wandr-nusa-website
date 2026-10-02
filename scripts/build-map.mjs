@@ -1,5 +1,5 @@
 // Turns Natural Earth 10m land data into the SVG paths for the Lesser Sunda
-// chain — east Java through Bali, Lombok, Sumbawa, Flores, Sumba and Timor.
+// chain: east Java through Bali, Lombok, Sumbawa, Flores, Sumba and Timor.
 // Output: src/data/islands.json. Re-run with `npm run map`.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
 
@@ -109,4 +109,4 @@ writeFileSync('src/data/islands.json', JSON.stringify(out))
 
 console.log(`${rings.length} island shapes, viewBox ${out.viewBox}`)
 console.log(`largest areas: ${rings.slice(0, 8).map((r) => Math.round(r.a)).join(', ')} px²`)
-console.log(`src/data/islands.json — ${(JSON.stringify(out).length / 1024).toFixed(1)} kB`)
+console.log(`src/data/islands.json, ${(JSON.stringify(out).length / 1024).toFixed(1)} kB`)

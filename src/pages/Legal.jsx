@@ -8,7 +8,7 @@ const CONTENT = {
     sections: [
       ['What we collect', `When you send an enquiry we receive the name, email, phone number, travel dates and message you type into the form. If you contact us on WhatsApp we hold that conversation in the same way any WhatsApp user would.`],
       ['Why we hold it', `Solely to answer your enquiry, quote your trip, and run it if you book. We do not sell or rent your details to anyone, and we do not add you to a mailing list unless you ask.`],
-      ['Who else sees it', `Only the people needed to deliver your trip — typically your guide, driver, and any accommodation we book on your behalf. Payment details, where taken, are handled by the payment provider and never stored by us.`],
+      ['Who else sees it', `Only the people needed to deliver your trip, typically your guide, driver, and any accommodation we book on your behalf. Payment details, where taken, are handled by the payment provider and never stored by us.`],
       ['How long we keep it', `Enquiries that do not become bookings are deleted after 24 months. Booking records are kept for seven years, as Indonesian tax law requires.`],
       ['Your rights', `Write to ${site.email} at any time to see what we hold about you, correct it, or have it deleted.`],
       ['Cookies', `This site sets no advertising or tracking cookies.`],

@@ -16,7 +16,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 2750000,
-      note: 'Private departure, two days to the crater rim or three to the summit. The exact figure depends on the route, the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Private departure, two days to the crater rim or three to the summit. The exact figure depends on the route, the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'rinjani-caldera',
     gallery: ['rinjani-sunrise', 'rinjani-lake-view', 'rinjani-barujari'],
@@ -28,12 +28,12 @@ export const journeys = [
       'A night camped at 2,639 m on the crater edge',
       'On the longer route, the summit ridge with Bali’s Agung on the horizon',
       'On the longer route, the hot springs below the lake',
-      'Porters carry camp, food and water — you carry a daypack',
+      'Porters carry camp, food and water, so you carry only a daypack',
     ],
     itinerary: [
       { day: 'Day 1', title: 'Sembalun to the rim', body: 'Shared by both routes. Morning pick-up and permits at the Sembalun gate, then a long open climb across the savannah and the steep pull up to the rim camp at 2,639 m. Camp set and dinner cooked while the caldera goes dark below you.' },
       { day: 'Day 2 · two-day route', title: 'Sunrise, then down', body: 'Up for first light over the lake and the cone. Breakfast at camp, then back down the way you came, off the mountain around the middle of the day and on to your hotel or the airport.' },
-      { day: 'Day 2 · three-day route', title: 'Summit, then the lake', body: 'A pre-dawn start for the scree push to the 3,726 m summit for sunrise. Back to camp for breakfast, then the long descent to Segara Anak — swim, fish, and sit in the hot springs.' },
+      { day: 'Day 2 · three-day route', title: 'Summit, then the lake', body: 'A pre-dawn start for the scree push to the 3,726 m summit for sunrise. Back to camp for breakfast, then the long descent to Segara Anak to swim, fish and sit in the hot springs.' },
       { day: 'Day 3 · three-day route', title: 'Senaru rim and out', body: 'Climb to the Senaru rim through cloud forest and descend to the village. Lunch, a shower, and the transfer back.' },
     ],
     includes: ['National park permits', 'Certified guide and porters', 'Tent, sleeping mat and sleeping bag', 'All meals and drinking water on the mountain', 'Hotel or airport transfers'],
@@ -54,13 +54,13 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 650000,
-      note: 'Private departure. The exact figure depends on the hill, the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Private departure. The exact figure depends on the hill, the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'sembalun-valley',
     gallery: ['sembalun-ridge', 'sembalun-fields', 'sembalun-sign'],
     tags: ['Mountain & Hills', 'Nature', 'Day Trips'],
     summary:
-      'Sembalun sits in a ring of hills, and the right one depends on the morning. Some are an hour of easy climbing to a ridge above the fields; others are three hours and a proper summit. Tell us how far you want to walk and we will pick the hill — Rinjani is the backdrop from all of them.',
+      'Sembalun sits in a ring of hills, and the right one depends on the morning. Some are an hour of easy climbing to a ridge above the fields; others are three hours and a proper summit. Tell us how far you want to walk and we will pick the hill. Rinjani is the backdrop from all of them.',
     highlights: [
       'Sunrise over the valley from a ridge, with Rinjani opposite',
       'A route matched to your legs rather than a fixed itinerary',
@@ -91,28 +91,28 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 400000,
-      note: 'Covers the day itself — tickets, guide and a driver between the stops. Transport from elsewhere on the island is quoted separately; tell us where you are staying.',
+      note: 'Covers the day itself: tickets, guide and a driver between the stops. Transport from elsewhere on the island is quoted separately; tell us where you are staying.',
     },
     image: 'tetebatu-walk',
     gallery: ['tetebatu-field', 'monkey-forest', 'sarang-walet', 'tetebatu-plant'],
     tags: ['Culture & Villages', 'Nature', 'Day Trips'],
     summary:
-      'A day on the green shoulder of Rinjani, at walking pace. Black monkeys in the forest, terraces worked by hand, a waterfall to stand under, and the crafts the villages around here still live on — bamboo, the backstrap loom and the potters at Masbagik.',
+      'A day on the green shoulder of Rinjani, at walking pace. Black monkeys in the forest, terraces worked by hand, a waterfall to stand under, and the crafts the villages around here still live on: bamboo, the backstrap loom and the potters at Masbagik.',
     highlights: [
       'Ebony langurs in the monkey forest above the village',
       'Rice terraces walked with someone who farms them',
-      'Sarang Walet — a thin fall in deep forest, with time to swim',
+      'Sarang Walet, a thin fall in deep forest, with time to swim',
       'Cloves, vanilla and coffee drying in the yards',
       'Bamboo craft and hand weaving, watched from the workshop floor',
       'Earthenware thrown and burnished by hand at Masbagik',
     ],
     itinerary: [
-      { day: 'Stop 1', title: 'Monkey forest', body: 'The forest above the village, where black langurs come down through the canopy. Early is better — they are active and the light is still coming through the trees.' },
+      { day: 'Stop 1', title: 'Monkey forest', body: 'The forest above the village, where black langurs come down through the canopy. Early is better. They are active and the light is still coming through the trees.' },
       { day: 'Stop 2', title: 'Rice terraces', body: 'Out on the paths between the paddies with a guide who works them, through whichever stage the season is at: flooded and mirrored, green, or gold and being cut.' },
       { day: 'Stop 3', title: 'Sarang Walet', body: 'Down through the trees to a narrow fall dropping into a pool in the forest. Quieter than the big ones on the north side, and usually empty. Bring something to swim in.' },
-      { day: 'Stop 4', title: 'Spice gardens', body: 'Cloves, vanilla, coffee and cacao growing and drying around the houses — close enough to crush a leaf and smell it.' },
+      { day: 'Stop 4', title: 'Spice gardens', body: 'Cloves, vanilla, coffee and cacao growing and drying around the houses, close enough to crush a leaf and smell it.' },
       { day: 'Stop 5', title: 'Bamboo and weaving', body: 'The two crafts the village still lives on: bamboo worked by hand, and songket woven on a backstrap loom. Try either if you want to.' },
-      { day: 'Stop 6', title: 'Pottery at Masbagik', body: 'Twenty minutes down the hill, on the full day only. Masbagik is one of the three pottery villages on Lombok — everything is coil-built by hand and fired in the open, and you can sit down and try it.' },
+      { day: 'Stop 6', title: 'Pottery at Masbagik', body: 'Twenty minutes down the hill, on the full day only. Masbagik is one of the three pottery villages on Lombok. Everything is coil-built by hand and fired in the open, and you can sit down and try it.' },
       { day: 'Half day', title: 'A shorter version', body: 'Four or five hours covers the monkey forest, the terraces and one more stop. Tell us which of the five matter most and we will build the morning around them.' },
     ],
     includes: ['Entrance ticket at every stop', 'Local guide', 'Private driver between the stops', 'Drinking water'],
@@ -133,7 +133,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 1300000,
-      note: 'Covers the boat, the guide, lunch and every ticket. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers the boat, the guide, lunch and every ticket. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'gili-kondo-island',
     gallery: ['gili-kondo-sandbar', 'gili-kondo-snorkel', 'gili-kondo-spit', 'gili-kondo-boats'],
@@ -143,14 +143,14 @@ export const journeys = [
     highlights: [
       'Coral close enough to the surface that beginners can see all of it',
       'Mangrove tunnels at Gili Petagan, swimmable at low tide',
-      'White sand with nobody on it — none of the three is inhabited',
+      'White sand with nobody on it, because none of the three is inhabited',
       'Rinjani behind you the whole way out',
       'Lunch on the sand',
     ],
     itinerary: [
       { day: 'Stop 1', title: 'Labuan Pandan', body: 'The harbour on the northeast coast where the boat leaves from. A stop on the way for the old lian trees if the timing works.' },
       { day: 'Stop 2', title: 'Gili Kondo', body: 'The largest of the three and the one with the beach. White sand, shallow water, and Rinjani across the strait behind it.' },
-      { day: 'Stop 3', title: 'Gili Bidara', body: 'The snorkelling stop. Coral sits close to the surface here, which makes it the easiest water on this coast to read — good if it is your first time with a mask.' },
+      { day: 'Stop 3', title: 'Gili Bidara', body: 'The snorkelling stop. Coral sits close to the surface here, which makes it the easiest water on this coast to read. Good if it is your first time with a mask.' },
       { day: 'Stop 4', title: 'Gili Petagan', body: 'Mangrove rather than beach: channels cut through the roots, taken slowly by boat, and swimmable when the tide drops far enough. Different from anything else on the day.' },
     ],
     includes: ['Boat and captain', 'Local guide', 'Snorkelling equipment', 'Lunch', 'Entrance ticket at every stop', 'Drinking water', 'Photographs of the day'],
@@ -171,13 +171,13 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 1000000,
-      note: 'Covers the boat, the captain, the guide and every ticket. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers the boat, the captain, the guide and every ticket. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'pink-beach-wide',
     gallery: ['pink-beach-boat', 'pink-beach-bay', 'pink-beach-outrigger'],
     tags: ['Beaches', 'Diving & Snorkeling', 'Day Trips', 'Nature'],
     summary:
-      'The sand really is pink — red coral ground fine and mixed through the white. A private boat out of Tanjung Luar takes in all three pink beaches, a sandbar that only exists at low tide, and the reef under the three rocks of Gili Petelu.',
+      'The sand really is pink: red coral ground fine and mixed through the white. A private boat out of Tanjung Luar takes in all three pink beaches, a sandbar that only exists at low tide, and the reef under the three rocks of Gili Petelu.',
     highlights: [
       'Sand the colour of watermelon, at three separate beaches',
       'Gili Pasir, a sandbar that surfaces and vanishes with the tide',
@@ -186,7 +186,7 @@ export const journeys = [
       'Photographs of the day, taken as you go',
     ],
     itinerary: [
-      { day: 'Stop 1', title: 'Tanjung Luar', body: 'The working harbour in the southeast, and where the boat waits. The fish market here is the largest on Lombok — worth ten minutes if you have the stomach for it.' },
+      { day: 'Stop 1', title: 'Tanjung Luar', body: 'The working harbour in the southeast, and where the boat waits. The fish market here is the largest on Lombok, worth ten minutes if you have the stomach for it.' },
       { day: 'Stop 2', title: 'Pink Beach', body: 'The main beach, and the one people come for. Best early, before the light goes flat and the day boats arrive.' },
       { day: 'Stop 3', title: 'Gili Pasir', body: 'A bar of sand with nothing on it, which appears as the tide drops and is gone again by afternoon. Timing is the whole trick.' },
       { day: 'Stop 4', title: 'Gili Petelu', body: 'Three rocks standing out of the water with the reef sheltering behind them. The snorkelling stop, and the best of the water on this coast.' },
@@ -210,13 +210,13 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 700000,
-      note: 'Covers the driving, the tickets and a guide for the walk. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers the driving, the tickets and a guide for the walk. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'benang-kelambu',
     gallery: ['benang-kelambu-curtain', 'benang-stokel'],
     tags: ['Waterfalls', 'Nature', 'Day Trips'],
     summary:
-      'Two waterfalls on the southern slope of Rinjani that could not be less alike. Benang Stokel drops in one hard column; twenty-five minutes further up, Benang Kelambu comes through the vegetation in dozens of separate threads — kelambu is the Sasak word for a mosquito net, and that is exactly what it looks like.',
+      'Two waterfalls on the southern slope of Rinjani that could not be less alike. Benang Stokel drops in one hard column; twenty-five minutes further up, Benang Kelambu comes through the vegetation in dozens of separate threads. Kelambu is the Sasak word for a mosquito net, and that is exactly what it looks like.',
     highlights: [
       'Benang Kelambu falling in threads through the greenery, straight into a pool you can stand in',
       'Benang Stokel, a single hard column ten minutes from the gate',
@@ -248,7 +248,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 1000000,
-      note: 'Covers the driving, the tickets, a guide and lunch. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers the driving, the tickets, a guide and lunch. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'selong-belanak',
     gallery: ['bukit-merese', 'mandalika-circuit', 'sade-village'],
@@ -259,15 +259,15 @@ export const journeys = [
       'Bukit Merese late in the afternoon, Tanjung Aan on one side and open ocean on the other',
       'Sade, where the houses are still bamboo, thatch and swept clay',
       'The Mandalika circuit on its headland, with the bay behind it',
-      'Selong Belanak — a kilometre of white sand and the gentlest surf in Lombok',
+      'Selong Belanak, a kilometre of white sand and the gentlest surf in Lombok',
       'The sand at Tanjung Aan, coarse round grains that really do look like peppercorns',
       'Photographs of the day, taken as you go',
     ],
     itinerary: [
-      { day: 'Stop 1', title: 'Sade', body: 'On the main road down to the coast, so it goes first. Around 150 houses of bamboo, thatch and packed clay, lived in rather than preserved. Someone from the village walks you through it, including how the floors are made — ask, it is the part everyone remembers.' },
+      { day: 'Stop 1', title: 'Sade', body: 'On the main road down to the coast, so it goes first. Around 150 houses of bamboo, thatch and packed clay, lived in rather than preserved. Someone from the village walks you through it, including how the floors are made. Ask about it, because it is the part everyone remembers.' },
       { day: 'Stop 2', title: 'Kuta Beach', body: 'The town beach and the reason the rest of this exists. Coarse pale sand, a bay calm enough to swim in, and the warungs behind it where lunch usually happens.' },
       { day: 'Stop 3', title: 'Bukit Seger', body: 'Ten minutes up the grass just east of Kuta for the view back across the bay. This is the hill in the Putri Mandalika story, and every February the whole coast comes down here for the Bau Nyale sea-worm festival.' },
-      { day: 'Stop 4', title: 'The Mandalika circuit', body: 'The MotoGP track, built across the headland with the sea on three sides — one of very few circuits anywhere with that view. You see it from the road and the viewpoints above it; whether you can go inside depends on what is running that week, and we will tell you before you book.' },
+      { day: 'Stop 4', title: 'The Mandalika circuit', body: 'The MotoGP track, built across the headland with the sea on three sides, one of very few circuits anywhere with that view. You see it from the road and the viewpoints above it; whether you can go inside depends on what is running that week, and we will tell you before you book.' },
       { day: 'Stop 5', title: 'Tanjung Aan', body: 'A double horseshoe bay east of the circuit, and the strangest sand on the island: coarse round grains like peppercorns that will not stick to you.' },
       { day: 'Stop 6', title: 'Bukit Merese', body: 'The grass headland past Tanjung Aan. Fifteen minutes up and you have the bay on one side, open ocean on the other and the cliffs running away east. The best half hour on this coast, and it is better the later you leave it.' },
       { day: 'Stop 7', title: 'Selong Belanak', body: 'West of Kuta and worth the drive out. A kilometre of white sand, a fishing fleet moored off it, and waves gentle enough that this is where most of Lombok learns to surf. Boards and instructors are right there on the sand if you want an hour of it.' },
@@ -290,7 +290,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 800000,
-      note: 'Covers the driving, the gate at Senaru and a guide for the walk. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers the driving, the gate at Senaru and a guide for the walk. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'sendang-gile',
     gallery: ['tiu-kelep', 'jungle-waterfall'],
@@ -307,8 +307,8 @@ export const journeys = [
     ],
     itinerary: [
       { day: 'Stop 1', title: 'Rinjani from Senaru', body: 'The road climbs to about 600 metres and the mountain fills the view behind the village. Ten minutes at the viewpoint before the gate, and on a clear morning it is the best look at the north face you will get without walking up it.' },
-      { day: 'Stop 2', title: 'Sendang Gile', body: 'A few hundred steps down from the gate, ten minutes at an easy pace. One column dropping into a shallow pool with a rail across the front of it — close enough to feel the spray, and the easier of the two by a long way.' },
-      { day: 'Stop 3', title: 'Tiu Kelep', body: 'Twenty minutes further on, across the river and along the old irrigation tunnel cut through the hillside. It opens into an amphitheatre with water coming off the whole rim, and a pool deep enough to swim in. After heavy rain the crossing closes — if that happens we tell you before you travel rather than drive you up there to find out.' },
+      { day: 'Stop 2', title: 'Sendang Gile', body: 'A few hundred steps down from the gate, ten minutes at an easy pace. One column dropping into a shallow pool with a rail across the front of it, close enough to feel the spray, and the easier of the two by a long way.' },
+      { day: 'Stop 3', title: 'Tiu Kelep', body: 'Twenty minutes further on, across the river and along the old irrigation tunnel cut through the hillside. It opens into an amphitheatre with water coming off the whole rim, and a pool deep enough to swim in. After heavy rain the crossing closes. If that happens we tell you before you travel rather than drive you up there to find out.' },
       { day: 'Stop 4', title: 'The monkey forest', body: 'Long-tailed macaques live along the forest road and are entirely used to cars stopping. Worth ten minutes on the way back, and worth not feeding.' },
     ],
     includes: ['Air-conditioned transport', 'Entrance tickets at the gate', 'Local guide for the walk', 'Drinking water', 'Photographs of the day'],
@@ -329,7 +329,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 1500000,
-      note: 'Covers the boat, the captain, the guide and the gear. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers the boat, the captain, the guide and the gear. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'underwater-statues',
     gallery: ['gili-islands-aerial', 'gili-salt-lake', 'coastline-aerial'],
@@ -340,11 +340,11 @@ export const journeys = [
       'Green turtles on the reef shelf off Gili Meno',
       'The ring of underwater statues off Meno, shallow enough to snorkel down to',
       'A private boat, so the order of the islands and the time at each one is yours',
-      'Nothing with an engine on any of the three — you walk, cycle or take a pony cart',
+      'Nothing with an engine on any of the three, so you walk, cycle or take a pony cart',
       'GoPro footage of the day, handed over before you go home',
     ],
     itinerary: [
-      { day: 'Stop 1', title: 'The crossing', body: 'Out of Bangsal on a boat booked for your group alone, about half an hour across. In the west monsoon, roughly December to February, the channel turns choppy — if it is not worth going we tell you the night before rather than on the beach.' },
+      { day: 'Stop 1', title: 'The crossing', body: 'Out of Bangsal on a boat booked for your group alone, about half an hour across. In the west monsoon, roughly December to February, the channel turns choppy. If it is not worth going we tell you the night before rather than on the beach.' },
       { day: 'Stop 2', title: 'Gili Trawangan', body: 'The biggest of the three and the furthest out, so it goes first. Snorkel the reef off the east side, then time ashore. The island is small enough to walk a good part of, and there is not a single car on it.' },
       { day: 'Stop 3', title: 'Gili Meno', body: 'The quiet one in the middle, and the reason most people book the day. Green turtles feed on the shallow shelf here, and the ring of underwater statues stands on the sand close enough in to snorkel down to. There is a salt lake inland if you walk across.' },
       { day: 'Stop 4', title: 'Gili Air', body: 'Closest to Lombok and the most liveable of the three. Swim off the east side, walk the sand track behind the beach, then the run back to Bangsal with the light going.' },
@@ -367,7 +367,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 5500000,
-      note: 'Covers three nights, all the driving, the boat, a guide, tickets and most of the meals. The exact figure depends on the size of your group and which hotel you want — ask and we will quote it.',
+      note: 'Covers three nights, all the driving, the boat, a guide, tickets and most of the meals. The exact figure depends on the size of your group and which hotel you want. Ask and we will quote it.',
     },
     image: 'lombok-beach-stay',
     gallery: ['bukit-merese', 'gili-islands-aerial', 'tiu-kelep', 'sade-village', 'underwater-statues', 'selong-belanak'],
@@ -375,7 +375,7 @@ export const journeys = [
     summary:
       'Four days and three nights, airport to airport, covering what people actually come to Lombok for. The south coast and the Sasak villages on the first day, the three Gilis and their reefs on the second, the north and its waterfalls on the third, and the potters and the pearl market on the way back to your flight.',
     highlights: [
-      'Three snorkel stops in one morning — the fish gardens off Air, the statues and the turtle point off Meno',
+      'Three snorkel stops in one morning: the fish gardens off Air, the statues and the turtle point off Meno',
       'Bukit Merese at the end of the first afternoon, with the light going',
       'Sendang Gile and Tiu Kelep, and the river crossing to the second one',
       'All three Sasak crafts: weaving at Sukarara, the houses at Sade, the potters at Banyumulek',
@@ -383,9 +383,9 @@ export const journeys = [
       'Three nights, all the driving and most of the meals in one figure',
     ],
     itinerary: [
-      { day: 'Day 1', title: 'The south coast and the Sasak villages', body: 'Collected at the airport and straight out. Sukarara for the weaving, Sade for the houses, then Kuta beach and lunch on it. The afternoon runs east — Seger hill, the Mandalika circuit, Tanjung Aan, and Bukit Merese with the light going. Selong Belanak on the way back, dinner, and into the hotel.' },
-      { day: 'Day 2', title: 'The three Gilis', body: 'Out of Kecinan by boat. Gili Air first for the fish gardens, then Meno for the underwater statues and the turtle point, then Trawangan for lunch and the rest of the afternoon — bicycles and horse carts are there if you want them, at your own cost. Back to Kecinan, dinner, hotel.' },
-      { day: 'Day 3', title: 'North Lombok and the waterfalls', body: 'Up the coast to Bayan, where the oldest mosque on the island still stands in bamboo and thatch, then Senaru for Sendang Gile and Tiu Kelep. Lunch, then back down the coast road with the Malimbu and Villa Hantu viewpoints on the way — the best half hour of driving in Lombok, and it is better late in the day.' },
+      { day: 'Day 1', title: 'The south coast and the Sasak villages', body: 'Collected at the airport and straight out. Sukarara for the weaving, Sade for the houses, then Kuta beach and lunch on it. The afternoon runs east: Seger hill, the Mandalika circuit, Tanjung Aan, and Bukit Merese with the light going. Selong Belanak on the way back, dinner, and into the hotel.' },
+      { day: 'Day 2', title: 'The three Gilis', body: 'Out of Kecinan by boat. Gili Air first for the fish gardens, then Meno for the underwater statues and the turtle point, then Trawangan for lunch and the rest of the afternoon. Bicycles and horse carts are there if you want them, at your own cost. Back to Kecinan, dinner, hotel.' },
+      { day: 'Day 3', title: 'North Lombok and the waterfalls', body: 'Up the coast to Bayan, where the oldest mosque on the island still stands in bamboo and thatch, then Senaru for Sendang Gile and Tiu Kelep. Lunch, then back down the coast road with the Malimbu and Villa Hantu viewpoints on the way. That is the best half hour of driving in Lombok, and it is better late in the day.' },
       { day: 'Day 4', title: 'Mataram, the potters and your flight', body: 'Check out and into town. The souvenir centre for pearls, cloth and honey, then Banyumulek, where the pots are coil-built and open-fired by hand. The airport after that, with time to spare.' },
     ],
     includes: ['Three nights of hotel', 'Airport pick-up and drop-off', 'Private transport and driver throughout', 'Local guide', 'Private boat to the Gilis', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Lunch and dinner on days one to three', 'Drinking water'],
@@ -406,7 +406,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 4999999,
-      note: 'Covers four nights, the ferry both ways, every boat, the driving, a guide and the tickets. The exact figure depends on the size of your group and where we collect you — ask and we will quote it.',
+      note: 'Covers four nights, the ferry both ways, every boat, the driving, a guide and the tickets. The exact figure depends on the size of your group and where we collect you. Ask and we will quote it.',
     },
     image: 'kenawa-island',
     gallery: [],
@@ -415,18 +415,18 @@ export const journeys = [
       'The island next door, which almost nobody crosses to. Five days of it: the empty islands off the west coast, a sultan’s palace built entirely of wood, the terraced pools on Moyo, and a morning in Saleh Bay swimming beside whale sharks.',
     highlights: [
       'Whale sharks in Saleh Bay at first light, in the water with them',
-      'Mata Jitu on Moyo — terraced limestone pools, and the one Diana swam in',
+      'Mata Jitu on Moyo: terraced limestone pools, and the one Diana swam in',
       'Kenawa at sunset: one hill, one beach, one jetty and nothing else',
       'Takat Sagele, a sandbar in open water with reef down both sides',
       'Mantar, six hundred metres up, where the whole strait opens out',
       'Istana Dalam Loka, one of the largest wooden buildings left in Indonesia',
     ],
     itinerary: [
-      { day: 'Day 1', title: 'Across the strait, and up to Mantar', body: 'The ferry from Kayangan to Poto Tano, an hour and a half with Rinjani going small behind you. Then up to Mantar — a village on a plateau six hundred metres above the water, where the whole Alas Strait opens out and the paragliders launch. Down to the coast for the night.' },
-      { day: 'Day 2', title: 'Kenawa and the islands around it', body: 'Kenawa first: one green hill, one white beach, one wooden jetty, nothing else. Then Paserang and Kambing, and Pasir Bintang for the sand it is named after. Takat Sagele in the middle of the day — a bare sandbar in open water with reef running down both sides, and the best snorkelling on this coast.' },
-      { day: 'Day 3', title: 'East to Sumbawa Besar', body: 'The drive east along the north coast. Istana Dalam Loka in town — the sultan’s palace, raised on ironwood stilts in 1885 and still one of the largest wooden buildings in the country. Kalela waterfall in the hills inland before the light goes.' },
+      { day: 'Day 1', title: 'Across the strait, and up to Mantar', body: 'The ferry from Kayangan to Poto Tano, an hour and a half with Rinjani going small behind you. Then up to Mantar, a village on a plateau six hundred metres above the water, where the whole Alas Strait opens out and the paragliders launch. Down to the coast for the night.' },
+      { day: 'Day 2', title: 'Kenawa and the islands around it', body: 'Kenawa first: one green hill, one white beach, one wooden jetty, nothing else. Then Paserang and Kambing, and Pasir Bintang for the sand it is named after. Takat Sagele in the middle of the day: a bare sandbar in open water with reef running down both sides, and the best snorkelling on this coast.' },
+      { day: 'Day 3', title: 'East to Sumbawa Besar', body: 'The drive east along the north coast. Istana Dalam Loka in town, the sultan’s palace, raised on ironwood stilts in 1885 and still one of the largest wooden buildings in the country. Kalela waterfall in the hills inland before the light goes.' },
       { day: 'Day 4', title: 'Moyo', body: 'Boat across to Moyo. Mata Jitu is what people come for: limestone terraces holding pool after pool of water the colour of glass, and the one Diana swam in when she came here in 1993. The blue pool above it is colder and usually empty. The rest of the island is forest, deer and macaques.' },
-      { day: 'Day 5', title: 'Whale sharks, then the road home', body: 'Out before dawn to Saleh Bay, where whale sharks come up under the fishing platforms to feed on what spills from the nets. You go in with a mask and a guide and swim alongside them. Nobody can promise a sighting — they are wild — but this is as close to reliable as Indonesia gets. Then the long drive west and the ferry back.' },
+      { day: 'Day 5', title: 'Whale sharks, then the road home', body: 'Out before dawn to Saleh Bay, where whale sharks come up under the fishing platforms to feed on what spills from the nets. You go in with a mask and a guide and swim alongside them. Nobody can promise a sighting, because they are wild, but this is as close to reliable as Indonesia gets. Then the long drive west and the ferry back.' },
     ],
     includes: ['Four nights of accommodation', 'The Kayangan to Poto Tano ferry, both ways', 'Private transport and driver throughout', 'Local guide', 'Boats to every island', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Drinking water'],
     excludes: ['Flights', 'Meals', 'Tips for the guide and crew'],
@@ -440,7 +440,7 @@ export const journeys = [
     kicker: 'Bespoke',
     region: 'Anywhere in Nusa Tenggara',
     duration: 'From 4 days',
-    group: 'Private — any size',
+    group: 'Private, any size',
     difficulty: 'Your pace',
     season: 'Year round',
     priceFrom: null,
@@ -451,7 +451,7 @@ export const journeys = [
       'Tell us how long you have, what you like, and how hard you want to walk. We’ll come back with a routed itinerary, honest costs, and the same guides we use on our own departures.',
     highlights: [
       'One planner from first message to last transfer',
-      'Honest, itemised pricing — no hidden commissions',
+      'Honest, itemised pricing with no hidden commissions',
       'Families, photographers, honeymoons, small groups',
       'Flights, hotels and permits handled for you',
     ],
@@ -480,7 +480,7 @@ export const categories = [
   'Private & Custom Trips',
 ]
 
-/** "4.65m" / "750k" — the figure only, for cards that render the currency separately. */
+/** "4.65m" / "750k": the figure only, for cards that render the currency separately. */
 export function priceFigure(value) {
   if (!value) return null
   if (value >= 1_000_000) return (value / 1_000_000).toFixed(2).replace(/\.?0+$/, '') + 'm'
@@ -490,14 +490,14 @@ export function priceFigure(value) {
 /**
  * The figure a card leads with. What a trip actually costs depends on the
  * route, the group and where we collect people, and that conversation happens
- * privately — so only the starting point is published, and only the starting
+ * privately, so only the starting point is published, and only the starting
  * point is in this file.
  */
 export const fromPrice = (j) => j.pricing?.from ?? j.priceFrom
 
 export const bySlug = (slug) => journeys.find((j) => j.slug === slug)
 
-/** 4 650 000 -> "IDR 4.65m" — compact enough for a card. */
+/** 4 650 000 -> "IDR 4.65m", compact enough for a card. */
 export function formatPrice(value) {
   if (!value) return 'On request'
   if (value >= 1_000_000) {

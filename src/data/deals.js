@@ -1,4 +1,4 @@
-// Seasonal offers shown on the homepage. `valid` is display text, not logic —
+// Seasonal offers shown on the homepage. `valid` is display text, not logic,
 // update it when an offer changes.
 export const deals = [
   {

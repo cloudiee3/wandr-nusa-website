@@ -15,7 +15,7 @@ export const testimonials = [
   {
     title: 'Four days, no plan',
     quote:
-      'We arrived with nothing booked. Wandr Nusa built us a route that took in the rice terraces, two waterfalls and a night on Gili Air — and every driver and guide turned up early.',
+      'We arrived with nothing booked. Wandr Nusa built us a route that took in the rice terraces, two waterfalls and a night on Gili Air, and every driver and guide turned up early.',
     name: 'Hannah & Tom R.',
     role: 'Bristol, UK',
     avatar: 'portrait-train',
@@ -24,7 +24,7 @@ export const testimonials = [
   {
     title: 'The Rinjani summit',
     quote:
-      'The hardest thing I have ever done and I would do it again tomorrow. Our guide read the weather perfectly and turned us around on the ridge at exactly the right moment — no argument, no drama.',
+      'The hardest thing I have ever done and I would do it again tomorrow. Our guide read the weather perfectly and turned us around on the ridge at exactly the right moment. No argument, no drama.',
     name: 'Mikkel A.',
     role: 'Copenhagen, DK',
     avatar: 'portrait-ferry',

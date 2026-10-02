@@ -36,7 +36,7 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
   function validate(which) {
     const e = {}
     if (which === 0) {
-      if (!form.trip) e.trip = 'Pick a journey — or "Not sure yet".'
+      if (!form.trip) e.trip = 'Pick a journey, or "Not sure yet".'
       if (!form.dates.trim()) e.dates = 'Even a rough month helps.'
     }
     if (which === 1) {
@@ -52,7 +52,7 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
 
   async function handleSubmit(e) {
     e.preventDefault()
-    // A submit can still reach us from an early step — Enter pressed in a field,
+    // A submit can still reach us from an early step: Enter pressed in a field,
     // or the browser running its default action on a button React has just
     // re-typed from "button" to "submit". Advance instead of sending.
     if (step < STEPS.length - 1) { next(); return }
@@ -79,7 +79,7 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
 Dates: ${form.dates || 'flexible'}
 Travellers: ${form.travellers}
 ${form.message ? `\n${form.message}` : ''}
-— ${form.name || ''}`
+${form.name ? `From ${form.name}` : ''}`
 
   if (status === 'sent') {
     return (
@@ -151,7 +151,7 @@ ${form.message ? `\n${form.message}` : ''}
             {journeys.map((j) => <option key={j.slug} value={j.title}>{j.title}</option>)}
             <option value="Transport / airport transfer">Transport / airport transfer</option>
             <option value="Accommodation">Accommodation</option>
-            <option value="Not sure yet">Not sure yet — help me choose</option>
+            <option value="Not sure yet">Not sure yet, help me choose</option>
           </select>
         </Field>
         <div className="grid gap-5 sm:grid-cols-2">
@@ -183,12 +183,12 @@ ${form.message ? `\n${form.message}` : ''}
       {/* Step 3 */}
       <fieldset className={step === 2 ? 'block' : 'hidden'}>
         <legend className="sr-only">Anything else</legend>
-        <Field label="Tell us about the trip" hint="Fitness, diet, what you’d love to see — all useful">
+        <Field label="Tell us about the trip" hint="Fitness, diet, what you’d love to see. All useful">
           <textarea name="message" rows={5} value={form.message} onChange={set('message')} className={`${inputCls()} resize-y`} />
         </Field>
         {status === 'error' && (
           <p className="mb-4 rounded-xl bg-ember/10 px-4 py-3 text-sm text-ember">
-            That didn’t send. Try again, or reach us on WhatsApp — we’ll get it either way.
+            That didn’t send. Try again, or reach us on WhatsApp. We’ll get it either way.
           </p>
         )}
       </fieldset>

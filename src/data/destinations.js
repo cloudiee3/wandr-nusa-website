@@ -9,7 +9,7 @@ export const destinations = [
     bestTime: 'Apr – Nov',
     blurb: 'A live volcano with a lake in its chest. The hardest and the best thing you can do on Lombok.',
     body:
-      'Rinjani is the second-highest volcano in Indonesia and the centre of Sasak spiritual life. The caldera holds Segara Anak — a crescent lake with hot springs at its edge and a young cone, Barujari, still growing in the middle. The summit push is genuinely hard: loose scree, altitude, and a 2am start. What you get for it is a sunrise over three islands.',
+      'Rinjani is the second-highest volcano in Indonesia and the centre of Sasak spiritual life. The caldera holds Segara Anak, a crescent lake with hot springs at its edge and a young cone, Barujari, still growing in the middle. The summit push is genuinely hard: loose scree, altitude, and a 2am start. What you get for it is a sunrise over three islands.',
     journeys: ['rinjani-trek', 'sembalun-hills'],
   },
   {
@@ -35,7 +35,7 @@ export const destinations = [
     bestTime: 'Year round',
     blurb: 'Three car-free islands off the north-west coast. Bicycles, reef, and nothing with an engine.',
     body:
-      'Trawangan is the loud one, Air the liveable one, Meno the quiet one — and the reef between them is better than any of their reputations suggest. Green turtles feed on the shelf off Meno most mornings. There are no cars or motorbikes on any of the three; you walk, cycle, or take a cidomo pony cart.',
+      'Trawangan is the loud one, Air the liveable one, Meno the quiet one, and the reef between them is better than any of their reputations suggest. Green turtles feed on the shelf off Meno most mornings. There are no cars or motorbikes on any of the three; you walk, cycle, or take a cidomo pony cart.',
     journeys: ['three-gilis'],
   },
   {
@@ -61,7 +61,7 @@ export const destinations = [
     bestTime: 'May – Sep',
     blurb: 'Wide empty bays, surf breaks, and the Sasak villages inland from them.',
     body:
-      'The south is drier and more open than the rest of the island — headland after headland of pale sand with very little built on it. Inland are the craft villages: weaving at Sukarara, pottery at Penujak, and the preserved compound at Sade where the houses are still built of bamboo, thatch and clay.',
+      'The south is drier and more open than the rest of the island. Headland after headland of pale sand, with very little built on it. Inland are the craft villages: weaving at Sukarara, pottery at Penujak, and the preserved compound at Sade where the houses are still built of bamboo, thatch and clay.',
     journeys: ['kuta-mandalika'],
   },
 ]

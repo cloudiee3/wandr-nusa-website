@@ -1,9 +1,9 @@
 // Builds the site for publishing as a Claude Artifact preview.
 //
 // Two things differ from the Netlify build:
-//   • base is "./" — an artifact page can sit at a subpath, so every asset URL
+//   • base is "./", because an artifact page can sit at a subpath, so every asset URL
 //     is relative and nothing may start with "/".
-//   • routing is hash-based — artifact hosting serves static files with no
+//   • routing is hash-based, because artifact hosting serves static files with no
 //     rewrite rule, so /journeys/x would 404 on refresh.
 //
 // The page itself is written without <html>/<head>/<body>: the Artifact

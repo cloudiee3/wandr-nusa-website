@@ -77,8 +77,8 @@ export default function SearchWidget() {
 
       {/* All three panels sit in the same grid cell, so the card is always as
           tall as the tallest of them and never jumps when you change tab. The
-          two that are not showing are inert — out of the tab order and out of
-          the accessibility tree — rather than merely transparent. */}
+          two that are not showing are inert, out of the tab order and out of
+          the accessibility tree, rather than merely transparent. */}
       <div className="grid">
         <div
           key="journeys"
@@ -158,7 +158,7 @@ export default function SearchWidget() {
       </button>
 
       <p className="mt-3 text-center text-[12.5px] sm:text-[11.5px] text-white/55">
-        No payment now — we reply with a routed plan and the real cost.
+        No payment now. We reply with a routed plan and the real cost.
       </p>
     </form>
   )

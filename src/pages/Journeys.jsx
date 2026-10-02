@@ -46,7 +46,7 @@ export default function Journeys() {
         image="rinjani-crater"
         eyebrow="Our journeys"
         title={<>Trips with a <span className="flourish-light">point to them</span></>}
-        lead={`${spell(journeys.filter((j) => j.slug !== 'custom-private-journey').length)} routes we know street by street and ridge by ridge — plus a blank page if none of them is quite it.`.replace(/^./, (c) => c.toUpperCase())}
+        lead={`${spell(journeys.filter((j) => j.slug !== 'custom-private-journey').length)} routes we know street by street and ridge by ridge, plus a blank page if none of them is quite it.`.replace(/^./, (c) => c.toUpperCase())}
       />
 
       <section className="wrap py-12 lg:py-16">
@@ -92,12 +92,12 @@ export default function Journeys() {
         {shown.length === 0 ? (
           <div className="mt-8 rounded-2xl border border-ink/[0.09] bg-white p-10 text-center">
             <h2 className="text-[1.4rem]">
-              {place ? <>No fixed departure for {place} — yet</> : 'Nothing matches that combination'}
+              {place ? <>No fixed departure for {place} yet</> : 'Nothing matches that combination'}
             </h2>
             <p className="mx-auto mt-3 max-w-md text-ink-500">
               {place
                 ? `We run ${place} as a private trip rather than a scheduled one. Tell us your dates and we’ll come back with a routed plan and the real cost.`
-                : 'Widen the filters, or let us build something around your dates instead — most of what we run started as a request rather than a listing.'}
+                : 'Widen the filters, or let us build something around your dates instead. Most of what we run started as a request rather than a listing.'}
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link

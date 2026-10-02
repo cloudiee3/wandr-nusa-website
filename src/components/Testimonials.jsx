@@ -10,14 +10,14 @@ export default function Testimonials() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="wrap">
-        {/* The reference runs this section without an eyebrow — the heading
+        {/* The reference runs this section without an eyebrow. The heading
             carries it, with the lead directly underneath. */}
         <div className="mx-auto max-w-2xl text-center">
           <Reveal as="h2" className="text-[2rem] leading-[1.12] sm:text-[2.7rem]">
             What our travellers <span className="flourish">say</span>
           </Reveal>
           <Reveal as="p" delay={90} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
-            Trusted by travellers from all over — here are their stories.
+            Trusted by travellers from all over. Here are their stories.
           </Reveal>
         </div>
 
@@ -82,7 +82,7 @@ export default function Testimonials() {
 
                   <figcaption className="mt-7 flex items-center gap-3.5 border-t border-ink/[0.07] pt-6">
                     {/* A photograph when there is one, initials when there is
-                        not — so taking a face off is a one-line data change. */}
+                        not, so taking a face off is a one-line data change. */}
                     {t.avatar ? (
                       <Img
                         name={t.avatar}

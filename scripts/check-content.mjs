@@ -6,7 +6,7 @@ import { journeys, categories } from '../src/data/journeys.js'
 import { destinations } from '../src/data/destinations.js'
 import { featured, testimonials } from '../src/data/testimonials.js'
 import images from '../src/data/images.json' with { type: 'json' }
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 
 const problems = []
 const note = (s) => console.log('  ' + s)
@@ -45,7 +45,7 @@ withinItem(destinations, 'destination')
 // ── No two covers the same ────────────────────────────────────────────
 // A trip that says `needsPhoto` is borrowing one on purpose until its own
 // arrives. That is a gap we are tracking, not a regression, so it is listed
-// rather than failed — but it is listed every single run.
+// rather than failed, but it is listed every single run.
 const awaiting = journeys.filter((j) => j.needsPhoto).map((j) => j.slug)
 const covers = new Map()
 for (const it of [...journeys, ...destinations]) {
@@ -96,7 +96,7 @@ for (const file of source) {
 // The display serif's ampersand sits heavy, its italic is too ornamental for
 // a heading, and the sans one looks borrowed. The brand's answer after all
 // three was to spell the word, so a stray "&" is a mistake rather than a
-// style choice. Chip labels keep theirs — they are set in the sans already.
+// style choice. Chip labels keep theirs, being set in the sans already.
 for (const [kind, items, fields] of [
   ['journey', journeys, ['title', 'priceNote', 'summary', 'kicker']],
   ['destination', destinations, ['name', 'blurb']],
@@ -104,9 +104,35 @@ for (const [kind, items, fields] of [
   for (const it of items) {
     for (const f of fields) {
       if (typeof it[f] === 'string' && it[f].includes('&')) {
-        problems.push(`${kind} "${it.slug}" has an ampersand in its ${f} — spell it "and"`)
+        problems.push(`${kind} "${it.slug}" has an ampersand in its ${f}: spell it "and"`)
       }
     }
+  }
+}
+
+// ── No em dashes anywhere a visitor can read ──────────────────────────
+// They read as machine-written rather than spoken, so the house style is a
+// comma, a colon or a full stop. Two places hide one from a plain grep: a
+// \u2014 escape in a string, and a dash inside a block comment that a
+// line-by-line scan would wrongly flag. Comments are stripped first, then
+// the remaining source is searched for both spellings.
+const stripComments = (src) => {
+  let out = '', i = 0
+  while (i < src.length) {
+    if (src.startsWith('/*', i)) { const e = src.indexOf('*/', i + 2); i = e < 0 ? src.length : e + 2; continue }
+    if (src.startsWith('//', i)) { const e = src.indexOf('\n', i); i = e < 0 ? src.length : e; continue }
+    out += src[i++]
+  }
+  return out
+}
+for (const file of readdirSync('src/data').map((f) => `src/data/${f}`)
+  .concat(readdirSync('src/pages').map((f) => `src/pages/${f}`))
+  .concat(readdirSync('src/components').map((f) => `src/components/${f}`))) {
+  if (!/\.(jsx?|json)$/.test(file)) continue
+  const body = stripComments(readFileSync(file, 'utf8'))
+  for (const form of ['\u2014', '\\u2014']) {
+    const n = body.split(form).length - 1
+    if (n) problems.push(`${file} has ${n} em dash${n > 1 ? 'es' : ''} in copy: use a comma, a colon or a full stop`)
   }
 }
 

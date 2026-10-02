@@ -63,7 +63,7 @@ export default function Contact() {
         <div>
           <Reveal as="h2" className="text-[1.8rem] leading-tight">Reach us directly</Reveal>
           <Reveal as="p" delay={80} className="mt-4 text-ink-500">
-            WhatsApp is fastest — it is on someone’s phone from 08:00 to 19:00 WITA, and messages sent
+            WhatsApp is fastest. It is on someone’s phone from 08:00 to 19:00 WITA, and messages sent
             overnight are answered first thing.
           </Reveal>
 

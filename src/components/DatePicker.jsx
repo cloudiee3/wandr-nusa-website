@@ -3,7 +3,7 @@ import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const WEEKDAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
 
-// Dates are handled locally throughout — toISOString() is UTC and would shift
+// Dates are handled locally throughout, because toISOString() is UTC and would shift
 // the day for anyone east or west of Greenwich, which is most of our travellers.
 export const toISO = (d) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`

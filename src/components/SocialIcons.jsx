@@ -1,6 +1,6 @@
 /**
  * Brand marks in their own colours. lucide dropped its logo icons in v1.47,
- * so these are drawn here — the WhatsApp one lives in WhatsAppIcon and takes
+ * so these are drawn here. The WhatsApp one lives in WhatsAppIcon and takes
  * its colour from `currentColor`, which is why it is not repeated here.
  */
 

@@ -59,7 +59,7 @@ export default function AboutStrip() {
             imgClassName="object-[50%_100%]"
           />
 
-          {/* Floating cards — the reference’s device, with travel content in it. */}
+          {/* Floating cards, the reference’s device, with travel content in it. */}
           <div className="absolute left-4 right-4 top-6 rounded-2xl bg-white/95 p-5 shadow-lift backdrop-blur-sm sm:left-6 sm:right-auto sm:w-[21rem]">
             <span className="text-[0.82rem] font-semibold text-ink">Traveller ratings</span>
             <div className="mt-3 flex items-center gap-3">

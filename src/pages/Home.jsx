@@ -22,8 +22,8 @@ const FEATURED_COUNT = 12
 // Alternating emphasis, the way the reference sets its opening statement:
 // the dark phrases carry the claim, the light ones carry the connective tissue.
 const MANIFESTO = [
-  ['We’re a Lombok travel company —', true],
-  ['planners, guides and experience designers who never stopped wandering our own islands,', false],
+  ['We’re a Lombok travel company.', true],
+  ['Planners, guides and experience designers who never stopped wandering our own islands,', false],
   ['working together to create journeys across Lombok and further east.', true],
   ['From the first search to the last goodbye,', false],
   ['we take care of the details', true],
@@ -210,7 +210,7 @@ export default function Home() {
 
           {shown.length === 0 && (
             <div className="mt-10 rounded-2xl border border-ink/[0.09] bg-white p-10 text-center">
-              <h3 className="text-[1.3rem]">No fixed departure for {kind} — yet</h3>
+              <h3 className="text-[1.3rem]">No fixed departure for {kind} yet</h3>
               <p className="mx-auto mt-3 max-w-md text-ink-500">
                 We run this as a private trip rather than a scheduled one. Tell us your dates and
                 we will come back with a routed plan and the real cost.
