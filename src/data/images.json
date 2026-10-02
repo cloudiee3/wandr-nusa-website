@@ -110,6 +110,22 @@
     ],
     "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBQCdASoUABkAPvlop06qpiMiMAwBUB8JZQC90CElwcIy6oPITy1n0aSdS8qekScBPAD+w1mLvWg9wUdNJCMCKZF1rAapEAecDpphZJy32CfMcDRX+Prg69uLAFrkZAg2sp8AQbk0dl1JoPF1msUGvKAAAA=="
   },
+  "portrait-train": {
+    "alt": "A traveller with a backpack leaning out of a train doorway, smiling",
+    "ratio": 1,
+    "sizes": [
+      320
+    ],
+    "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoUABQAPwF2slOrJySiqAgBYCAJYwC2yAwyexRk4Jj4mDpQdltBE/QAAPWAd+U+l5FDOncYiNgh5cGCbRvCATAXQYlMNf9TYZDjhpiltYmUu+XU94IZSaqq0fFPOjqirN9z/igPuAAAAA=="
+  },
+  "portrait-ferry": {
+    "alt": "A traveller waving from the deck of a ferry, a case in one hand",
+    "ratio": 1,
+    "sizes": [
+      320
+    ],
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwBACdASoUABQAPwF4s1QrJySjKAgBYCAJYwDA3A2Kv+jnUPMRzE5x8us1+TAgAP0fiILoVM7MhLXA2e8V1n97gJ0mUHVHwVhk8IzapdObqvKirhsXRBsgACRgAA=="
+  },
   "kenawa-island": {
     "alt": "Kenawa island from the air — one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind",
     "ratio": 1.7778,

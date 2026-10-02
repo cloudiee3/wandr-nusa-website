@@ -81,15 +81,23 @@ export default function Testimonials() {
                   </blockquote>
 
                   <figcaption className="mt-7 flex items-center gap-3.5 border-t border-ink/[0.07] pt-6">
-                    {/* Initials rather than a face: we have no photograph of
-                        the people quoted, and a stock one would be a lie. */}
-                    <span
-                      aria-hidden="true"
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sea-100
-                                 font-display text-[0.95rem] font-semibold text-sea-700"
-                    >
-                      {t.name.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('')}
-                    </span>
+                    {/* A photograph when there is one, initials when there is
+                        not — so taking a face off is a one-line data change. */}
+                    {t.avatar ? (
+                      <Img
+                        name={t.avatar}
+                        sizes="48px"
+                        className="h-12 w-12 shrink-0 overflow-hidden rounded-full"
+                      />
+                    ) : (
+                      <span
+                        aria-hidden="true"
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sea-100
+                                   font-display text-[0.95rem] font-semibold text-sea-700"
+                      >
+                        {t.name.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('')}
+                      </span>
+                    )}
                     <span className="min-w-0">
                       <span className="block truncate text-[0.95rem] font-semibold text-ink">{t.name}</span>
                       <span className="block text-[0.82rem] text-ink-400">{t.role}</span>

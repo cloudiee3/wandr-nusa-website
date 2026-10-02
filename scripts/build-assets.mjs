@@ -23,6 +23,9 @@ const PHOTO_MAP = {
   // The first frame in the library with people in it.
   'travellers-viewpoint':['Travellers Viewpoint.jpg', 'Three travellers at the edge of a lake, one pointing out across the water towards the hills'],
   'travellers-laughing': ['Travellers Laughing.jpg', 'Four travellers laughing together on a morning walk, one pointing off towards the hills behind them'],
+  // Square head-and-shoulders crops, sized for the testimonial avatars.
+  'portrait-train':      ['Portrait Train.jpg', 'A traveller with a backpack leaning out of a train doorway, smiling'],
+  'portrait-ferry':      ['Portrait Ferry.jpg', 'A traveller waving from the deck of a ferry, a case in one hand'],
   'kenawa-island':       ['Kenawa Island.webp', 'Kenawa island from the air — one green hill, a white beach and a wooden jetty, with the Sumbawa mountains behind'],
   'lombok-beach-stay':   ['Lombok Beach Stay.jpg', 'Beachfront villas and a pool above white sand and clear water on the Lombok coast'],
   'selong-belanak':      ['Selong Belanak Bay.jpg', 'The long white curve of Selong Belanak, a fishing fleet moored off it and green hills behind'],

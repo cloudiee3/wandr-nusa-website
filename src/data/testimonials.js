@@ -9,6 +9,8 @@ export const featured = {
   video: null,
 }
 
+// `avatar` is optional: with one the card shows the photograph, without one it
+// falls back to the initials disc, so dropping a face is a one-line change.
 export const testimonials = [
   {
     title: 'Four days, no plan',
@@ -16,6 +18,7 @@ export const testimonials = [
       'We arrived with nothing booked. Wandr Nusa built us a route that took in the rice terraces, two waterfalls and a night on Gili Air — and every driver and guide turned up early.',
     name: 'Hannah & Tom R.',
     role: 'Bristol, UK',
+    avatar: 'portrait-train',
     rating: 5,
   },
   {
@@ -24,6 +27,7 @@ export const testimonials = [
       'The hardest thing I have ever done and I would do it again tomorrow. Our guide read the weather perfectly and turned us around on the ridge at exactly the right moment — no argument, no drama.',
     name: 'Mikkel A.',
     role: 'Copenhagen, DK',
+    avatar: 'portrait-ferry',
     rating: 5,
   },
 ]
