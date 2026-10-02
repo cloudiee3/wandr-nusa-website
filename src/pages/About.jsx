@@ -38,26 +38,22 @@ export default function About() {
         image="rice-road-aerial"
         eyebrow="About us"
         title={<>A small outfit, <span className="flourish-light">from here</span></>}
-        lead={`${site.name} is a Lombok-based travel bureau. Twelve years, one island group, and a short list of trips we are willing to put our name on.`}
+        lead={`${site.name} is a Lombok-based travel bureau. One island group, a short list of trips, and nothing on that list we have not done ourselves.`}
       />
 
-      <section className="wrap grid gap-14 py-16 lg:grid-cols-[1.35fr_1fr] lg:gap-20 lg:py-24">
+      <section className="wrap grid gap-12 py-16 lg:grid-cols-[1.25fr_1fr] lg:gap-16 lg:py-24">
         <div>
-          <Reveal as="p" className="font-serif text-[1.4rem] leading-relaxed text-ink-600">
-            We started because visitors kept being sold the same four photographs, and going home having
-            seen only those four.
+          <Reveal as="p" className="font-serif text-[1.5rem] leading-[1.45] text-ink-600 sm:text-[1.7rem]">
+            Most people leave Lombok having seen the same four photographs.
           </Reveal>
           <Reveal as="p" delay={90} className="mt-6 text-[1.02rem] leading-relaxed text-ink-500">
-            Lombok and the islands east of it get compared to Bali constantly, usually by people trying to
-            sell you a day trip. We think that misses the point. These are quieter islands with harder mountains,
-            better reef, and a Sasak culture that is still lived rather than performed. What they do not have
-            is much infrastructure for showing it to you properly.
+            They land, they are sold a day trip, and they go home with the waterfall, the pink beach, the
+            viewpoint and the Gilis. All four are worth seeing. All four are also the easy part.
           </Reveal>
           <Reveal as="p" delay={150} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
-            So we built it. A permanent crew of guides and drivers, a fleet we maintain ourselves, and routes
-            that were walked before they were written down. We keep the map small on purpose. Everything we
-            run is within a few hours of home, which is why we can answer a question about
-            the trail conditions on Rinjani with something other than a guess.
+            We live at this end of it. Every route on this site was walked before it was written down, by the
+            people who will walk it with you, in the season we sell it in. We keep the map small on purpose,
+            so that when you ask about the trail on Rinjani you get an answer rather than a guess.
           </Reveal>
 
           {/* Five across on a wide screen, three then two below it, two on a
@@ -80,19 +76,17 @@ export default function About() {
           </Reveal>
         </div>
 
-        <Reveal delay={120} className="space-y-4">
+        {/* One photograph that takes the height of the column beside it, rather
+            than a stack with its own fixed height. The stack ran 925px against
+            530px of text and left 396px of white underneath it; this cannot,
+            whatever the copy grows or shrinks to. */}
+        <Reveal delay={120} className="group lg:h-full">
           <Img
             name="rice-field-huts"
-            sizes="(min-width:1024px) 34vw, 100vw"
-            className="aspect-[4/5] w-full overflow-hidden rounded-2xl"
-            imgClassName="transition-transform duration-[1200ms] ease-out hover:scale-[1.04]"
+            sizes="(min-width:1024px) 38vw, 100vw"
+            className="aspect-[4/5] w-full overflow-hidden rounded-3xl lg:aspect-auto lg:h-full"
+            imgClassName="transition-transform duration-[1600ms] ease-out group-hover:scale-[1.05]"
           />
-          <div className="grid grid-cols-2 gap-4">
-            <Img name="monkey-forest" sizes="17vw" className="aspect-square w-full overflow-hidden rounded-2xl"
-              imgClassName="transition-transform duration-[1200ms] ease-out hover:scale-[1.06]" />
-            <Img name="sarang-walet" sizes="17vw" className="aspect-square w-full overflow-hidden rounded-2xl"
-              imgClassName="transition-transform duration-[1200ms] ease-out hover:scale-[1.06]" />
-          </div>
         </Reveal>
       </section>
 
