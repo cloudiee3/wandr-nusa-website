@@ -12,7 +12,8 @@
     "build:artifact": "node scripts/build-artifact.mjs",
     "map": "node scripts/build-map.mjs",
     "check": "node scripts/check-content.mjs",
-    "test:flow": "node tests/booking-flow.mjs"
+    "test:flow": "node tests/booking-flow.mjs",
+    "test:ui": "node tests/interactions.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

@@ -1,10 +1,11 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { X } from 'lucide-react'
+import { Heart, X } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import JourneyCard from '../components/JourneyCard'
 import { spell } from '../lib/spell'
 import { readSearch } from '../lib/search'
+import { readFavourites, subscribeFavourites } from '../lib/favourites'
 import Reveal from '../components/Reveal'
 import { journeys, categories } from '../data/journeys'
 import { destinations, destBySlug } from '../data/destinations'
@@ -18,15 +19,25 @@ export default function Journeys() {
   const { dest, place, kind, from, to, travellers } = readSearch(params)
   const destination = dest ? destBySlug(dest) : null
 
+  // Saving a trip used to lead nowhere: the heart stored a slug and nothing
+  // ever read it back. This chip appears once there is something in there.
+  const [saved, setSaved] = useState(() => readFavourites())
+  useEffect(() => subscribeFavourites(() => setSaved(readFavourites())), [])
+  const savedOn = active === 'Saved'
+  // Leave the saved view as soon as the last one is unsaved, so the page is
+  // never an empty list with no way back.
+  useEffect(() => { if (savedOn && saved.size === 0) setActive('All') }, [savedOn, saved.size])
+
   const shown = useMemo(() => {
     // A "place" is somewhere we don’t run a fixed departure yet.
     if (place) return []
     let list = journeys
     if (destination) list = list.filter((j) => destination.journeys.includes(j.slug))
     if (kind === 'day') list = list.filter((j) => j.duration.toLowerCase().includes('day') && !j.duration.includes('·'))
+    if (active === 'Saved') return list.filter((j) => saved.has(j.slug))
     if (active !== 'All') list = list.filter((j) => j.tags.includes(active))
     return list
-  }, [destination, place, kind, active])
+  }, [destination, place, kind, active, saved])
 
   const searched = destination || place || kind || from || travellers
   const clearSearch = () => setParams({}, { replace: true })
@@ -62,6 +73,17 @@ export default function Journeys() {
         )}
 
         <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
+          {saved.size > 0 && (
+            <button
+              type="button"
+              onClick={() => setActive(savedOn ? 'All' : 'Saved')}
+              aria-pressed={savedOn}
+              className={`chip shrink-0 gap-1.5 ${savedOn ? 'chip-on' : ''}`}
+            >
+              <Heart className={`h-3.5 w-3.5 ${savedOn ? 'fill-current' : 'fill-ember text-ember'}`} strokeWidth={2} />
+              Saved {saved.size}
+            </button>
+          )}
           {categories.map((c) => (
             <button
               key={c}
@@ -80,10 +102,14 @@ export default function Journeys() {
           {destination && <> in {destination.name}</>}
         </p>
 
+        {/* The cards are h3. Without this the page goes straight from the
+            hero's h1 to them, which reads as a missing level. */}
+        <h2 className="sr-only">Journeys</h2>
+
         {shown.length === 0 ? (
           <div className="mt-8 rounded-2xl border border-ink/[0.09] bg-white p-10 text-center">
             <h2 className="text-[1.4rem]">
-              {place ? <>No fixed departure for {place} yet</> : 'Nothing matches that combination'}
+              {place ? <>No fixed departure for {place} yet</> : savedOn ? 'Nothing saved yet' : 'Nothing matches that combination'}
             </h2>
             <p className="mx-auto mt-3 max-w-md text-ink-500">
               {place

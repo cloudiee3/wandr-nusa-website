@@ -50,6 +50,15 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => setOpen(false), [pathname])
+  // Escape is the reflex for getting out of an overlay, and without it the
+  // only ways out were the X and the backdrop.
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -140,7 +149,15 @@ export default function Navbar() {
       </header>
 
       {/* Mobile drawer */}
-      <div className={`fixed inset-0 z-40 lg:hidden ${open ? '' : 'pointer-events-none'}`} aria-hidden={!open}>
+      {/* `inert` as well as aria-hidden: the panel stays in the layout when it is
+          closed, so without it a keyboard user tabs straight into five links and
+          a WhatsApp button they cannot see. A focusable element inside
+          aria-hidden is the violation, not the hiding. */}
+      <div
+        className={`fixed inset-0 z-40 lg:hidden ${open ? '' : 'pointer-events-none'}`}
+        aria-hidden={!open}
+        inert={!open}
+      >
         <div
           onClick={() => setOpen(false)}
           className={`absolute inset-0 bg-ink-900/45 backdrop-blur-sm transition-opacity duration-300 ${

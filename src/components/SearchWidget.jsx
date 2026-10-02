@@ -27,13 +27,30 @@ export default function SearchWidget() {
   const [pickup, setPickup] = useState(transferGroups[0].options[0])
   const [dropoff, setDropoff] = useState('Senggigi')
   const [area, setArea] = useState(stayGroups[0].options[0])
+  // "Somewhere else" is not an address, so it opens a box to type the real one.
+  const [pickupElse, setPickupElse] = useState('')
+  const [dropoffElse, setDropoffElse] = useState('')
+  const [problem, setProblem] = useState('')
+
+  const resolve = (choice, typed) => (choice === OTHER_PLACE ? typed.trim() : choice)
 
   function submit(e) {
     e.preventDefault()
     const people = { adults: String(adults), children: String(children) }
 
     if (tab === 'transport') {
-      navigate(`/contact?${buildSearch({ type: 'transport', pickup, dropoff, date: from, ...people })}`)
+      const a = resolve(pickup, pickupElse)
+      const b = resolve(dropoff, dropoffElse)
+      if (!a || !b) {
+        setProblem('Tell us where that is and we will quote the run.')
+        return
+      }
+      if (a.toLowerCase() === b.toLowerCase()) {
+        setProblem('Pick-up and drop-off are the same place. Change one of them.')
+        return
+      }
+      setProblem('')
+      navigate(`/contact?${buildSearch({ type: 'transport', pickup: a, dropoff: b, date: from, ...people })}`)
       return
     }
     if (tab === 'stays') {
@@ -121,13 +138,24 @@ export default function SearchWidget() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <div>
               <label className="field-label" htmlFor="sw-pickup">Pick-up</label>
-              <GroupedSelect id="sw-pickup" icon={Car} value={pickup} onChange={setPickup} groups={transferGroups} tail={OTHER_PLACE} />
+              <GroupedSelect id="sw-pickup" icon={Car} value={pickup} onChange={(v) => { setPickup(v); setProblem('') }} groups={transferGroups} tail={OTHER_PLACE} />
             </div>
             <div>
               <label className="field-label" htmlFor="sw-dropoff">Drop-off</label>
-              <GroupedSelect id="sw-dropoff" icon={Globe} value={dropoff} onChange={setDropoff} groups={transferGroups} tail={OTHER_PLACE} />
+              <GroupedSelect id="sw-dropoff" icon={Globe} value={dropoff} onChange={(v) => { setDropoff(v); setProblem('') }} groups={transferGroups} tail={OTHER_PLACE} />
             </div>
           </div>
+
+          {pickup === OTHER_PLACE && (
+            <ElseField id="sw-pickup-else" label="Where are we collecting you?" value={pickupElse} onChange={setPickupElse} />
+          )}
+          {dropoff === OTHER_PLACE && (
+            <ElseField id="sw-dropoff-else" label="Where are we taking you?" value={dropoffElse} onChange={setDropoffElse} />
+          )}
+          {problem && (
+            <p role="alert" className="mt-3 text-[0.85rem] text-white">{problem}</p>
+          )}
+
           <SingleDateField label="Date" value={from} onChange={setFrom} />
           <GuestsRow label="Passengers" {...{ adults, children, setAdults, setChildren }} />
         </div>
@@ -177,6 +205,22 @@ const GroupedSelect = ({ id, icon: Icon, value, onChange, groups, tail }) => (
       ))}
       {tail && <option value={tail}>{tail}</option>}
     </select>
+  </div>
+)
+
+/** Shown only when someone picks "Somewhere else", so the enquiry carries a
+ *  real place instead of the words "Somewhere else". */
+const ElseField = ({ id, label, value, onChange }) => (
+  <div className="mt-4">
+    <label className="field-label" htmlFor={id}>{label}</label>
+    <input
+      id={id}
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder="Hotel name, village, or a landmark"
+      className="field"
+    />
   </div>
 )
 

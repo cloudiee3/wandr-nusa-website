@@ -1,33 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CalendarDays, Heart, MapPin, Star } from 'lucide-react'
 import Img from './Img'
 import { formatPrice, fromPrice } from '../data/journeys'
+import { readFavourites, toggleFavourite, subscribeFavourites } from '../lib/favourites'
 
-const FAV_KEY = 'wandrnusa:saved'
-
-// Browser storage is per-viewer and can throw, so every access is guarded and
-// the card renders correctly when it comes back empty.
-const readFavs = () => {
-  try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) ?? '[]')) }
-  catch { return new Set() }
-}
-const writeFavs = (set) => {
-  try { localStorage.setItem(FAV_KEY, JSON.stringify([...set])) } catch { /* ignore */ }
-}
 
 export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw' }) {
   const shots = [...new Set([journey.image, ...journey.gallery])].slice(0, 4)
   const [i, setI] = useState(0)
-  const [saved, setSaved] = useState(() => readFavs().has(journey.slug))
+  const [saved, setSaved] = useState(() => readFavourites().has(journey.slug))
+
+  // The same trip can be on screen twice (the grid and "you might also like"),
+  // so each card follows the store rather than only its own click.
+  useEffect(() => subscribeFavourites(() => setSaved(readFavourites().has(journey.slug))), [journey.slug])
 
   function toggleSave(e) {
     e.preventDefault()
     e.stopPropagation()
-    const favs = readFavs()
-    favs.has(journey.slug) ? favs.delete(journey.slug) : favs.add(journey.slug)
-    writeFavs(favs)
-    setSaved(favs.has(journey.slug))
+    setSaved(toggleFavourite(journey.slug))
   }
 
   return (
