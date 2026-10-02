@@ -41,7 +41,7 @@ export default function Footer() {
                 </a>
               </p>
               <p className="mt-2.5">
-                {site.address.line1}, {site.address.city}, {site.address.region}, {site.address.country}
+                {site.address.city}, {site.address.region}, {site.address.country}
               </p>
             </div>
           </div>

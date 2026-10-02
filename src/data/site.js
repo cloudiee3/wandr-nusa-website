@@ -15,8 +15,7 @@ export const site = {
   email: 'wandrnusa@gmail.com',
 
   address: {
-    line1: 'Tetebatu',
-    city: 'East Lombok',
+    city: 'Lombok',
     region: 'West Nusa Tenggara',
     country: 'Indonesia',
   },

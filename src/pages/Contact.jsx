@@ -81,7 +81,6 @@ export default function Contact() {
               <a href={`mailto:${site.email}`} className="link-underline -my-2.5 inline-block py-3">{site.email}</a>
             </ContactRow>
             <ContactRow icon={MapPin} label="Office">
-              {site.address.line1}<br />
               {site.address.city}<br />
               {site.address.region}, {site.address.country}
             </ContactRow>

@@ -55,7 +55,7 @@ export default function About() {
           <Reveal as="p" delay={150} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
             So we built it. A permanent crew of guides and drivers, a fleet we maintain ourselves, and routes
             that were walked before they were written down. We keep the map small on purpose. Everything we
-            run is within a few hours of the office in Senggigi, which is why we can answer a question about
+            run is within a few hours of home, which is why we can answer a question about
             the trail conditions on Rinjani with something other than a guess.
           </Reveal>
 
