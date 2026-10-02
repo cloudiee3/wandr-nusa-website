@@ -23,7 +23,7 @@ export default function Testimonials() {
 
         {/* Not an even split: the reference gives the written reviews about a
             third more width than the photograph beside them. */}
-        <div className="mt-12 grid gap-7 lg:grid-cols-[0.74fr_1fr] lg:gap-9">
+        <div className="mt-12 grid gap-7 lg:grid-cols-[0.74fr_minmax(0,1fr)] lg:gap-9">
           {/* featured story */}
           <Reveal>
             <figure className="relative m-0 h-full min-h-[26rem] overflow-hidden rounded-3xl lg:min-h-[34rem]">
@@ -67,7 +67,7 @@ export default function Testimonials() {
           </Reveal>
 
           {/* written reviews */}
-          <div className="grid gap-7 lg:gap-9">
+          <div className="grid min-w-0 gap-7 lg:gap-9">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={(i + 1) * 110}>
                 <figure className="m-0 flex h-full flex-col rounded-3xl border border-ink/[0.08] bg-white p-7 sm:p-9">
@@ -80,7 +80,7 @@ export default function Testimonials() {
                     {t.quote}
                   </blockquote>
 
-                  <figcaption className="mt-7 flex items-center gap-3.5 border-t border-ink/[0.07] pt-6">
+                  <figcaption className="mt-7 flex flex-wrap items-center gap-x-3.5 gap-y-3 border-t border-ink/[0.07] pt-6">
                     {/* A photograph when there is one, initials when there is
                         not, so taking a face off is a one-line data change. */}
                     {t.avatar ? (

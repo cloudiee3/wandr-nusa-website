@@ -48,7 +48,7 @@ export default function Footer() {
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="link-underline py-2 text-[0.93rem] font-medium text-white/70 transition-colors hover:text-white"
+                  className="link-underline -my-1 py-3 text-[0.93rem] font-medium text-white/70 transition-colors hover:text-white"
                 >
                   {l.label}
                 </Link>
@@ -59,11 +59,11 @@ export default function Footer() {
                 the left, this is what keeps the columns level. */}
             <div className="mt-8 text-[0.93rem] text-white/55">
               <p className="-my-2 flex flex-wrap items-center gap-x-3 lg:justify-end">
-                <a href={site.phoneHref} className="link-underline py-2 transition-colors hover:text-white">
+                <a href={site.phoneHref} className="link-underline -my-1 py-3 transition-colors hover:text-white">
                   {site.phone}
                 </a>
                 <span aria-hidden="true" className="text-white/25">·</span>
-                <a href={`mailto:${site.email}`} className="link-underline py-2 transition-colors hover:text-white">
+                <a href={`mailto:${site.email}`} className="link-underline -my-1 py-3 transition-colors hover:text-white">
                   {site.email}
                 </a>
               </p>
