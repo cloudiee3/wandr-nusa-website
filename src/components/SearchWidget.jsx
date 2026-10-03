@@ -107,7 +107,7 @@ export default function SearchWidget() {
         <div
           key="journeys"
           inert={tab !== 'journeys'}
-          className={`transition-opacity duration-300 ${
+          className={`${
             tab === 'journeys' ? 'opacity-100' : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
           }`}
         >
@@ -133,7 +133,7 @@ export default function SearchWidget() {
         <div
           key="transport"
           inert={tab !== 'transport'}
-          className={`transition-opacity duration-300 ${
+          className={`${
             tab === 'transport' ? 'opacity-100' : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
           }`}
         >
@@ -168,7 +168,7 @@ export default function SearchWidget() {
         <div
           key="stays"
           inert={tab !== 'stays'}
-          className={`transition-opacity duration-300 ${
+          className={`${
             tab === 'stays' ? 'opacity-100' : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
           }`}
         >
