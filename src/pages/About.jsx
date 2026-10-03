@@ -6,28 +6,29 @@ import Reveal from '../components/Reveal'
 import CountUp from '../components/CountUp'
 import SectionHead from '../components/SectionHead'
 import { destinations } from '../data/destinations'
+import { spell } from '../lib/spell'
 import { site, stats } from '../data/site'
 
 const values = [
   {
     icon: Compass,
     title: 'We walk it first',
-    body: 'No itinerary goes on this site until one of us has done it end to end, in the season we sell it in.',
+    body: 'Nothing goes on this site until one of us has done it end to end, in the season we sell it in. If it was not worth our own Sunday, it does not make the list.',
   },
   {
     icon: HeartHandshake,
-    title: 'Direct, fair pay',
-    body: 'Guides, drivers and porters are hired directly and paid above the regional standard, with no agency taking a cut in the middle.',
+    title: 'One of us, start to finish',
+    body: 'Whoever answers your first message is the one there when you arrive, and the one you text at midnight when a plan changes. No handovers, no call centre, nobody with a clipboard you have never met.',
   },
   {
     icon: Leaf,
     title: 'Small groups only',
-    body: 'Eight on the mountain, ten on everything else. Big enough to share the cost, small enough not to be a nuisance.',
+    body: 'Eight on the mountain, ten everywhere else. Big enough to share the cost, small enough that your guide knows your name by the first morning and your coffee order by the second.',
   },
   {
     icon: ShieldCheck,
     title: 'We turn back',
-    body: 'Weather calls are the guide’s to make and we back them every time. A summit is never worth the alternative.',
+    body: 'Weather calls belong to the guide and we back them every time. The mountain keeps. We would rather you came again than pushed on once.',
   },
 ]
 
@@ -38,7 +39,7 @@ export default function About() {
         image="cliff-coast-aerial"
         eyebrow="About us"
         title={<>A small outfit, <span className="flourish-light">from here</span></>}
-        lead={`${site.name} is a Lombok-based travel bureau. One island group, a short list of trips, and nothing on that list we have not done ourselves.`}
+        lead={`${site.name} is a small travel company on Lombok. One island group, a short list of journeys, and not one of them we would not take our own family on.`}
       />
 
       <section className="wrap grid gap-12 py-16 lg:grid-cols-[1.25fr_1fr] lg:gap-16 lg:py-24">
@@ -51,9 +52,13 @@ export default function About() {
             viewpoint and the Gilis. All four are worth seeing. All four are also the easy part.
           </Reveal>
           <Reveal as="p" delay={150} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
-            We live at this end of it. Every route on this site was walked before it was written down, by the
-            people who will walk it with you, in the season we sell it in. We keep the map small on purpose,
-            so that when you ask about the trail on Rinjani you get an answer rather than a guess.
+            We live at this end of it. Every route here was walked before it was written down, by the people
+            who will walk it with you, in the season we sell it in. We keep the map small on purpose, so that
+            when you ask what the trail on Rinjani is doing this week you get an answer rather than a guess.
+          </Reveal>
+          <Reveal as="p" delay={200} className="mt-5 text-[1.02rem] leading-relaxed text-ink-500">
+            The rest is just how we were raised. You will be met by someone who already knows your name. You will be fed too much at least once. And somewhere around the second morning you
+            stop being a booking and start being someone we are glad turned up.
           </Reveal>
 
           {/* Five across on a wide screen, three then two below it, two on a
@@ -128,7 +133,7 @@ export default function About() {
           align="center"
           eyebrow="Where we go"
           title={<>The map we keep <span className="flourish">deliberately small</span></>}
-          lead={`${destinations.length} places, all within a few hours of each other. We would rather know these properly than sell you somewhere we have never been.`}
+          lead={`${spell(destinations.length).replace(/^./, (c) => c.toUpperCase())} places, close enough to each other that we know them in every season. Enough for a week, a fortnight, or the kind of trip you end up describing badly to everyone at home.`}
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -204,7 +209,11 @@ export default function About() {
         </div>
 
         <Reveal delay={200} className="mt-14 text-center">
-          <Link to="/contact" className="btn-primary">
+          <p className="mx-auto max-w-lg text-[1.02rem] leading-relaxed text-ink-500">
+            Tell us roughly when you are coming and we will tell you what the islands are doing that week.
+            No deposit, no pressure, and a real person at the other end of it.
+          </p>
+          <Link to="/contact" className="btn-primary mt-7">
             Talk to Us <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
           </Link>
         </Reveal>
