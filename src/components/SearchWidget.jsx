@@ -107,7 +107,7 @@ export default function SearchWidget() {
         <div
           key="journeys"
           inert={tab !== 'journeys'}
-          className={`col-start-1 row-start-1 transition-opacity duration-300 ${
+          className={`col-start-1 row-start-1 flex flex-col justify-between transition-opacity duration-300 ${
             tab === 'journeys' ? 'opacity-100' : 'pointer-events-none opacity-0'
           }`}
         >
@@ -133,7 +133,7 @@ export default function SearchWidget() {
         <div
           key="transport"
           inert={tab !== 'transport'}
-          className={`col-start-1 row-start-1 transition-opacity duration-300 ${
+          className={`col-start-1 row-start-1 flex flex-col justify-between transition-opacity duration-300 ${
             tab === 'transport' ? 'opacity-100' : 'pointer-events-none opacity-0'
           }`}
         >
@@ -168,7 +168,7 @@ export default function SearchWidget() {
         <div
           key="stays"
           inert={tab !== 'stays'}
-          className={`col-start-1 row-start-1 transition-opacity duration-300 ${
+          className={`col-start-1 row-start-1 flex flex-col justify-between transition-opacity duration-300 ${
             tab === 'stays' ? 'opacity-100' : 'pointer-events-none opacity-0'
           }`}
         >
