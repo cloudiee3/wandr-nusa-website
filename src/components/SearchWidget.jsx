@@ -107,8 +107,8 @@ export default function SearchWidget() {
         <div
           key="journeys"
           inert={tab !== 'journeys'}
-          className={`col-start-1 row-start-1 flex flex-col justify-between transition-opacity duration-300 ${
-            tab === 'journeys' ? 'opacity-100' : 'pointer-events-none opacity-0'
+          className={`transition-opacity duration-300 ${
+            tab === 'journeys' ? 'opacity-100' : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
           }`}
         >
           <Row label="Destination" htmlFor="sw-dest">
@@ -133,8 +133,8 @@ export default function SearchWidget() {
         <div
           key="transport"
           inert={tab !== 'transport'}
-          className={`col-start-1 row-start-1 flex flex-col justify-between transition-opacity duration-300 ${
-            tab === 'transport' ? 'opacity-100' : 'pointer-events-none opacity-0'
+          className={`transition-opacity duration-300 ${
+            tab === 'transport' ? 'opacity-100' : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
           }`}
         >
           {/* Side by side once there is room for the labels to be read. On a
@@ -168,8 +168,8 @@ export default function SearchWidget() {
         <div
           key="stays"
           inert={tab !== 'stays'}
-          className={`col-start-1 row-start-1 flex flex-col justify-between transition-opacity duration-300 ${
-            tab === 'stays' ? 'opacity-100' : 'pointer-events-none opacity-0'
+          className={`transition-opacity duration-300 ${
+            tab === 'stays' ? 'opacity-100' : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
           }`}
         >
           <Row label="Area" htmlFor="sw-area">
