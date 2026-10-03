@@ -87,8 +87,10 @@ export const searchGroups = [
       { label: 'Senggigi' },
       { label: 'Tetebatu', dest: 'tetebatu' },
       { label: 'Sendang Gile & Tiu Kelep', dest: 'north-lombok' },
-      { label: 'Sade & Sasak Villages', dest: 'south-coast' },
-      { label: 'All of Lombok, four days', trip: 'explore-lombok' },
+      // Sade used to sit here as its own line, pointing at the same south-coast
+      // page as Kuta & Mandalika. The Kuta day already stops there, so it was
+      // two labels for one trip.
+      { label: 'Explore Lombok', trip: 'explore-lombok' },
     ],
   },
   {
