@@ -30,6 +30,24 @@ const chips = await partySize.allTextContents()
 check(chips.length > 0, 'journeys page shows the party size back',
   chips.length ? `chip reads "${chips[0]}"` : 'no party-size chip rendered')
 
+// ── 1b. A package option lands on the package, not a filtered list ─
+await p.goto('http://localhost:5173/', { waitUntil: 'networkidle' })
+await p.selectOption('#sw-dest', { label: 'Sumbawa' })
+await p.locator('form button[type="submit"]').first().click()
+await p.waitForURL(/\/journeys\/explore-sumbawa/, { timeout: 5000 }).catch(() => {})
+check(p.url().includes('/journeys/explore-sumbawa'),
+  'picking Sumbawa opens the Sumbawa package', p.url().split('5173')[1] ?? p.url())
+// The enquiry form mounts after the navigation resolves, so wait for the value
+// rather than reading straight away.
+await p.locator('form[name="enquiry"] [name="dates"]')
+  .waitFor({ state: 'attached', timeout: 4000 }).catch(() => {})
+await p.waitForFunction(() => {
+  const f = document.querySelector('form[name="enquiry"] [name="dates"]')
+  return f && f.value.trim().length > 0
+}, { timeout: 4000 }).catch(() => {})
+const pkg = await p.inputValue('form[name="enquiry"] [name="dates"]').catch(() => '')
+check(pkg.trim().length > 0, 'the package enquiry arrives with the dates already in it', `dates = "${pkg}"`)
+
 // ── 2. Custom journey: do the dates the traveller picked survive? ──
 await p.goto('http://localhost:5173/journeys/custom-private-journey?from=2027-03-04&to=2027-03-11&adults=3&children=1',
   { waitUntil: 'networkidle' })

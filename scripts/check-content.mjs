@@ -3,7 +3,7 @@
 // longer exists, a filter chip with nothing behind it.
 //   npm run check
 import { journeys, categories, formatPrice } from '../src/data/journeys.js'
-import { destinations } from '../src/data/destinations.js'
+import { destinations, searchGroups } from '../src/data/destinations.js'
 import { featured, testimonials } from '../src/data/testimonials.js'
 import images from '../src/data/images.json' with { type: 'json' }
 import { readFileSync, readdirSync } from 'node:fs'
@@ -136,6 +136,22 @@ for (const [value, want] of [
 ]) {
   const got = formatPrice(value)
   if (got !== want) problems.push(`formatPrice(${value}) is "${got}", expected "${want}"`)
+}
+
+// ── The hero search points at pages that exist ───────────────────────
+// A typo in one of these is invisible: the widget still submits, and the
+// traveller lands on a redirect instead of the package they picked.
+const destSlugs = new Set(destinations.map((d) => d.slug))
+const tripSlugs = new Set(journeys.map((j) => j.slug))
+for (const g of searchGroups) {
+  for (const o of g.options) {
+    if (o.dest && !destSlugs.has(o.dest)) {
+      problems.push(`search option "${o.label}" points at destination "${o.dest}", which does not exist`)
+    }
+    if (o.trip && !tripSlugs.has(o.trip)) {
+      problems.push(`search option "${o.label}" points at journey "${o.trip}", which does not exist`)
+    }
+  }
 }
 
 // ── No em dashes anywhere a visitor can read ──────────────────────────

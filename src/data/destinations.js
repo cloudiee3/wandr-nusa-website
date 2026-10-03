@@ -69,10 +69,14 @@ export const destinations = [
 export const destBySlug = (slug) => destinations.find((d) => d.slug === slug)
 
 // ── Hero search dropdown ────────────────────────────────────
-// The top destinations across the three regions we cover, grouped and ordered
-// by how much they’re actually visited. `dest` points at one of the
-// destination pages above; options without one have no fixed itinerary yet, so
-// the journeys page offers to build the trip instead.
+// Lombok is listed place by place, because that is where we run day trips and
+// where somebody is choosing between them. Everything further east we sell as
+// one package rather than a menu of stops, so it is one line each: naming five
+// Sumbawa landmarks implied five separate trips that do not exist.
+//
+// An option carries `dest` (a destination page), `trip` (a journey we already
+// run, which is how the packages work) or neither, which means we have no
+// fixed departure there and the journeys page offers to plan one.
 export const searchGroups = [
   {
     region: 'Lombok',
@@ -84,31 +88,18 @@ export const searchGroups = [
       { label: 'Tetebatu', dest: 'tetebatu' },
       { label: 'Sendang Gile & Tiu Kelep', dest: 'north-lombok' },
       { label: 'Sade & Sasak Villages', dest: 'south-coast' },
+      { label: 'All of Lombok, four days', trip: 'explore-lombok' },
     ],
   },
   {
-    region: 'Sumbawa',
+    region: 'Further east',
     options: [
-      { label: 'Moyo Island' },
-      { label: 'Saleh Bay (Whale Sharks)' },
-      { label: 'Kenawa Island' },
-      { label: 'Mount Tambora' },
-      { label: 'Lakey Peak, Hu\u2019u' },
-    ],
-  },
-  {
-    region: 'Nusa Tenggara Timur',
-    options: [
-      { label: 'Komodo National Park' },
-      { label: 'Labuan Bajo' },
-      { label: 'Padar Island' },
-      { label: 'Kelimutu, Flores' },
-      { label: 'Sumba' },
-      { label: 'Rote' },
-      { label: 'Alor' },
+      { label: 'Sumbawa', trip: 'explore-sumbawa' },
+      { label: 'Nusa Tenggara Timur' },
     ],
   },
 ]
 
-/** Stable option values: a destination slug, or "place:<label>". */
-export const optionValue = (o) => (o.dest ? o.dest : `place:${o.label}`)
+/** Stable option values: a destination slug, "trip:<slug>", or "place:<label>". */
+export const optionValue = (o) =>
+  o.dest ? o.dest : o.trip ? `trip:${o.trip}` : `place:${o.label}`

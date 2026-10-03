@@ -61,6 +61,12 @@ export default function SearchWidget() {
       navigate(`/journeys/custom-private-journey?${buildSearch({ from, to, ...people })}`)
       return
     }
+    // A package goes straight to its own page with the dates and the party
+    // size already on it, the same as the custom route above.
+    if (dest.startsWith('trip:')) {
+      navigate(`/journeys/${dest.slice(5)}?${buildSearch({ from, to, ...people })}`)
+      return
+    }
     const q = new URLSearchParams(buildSearch({ kind: 'journeys', from, to, ...people }))
     // A destination slug filters the catalogue; a "place:" option is somewhere
     // we don’t run a fixed departure yet, so the journeys page offers to plan it.

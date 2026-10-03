@@ -101,13 +101,12 @@ export const stayGroups = [
     group: 'Gili Islands',
     options: ['Gili Trawangan', 'Gili Air', 'Gili Meno'],
   },
+  // Same reasoning as the journeys dropdown: we book rooms island by island on
+  // Lombok and the Gilis, and arrange the rest around a package, so naming
+  // towns in Sumbawa and Flores offered a service we do not sell that way.
   {
-    group: 'Sumbawa',
-    options: ['Sumbawa Besar', 'Moyo Island', 'Lakey Peak, Hu\u2019u', 'Bima'],
-  },
-  {
-    group: 'Nusa Tenggara Timur',
-    options: ['Labuan Bajo', 'Moni, Flores', 'Ende, Flores', 'Waingapu, Sumba', 'Tambolaka, Sumba', 'Nemberala, Rote'],
+    group: 'Further east',
+    options: ['Sumbawa', 'Nusa Tenggara Timur'],
   },
 ]
 
