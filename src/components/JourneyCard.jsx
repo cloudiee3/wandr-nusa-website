@@ -82,17 +82,21 @@ export default function JourneyCard({ journey, sizes = '(min-width:1024px) 33vw,
         </Link>
       </h3>
 
-      <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.8rem] text-ink-400">
+      {/* No bars between these three. This row wraps to two lines on every card
+          at 1024px and on most of them at 360px and below, and a bar is a wrap
+          point of its own: whichever way they were grouped, one ended up alone
+          at the end of a line or alone at the start of the next. The icons
+          already tell the three facts apart, which is what the bars were for,
+          so the gap does the separating and nothing can be left stranded. */}
+      <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.8rem] text-ink-400">
         <span className="inline-flex items-center gap-1.5">
-          <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} />{journey.region}
+          <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />{journey.region}
         </span>
-        <span className="text-ink-200">|</span>
         <span className="inline-flex items-center gap-1.5">
-          <CalendarDays className="h-3.5 w-3.5" strokeWidth={1.75} />{journey.duration}
+          <CalendarDays className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />{journey.duration}
         </span>
-        <span className="text-ink-200">|</span>
         <span className="inline-flex items-center gap-1.5">
-          <Star className="h-3.5 w-3.5 fill-ember text-ember" strokeWidth={1.75} />
+          <Star className="h-3.5 w-3.5 shrink-0 fill-ember text-ember" strokeWidth={1.75} />
           <span className="tnum">{journey.rating.toFixed(1)}</span>
           <span className="text-ink-300">({journey.reviews})</span>
         </span>

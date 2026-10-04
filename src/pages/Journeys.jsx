@@ -33,7 +33,10 @@ export default function Journeys() {
     if (place) return []
     let list = journeys
     if (destination) list = list.filter((j) => destination.journeys.includes(j.slug))
-    if (kind === 'day') list = list.filter((j) => j.duration.toLowerCase().includes('day') && !j.duration.includes('·'))
+    // Read the tag, not the duration string. Sniffing for "day" matched
+    // "2 or 3 days" and "From 4 days", so asking the hero widget for day
+    // trips returned the Rinjani summit trek and the open-ended custom one.
+    if (kind === 'day') list = list.filter((j) => j.tags.includes('Day Trips'))
     if (active === 'Saved') return list.filter((j) => saved.has(j.slug))
     if (active !== 'All') list = list.filter((j) => j.tags.includes(active))
     return list

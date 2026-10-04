@@ -188,6 +188,19 @@ for (const c of categories) {
   if (!n) problems.push(`filter "${c}" returns no journeys`)
 }
 
+// ── The Day Trips tag has to agree with the duration ─────────────────
+// The hero widget's "day trips" answer filters on this tag. It used to sniff
+// the duration string for "day", which matched "2 or 3 days" and "From 4
+// days", so a search for day trips returned the Rinjani summit trek and the
+// open-ended custom journey. The tag is now the only signal, so it has to
+// stay true.
+for (const j of journeys) {
+  const tagged = j.tags?.includes('Day Trips')
+  const overnight = /night/i.test(j.duration) || /\b([2-9]|\d\d)\s*days?\b/i.test(j.duration)
+  if (tagged && overnight) problems.push(`journey "${j.slug}" is tagged Day Trips but runs "${j.duration}"`)
+  if (!tagged && !overnight) problems.push(`journey "${j.slug}" runs "${j.duration}" but is not tagged Day Trips`)
+}
+
 // ── Every tag used must be a real chip ────────────────────────────────
 const known = new Set(categories)
 for (const j of journeys) {

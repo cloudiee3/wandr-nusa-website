@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import {
-  ArrowLeft, Check, Clock, Gauge, MapPin, Minus, Sun, Users,
+  ArrowLeft, AlertTriangle, Backpack, Check, Clock, Gauge, MapPin, Minus, Sun, Users,
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import Img from '../components/Img'
@@ -162,6 +162,46 @@ export default function JourneyDetail() {
               </ul>
             </Reveal>
           </div>
+
+          {/* Only the trips that have been written up this far carry these two,
+              so each is held back until there is something in it rather than
+              leaving an empty heading on every other page. */}
+          {(j.bring?.length > 0 || j.notFor?.length > 0) && (
+            <div className="mt-12 grid gap-8 sm:grid-cols-2">
+              {j.bring?.length > 0 && (
+                <Reveal>
+                  <h3 className="label flex items-center gap-2">
+                    <Backpack className="h-4 w-4 text-ink-300" strokeWidth={1.8} /> What to bring
+                  </h3>
+                  <ul className="mt-4 space-y-2.5">
+                    {j.bring.map((x) => (
+                      <li key={x} className="flex gap-3 text-[0.94rem] text-ink-600">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-sea-500" strokeWidth={2.2} />{x}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )}
+              {j.notFor?.length > 0 && (
+                <Reveal delay={100}>
+                  <h3 className="label flex items-center gap-2">
+                    <AlertTriangle className="h-4 w-4 text-ember" strokeWidth={1.8} /> Not the trip for
+                  </h3>
+                  <ul className="mt-4 space-y-2.5">
+                    {j.notFor.map((x) => (
+                      <li key={x} className="flex gap-3 text-[0.94rem] text-ink-600">
+                        <Minus className="mt-0.5 h-4 w-4 shrink-0 text-ink-200" strokeWidth={2} />{x}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-[0.88rem] leading-relaxed text-ink-400">
+                    Tell us if any of this is you. There is almost always another way to see the same
+                    place, and we would rather find it now than on the mountain.
+                  </p>
+                </Reveal>
+              )}
+            </div>
+          )}
         </div>
 
         {/* gallery rail */}
