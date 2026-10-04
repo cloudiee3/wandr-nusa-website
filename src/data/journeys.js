@@ -84,8 +84,8 @@ export const journeys = [
       from: 1000000,
       note: 'Private departure, picked up at your hotel and dropped back at it. The exact figure depends on the size of your group and where on the island you are staying. Ask and we will quote it.',
     },
-    image: 'tiu-kelep',
-    gallery: ['sendang-gile', 'sembalun-valley', 'sembalun-fields'],
+    image: 'sendang-gile',
+    gallery: ['tiu-kelep', 'sembalun-valley', 'sembalun-fields'],
     tags: ['Waterfalls', 'Mountain & Hills', 'Nature', 'Day Trips'],
     summary:
       'The waterfalls first, while the forest is still cool and before anyone else is on the path, then up to the Sembalun valley for the afternoon. Sendang Gile is a staircase down to one hard column of water. Tiu Kelep costs you a river crossing and gives back an amphitheatre you can swim in. After lunch the day climbs: Bukit Selong for the valley laid out underneath you, and Pusuk Sembalun to sit and watch the light go.',
