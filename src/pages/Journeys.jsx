@@ -45,10 +45,10 @@ export default function Journeys() {
   return (
     <>
       <PageHero
-        image="rinjani-crater"
+        image="forest-road-aerial"
         eyebrow="Our journeys"
-        title={<>Trips with a <span className="flourish-light">point to them</span></>}
-        lead={`${spell(journeys.filter((j) => j.slug !== 'custom-private-journey').length)} routes we know street by street and ridge by ridge, plus a blank page if none of them is quite it.`.replace(/^./, (c) => c.toUpperCase())}
+        title={<>The long way, <span className="flourish-light">on purpose</span></>}
+        lead={`${spell(journeys.filter((j) => j.slug !== 'custom-private-journey').length)} routes we know by the season, the surface and where to stop. And a blank page, for the one that is not here yet.`.replace(/^./, (c) => c.toUpperCase())}
       />
 
       <section className="wrap py-12 lg:py-16">
