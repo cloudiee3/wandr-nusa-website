@@ -102,13 +102,15 @@ for (const file of source) {
   }
 }
 
-// ── No ampersands in a title ──────────────────────────────────────────
+// ── No ampersands in running copy ─────────────────────────────────────
 // The display serif's ampersand sits heavy, its italic is too ornamental for
 // a heading, and the sans one looks borrowed. The brand's answer after all
-// three was to spell the word, so a stray "&" is a mistake rather than a
-// style choice. Chip labels keep theirs, being set in the sans already.
+// three was to spell the word, so a stray "&" mid-sentence is a mistake
+// rather than a style choice. Chip labels keep theirs, being set in the sans
+// already, and journey titles are off this list because the owner asked for
+// one: "Tiu Kelep & Bukit Selong". A title is a name and theirs to set.
 for (const [kind, items, fields] of [
-  ['journey', journeys, ['title', 'priceNote', 'summary', 'kicker']],
+  ['journey', journeys, ['priceNote', 'summary', 'kicker']],
   ['destination', destinations, ['name', 'blurb']],
 ]) {
   for (const it of items) {

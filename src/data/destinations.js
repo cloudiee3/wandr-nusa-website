@@ -10,7 +10,7 @@ export const destinations = [
     blurb: 'A live volcano with a lake in its chest. The hardest and the best thing you can do on Lombok.',
     body:
       'Rinjani is the second-highest volcano in Indonesia and the centre of Sasak spiritual life. The caldera holds Segara Anak, a crescent lake with hot springs at its edge and a young cone, Barujari, still growing in the middle. The summit push is genuinely hard: loose scree, altitude, and a 2am start. What you get for it is a sunrise over three islands.',
-    journeys: ['rinjani-trek', 'sembalun-senaru-loop'],
+    journeys: ['rinjani-trek', 'tiu-kelep-bukit-selong'],
   },
   {
     slug: 'tetebatu',
@@ -42,14 +42,14 @@ export const destinations = [
     slug: 'north-lombok',
     name: 'North Lombok',
     island: 'Lombok',
-    image: 'tiu-kelep',
-    gallery: ['jungle-waterfall', 'sendang-gile'],
+    image: 'jungle-waterfall',
+    gallery: ['tiu-kelep', 'sendang-gile'],
     elevation: '600 m',
     bestTime: 'Year round',
     blurb: 'Rainforest on the north flank of Rinjani, and the two waterfalls at the end of it.',
     body:
       'Senaru is the trailhead village for the northern Rinjani route, but most people come for Sendang Gile and Tiu Kelep. The first is a short walk down a stone staircase. The second takes a river crossing and a path through the forest, and opens into a wide rock amphitheatre where the water comes down on every side.',
-    journeys: ['north-lombok-waterfalls', 'sembalun-senaru-loop'],
+    journeys: ['tiu-kelep-bukit-selong'],
   },
   {
     slug: 'south-coast',
