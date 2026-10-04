@@ -152,7 +152,7 @@ export const byRequest = [
   { title: 'Somewhere to stay', body: 'Homestays, guesthouses and villas near the route, booked and paid on your behalf.' },
   { title: 'Transport from anywhere', body: 'Airport, harbour or hotel, one way or return, priced per vehicle rather than per head.' },
   { title: 'More days', body: 'Most day trips extend into two or three, with the extra nights arranged around them.' },
-  { title: 'Food', body: 'Local warungs or a restaurant booking, and dietary needs passed on before you arrive.' },
+  { title: 'Lunch and food', body: 'No day trip includes a meal, so you order what you want where we stop. Tell us what you like or cannot eat and your guide books it ahead.' },
   { title: 'A guide who speaks your language', body: 'English as standard; other languages when we can arrange them in advance.' },
 ]
 
