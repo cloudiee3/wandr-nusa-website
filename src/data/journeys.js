@@ -112,7 +112,6 @@ export const journeys = [
       'Driver and English-speaking guide',
       'Entrance fees and the local guide at the waterfalls',
       'Entrance at Bukit Selong',
-      'Public liability cover, for ages 7 to 65',
     ],
     excludes: [
       'Lunch and drinks, which your guide will help you order',
@@ -198,7 +197,7 @@ export const journeys = [
     rating: 4.9,
     reviews: 88,
     priceNote: 'including hotel transfers, the private boat, guide, snorkelling gear and every island fee',
-    title: 'Four Gilis and the Mangroves',
+    title: 'Gili Kondo, Bidara and Petagan',
     kicker: 'Boat day',
     region: 'Sambelia, East Lombok',
     duration: 'Full day',
@@ -236,7 +235,6 @@ export const journeys = [
       'English-speaking local guide',
       'Snorkelling equipment, mask and fins',
       'Entrance fee at every island',
-      'Public liability cover, for ages 7 to 65',
       'Photographs of the day',
     ],
     excludes: [
