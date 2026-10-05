@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero'
+import EmailLink from '../components/EmailLink'
 import { site } from '../data/site'
 
 const CONTENT = {
@@ -24,7 +25,7 @@ const CONTENT = {
       ['Safety and guide authority', `On any trek, the guide has final authority on route, timing and turning back. Decisions made on safety grounds do not entitle you to a refund, though we will offer what alternative we can.`],
       ['Insurance', `Travel insurance is a condition of booking on all trekking itineraries, and must cover trekking to at least 4,000 m and emergency evacuation.`],
       ['Fitness and disclosure', `You must tell us about any medical condition that could affect your trip at the time of booking. We will tell you honestly whether an itinerary is realistic for you.`],
-      ['Liability', `${site.legalName} holds public liability insurance as required of a licensed Indonesian travel bureau. Nothing in these terms limits liability for death or personal injury caused by our negligence.`],
+      ['Liability', `Nothing in these terms limits liability for death or personal injury caused by our negligence.`],
     ],
   },
 }
@@ -51,8 +52,10 @@ export default function Legal({ kind }) {
         </div>
 
         <p className="mt-14 border-t border-ink/[0.07] pt-8 text-ink-500">
-          Questions about any of this? Email{' '}
-          <a href={`mailto:${site.email}`} className="link-underline text-sea-600">{site.email}</a>.
+          {/* Ends on a colon rather than a full stop: the copy control follows
+              the address, and a stop after it would read as part of it. */}
+          Questions about any of this? Write to us:{' '}
+          <EmailLink className="link-underline text-sea-600" />
         </p>
       </section>
     </>

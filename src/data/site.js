@@ -30,9 +30,9 @@ export const site = {
   // stand-in: their real wordmark would have to come from their partner
   // assets rather than be drawn from memory.
   socials: [
-    { label: 'GetYourGuide', href: 'https://www.getyourguide.com/', icon: 'getyourguide' },
-    { label: 'Instagram', href: 'https://instagram.com/', icon: 'instagram' },
-    { label: 'Facebook', href: 'https://facebook.com/', icon: 'facebook' },
+    { label: 'GetYourGuide', href: 'https://www.getyourguide.com/wandr-nusa-s792689/', icon: 'getyourguide' },
+    { label: 'Instagram', href: 'https://www.instagram.com/wandrnusa/', icon: 'instagram' },
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61594004043638', icon: 'facebook' },
     { label: 'WhatsApp', href: 'https://wa.me/6282340819128', icon: 'whatsapp' },
   ],
 }

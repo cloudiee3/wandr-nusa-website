@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import PageHero from '../components/PageHero'
+import EmailLink from '../components/EmailLink'
 import Reveal from '../components/Reveal'
 import EnquiryForm from '../components/EnquiryForm'
 import { site, whatsappLink } from '../data/site'
@@ -71,7 +72,7 @@ export default function Contact() {
               <a href={site.phoneHref} className="link-underline -my-2.5 inline-block py-3">{site.phone}</a>
             </ContactRow>
             <ContactRow icon={Mail} label="Email">
-              <a href={`mailto:${site.email}`} className="link-underline -my-2.5 inline-block py-3">{site.email}</a>
+              <EmailLink className="link-underline -my-2.5 inline-block py-3" />
             </ContactRow>
             <ContactRow icon={MapPin} label="Office">
               {site.address.city}<br />
