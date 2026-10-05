@@ -231,6 +231,39 @@ export default function JourneyDetail() {
             before you commit to it.
           </p>
         </Reveal>
+
+        {/* Things only this trip can add, above the list every trip shares.
+            They carry their own photograph and their own price, because a
+            traveller deciding on one wants to see it and know what it costs,
+            not read that it is available. A null price prints "Ask us" rather
+            than a number we have not set yet. */}
+        {j.addOns?.length > 0 && (
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {j.addOns.map((a, i) => (
+              <Reveal key={a.title} delay={i * 70}>
+                <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-sea-500/25 bg-sea-100/40">
+                  {a.image && (
+                    <Img
+                      name={a.image}
+                      sizes="(min-width:1024px) 30vw, (min-width:640px) 46vw, 100vw"
+                      className="aspect-[16/9] w-full"
+                    />
+                  )}
+                  <div className="flex flex-1 flex-col p-5">
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="font-sans text-[0.98rem] font-bold">{a.title}</h3>
+                      <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-[0.78rem] font-semibold text-sea-700">
+                        {a.price ? formatPrice(a.price) : 'Ask us'}
+                      </span>
+                    </div>
+                    <p className="mt-1.5 text-[0.88rem] leading-relaxed text-ink-500">{a.body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        )}
+
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {byRequest.map((r, i) => (
             <Reveal key={r.title} delay={i * 70}>

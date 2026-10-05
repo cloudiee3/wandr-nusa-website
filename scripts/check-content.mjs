@@ -15,6 +15,10 @@ const note = (s) => console.log('  ' + s)
 const slots = []
 for (const j of journeys) {
   slots.push([j.image, `${j.slug} cover`], ...(j.gallery ?? []).map((g) => [g, `${j.slug} gallery`]))
+  // Add-ons carry a photo of their own. Without this they read as unused and
+  // the file looks safe to delete, which is the third time a new slot has
+  // gone missing from this list.
+  slots.push(...(j.addOns ?? []).filter((a) => a.image).map((a) => [a.image, `${j.slug} add-on`]))
 }
 for (const d of destinations) {
   slots.push([d.image, `${d.slug} cover`], ...(d.gallery ?? []).map((g) => [g, `${d.slug} gallery`]))
