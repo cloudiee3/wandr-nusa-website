@@ -51,6 +51,12 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
 
   const shift = (n) => setCursor(new Date(year, month + n, 1))
 
+  // Nothing before this month can be chosen, so there is nothing to page back
+  // to. Without this the arrow keeps working and walks you through months of
+  // greyed-out days, which reads as the calendar being broken.
+  const now = startOfToday()
+  const atFirstMonth = year === now.getFullYear() && month === now.getMonth()
+
   return (
     <div
       role="dialog"
@@ -58,7 +64,7 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
       className={`absolute inset-x-0 z-30 rounded-2xl border border-ink/[0.09] bg-white p-4 shadow-lift sm:p-5 ${drop}`}
     >
       <div className="flex items-center justify-between">
-        <NavBtn label="Previous month" onClick={() => shift(-1)}><ChevronLeft className="h-4 w-4" strokeWidth={2} /></NavBtn>
+        <NavBtn label="Previous month" onClick={() => shift(-1)} disabled={atFirstMonth}><ChevronLeft className="h-4 w-4" strokeWidth={2} /></NavBtn>
         <span className="font-display text-[1.05rem] font-semibold text-ink">{title}</span>
         <NavBtn label="Next month" onClick={() => shift(1)}><ChevronRight className="h-4 w-4" strokeWidth={2} /></NavBtn>
       </div>
@@ -118,13 +124,15 @@ function Panel({ from, to, mode, onPick, onClose, drop }) {
   )
 }
 
-const NavBtn = ({ label, onClick, children }) => (
+const NavBtn = ({ label, onClick, disabled, children }) => (
   <button
     type="button"
     aria-label={label}
     onClick={onClick}
+    disabled={disabled}
     className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink-500
-               transition-colors active:scale-95 hover:bg-ink-600/10 hover:text-ink"
+               transition-colors active:scale-95 hover:bg-ink-600/10 hover:text-ink
+               disabled:pointer-events-none disabled:opacity-25"
   >
     {children}
   </button>

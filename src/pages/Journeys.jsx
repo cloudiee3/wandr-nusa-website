@@ -13,7 +13,19 @@ import { destinations, destBySlug } from '../data/destinations'
 
 export default function Journeys() {
   const [params, setParams] = useSearchParams()
-  const [active, setActive] = useState('All')
+
+  // The chosen filter lives in the URL, not in component state. Held in state
+  // it was lost the moment you opened a trip and came back: the chip reset to
+  // All while the browser restored your scroll position, so you landed half
+  // way down a list you were no longer looking at. In the URL, Back restores
+  // it, and a filtered view can be sent to someone.
+  const active = params.get('tag') || 'All'
+  const setActive = (tag) => {
+    const next = new URLSearchParams(params)
+    if (tag === 'All') next.delete('tag')
+    else next.set('tag', tag)
+    setParams(next)
+  }
 
   // Set by the hero search widget.
   const { dest, place, kind, from, to, travellers } = readSearch(params)
@@ -26,7 +38,14 @@ export default function Journeys() {
   const savedOn = active === 'Saved'
   // Leave the saved view as soon as the last one is unsaved, so the page is
   // never an empty list with no way back.
-  useEffect(() => { if (savedOn && saved.size === 0) setActive('All') }, [savedOn, saved.size])
+  // replace, not push: otherwise Back walks you through every moment the
+  // saved list happened to empty.
+  useEffect(() => {
+    if (!savedOn || saved.size > 0) return
+    const next = new URLSearchParams(params)
+    next.delete('tag')
+    setParams(next, { replace: true })
+  }, [savedOn, saved.size]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const shown = useMemo(() => {
     // A "place" is somewhere we don’t run a fixed departure yet.

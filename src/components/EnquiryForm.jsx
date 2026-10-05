@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, Check, Loader2, Send } from 'lucide-react'
 import WhatsAppIcon from './WhatsAppIcon'
 import { journeys } from '../data/journeys'
@@ -28,6 +28,8 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [errors, setErrors] = useState({})
 
+  const formRef = useRef(null)
+
   const set = (k) => (e) => {
     setForm((f) => ({ ...f, [k]: e.target.value }))
     setErrors((x) => ({ ...x, [k]: undefined }))
@@ -44,7 +46,19 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'That email doesn’t look right.'
     }
     setErrors(e)
-    return Object.keys(e).length === 0
+    const bad = Object.keys(e)
+    // Pressing Continue used to leave focus on the button. Sighted users see
+    // the red text appear; anyone using a screen reader or a keyboard heard
+    // and saw nothing at all, so the form looked simply broken. Move to the
+    // first field we rejected and the message, which sits inside that field's
+    // label, is read out with it.
+    if (bad.length) {
+      requestAnimationFrame(() => {
+        const el = formRef.current?.querySelector(`[name="${bad[0]}"]`)
+        if (el) { el.focus(); el.scrollIntoView({ block: 'center', behavior: 'smooth' }) }
+      })
+    }
+    return bad.length === 0
   }
 
   const next = () => validate(step) && setStep((s) => Math.min(s + 1, STEPS.length - 1))
@@ -111,6 +125,7 @@ ${form.name ? `From ${form.name}` : ''}`
 
   return (
     <form
+      ref={formRef}
       name="enquiry"
       method="POST"
       data-netlify="true"
@@ -146,7 +161,7 @@ ${form.name ? `From ${form.name}` : ''}`
       <fieldset className={step === 0 ? 'block' : 'hidden'}>
         <legend className="sr-only">Your trip</legend>
         <Field label="Which journey?" error={errors.trip}>
-          <select name="trip" value={form.trip} onChange={set('trip')} className={inputCls(errors.trip)}>
+          <select name="trip" aria-invalid={!!errors.trip} value={form.trip} onChange={set('trip')} className={inputCls(errors.trip)}>
             <option value="">Choose one…</option>
             {journeys.map((j) => <option key={j.slug} value={j.title}>{j.title}</option>)}
             <option value="Transport / airport transfer">Transport / airport transfer</option>
@@ -156,7 +171,7 @@ ${form.name ? `From ${form.name}` : ''}`
         </Field>
         <div className="grid gap-5 sm:grid-cols-2">
           <Field label="When?" hint="A month is fine" error={errors.dates}>
-            <input name="dates" value={form.dates} onChange={set('dates')} placeholder="e.g. mid-July 2027" className={inputCls(errors.dates)} />
+            <input name="dates" aria-invalid={!!errors.dates} value={form.dates} onChange={set('dates')} placeholder="e.g. mid-July 2027" className={inputCls(errors.dates)} />
           </Field>
           <Field label="How many of you?">
             <input name="travellers" value={form.travellers} onChange={set('travellers')} className={inputCls()} />
@@ -168,11 +183,11 @@ ${form.name ? `From ${form.name}` : ''}`
       <fieldset className={step === 1 ? 'block' : 'hidden'}>
         <legend className="sr-only">Your details</legend>
         <Field label="Your name" error={errors.name}>
-          <input name="name" value={form.name} onChange={set('name')} autoComplete="name" className={inputCls(errors.name)} />
+          <input name="name" aria-invalid={!!errors.name} value={form.name} onChange={set('name')} autoComplete="name" className={inputCls(errors.name)} />
         </Field>
         <div className="grid gap-5 sm:grid-cols-2">
           <Field label="Email" error={errors.email}>
-            <input type="email" name="email" value={form.email} onChange={set('email')} autoComplete="email" className={inputCls(errors.email)} />
+            <input type="email" name="email" aria-invalid={!!errors.email} value={form.email} onChange={set('email')} autoComplete="email" className={inputCls(errors.email)} />
           </Field>
           <Field label="Phone / WhatsApp" hint="Optional">
             <input type="tel" name="phone" value={form.phone} onChange={set('phone')} autoComplete="tel" className={inputCls()} />

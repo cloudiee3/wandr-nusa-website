@@ -161,5 +161,5 @@ export const stats = [
   { value: 100, suffix: '%', label: 'Locally owned and guided' },
   { text: '24/7', label: 'Support while you travel' },
   { value: 1, prefix: '<', suffix: ' hr', label: 'Typical WhatsApp reply' },
-  { value: 12, suffix: '', label: 'Most travellers per group' },
+  { value: 10, suffix: '', label: 'Most travellers per group' },
 ]

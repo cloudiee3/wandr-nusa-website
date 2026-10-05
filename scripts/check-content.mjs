@@ -5,6 +5,7 @@
 import { journeys, categories, formatPrice } from '../src/data/journeys.js'
 import { destinations, searchGroups } from '../src/data/destinations.js'
 import { featured, testimonials } from '../src/data/testimonials.js'
+import { stats } from '../src/data/site.js'
 import images from '../src/data/images.json' with { type: 'json' }
 import { readFileSync, readdirSync } from 'node:fs'
 
@@ -183,6 +184,17 @@ for (const file of readdirSync('src/data').map((f) => `src/data/${f}`)
   for (const form of ['\u2014', '\\u2014']) {
     const n = body.split(form).length - 1
     if (n) problems.push(`${file} has ${n} em dash${n > 1 ? 'es' : ''} in copy: use a comma, a colon or a full stop`)
+  }
+}
+
+// ── The group-size stat has to match the trips ───────────────────────
+// The About page advertised 12 while every trip said 10 and its own values
+// card said "ten everywhere else", so the page contradicted itself twice over.
+{
+  const claimed = stats.find((s) => /travellers per group/i.test(s.label))?.value
+  const biggest = Math.max(...journeys.map((j) => Number(j.group.match(/\d+/)?.[0] ?? 0)))
+  if (claimed && claimed !== biggest) {
+    problems.push(`About says at most ${claimed} per group, but the largest group on any trip is ${biggest}`)
   }
 }
 
