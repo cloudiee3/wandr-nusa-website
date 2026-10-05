@@ -8,7 +8,7 @@ import { readSearch } from '../lib/search'
 import { readFavourites, subscribeFavourites } from '../lib/favourites'
 import Reveal from '../components/Reveal'
 import { journeys, categories } from '../data/journeys'
-import { destinations, destBySlug } from '../data/destinations'
+import { destBySlug } from '../data/destinations'
 
 
 export default function Journeys() {

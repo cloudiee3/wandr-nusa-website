@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import {
   ArrowLeft, AlertTriangle, Backpack, Check, Clock, Gauge, MapPin, Minus, Sun, Users,
@@ -8,14 +9,27 @@ import Reveal from '../components/Reveal'
 import JourneyCard from '../components/JourneyCard'
 import EnquiryForm from '../components/EnquiryForm'
 import WhatsAppIcon from '../components/WhatsAppIcon'
+import WhatsAppLink from '../components/WhatsAppLink'
 import { bySlug, formatPrice, fromPrice, journeys } from '../data/journeys'
-import { byRequest, whatsappLink } from '../data/site'
+import { byRequest } from '../data/site'
 import { readSearch } from '../lib/search'
+import { track } from '../lib/analytics'
 
 export default function JourneyDetail() {
   const { slug } = useParams()
   const [params] = useSearchParams()
   const j = bySlug(slug)
+
+  // Which trips get looked at, which is the number worth having next to how
+  // many people then reached for WhatsApp.
+  //
+  // Above the redirect below, not under it: a hook after an early return runs
+  // on a real trip and not on an unknown slug, and React counts hooks. That
+  // mismatch crashes the page rather than redirecting it.
+  useEffect(() => {
+    if (j) track('Journey view', { trip: j.title, slug: j.slug })
+  }, [j?.slug]) // eslint-disable-line react-hooks/exhaustive-deps
+
   if (!j) return <Navigate to="/journeys" replace />
 
   // Arriving from the hero search, which carries the dates and the party size.
@@ -48,9 +62,9 @@ export default function JourneyDetail() {
       >
         <div className="flex flex-wrap items-center gap-3">
           <a href="#enquire" className="btn-accent">Check Availability</a>
-          <a href={whatsappLink(`Hi! I’d like to ask about "${j.title}".`)} target="_blank" rel="noreferrer" className="btn-ghost-light">
+          <WhatsAppLink subject={j.title} placement="hero" className="btn-ghost-light">
             <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask a Question
-          </a>
+          </WhatsAppLink>
         </div>
       </PageHero>
 
@@ -92,14 +106,9 @@ export default function JourneyDetail() {
             <p className="mt-2 text-[0.82rem] text-ink-300">*{j.priceNote}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#enquire" className="btn-primary">Get a Quote</a>
-              <a
-                href={whatsappLink(`Hi! What would "${j.title}" cost for my group?`)}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ghost"
-              >
+              <WhatsAppLink subject={j.title} placement="price" className="btn-ghost">
                 <WhatsAppIcon className="h-[17px] w-[17px]" /> Ask on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </Reveal>
         </section>

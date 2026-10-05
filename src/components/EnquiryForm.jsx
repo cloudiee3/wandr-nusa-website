@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, Check, Loader2, Send } from 'lucide-react'
 import WhatsAppIcon from './WhatsAppIcon'
+import WhatsAppLink from './WhatsAppLink'
 import { journeys } from '../data/journeys'
-import { site, whatsappLink } from '../data/site'
+import { whatsappMessage } from '../data/site'
 
 const STEPS = ['Your trip', 'Your details', 'Anything else']
 const EMPTY = {
@@ -89,7 +90,7 @@ export default function EnquiryForm({ defaultTrip = '', defaultMessage = '', def
     }
   }
 
-  const waMessage = `Hi ${site.name}! I’d like to enquire about: ${form.trip || 'a trip to Lombok'}.
+  const waMessage = `${whatsappMessage(form.trip || undefined)}
 Dates: ${form.dates || 'flexible'}
 Travellers: ${form.travellers}
 ${form.message ? `\n${form.message}` : ''}
@@ -107,10 +108,10 @@ ${form.name ? `From ${form.name}` : ''}`
           message us on WhatsApp and we’ll pick it up now.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-whatsapp">
+          <WhatsAppLink subject={form.trip || undefined} message={waMessage} placement="after-send" className="btn-whatsapp">
             <WhatsAppIcon className="h-[18px] w-[18px]" />
             Continue on WhatsApp
-          </a>
+          </WhatsAppLink>
           <button
             type="button"
             className="btn-ghost"
@@ -214,9 +215,9 @@ ${form.name ? `From ${form.name}` : ''}`
         </button>
 
         <div className="flex flex-wrap items-center gap-3">
-          <a href={whatsappLink(waMessage)} target="_blank" rel="noreferrer" className="btn-ghost">
+          <WhatsAppLink subject={form.trip || undefined} message={waMessage} placement="form" className="btn-ghost">
             <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp Instead
-          </a>
+          </WhatsAppLink>
           {/* Distinct keys so React swaps the DOM node instead of retyping one. */}
           {step < STEPS.length - 1 ? (
             <button key="next" type="button" onClick={next} className="btn-primary">

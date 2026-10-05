@@ -122,12 +122,32 @@ export const nav = [
   { label: 'Contact', to: '/contact', spy: 'contact' },
 ]
 
-/** Builds a wa.me link with a message already typed for the traveller. */
-export function whatsappLink(message) {
-  const text = encodeURIComponent(
-    message || `Hi ${site.name}! I’d like to ask about a trip.`,
-  )
-  return `https://wa.me/${site.whatsapp}?text=${text}`
+/**
+ * The message every WhatsApp button types for the traveller.
+ *
+ * One sentence, the same everywhere, naming the trip when we know it. "(via
+ * website)" is there so that a message arriving on the phone can be told apart
+ * from one that came through GetYourGuide or from somebody who just had the
+ * number.
+ */
+export const whatsappMessage = (subject) =>
+  `Hi ${site.name}, I’m interested in ${subject || 'a trip'} (via website)`
+
+/**
+ * Builds a wa.me link with the message already typed.
+ *
+ * `src` names where on the site the button was, and rides along in the URL.
+ * WhatsApp itself drops any parameter it does not recognise, so this is a
+ * breadcrumb in logs and link previews rather than something WhatsApp reports
+ * back: the number you actually read is the WhatsApp click event, which
+ * carries the same value.
+ */
+export function whatsappLink(message, src) {
+  // encodeURIComponent, not URLSearchParams: the latter writes spaces as "+",
+  // and a wa.me deep link is not a form submission. %20 is what works.
+  const text = encodeURIComponent(message || whatsappMessage())
+  const tail = src ? `&src=${encodeURIComponent(src)}` : ''
+  return `https://wa.me/${site.whatsapp}?text=${text}${tail}`
 }
 
 export const trustSignals = [
@@ -150,7 +170,7 @@ export const trustSignals = [
 // which is the difference between an operator and a listing.
 export const byRequest = [
   { title: 'Somewhere to stay', body: 'Homestays, guesthouses and villas near the route, booked and paid on your behalf.' },
-  { title: 'Transport from anywhere', body: 'Airport, harbour or hotel, one way or return, priced per vehicle rather than per head.' },
+  { title: 'Transport from anywhere', body: 'Airport, harbour or hotel, one way or return, in a private vehicle sized to your group: a car for one or two of you, a van for more. Priced per vehicle rather than per head.' },
   { title: 'More days', body: 'Most day trips extend into two or three, with the extra nights arranged around them.' },
   { title: 'Lunch and food', body: 'No day trip includes a meal, so you order what you want where we stop. Tell us what you like or cannot eat and your guide books it ahead.' },
   { title: 'A guide who speaks your language', body: 'English as standard; other languages when we can arrange them in advance.' },

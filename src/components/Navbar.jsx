@@ -3,7 +3,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
 import WhatsAppIcon from './WhatsAppIcon'
-import { nav, site, whatsappLink } from '../data/site'
+import WhatsAppLink from './WhatsAppLink'
+import { nav, site } from '../data/site'
 
 /**
  * On the homepage the nav is route-based, so the pill would sit on Home for the
@@ -119,14 +120,12 @@ export default function Navbar() {
             </nav>
 
             <div className="flex items-center gap-2">
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noreferrer"
+              <WhatsAppLink
+                placement="nav-cta"
                 className="btn btn-alive hidden bg-ink !px-6 !py-2.5 !text-[0.85rem] text-white hover:-translate-y-0.5 hover:bg-ink-600 sm:inline-flex"
               >
                 Get Started
-              </a>
+              </WhatsAppLink>
 
               <button
                 type="button"
@@ -191,10 +190,10 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-whatsapp mt-6 w-full">
+          <WhatsAppLink placement="menu" className="btn-whatsapp mt-6 w-full">
             <WhatsAppIcon className="h-[18px] w-[18px]" />
             Message Us on WhatsApp
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
     </>

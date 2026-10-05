@@ -3,9 +3,10 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import PageHero from '../components/PageHero'
 import EmailLink from '../components/EmailLink'
+import WhatsAppLink from '../components/WhatsAppLink'
 import Reveal from '../components/Reveal'
 import EnquiryForm from '../components/EnquiryForm'
-import { site, whatsappLink } from '../data/site'
+import { site } from '../data/site'
 import { readSearch } from '../lib/search'
 
 /** The hero widget sends Transport and Stays enquiries here with their answers
@@ -62,9 +63,9 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={140} className="mt-8 space-y-1">
-            <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-whatsapp w-full sm:w-auto">
+            <WhatsAppLink placement="contact-panel" className="btn-whatsapp w-full sm:w-auto">
               <WhatsAppIcon className="h-[18px] w-[18px]" /> Message on WhatsApp
-            </a>
+            </WhatsAppLink>
           </Reveal>
 
           <Reveal delay={200} className="mt-10 space-y-5 border-t border-ink/[0.07] pt-8">

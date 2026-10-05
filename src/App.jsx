@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -13,8 +14,12 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
+import { initAnalytics } from './lib/analytics'
 
 export default function App() {
+  // Injected once, and only when the site has been given somewhere to send it.
+  useEffect(initAnalytics, [])
+
   return (
     <>
       <ScrollToTop />

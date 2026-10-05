@@ -11,7 +11,7 @@ import DestinationSlider from '../components/DestinationSlider'
 import AboutStrip from '../components/AboutStrip'
 import Testimonials from '../components/Testimonials'
 import { categories, journeys } from '../data/journeys'
-import { hero, site, stats } from '../data/site'
+import { hero, stats } from '../data/site'
 
 // The home grid carries the whole catalogue while it still fits inside a
 // reasonable scroll. Past this the remainder goes behind one button that

@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Ticket } from 'lucide-react'
 import Logo from './Logo'
 import WhatsAppIcon from './WhatsAppIcon'
+import WhatsAppLink from './WhatsAppLink'
 import { InstagramIcon, FacebookIcon } from './SocialIcons'
-import { nav, site, whatsappLink } from '../data/site'
+import { nav, site } from '../data/site'
 
 const links = [...nav, { label: 'Privacy', to: '/privacy' }, { label: 'Terms', to: '/terms' }]
 
@@ -36,9 +37,9 @@ export default function Footer() {
               <Link to="/contact" className="btn-accent">
                 Start an Enquiry <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
               </Link>
-              <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn-ghost-light">
+              <WhatsAppLink placement="footer" className="btn-ghost-light">
                 <WhatsAppIcon className="h-[17px] w-[17px]" /> WhatsApp Us
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
 
@@ -75,20 +76,30 @@ export default function Footer() {
             {/* Discs rather than bare glyphs, so four marks in four different
                 brand colours still read as one row. */}
             <div className="-mx-1.5 mt-8 flex flex-wrap items-center gap-1 lg:justify-end">
-              {site.socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={s.label}
-                  title={s.label}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.07]
-                             transition-all duration-300 hover:scale-105 hover:bg-white/[0.14]"
-                >
-                  <SocialMark name={s.icon} />
-                </a>
-              ))}
+              {site.socials.map((s) => {
+                const cls = `inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.07]
+                             transition-all duration-300 hover:scale-105 hover:bg-white/[0.14]`
+                // The WhatsApp disc is a WhatsApp button like any other, so it
+                // carries the same typed message and the same click event
+                // rather than dropping someone into an empty chat.
+                return s.icon === 'whatsapp' ? (
+                  <WhatsAppLink key={s.label} placement="footer-social" aria-label={s.label} title={s.label} className={cls}>
+                    <SocialMark name={s.icon} />
+                  </WhatsAppLink>
+                ) : (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className={cls}
+                  >
+                    <SocialMark name={s.icon} />
+                  </a>
+                )
+              })}
             </div>
 
             <p className="mt-7 font-sans text-[12px] leading-relaxed text-white/40 sm:text-[11px]">

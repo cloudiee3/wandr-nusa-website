@@ -146,7 +146,7 @@ export const journeys = [
     pricing: {
       unit: 'per person',
       from: 550000,
-      note: 'The day itself: the tickets, the guide and the transport between stops. Collection from elsewhere on Lombok is extra and quoted with it, on a scooter if you are on your own and in a van from two up. If you are already staying in Tetebatu we just start walking.',
+      note: 'The day itself: the tickets, the guide and the transport between stops. Collection from elsewhere on Lombok is extra and quoted with it, in a private vehicle sized to your group: a car for one or two of you, a van for more. If you are already staying in Tetebatu we just start walking.',
     },
     image: 'tetebatu-walk',
     gallery: ['tetebatu-field', 'sarang-walet', 'monkey-forest', 'tetebatu-plant'],
@@ -173,7 +173,7 @@ export const journeys = [
     includes: [
       'Entrance ticket at every stop',
       'Local guide',
-      'Transport between the stops',
+      'Private vehicle between the stops, sized to your group',
     ],
     excludes: [
       'Lunch and drinks, which your guide will help you order',
@@ -282,7 +282,7 @@ export const journeys = [
       'Snorkelling under the three rocks of Gili Petelu, and again off Gili Gambir',
       'Tanjung Ringgit if you want it, cliffs standing over open ocean at the end of the island',
       'A wooden boat and captain to yourselves, not a shared departure',
-      'GoPro photographs and video of the day, if you want them',
+      'A photographer or videographer on request, so somebody else holds the camera',
     ],
     itinerary: [
       { day: 'Stop 1', title: 'The drive southeast', body: 'This is not a boat that leaves from your beach. It waits at Telong Elong in the far southeast, which is about an hour from Kuta, an hour and a half from Mataram, two from Senggigi and two and a half from Bangsal. We collect you early enough to be on the water in good light, and we tell you the time when you book rather than the night before.' },
@@ -304,7 +304,7 @@ export const journeys = [
     excludes: [
       'Lunch and drinks, which your guide will help you order',
       'The ojek up to Tanjung Ringgit, paid to the rider',
-      'GoPro photographs and video, which is an extra',
+      'A photographer or videographer, which is available on request',
       'Tips for the guide and crew',
     ],
     bring: [
@@ -358,7 +358,7 @@ export const journeys = [
       { day: 'Stop 5', title: 'Bukit Merese', body: 'Fifteen minutes up the grass headland past Tanjung Aan, and the last thing of the day on purpose. Bay on one side, open ocean on the other, cliffs running away east, and the sun going down into it. Stay until it has gone.' },
     ],
     includes: [
-      'Air-conditioned vehicle, driver and fuel',
+      'Private vehicle sized to your group, driver and fuel',
       'Local guide at the waterfalls',
       'Entrance ticket at every stop',
       'Parking everywhere on the route',
@@ -394,7 +394,7 @@ export const journeys = [
     slug: 'kuta-mandalika',
     rating: 4.9,
     reviews: 168,
-    priceNote: 'including transport, guide and tickets at every stop',
+    priceNote: 'including the vehicle, driver, guide and tickets at every stop',
     title: 'Kuta Mandalika & the South Coast',
     kicker: 'Day trip',
     region: 'Kuta, Central Lombok',
@@ -429,14 +429,14 @@ export const journeys = [
       { day: 'Stop 6', title: 'Bukit Merese', body: 'The grass headland past Tanjung Aan. Fifteen minutes up and you have the bay on one side, open ocean on the other and the cliffs running away east. The best half hour on this coast, and it is better the later you leave it.' },
       { day: 'Stop 7', title: 'Selong Belanak', body: 'West of Kuta and worth the drive out. A kilometre of white sand, a fishing fleet moored off it, and waves gentle enough that this is where most of Lombok learns to surf. Boards and instructors are right there on the sand if you want an hour of it.' },
     ],
-    includes: ['Private transport and driver', 'Local guide', 'Entrance ticket at every stop', 'Photographs of the day'],
+    includes: ['Private vehicle sized to your group, with a driver', 'Local guide', 'Entrance ticket at every stop', 'Photographs of the day'],
     excludes: ['Lunch and drinks, which your guide will help you order', 'Surfboard hire or a lesson at Selong Belanak', 'Tips for the guide and driver'],
   },
   {
     slug: 'three-gilis',
     rating: 4.9,
     reviews: 184,
-    priceNote: 'including the private boat, guide, snorkelling gear and a GoPro',
+    priceNote: 'including the private boat, guide and snorkelling gear',
     title: 'Gili Trawangan, Meno & Air',
     kicker: 'Day trip',
     region: 'Bangsal, North Lombok',
@@ -459,7 +459,7 @@ export const journeys = [
       'The ring of underwater statues off Meno, shallow enough to snorkel down to',
       'A private boat, so the order of the islands and the time at each one is yours',
       'Nothing with an engine on any of the three, so you walk, cycle or take a pony cart',
-      'GoPro footage of the day, handed over before you go home',
+      'A photographer or videographer on request, so somebody else holds the camera',
     ],
     itinerary: [
       { day: 'Stop 1', title: 'The crossing', body: 'Out of Bangsal on a boat booked for your group alone, about half an hour across. In the west monsoon, roughly December to February, the channel turns choppy. If it is not worth going we tell you the night before rather than on the beach.' },
@@ -467,8 +467,8 @@ export const journeys = [
       { day: 'Stop 3', title: 'Gili Meno', body: 'The quiet one in the middle, and the reason most people book the day. Green turtles feed on the shallow shelf here, and the ring of underwater statues stands on the sand close enough in to snorkel down to. There is a salt lake inland if you walk across.' },
       { day: 'Stop 4', title: 'Gili Air', body: 'Closest to Lombok and the most liveable of the three. Swim off the east side, walk the sand track behind the beach, then the run back to Bangsal with the light going.' },
     ],
-    includes: ['Private boat and captain', 'Local guide', 'Snorkelling equipment', 'GoPro footage of the day'],
-    excludes: ['Lunch and drinks, which your guide will help you order', 'Transport to Bangsal Harbour', 'Tips for the guide and crew'],
+    includes: ['Private boat and captain', 'Local guide', 'Snorkelling equipment'],
+    excludes: ['Lunch and drinks, which your guide will help you order', 'A photographer or videographer, which is available on request', 'Transport to Bangsal Harbour', 'Tips for the guide and crew'],
   },
   {
     slug: 'explore-lombok',
@@ -506,7 +506,7 @@ export const journeys = [
       { day: 'Day 3', title: 'North Lombok and the waterfalls', body: 'Up the coast to Bayan, where the oldest mosque on the island still stands in bamboo and thatch, then Senaru for Sendang Gile and Tiu Kelep. Lunch, then back down the coast road with the Malimbu and Villa Hantu viewpoints on the way. That is the best half hour of driving in Lombok, and it is better late in the day.' },
       { day: 'Day 4', title: 'Mataram, the potters and your flight', body: 'Check out and into town. The souvenir centre for pearls, cloth and honey, then Banyumulek, where the pots are coil-built and open-fired by hand. The airport after that, with time to spare.' },
     ],
-    includes: ['Three nights of hotel', 'Airport pick-up and drop-off', 'Private transport and driver throughout', 'Local guide', 'Private boat to the Gilis', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Lunch and dinner on days one to three', 'Drinking water'],
+    includes: ['Three nights of hotel', 'Airport pick-up and drop-off', 'Private vehicle and driver throughout, sized to your group', 'Local guide', 'Private boat to the Gilis', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Lunch and dinner on days one to three', 'Drinking water'],
     excludes: ['Flights', 'Bicycles, horse carts and anything else you do in your own time on Trawangan', 'Anything you buy at the souvenir centre or the craft villages', 'Tips for the guide and driver'],
   },
   {
@@ -546,7 +546,7 @@ export const journeys = [
       { day: 'Day 4', title: 'Moyo', body: 'Boat across to Moyo. Mata Jitu is what people come for: limestone terraces holding pool after pool of water the colour of glass, and the one Diana swam in when she came here in 1993. The blue pool above it is colder and usually empty. The rest of the island is forest, deer and macaques.' },
       { day: 'Day 5', title: 'Whale sharks, then the road home', body: 'Out before dawn to Saleh Bay, where whale sharks come up under the fishing platforms to feed on what spills from the nets. You go in with a mask and a guide and swim alongside them. Nobody can promise a sighting, because they are wild, but this is as close to reliable as Indonesia gets. Then the long drive west and the ferry back.' },
     ],
-    includes: ['Four nights of accommodation', 'The Kayangan to Poto Tano ferry, both ways', 'Private transport and driver throughout', 'Local guide', 'Boats to every island', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Drinking water'],
+    includes: ['Four nights of accommodation', 'The Kayangan to Poto Tano ferry, both ways', 'Private vehicle and driver throughout, sized to your group', 'Local guide', 'Boats to every island', 'Snorkelling equipment', 'Entrance ticket at every stop', 'Drinking water'],
     excludes: ['Flights', 'Meals', 'Tips for the guide and crew'],
   },
   {

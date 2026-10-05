@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import WhatsAppIcon from './WhatsAppIcon'
-import { whatsappLink } from '../data/site'
+import WhatsAppLink from './WhatsAppLink'
 
 /** Floating WhatsApp button, shown once the hero is behind you. */
 export default function WhatsAppFab() {
@@ -14,10 +14,8 @@ export default function WhatsAppFab() {
   }, [])
 
   return (
-    <a
-      href={whatsappLink()}
-      target="_blank"
-      rel="noreferrer"
+    <WhatsAppLink
+      placement="floating"
       aria-label="Message Wandr Nusa on WhatsApp"
       style={{ bottom: 'calc(1.25rem + env(safe-area-inset-bottom, 0px))' }}
       className={`fixed right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full
@@ -27,6 +25,6 @@ export default function WhatsAppFab() {
                   }`}
     >
       <WhatsAppIcon className="h-7 w-7" />
-    </a>
+    </WhatsAppLink>
   )
 }
